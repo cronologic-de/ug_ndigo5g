@@ -1,0 +1,98 @@
+% SVN Info:
+% $Date: 2020-11-25 15:16:56 +0100 (Mi, 25 Nov 2020) $
+% $Rev: 5261 $
+% $Author: kolja $
+\documentclass[11pt,notitlepage]{scrreprt}
+%
+\usepackage[utf8]{inputenc}
+\usepackage[usenames, dvipsnames]{color}
+\usepackage{graphicx} %for including figures
+\usepackage{tabularx}
+\usepackage{amsmath} %for math environments
+\usepackage[left=25mm, right=25mm, top=25mm, bottom=25mm]{geometry} %for page properties (pagestyle)
+\usepackage[section,subsection,subsubsection]{extraplaceins} %for binding figures to a (sub-)section
+\usepackage{listings}%for code in latex document
+\usepackage{textcomp}%for code in latex document
+\usepackage{fancyhdr}%for header, footer
+\usepackage{balance}%for two-column layout
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{array} %for centered AND constant width columns
+\usepackage{longtable}
+
+%
+\fancyfoot[CE,CO]{\thepage} %sets footer
+\fancyfoot[LE,LO]{cronologic GmbH \& Co. KG} %sets footer
+\fancyfoot[RE,RO]{Ndigo5G User Guide} %sets footer
+\fancyhead{} %removes header
+\renewcommand{\headrulewidth}{0pt} %removes header line
+\renewcommand{\footrulewidth}{1pt} %creates footer line
+\renewcommand{\footrule}{{\color{cronlightgreen}%
+\vskip-\footruleskip\vskip-\footrulewidth
+\hrule width\headwidth height\footrulewidth\vskip\footruleskip}}
+%
+\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+\definecolor{crondarkgreen}{RGB}{32, 90, 133} %1. Überschrift
+\definecolor{crondarkblue}{RGB}{43, 119, 177} %2. Überschrift
+\definecolor{cronlightgreen}{RGB}{86,159,214} %3. Überschrift
+\definecolor{crongrey}{gray}{0.32} %Variablendeklaration API
+%
+\addtokomafont{chapter}{\color{crondarkgreen}}
+\addtokomafont{section}{\color{crondarkblue}}
+\addtokomafont{subsection}{\color{cronlightgreen}}
+%
+\newcommand{\cronvar}[2]{\noindent\textsf{\textbf{\textcolor{crongrey}{#1} #2}}}%for variable declaration
+\newcommand{\crondef}[1]{\noindent\textsf{\textcolor{crongrey}{\#{}define} #1}}%for definitions
+\newcommand{\tu}{\textunderscore}%shorter
+\newcommand{\subscript}[1]{\ensuremath{_{\textrm{#1}}}}
+\renewcommand{\arraystretch}{1.6}
+%
+\parskip 8pt
+%
+\title{
+	\ \\
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{figures/title2.pdf}
+	\end{center}
+	\ \\
+	\ \\
+	\includegraphics[width=0.6\textwidth]{figures/title.pdf}}
+	\subtitle{
+		\ \\
+		\ \\
+		\begin{center}
+			\includegraphics[width=0.75\textwidth]{figures/Ndigo5G-3Dlowres.jpg}
+		\end{center}
+}
+\titlehead{Revision \hyperlink{ugrev}{1.1.3} as of 2020-11-21\\Firmware \hyperlink{fwrev}{2 (build 4865)}, Driver \hyperlink{drvrev}{v1.4.3}\\\\cronologic GmbH \& Co. KG\\Jahnstraße 49\\60318 Frankfurt am Main\\Germany \\ \href{https://www.cronologic.de/}{www.cronologic.de}
+\date{}}
+%
+\begin{document}
+	\newpage
+	\maketitle
+	\thispagestyle{empty}
+	\newpage
+	\pagenumbering{roman}
+	\tableofcontents
+	\clearpage
+	\pagestyle{fancy}
+	\pagenumbering{arabic}
+	%
+	\chapter{Introduction}
+		\input{Ndigo_Intro.tex}
+	\chapter{Hardware}
+		\input{Ndigo_Hardware.tex}
+	\chapter{Driver Programming API}
+		\input{Ndigo_API.tex}
+	\chapter{Packet Format\label{cp:packetformat}}
+		\input{Ndigo_PackForm.tex}
+	\chapter{C Example}
+		\input{Ndigo_CExp.tex}
+	\chapter{Technical Data}
+		\input{Ndigo_Tech.tex}
+		\input{Ndigo_DIN.tex}
+	\chapter{Revision History}
+		\input{Ndigo_FwRev.tex}
+		\input{Ndigo_DrvRev.tex}
+		\input{Ndigo_UGRev.tex}
+\end{document}

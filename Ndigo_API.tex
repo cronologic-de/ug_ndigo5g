@@ -1,0 +1,640 @@
+% SVN Info:
+% $Date: 2019-06-04 16:01:22 +0200 (Di, 04 Jun 2019) $
+% $Rev: 4980 $
+% $Author: andreas $
+The API is a DLL with C linkage. The functions provided by the DLL are declared in \textsf{Ndigo\tu interface.h}. \par
+
+\section{Constants}
+
+	\crondef{NDIGO\tu CHANNEL\tu COUNT 4}\\
+	The number of analog input channels.\par
+
+	\crondef{NDIGO\tu GATE\tu COUNT 4}\\
+	The number of gating blocks.\par
+
+	\crondef{NDIGO\tu TRIGGER\tu COUNT 16}\\
+	The number of triggers. Two per analog input, one per digital input plus some specials.\par
+
+	\crondef{NDIGO\tu ADD\tu TRIGGER\tu COUNT 6}\\
+	Additional set of triggers for digital inputs.
+
+	\section{Initialization}
+
+		\cronvar{int}{ndigo\tu count\tu devices(}\cronvar{int}{*error\tu code}, \cronvar{char}{**error\tu message)}\\
+		Return the number of boards that are supported by this driver in the system.\par
+
+		\cronvar{int}{ndigo\tu get\tu default\tu init\tu parameters(}\cronvar{ndigo\tu init\tu parameters}{*init)}\\
+		Get a set of default parameters to feed into \textsf{ndigo\tu init()}. This must always be used to initialize the \textsf{ndigo\tu init\tu parameter structure}.\par
+
+		\cronvar{ndigo\tu device}{*ndigo\tu init(}\cronvar{ndigo\tu init\tu parameters}{*params}, \cronvar{int}{*error\tu code}, \cronvar{char}{**error\tu message)}\\
+		Open and initialize the Ndigo board with the given index. With \textsf{error\tu code} and \textsf{error\tu message} the user must provide pointers where to buffers where error information should be written by the driver. The buffer for the error message must by at least 80 chars long.\par
+		
+		Params is a structure of type \textsf{ndigo\tu init\tu parameters} that must be completely initialized.\par
+		
+		\cronvar{int}{ndigo\tu close(}\cronvar{ndigo\tu device}{*device)}\\
+		Finalize the driver for this device.
+	
+		\subsection{Structure ndigo\tu init\tu parameters}
+		
+			\cronvar{int}{version}\\
+			Must be set to \textsf{NDIGO\tu API\tu VERSION}\par
+			
+			\cronvar{int}{card\tu index}\\
+			The index in the list of Ndigo5G boards that should be initialized. There might be multiple boards in the system that are handled by this driver as reported by \textsf{ndigo\tu count\tu devices}. This index selects one of them. Boards are enumerated depending on the PCIe slot. The lower the bus number and the lower the slot number the lower the card index.\par
+
+			\cronvar{int}{board\tu id}\\
+			This 8 bit number is filled into each packet created by the board and is useful if data streams of multiple boards will be merged. If only Ndigo5G cards are used this number can be set to the card index. If boards of different types that use a compatible data format are used in a system each board should get a unique id. Can be changed with \textsf{int ndigo\tu set\tu board\tu id(ndigo\tu device *device, int board\tu id)}.\par
+	
+			\cronvar{ndigo\tu bool\tu t}{use\tu external\tu clock}\\
+			Use 10MHz clock supplied by IPC flat band cable. Must be set for all slaves.\par
+			
+			\cronvar{ndigo\tu bool\tu t}{drive\tu external\tu clock}\\
+			Drive internal 10MHz clock of this board to IPC flat band cable. Must be set for master.\par
+
+			\cronvar{ndigo\tu bool\tu t}{is\tu slave}\\
+			Data acquisition of this board is controlled by the master board.\par
+
+			\cronvar{int}{sync\tu period}\\
+			Period of the multicard sync pulse. Should be set to 4 (default) when using several Ndigo boards in sync. Ignored for single board setups. The Ndigo5G has 4 phases relative to the global 10MHz clock.\par
+			
+			\cronvar{int}{sync\tu delay}\\
+			Fine tap delay for incoming sync signals.\par
+			
+			\cronvar{ndigo\tu bool\tu t}{force\tu window\tu calibration}\\
+			If true/1, valid data window is detected at initialization. Default value is false/0: values from flash memory are used in order to set data window to correct position.
+
+			\cronvar{ndigo\tu bool\tu t}{hptdc\tu sync\tu enabled}\\
+			A HPTDC is connected to this board. Enables the clock and sync line from the Ndigo5G to the HPTDC.\par
+
+			\cronvar{\tu \tu int64}{buffer\tu size[8]}\\
+			The minimum size of the DMA buffer. If set to 0 the default size of 16MByte is used. Ndigo5G only uses \textsf{buffer\tu size[0]}.\par
+
+			\cronvar{int}{buffer\tu type}\\
+			Must be set to \textsf{NDIGO\tu BUFFER\tu ALLOCATE}.\par
+
+			\cronvar{\tu \tu int64}{buffer\tu address}\\
+			Ignored. Might be used for future buffer types.\par
+
+			\cronvar{int}{variant}\\
+			Set to 0. Can be used to activate future device variants such as different base frequencies.\par
+
+			\cronvar{int}{device\tu type}\\
+			Initialized by \textsf{ndigo\tu get\tu default\tu init\tu parameters()}. Must be left unchanged.
+			
+			\begin{description}
+				\item[] \crondef{CRONO\tu DEVICE\tu HPTDC 0}
+				\item[] \crondef{CRONO\tu DEVICE\tu NDIGO5G 1}
+				\item[] \crondef{CRONO\tu DEVICE\tu NDIGO250M 2}
+			\end{description}
+			
+			\cronvar{int}{dma\tu read\tu delay}\\
+			Initialized by \textsf{ndigo\tu get\tu default\tu init\tu parameters()}. The write pointer update is delay by this number of 4 ns clock periods to hide race conditions between software and DMA.
+	\section{Status Information}
+		\subsection{Functions for Information Retrieval}
+		
+			The driver provides functions to retrieve detailed information on the type of board, its configuration, settings and state. The information is split according to its scope and the computational requirements to query the information from the board.\par
+			
+			\cronvar{int}{ndigo\tu get\tu driver\tu revision()}\\
+			Returns the driver version, same format as ndigo\tu static\tu info::driver\tu revision. This function does not require a
+			present Ndigo5G device.
+
+			\cronvar{const char*}{ndigo\tu get\tu driver\tu revision\tu str()}\\
+			Returns the driver version including SVN build revision as a string. This function does not require a
+			present Ndigo5G device.
+			
+			\cronvar{int}{ndigo\tu get\tu static\tu info(}\cronvar{ndigo\tu device}{*device},\cronvar{ndigo\tu static\tu info}{*info)}\\
+			This structure contains information about the board that does not change during run time.\par
+
+			\cronvar{int}{ndigo\tu get\tu param\tu info(}\cronvar{ndigo\tu device}{*device}, \cronvar{ndigo\tu param\tu info}{*info)}\\
+			The structure returned by this call contains information that changes indirectly due to configuration changes.\par
+
+			\cronvar{int}{ndigo\tu get\tu fast\tu info(}\cronvar{ndigo\tu device}{*device}, \cronvar{ndigo\tu fast\tu info}{*info)}\\
+			This call returns a structure that contains dynamic information that can be obtained within a few microseconds.\par
+
+			\cronvar{int}{ndigo\tu get\tu slow\tu info(}\cronvar{ndigo\tu device}{*device}, \cronvar{ndigo\tu slow\tu info}{*info)}\\
+			The data reported in this structure requires milliseconds to be obtained. The application should only call it in situation where the program flow can cope with an interruption of that magnitude.
+		
+		\cronvar{const char*}{ndigo\tu get\tu last\tu error\tu message(}\cronvar{ndigo\tu device}{*device)}\\
+		\subsection{Structure ndigo\tu static\tu info}
+		
+			This structure contains information about the board that does not change during run time. It is provided by the function \textsf{ndigo\tu get\tu static\tu info}.\par
+			
+			\cronvar{int}{size}\\
+			The number of bytes occupied by the structure\par
+
+			\cronvar{int}{version}\\
+			A version number that is increased when the definition of the structure is changed. The increment can be larger than one to match driver version numbers or similar. Set to 0 for all versions up to first release.\par
+
+			\cronvar{int}{board\tu id}\\
+			Index of the board as passed to the constructor or set via \textsf{int ndigo\tu set\tu board\tu id(ndigo\tu device *device, int board\tu id)}.\par
+			
+			\cronvar{int}{driver\tu revision}\\
+			The lower three bytes contain a triple level hierarchy of version numbers, e.g. 0x010103 encodes version 1.1.3.\par
+
+			A change in the first digit generally requires a recompilation of user applications. Change in the second digit denote significant improvements or changes that don't break compatibility and the third digit changes with minor bugfixes and similar updates.\par
+
+			\cronvar{int}{firmware\tu revision}\\
+			Firmware revision of the FPGA configuration. This increments only when there is a functional change.\par
+
+			\cronvar{int}{board\tu revision}\\
+			0 for experimental prototypes labeled ``Rev. 1''\\
+			2 for the version produced until 2010 labeled ``Rev. 2''`\\
+			3 for the version produced starting in 2011 labeled ``Rev. 3''\\
+			
+			\cronvar{int}{board\tu configuration}\\
+			Describes the schematic configuration of the board.\par
+
+			\noindent\textit{For board revision 0 this always reads 0.}\par
+
+			\noindent\textit{For board revision 2 the following assignments are valid:}\par
+
+			\noindent If Bit 3 = 0 this following is valid:\\
+			Bit 0 determines the ADC resolution. ($0 = 8-\text{bit}$ or $1 = 10-\text{bit}$ ).\\
+			Bit 1 determines whether the TDC-oscillator is present ($0 = \text{oscillator present}$, $1 = \text{simple trigger}$).\\
+			Bit 2 determines the input connectors ($0 = \text{single ended}$, $1 = \text{differential}$).\par
+
+			\noindent Bit $3 = 1$ signifies a special version of the board\\
+			0xA is Ndigo1250M-12 single ended with digital trigger\\
+			0x8 is Ndigo5G-8 single ended with digital trigger\par
+			
+			\noindent\textbf{For Board revision 3 the following assignments are valid:}\par
+
+			\noindent Bit 2 determines the input connectors ($0 = \text{single ended}$, $1 = \text{differential}$).\par
+
+			\noindent The other bits have one of the following patterns [Bits 3...0]\par
+
+			\noindent 0010 Ndigo5G-10 2.5u 10\\
+			0011 Ndigo5G-8-AQ 2.5u 8\\
+			0110 Ndigo5G-10-Diff 560pF 10 DIFF\\
+			1000 Ndigo5G-8 560pF 8+\\
+			1010 Ndigo1250M-12 2.2uF 12 Sciex DC\\
+			1011 Ndigo5G-10 560pF 10\\
+			1110 Ndigo5G-Sciex 2.2uF 10 Sciex Infiniband, DIFF\\
+			1111 Ndigo5G-Roent = fADC4/10 560pF 10\par
+
+			\cronvar{int}{adc\tu resolution}\\
+			Number of bits of the ADC, set to 0 if unknown.\par
+
+			\cronvar{double}{nominal\tu sample\tu rate}\\
+			Sample rate in once channel mode. Usually $5.0e9 = 5 Gsps$.\par
+
+			\cronvar{double}{analog\tu bandwidth}\\
+			3e9 for 3Ghz
+			
+			\cronvar{int}{chip\tu id}\\
+			16 bit factory ID of the ADC chip\par
+			
+			\cronvar{int}{board\tu serial}\\
+			Serial number with the year minus 2000 in the highest 8 bits of the integer and a running number in the lower 24 bits. This number is identical with the one on the label on the board.\par
+
+			\cronvar{int}{flash\tu serial\tu low}\\
+			\cronvar{int}{flash\tu serial\tu high}\\
+			64 bit manufacturer serial number of the flash chip.\par
+
+			\cronvar{int}{flash\tu valid}\\
+			If not 0 the driver found valid calibration data in the flash on the board and is using it.\par
+
+			\cronvar{ndigo\tu bool\tu t}{dc\tu coupled}\\
+			Returns false for the standard AC coupled Ndigo5G.\par
+
+			\cronvar{int}{subversion\tu revision}\\
+			A number to track builds of the firmware in more detail than the firmware revision. It changes with every change in the firmware, even if there is no visible effect for the user.\par
+			
+			\cronvar{char}{calibration\tu date[20]}\\
+			DIN EN ISO 8601 string YYYY-MM-DD HH:DD describing the time when the card was calibrated.
+		
+		\subsection{Structure ndigo\tu param\tu info}
+		
+			\cronvar{int}{size}\\
+			The number of bytes occupied by the structure.\par
+
+			\cronvar{int}{version}\\
+			A version number that is increased when the definition of the structure is changed. The increment can be larger than one to match driver version numbers or similar. Set to 0 for all versions up to
+first release.\par
+
+			\cronvar{double}{bandwidth}\\
+			Analog Bandwidth setting of the ADC. Either $3e9 = 3GHz$ or $1e9=1GHz$ for 10 bit version.\par
+
+			\cronvar{double}{sample\tu rate}\\
+			Sample rate. This is 1.25e9, 2.5e9 or 5.0e9 depending on the current ADC mode. $\text{sample\tu rate}\cdot \text{channels} = 5.0e9$.\par
+			
+			\cronvar{double}{sample\tu period}\\
+			The period one sample in the data represents in picoseconds\par
+
+			\cronvar{int}{board\tu id}\\
+			The number the board uses to identify the data source in the output data stream.\par
+
+			\cronvar{int}{channels}\\
+			Number of channels. 1, 2 or 4 depending on the ADC mode chosen. $\text{sample\tu rate}\cdot\text{channels} = 5.0e9$.\par
+
+			\cronvar{int}{channel\tu mask}\\
+			Mask with a set bit for each enabled input channel.\par
+
+			\cronvar{\tu\tu int64}{total\tu buffer}\\
+			The total amount of the DMA buffer in bytes.\par
+
+%			\cronvar{\tu\tu int64}{free\tu buffer}\\
+%			Unused portion of the DMA buffer in bytes.\par
+		
+		\subsection{Structure ndigo\tu fast\tu info}
+		
+			\cronvar{int}{size}\\
+			The number of bytes occupied by the structure\par
+
+			\cronvar{int}{version}\\
+			A version number that is increased when the definition of the structure is changed. The increment can be larger than one to match driver version numbers or similar. Set to 0 for all versions up to first release.\par
+
+			\cronvar{int}{adc\tu rpm}\\
+			Speed of the ADC fan. Reports 0 if no fan is present.\par
+
+			\cronvar{int}{fpga\tu rpm}\\
+			Speed of the FPGA fan. Reports 0 if no fan is present.\par
+
+			\cronvar{int}{alerts}\\
+			Alert bits from the system monitor.\par
+			
+			\noindent Bit 0 : FPGA temperature alert ($> 85^{\circ}C$)\\
+			Bit 1 : Internal FPGA voltage out of range ($< 1.01V$ or $> 1.08V$)\\
+			Bit 2 : FPGA auxiliary voltage out of range. ($< 2.375V$ or $>  2.625V$)\\
+			Bit 3 : FPGA temperature critical ($> 125^{\circ}C$)\\
+			Bit 4 : ADC temperature alert ($> 90^{\circ}C$)\\
+			Bit 5 : ADC temperature critical ($> 100^{\circ}C$): will automatically be turned off.\par
+
+			\cronvar{double}{voltage\tu aux}\\
+			Auxiliary FPGA voltage, nominal 2.5V\par
+
+			\cronvar{double}{voltage\tu int}\\
+			Internal FPGA voltage, nominal 1.0V\par
+
+			\cronvar{double}{fpga\tu temperature}\\
+			In $^\circ$C measured on die.\par
+
+			\cronvar{int}{pcie\tu link\tu width}\\
+			Number of PCIe lanes that the card uses. Should be 4 for Ndigo5G. \par %% and 8 for Ndigo5G-Sciex.\par
+
+			\cronvar{int}{pcie\tu max\tu payload}\\
+			Maximum size in bytes for one PCIe transaction, depends on system configuration.\par
+		
+		\subsection{Structure ndigo\tu slow\tu info}
+		
+			\cronvar{int}{size}\\
+			The number of bytes occupied by the structure.\par
+
+			\cronvar{int}{version}\\
+			A version number that is increased when the definition of the structure is changed. The increment can be larger than one to match driver version numbers or similar. Set to 0 for all versions up to
+first release.\par
+
+			\cronvar{double}{adc\tu temperature}\\
+			ADC temperature in $^{\circ}C$ measured on die.\par
+
+			\cronvar{double}{board\tu temperature}\\
+			In $^{\circ}C$.
+		
+	\section{Configuration}
+	
+		The device is configured with a configuration structure. The user should first obtain a structure that contains the default settings of the device read from an on board ROM , than modify the structure as needed for the user application and use the result to configure the device.\par
+
+		\cronvar{int}{ndigo\tu get\tu default\tu configuration(}\cronvar{ndigo\tu device}{*device,} \cronvar{ndigo\tu configuration}{*config)}\par
+
+		\cronvar{int}{ndigo\tu get\tu current\tu configuration(}\cronvar{ndigo\tu device}{*device,} \cronvar{ndigo\tu configuration}{*config)}\par
+		
+		\cronvar{int}{ndigo\tu configure(}\cronvar{ndigo\tu device} {*device,} \cronvar{ndigo\tu configuration}{*config)}\par
+
+		\cronvar{int}{ndigo\tu set\tu board\tu id(}\cronvar{ndigo\tu device}{*device,} \cronvar{int}{board\tu id)}\\
+		The \textsf{board\tu id} can be changed after initialization of the card. If cronotools are used the \textsf{board\tu id} changes have to be done before cronotools initialization.	
+	
+		\subsection{Structure ndigo\tu configuration}
+		
+			This is the structure containing the configuration information. It is used in conjunction with \textsf{ndigo\tu get\tu default\tu configuration}, \textsf{ndigo\tu get\tu current\tu configuration} and \textsf{ndigo\tu configure}.\par
+
+			It uses internally the structures \textsf{ndigo\tu trigger\tu block} and \textsf{ndigo\tu trigger}.\par
+
+			\cronvar{int}{size}\\
+			The number of bytes occupied by the structure.\par
+
+			\cronvar{int}{version}\\
+			A version number that is increased when the definition of the structure is changed. The increment can be larger than one to match driver version numbers or similar. Set to 0 for all versions up to first release.\par
+
+			\cronvar{int}{reserved1}\\
+			Reserved for internal usage. Do not change.\par
+
+			\cronvar{int}{adc\tu mode}\\
+			Constant describing the ADC mode\par
+
+			\crondef{NDIGO\tu ADC\tu MODE\tu ABCD 0}\\
+			\crondef{NDIGO\tu ADC\tu MODE\tu AC 4}\\
+			\crondef{NDIGO\tu ADC\tu MODE\tu BC 5}\\
+			\crondef{NDIGO\tu ADC\tu MODE\tu AD 6}\\
+			\crondef{NDIGO\tu ADC\tu MODE\tu BD 7}\\
+			\crondef{NDIGO\tu ADC\tu MODE\tu A 8}\\
+			\crondef{NDIGO\tu ADC\tu MODE\tu B 9}\\
+			\crondef{NDIGO\tu ADC\tu MODE\tu C 10}\\
+			\crondef{NDIGO\tu ADC\tu MODE\tu D 11}\\
+			\crondef{NDIGO\tu ADC\tu MODE\tu AAAA 12}\\
+			\crondef{NDIGO\tu ADC\tu MODE\tu BBBB 13}\\
+			\crondef{NDIGO\tu ADC\tu MODE\tu CCCC 14}\\
+			\crondef{NDIGO\tu ADC\tu MODE\tu DDDD 15}\\
+			\crondef{NDIGO\tu ADC\tu MODE\tu A12 28} // not available on all boards\\
+			\crondef{NDIGO\tu ADC\tu MODE\tu B12 29} // not available on all boards\\
+			\crondef{NDIGO\tu ADC\tu MODE\tu C12 3}0 // not available on all boards\\
+			\crondef{NDIGO\tu ADC\tu MODE\tu D12 31} // not available on all boards\par
+
+			\cronvar{double}{bandwidth}\\
+			Set to the minimum bandwidth required for the application. Lower bandwidth results in reduced noise. The driver will set the ADC to the minimum setting that has at least the desired bandwidth and report the selected bandwidth in the \textsf{ndigo\tu param\tu info} structure. The -8, -10 and -12 versions currently supports 1GHz and 3GHz bandwidth, the -8AQ version supports 2GHz, 1.5GHz, 600MHz and 500 MHz.\par
+
+			\cronvar{ndigo\tu bool\tu t}{reserved}\\
+			\cronvar{ndigo\tu bool\tu t}{tdc\tu enabled}\\
+			Enable capturing of TDC measurements on external digital input channel.\par
+			
+			\cronvar{ndigo\tu bool\tu t}{tdc\tu fb\tu enabled}\\
+			Enable enhanced TDC resolution. Currently not implemented.\par
+
+			\cronvar{double}{analog\tu offset[NDIGO\tu CHANNEL\tu COUNT]}\\
+			Sets the input DC offset-values to +- this value in volts. Defaults to 0.\par
+
+			\cronvar{double}{dc\tu offset[2]}\\
+			Sets the DC offset in volts for the TDC trigger input (index 1) and the GATE input (index 0). The trigger threshold is zero. For negative 0.8V NIM pulses a value of 0.4 should be set here.\par
+
+			\cronvar{ndigo\tu trigger}{trigger[NDIGO\tu TRIGGER\tu COUNT + NDIGO\tu ADD\tu TRIGGER\tu COUNT]}\\
+			Configuration of the external trigger sources. Threshold is ignored for entries 8 and above.\par
+			
+			The trigger indexes refer to the entry in the trigger array and are defined like this:\par
+
+			\crondef{NDIGO\tu TRIGGER\tu A0 0}\\
+			\crondef{NDIGO\tu TRIGGER\tu A1 1}\\
+			\crondef{NDIGO\tu TRIGGER\tu B0 2}\\
+			\crondef{NDIGO\tu TRIGGER\tu B1 3}\\
+			\crondef{NDIGO\tu TRIGGER\tu C0 4}\\
+			\crondef{NDIGO\tu TRIGGER\tu C1 5}\\
+			\crondef{NDIGO\tu TRIGGER\tu D0 6}\\
+			\crondef{NDIGO\tu TRIGGER\tu D1 7}\\
+			\crondef{NDIGO\tu TRIGGER\tu TDC 8}\\
+			\crondef{NDIGO\tu TRIGGER\tu GATE 9}\\
+			\crondef{NDIGO\tu TRIGGER\tu BUS0 10}\\
+			\crondef{NDIGO\tu TRIGGER\tu BUS1 11}\\
+			\crondef{NDIGO\tu TRIGGER\tu BUS2 12}\\
+			\crondef{NDIGO\tu TRIGGER\tu BUS3 13}\par
+			
+			\crondef{NDIGO\tu TRIGGER\tu AUTO 14}\\
+			\crondef{NDIGO\tu TRIGGER\tu ONE 15}\par
+			
+			Always positive edge-sensitive sources:\\
+			\crondef{NDIGO\tu TRIGGER\tu TDC\tu PE 16}\\
+			\crondef{NDIGO\tu TRIGGER\tu GATE\tu PE 17}\\
+			\crondef{NDIGO\tu TRIGGER\tu BUS0\tu PE 18}\\
+			\crondef{NDIGO\tu TRIGGER\tu BUS1\tu PE 19}\\
+			\crondef{NDIGO\tu TRIGGER\tu BUS2\tu PE 20}\\
+			\crondef{NDIGO\tu TRIGGER\tu BUS3\tu PE 21}\par
+
+			\cronvar{ndigo\tu trigger\tu block}{trigger\tu block[NDIGO\tu CHANNEL\tu COUNT + 1]}\\
+			A structure describing the trigger settings of the four channels plus the timestamp channel. In some modes not all channels are used.\par
+
+			\cronvar{ndigo\tu gating\tu block}{gating\tu block[4]}\\
+			A structure describing the gating blocks that can be used by the trigger blocks to filter triggers.\par
+
+			\cronvar{ndigo\tu extension\tu block}{extension\tu block[NDIGO\tu EXTENSION\tu COUNT]}\\
+			A structure describing the routing of the 4 digital channels of the Ndigo extension board to the trigger matrix.\par
+
+			\cronvar{int}{drive\tu bus[4]}\\
+			Enable output drive for each of the four external sync lines. Each integer represents a bitmask selecting the trigger sources for that line. The bit mapping is described in section ``Structure \textsf{ndigo\tu trigger\tu block}'' on page \pageref{cp:triggerblock}.\par
+
+			\cronvar{int}{auto\tu trigger\tu period}\\
+			\cronvar{int}{auto\tu trigger\tu random\tu exponent}\\
+			Create a trigger either periodically or randomly. There are two parameters $M = \text{trigger\tu period}$ and $N = \text{random\tu exponent}$ that result in a distance between triggers of
+			
+			\begin{align}
+				T = 1 + M + [1...2^N]
+			\end{align}
+
+			clock cycles.
+			
+			\begin{align}
+				0 \leq M < 2^{32}\\
+				0 \leq N < 32
+			\end{align}					
+		
+			There is no enable or reset as the usage of this trigger can be configured in the trigger block channel source field.\par
+
+			\cronvar{int}{output\tu mode}\\
+			Defines the data representation in the output. Signed16 scales and INL-corrects the input. RAW directly presents the ADC values.\par
+			
+			\crondef{NDIGO\tu OUTPUT\tu MODE\tu SIGNED16 0}\\
+			\crondef{NDIGO\tu OUTPUT\tu MODE\tu RAW 1}\\
+			\crondef{NDIGO\tu OUTPUT\tu MODE\tu CUSTOM 2}\\
+			\crondef{NDIGO\tu OUTPUT\tu MODE\tu CUSTOM\tu INL 3}\par
+			
+			\cronvar{lut\tu func}{custom\tu lut}\\
+			If the \textsf{output\tu mode} is set to \textsf{NDIGO\tu OUTPUT\tu MODE\tu CUSTOM} or\\\textsf{NDIGO\tu OUTPUT\tu MODE\tu CUSTOM\tu INL} this function is used for mapping from ADC value to output value. The driver will call this function with a value from -1 to +1 and the function must return the corresponding signed 16 bit value that the board should return for an input voltage relative to the full scale range.\par
+
+			\cronvar{typedef short}{(*lut\tu func)(}\cronvar{int}{channel,} \cronvar{float}{x)}\par
+
+			This can be used e.g. for custom INL, offset and gain correction that covers user front end electronics. It can also invert the signal or correct the effect of logarithmic input amplifiers etc.\par
+			
+			The LUT is applied on the board, thus using it does not cause any additional CPU load. In the mode ``\textsf{NDIGO\tu OUTPUT\tu MODE\tu CUSTOM\tu INL}'' the on-board INL correction table is applied before the user function, while ``\textsf{NDIGO\tu OUTPUT\tu MODE\tu CUSTOM}'' does not perform INL correction. In order to use the user lookup table functionality \textsf{lut\tu func} must be set to a pointer to the LUT-function.
+		
+		\subsection{Structure ndigo\tu trigger}
+		
+			\cronvar{short}{threshold}\\
+			Sets the threshold for the trigger block within the range of the ADC data of -32768 and +32768.\par
+
+			For trigger indices \textsf{NDIGO\tu TRIGGER\tu TDC} to \textsf{NDIGO\tu TRIGGER\tu BUS3\tu PE} the threshold is ignored.\par
+
+			\cronvar{ndigo\tu bool\tu t}{edge}\\
+			If set this trigger implements edge trigger functionality else this is a level trigger.\par
+
+			For trigger indices \textsf{NDIGO\tu TRIGGER\tu AUTO} and \textsf{NDIGO\tu TRIGGER\tu ONE} this is ignored.\par
+			
+			For trigger indices \textsf{NDIGO\tu TRIGGER\tu TDC\tu PE} to \textsf{NDIGO\tu TRIGGER\tu BUS3\tu PE} this must be set.\par
+	
+			\cronvar{ndigo\tu bool\tu t}{rising}\\
+			If set trigger on rising edges or when above threshold.\par
+
+			For trigger indices \textsf{NDIGO\tu TRIGGER\tu AUTO} and \textsf{NDIGO\tu TRIGGER\tu ONE} this is ignored.\par
+
+			For trigger indices \textsf{NDIGO\tu TRIGGER\tu TDC\tu PE} to \textsf{NDIGO\tu TRIGGER\tu BUS3\tu PE} this must be set.
+		
+		\subsection{Structure ndigo\tu trigger\tu block\label{cp:triggerblock}}
+		
+		\cronvar{ndigo\tu bool\tu t}{enabled}\\
+		Activate triggers on this channel.\par
+
+		\cronvar{ndigo\tu bool\tu t}{retrigger}\\
+		If a new trigger condition occurs while the postcursor is acquired the packet is extended by starting a new postcursor. Otherwise the new trigger is ignored and the packet ends after the precursor of the first trigger.\par
+
+		The retrigger setting is ignored for the timestamp channel.\par
+
+		\cronvar{ndigo\tu bool\tu t}{reserved1}\\
+		Defaults to false. Do not change.\par
+
+		\cronvar{ndigo\tu bool\tu t}{reserved2}\\
+		Defaults to false. Do not change.\par
+
+		\cronvar{int}{precursor}\\
+		Precursor in multiples of 3.2ns. The amount of data preceding a trigger that is captured.\par
+		
+		The precursor setting is ignored for the timestamp channel.\par
+
+		\cronvar{int}{length}\\
+		In multiples of 3.2ns.\par
+
+		The total amount of data that is recorded in addition to the trigger window. Precursor determines how many of these are ahead of the trigger and how many are appended after the trigger. In edge trigger mode the trigger window always is 3.2ns wide, in level trigger mode it is as long as the
+trigger condition is fulfilled.\par
+
+		The length setting is ignored for the timestamp channel.\par
+
+		\cronvar{int}{sources}\\
+		A bit mask with a bit set for all trigger sources that can trigger this channel.\par
+		
+		\begin{tabular}{lc}
+			\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu A0} & 0x00000001\\
+			\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu A1} & 0x00000002\\
+			\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu B0} & 0x00000004\\
+			\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu B1} & 0x00000008\\
+			\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu C0} & 0x00000010\\
+			\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu C1} & 0x00000020\\
+			\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu D0} & 0x00000040\\
+			\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu D1} & 0x00000080\\
+			\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu TDC} & 0x00000100\\
+			\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu GATE} & 0x00000200\\
+			\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu BUS0} & 0x00000400\\
+			\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu BUS1} & 0x00000800\\
+		\end{tabular}\\
+		\begin{tabular}{lc}
+			\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu BUS2} & 0x00001000\\
+			\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu BUS3} & 0x00002000
+		\end{tabular}\\
+		\begin{tabular}{lc}
+			\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu AUTO} & 0x00004000\\
+			\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu ONE} & 0x00008000
+		\end{tabular}\\
+		\begin{tabular}{lc}
+			\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu TDC\tu PE} & 0x01000000\\
+			\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu GATE\tu PE} & 0x02000000\\
+			\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu BUS0\tu PE} & 0x04000000\\
+			\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu BUS1\tu PE} & 0x08000000\\
+			\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu BUS2\tu PE} & 0x10000000\\
+			\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu BUS3\tu PE} & 0x20000000
+		\end{tabular}
+		
+		\cronvar{int}{gates}\par
+		
+		\begin{tabular}{lc}
+			\crondef{NDIGO\tu TRIGGER\tu GATE\tu NONE} & 0x0000\\
+			\crondef{NDIGO\tu TRIGGER\tu GATE\tu 0}  & 0x0001\\
+			\crondef{NDIGO\tu TRIGGER\tu GATE\tu 1}  & 0x0002\\
+			\crondef{NDIGO\tu TRIGGER\tu GATE\tu 2}  & 0x0004\\
+			\crondef{NDIGO\tu TRIGGER\tu GATE\tu 3}  & 0x0008
+		\end{tabular}
+		
+		\cronvar{double}{minimum\tu free\tu packets;}\\
+		This parameter sets how many packets are supposed to fit into the on-board FIFO before a new packet is recorded after the FIFO was full, i.e. a certain amount of free space in the FIFO is demanded before a new packet is written after the FIFO was full. As a measure for the packet length the gatelength set by the user is used. The on-board algorithm checks the free FIFO space only in case the FIFO is full. Therefore, if this number is 1.0 or more at least every second packet in the DMA buffer is guaranteed to have the full length set by the gatelength parameters. In many cases smaller values will also result in full length packets. But below a certain value multiple packets that are cut off at the end will show up.
+		
+		\subsection{Structure ndigo\tu gating\tu block\label{cp:gatingblock}}
+		
+			\cronvar{ndigo\tu bool\tu t}{negate}\\
+			Invert output polarity. Defaults to false.\par
+
+			\cronvar{ndigo\tu bool\tu t}{retrigger}\\
+			Defaults to false. If retriggering is enabled the timer is reset to the value of the start parameter whenever the input signal is set while waiting to reach the stop time.\par
+
+			\cronvar{ndigo\tu bool\tu t}{extend}\\
+			Defaults to true. If set, a gate is created with the set timing from the first occurrence of the input trigger even for short gates. If not set, the input signal must persist for the gate to be created. This feature is NOT YET IMPLEMENTED.\par
+
+			\cronvar{ndigo\tu bool\tu t}{reserved1}\\
+			Defaults to false. Do not change.\par
+
+			\cronvar{int}{start}\\
+			In multiples of 3.2ns. The time from the first input signal seen in the idle state until the gating output is set. The value of start needs to be less or equal to the stop value. Maximum value for start and stop is $2^{16}-1$.\par
+
+			\cronvar{int}{stop}\\
+			In multiples of 3.2ns. Maximum allowed value is $2^{16}-1$.\par
+
+			The time from leaving the idle state until the gating output is reset. If retriggering is enabled the timer is reset to the value of the start parameter whenever the input signal is set while waiting to reach the stop time.\par
+
+			\cronvar{int}{sources}\\
+			A bit mask with a bit set for all trigger sources that can trigger this channel. The gates cannot use the additional digital trigger sources \textsf{NDIGO\tu TRIGGER\tu SOURCE\tu TDC\tu PE} to\\ \textsf{NDIGO\tu TRIGGER\tu SOURCE\tu BUS3\tu PE}.\par
+
+			\begin{tabular}{lc}
+				\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu A0} & 0x00000001\\
+				\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu A1} & 0x00000002\\
+				\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu B0} & 0x00000004\\
+				\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu B1} & 0x00000008\\
+				\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu C0} & 0x00000010\\
+				\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu C1} & 0x00000020\\
+				\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu D0} & 0x00000040\\
+				\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu D1} & 0x00000080\\
+				\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu TDC} & 0x00000100\\
+				\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu GATE} & 0x00000200\\
+				\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu BUS0} & 0x00000400\\
+				\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu BUS1} & 0x00000800\\
+				\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu BUS2} & 0x00001000\\
+				\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu BUS3} & 0x00002000\\
+				\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu AUTO} & 0x00004000\\
+				\crondef{NDIGO\tu TRIGGER\tu SOURCE\tu ONE} & 0x00008000
+			\end{tabular}
+			
+		\subsection{Structure ndigo\tu extension\tu block}
+			This structure configures how the inputs from the optional extension board and signals from the synchronization bus are merged.\par
+
+			\cronvar{ndigo\tu bool\tu t}{enable}\\
+			Enable routing of digital signal from Ndigo extension board to the according BUSx trigger unit.\par
+
+			\cronvar{ndigo\tu bool\tu t}{ignore\tu cable}\\
+			If \textit{false} input signal and BUS signal are ORed before routing to the according BUSx trigger unit. Otherwise only the signal from Ndigo extension board is used.
+			
+		\subsection{Run Time Control}
+		
+			\cronvar{int}{ndigo\tu start\tu capture(}\cronvar{ndigo\tu device}{*device)}\par
+		
+			\cronvar{int}{ndigo\tu pause\tu capture(}\cronvar{ndigo\tu device}{*device)}\par
+
+			\cronvar{int}{ndigo\tu continue\tu capture(}\cronvar{ndigo\tu device}{*device)}\\
+			Call this to resume data acquisition after a call to \textsf{ndigo\tu pause\tu capture}.\par
+
+			\cronvar{int}{ndigo\tu stop\tu capture(}\cronvar{ndigo\tu device}{*device)}
+		
+	\section{Readout\label{cp:readout}}
+	
+		\cronvar{int}{ndigo\tu read(}\cronvar{ndigo\tu device}{*device,} \cronvar{ndigo\tu read\tu in}{*in,} \cronvar{ndigo\tu read\tu out}{*out)}\\
+		Return a pointer to an array of captured data in \textsf{read\tu out}. The result can contain any number of packets of type \textsf{ndigo\tu packet}. \textsf{read\tu in} provides parameters to the driver. A call to this method automatically allows the driver to reuse the memory returned in the previous call.\par
+
+Returns an error code as defined in the structure \textsf{ndigo\tu read\tu out}.\par
+
+		\cronvar{int}{ndigo\tu acknowledge(}\cronvar{ndigo\tu device}{*device,} \cronvar{ndigo\tu packet}{*packet)}\\
+		Acknowledge all data up to the packet provided as parameter. This is mandatory if \textsf{acknowledge\tu last\tu read} in the \textsf{ndigo\tu read\tu in} structure is set to false for calls to \textsf{ndigo\tu read}.\par
+
+		This feature allows to either free up partial DMA space early if there will be no call to \textsf{ndigo\tu read} anytime soon. It also allows to keep data over multiple calls to \textsf{ndigo\tu read} to avoid unnecessary copying of data.\par
+
+		\cronvar{int}{ndigo\tu process\tu tdc\tu packet(}\cronvar{ndigo\tu device}{*device,} \cronvar{ndigo\tu packet}{*packet)}\\
+		Call on a TDC packet to update the timestamp of the packet with a more accurate value. If called more than once on a packet the timestamp will be invalid.	
+	
+		\subsection{Input Structure ndigo\tu read\tu in}
+		
+			\cronvar{ndigo\tu bool\tu t}{acknowledge\tu last\tu read}\\
+			If set \textsf{ndigo\tu read} automatically acknowledges packets from the last read.
+		
+		\subsection{Input Structure ndigo\tu read\tu out}
+		
+			\cronvar{ndigo\tu packet}{*first\tu packet}\\
+			Pointer to the first packet that was capture by the call of \textsf{ndigo\tu read}.\par
+
+			\cronvar{ndigo\tu packet}{*last\tu packet}\\
+			Address of header of the last packet in the buffer.\par
+
+			\cronvar{int}{error\tu code}\\
+			\crondef{NDIGO\tu READ\tu OK 0}\\
+			\crondef{NDIGO\tu READ\tu NO\tu DATA 1}\\
+			\crondef{NDIGO\tu READ\tu INTERNAL\tu ERROR 2}\par
+			
+			\cronvar{const char}{*error\tu message}
+		
+	\section{Other Functions}
+		\subsection{LED control}
+		
+			There are six LEDs on the front panel. The intensity of the red and green part can be set from 0 to 255. There is no blue component in the current version. Per default all LEDs are set to auto mode. This means that used channels are lit green, activity is shown as yellow on overflow is shown as red.\par
+
+			\cronvar{int}{ndigo\tu set\tu led\tu color(}\cronvar{ndigo\tu device}{*device,} \cronvar{int}{led,} \cronvar{unsigned short}{r,} \cronvar{unsigned short}{g,} \cronvar{unsigned short}{b)}\\
+			Set the LED to the selected color. No automatic updates are performed.\par
+			
+			\cronvar{int}{ndigo\tu set\tu led\tu automode(}\cronvar{ndigo\tu device}{*device,} \cronvar{int}{led)}\\
+			Let the selected LED be controlled by hardware. 
