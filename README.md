@@ -6,7 +6,7 @@ This is a LaTeX2e project that creates the userguides for the [Ndigo5G-10 and Nd
 
 To compile run
 ```shell
-pdflatex Ndigo5G_User_Guide.tex
+pdflatex Ndigo_User.tex
 ```
 
 ## License
