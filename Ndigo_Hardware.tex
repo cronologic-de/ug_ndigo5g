@@ -61,7 +61,7 @@ ends of the cable, proper termination is required.}
 				\end{center}
 			\end{figure*}	
 			%
-			AC coupling removes the common mode voltage from the input signal. Users can move the common mode voltage to a value of their choice using the analog\textunderscore offset parameter of each channel before sampling.\par
+			AC coupling removes the common mode voltage from the input signal. Users can move the common mode voltage to a value of their choice using the analog\tu offset parameter of each channel before sampling.\par
 			%
 			\begin{figure*}[h!]
 				\begin{center}
@@ -74,14 +74,17 @@ ends of the cable, proper termination is required.}
 		%
 	\subsection{Digital Inputs}
 	
-		There are two digital inputs on the front slot cover called Trigger and GATE.\par
-		Both inputs provide a digital input signal routed to the trigger matrix. These signals can be used to trigger any of the trigger state machines and gating blocks. The inputs are AC coupled. DC offset is configurable via the \textsf{dc\textunderscore offset} parameter in the configurations structure to support positive and negative input pulses.\par
-		The configuration is set via the structures trigger[8] and trigger[9] in the configuration structure. The input circuit is shown in Figure \ref{fig:DigitalInput} on page \pageref{fig:DigitalInput}.
+		There are two digital inputs on the front slot cover called Trigger and Gate.\par
+		Both inputs provide a digital input signal routed to the trigger matrix. These signals can be used to trigger any of the trigger state machines and gating blocks. The inputs are AC coupled. DC offset is configurable via the \textsf{dc\tu offset} parameter in the configurations structure to support positive and negative input pulses. \textsf{dc\tu offset[1]} is the offset for the Trigger input and \textsf{dc\tu offset[0]} is the offset for the GATE input.\par
+		The configuration is set via the structures \textsf{trigger\allowbreak [NDIGO\tu TRIGGER\tu TRIGGER]} for the Trigger input and \textsf{trigger[NDIGO\tu TRIGGER\tu GATE]} for the GATE input. The input circuit is shown in Figure \ref{fig:DigitalInput} on page \pageref{fig:DigitalInput}.
 		
 		\subsubsection{TDC on Trigger Input}
 		
-			There is a TDC connected to the Trigger input. When used with the TDC, the Trigger input supports negative pulses only . The TDC creates packets of type 8. These packets first contain a coarse timestamp and a payload that can be used to calculate the trigger position with higher precision. The function \textsf{ndigo\textunderscore process\textunderscore tdc\textunderscore packet()} can be used to replace the coarse timestamp with the precise timestamp. This function is described in section \ref{cp:readout} on page \pageref{cp:readout}.
-TDC pulses must have a minimum duration of 3.3ns. The dead-time of the TDC is 32ns.
+			There is a TDC connected to the Trigger input. When used with the TDC, the Trigger input supports negative pulses only . The TDC creates packets of type 8. These packets first contain a coarse timestamp and a payload that can be used to calculate the trigger position with higher precision. The function \textsf{ndigo\tu process\tu tdc\tu packet()} can be used to replace the coarse timestamp with the precise timestamp. This function is described in section \ref{cp:readout} on page \pageref{cp:readout}.
+			TDC pulses must have a minimum duration of 3.3ns. The dead-time of the TDC is 32ns.
+
+			\textsf{NDIGO\tu TRIGGER\tu TDC} is an alias for \textsf{NDIGO\tu TRIGGER\tu TRIGGER}.
+
 
 \section{Extension Card\label{cp:extcard}}
 
@@ -117,7 +120,7 @@ TDC pulses must have a minimum duration of 3.3ns. The dead-time of the TDC is 32
 		\begin{tabular}{|c|c|c|c|}
 			\hline
 			Connector & Extension Card & Trigger matrix input  & Trigger matrix input\\
-			& Digital Channel & ignore\textunderscore cable = 0 & ignore\textunderscore cable = 1\\
+			& Digital Channel & ignore\tu cable = 0 & ignore\tu cable = 1\\
 			\hline\hline
 			LEMO00: CH0 & 0 & BUS0 = EXT0 \textbar\ Sync Cable 0 & BUS0 = EXT0\\\hline
 			LEMO00: CH1 & 1 & BUS1 = EXT1 \textbar\ Sync Cable 1 & BUS1 = EXT1\\\hline
@@ -188,7 +191,7 @@ written to the PC.\label{fig:ZeroSupp}}
 	
 	\subsection{Trigger Blocks}
 	
-		Ndigo5G-10 and Ndigo5G-8 record analog waveforms using zero suppression. Whenever a relevant waveform is detected, data is written to an internal FIFO memory. Each ADC channel has one trigger block determining whether data is written to the FIFO. The parameters are set in  Structure \textsf{ndigo\textunderscore trigger\textunderscore block}(See chapter \ref{cp:triggerblock} on page \pageref{cp:triggerblock}).\par
+		Ndigo5G-10 and Ndigo5G-8 record analog waveforms using zero suppression. Whenever a relevant waveform is detected, data is written to an internal FIFO memory. Each ADC channel has one trigger block determining whether data is written to the FIFO. The parameters are set in  Structure \textsf{ndigo\tu trigger\tu block}(See chapter \ref{cp:triggerblock} on page \pageref{cp:triggerblock}).\par
 		
 		Each trigger block consists of two independent units that check the incoming raw data stream for trigger conditions (Fig. \ref{fig:ZeroSupp} on page \pageref{fig:ZeroSupp}). Users can specify a threshold and can choose whether triggering is used whenever incoming data is below or above the threshold (level triggering) or only if data exceeds the threshold (edge triggering).\par
 
@@ -205,7 +208,7 @@ written to the PC.\label{fig:ZeroSupp}}
 		\begin{itemize}
 			\item the 8 trigger decision units of all four ADC channels (Figure \ref{fig:analog-trigger} on page \pageref{fig:analog-trigger})
 			\item the GATE input (Figure \ref{fig:DigitalInput} on page \pageref{fig:DigitalInput})
-			\item the Trigger input (Figure \ref{fig:DigitalInput} on page \pageref{fig:DigitalInput})
+			\item the Trigger or TDC input,  (Figure \ref{fig:DigitalInput} on page \pageref{fig:DigitalInput})
 			\item a function trigger providing random or periodic triggering (Section \ref{cp:AutoTriggeringFunctionGenerator} on page \pageref{cp:AutoTriggeringFunctionGenerator})
 			\item triggers originating from other cards connected with the sync cable or from the Ndigo Extension card (BUS0, BUS1, BUS2, BUS3)
 			\item A second set of trigger units for the digital inputs Trigger, GATE, BUS0, BUS1, BUS2, and BUS3 that is set in hardware to positive edge triggering. This set of triggers is not available as inputs for the gate blocks.
@@ -296,7 +299,7 @@ multiples of 3.2ns.\par
 		
 		The retrigger feature will create a new gate if a trigger occurs during an active gate window. The gate signal can be inverted, causing an active gate to close for a time defined by the user.\par
 		
-		The parameters of a gating block are set in Structure \textsf{ndigo\textunderscore gating\textunderscore block} described on page \pageref{cp:gatingblock}.\par
+		The parameters of a gating block are set in Structure \textsf{ndigo\tu gating\tu block} described on page \pageref{cp:gatingblock}.\par
 		
 		Figure \ref{fig:GateUDelay} shows the functionality of the gate timing and delay unit. Active gate time is marked in green.
 		
@@ -311,7 +314,7 @@ multiples of 3.2ns.\par
 			
 			In mass spectrometer and other experiments, noise while starting data acquisition can result in undesired trigger events for that time period. To prevent noise in the output data, a gating block could be used to suppress all triggers during start-up.\par
 			
-			The following example illustrates the use of a gating block to prevent noise: The GATEinput transmits a pulse on each acquisition start. The trigger structure of the GATE input is used to select pulse polarity. Then, the GATE trigger is selected as gating block input and the gating block's start parameter is set to 0. The stop parameter is set to the desired length measured in 3.2ns clock cycle and negate is set to true. The gating block will now output a low pulse of the desired length whenever there is a pulse on the GATE input.\par
+			The following example illustrates the use of a gating block to prevent noise: The GATE input transmits a pulse on each acquisition start. The trigger structure of the GATE input is used to select pulse polarity. Then, the GATE trigger is selected as gating block input and the gating block's start parameter is set to 0. The stop parameter is set to the desired length measured in 3.2ns clock cycle and negate is set to true. The gating block will now output a low pulse of the desired length whenever there is a pulse on the GATE input.\par
 			
 		Enabling this gating block as an AND input to the trigger block, for which noise shall be suppressed.
 			
@@ -483,7 +486,7 @@ After flashing and shutting the PC or the crate off and on again it is recommend
 	
 	\section{Calibrating the TDC}
 	
-		After each update of the Ndigo5G-10 firmware the TDC has to be calibrated. The calibration is done with the tool ``TDC\textunderscore Calibration.exe'' which is available after installing the Ndigo device driver. After invoking the application a window as shown in Figure \ref{fig:Calib} will appear.\par
+		After each update of the Ndigo5G-10 firmware the TDC has to be calibrated. The calibration is done with the tool ``TDC\tu Calibration.exe'' which is available after installing the Ndigo device driver. After invoking the application a window as shown in Figure \ref{fig:Calib} will appear.\par
 
 		\begin{figure*}[ht]
 			\begin{center}
