@@ -211,7 +211,7 @@ written to the PC.\label{fig:ZeroSupp}}
 			\item the Trigger or TDC input,  (Figure \ref{fig:DigitalInput} on page \pageref{fig:DigitalInput})
 			\item a function trigger providing random or periodic triggering (Section \ref{cp:AutoTriggeringFunctionGenerator} on page \pageref{cp:AutoTriggeringFunctionGenerator})
 			\item triggers originating from other cards connected with the sync cable or from the Ndigo Extension card (BUS0, BUS1, BUS2, BUS3)
-			\item A second set of trigger units for the digital inputs Trigger, GATE, BUS0, BUS1, BUS2, and BUS3 that is set in hardware to positive edge triggering. This set of triggers is not available as inputs for the gate blocks.
+			\item A second set of trigger units with names ending in \textsf{\tu pe} for the digital inputs Trigger, GATE, BUS0, BUS1, BUS2, and BUS3 configured for positive edge triggering. Together with the regular trigger units on this inputs, both edges of a pulse can be used in the trigger logic. This set of triggers is not available as inputs for the gate blocks.
 		\end{itemize}
 
 		Trigger inputs from the above sources can be concatenated using logical ``OR'' (Figure \ref{fig:triggermatrix} on page \pageref{fig:triggermatrix}) by setting the appropriate bits in the trigger blocks source mask.\par
