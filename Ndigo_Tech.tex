@@ -148,7 +148,7 @@ Input Passband: 4.5MHz to 3000MHz.\par
 			\hline
 		\end{tabularx}
 		
-		AC coupled differential analog inputs.
+		AC coupled differential analog inputs (S version).
 		
 		\noindent
 		\begin{tabularx}{\textwidth}{|c|X|c|c|c|c|}
@@ -164,3 +164,24 @@ Input Passband: 4.5MHz to 3000MHz.\par
 			& Analog offset & -0,25 && 0.25& V\\
 			\hline
 		\end{tabularx}
+
+	\subsection{Analog inputs}
+		Single ended AC coupled inputs Trigger and GATE with configurable DC offset bias.
+
+		\noindent
+		\begin{tabularx}{\textwidth}{|c|X|c|c|c|c|}
+			\hline
+			Symbol & Parameter & Min & Typical & Max & Units\\
+			\hline\hline
+			V\subscript{trig} & Pulse height &&& 5.0 & V\\
+			\hline
+			V\subscript{trigoffset}& DC offset & -1.25 && 1.25& V\\
+			\hline
+			V\subscript{tdcoffset}& DC offset for TDC & -1.25 && -0.01& V\\
+			\hline
+			Z\subscript{trig} & input impedance && 50 && $\Omega$\\
+			\hline
+			t\subscript{pulse}& pulse width & 7 && 100& ns\\
+			\hline
+		\end{tabularx}
+		
