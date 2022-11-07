@@ -63,7 +63,7 @@ ends of the cable, proper termination is required.}
 			%
 			AC coupling removes the common mode voltage from the input signal. Users can move the common mode voltage to a value of their choice using the analog\tu offset parameter of each channel before sampling.\par
 			%
-			\begin{figure*}[h!]
+			\begin{figure*}[!ht]
 				\begin{center}
 					\includegraphics[width=\textwidth]{figures/AnalogOffset_Pulse.pdf}
 					\caption{Asymmetric signal shifted to increase dynamic range\label{fig:shiftInput}}
@@ -332,14 +332,14 @@ and $stop = start+1$, $negate = false$. This causes the gating block to produce 
 		
 			The gates provide AND connections between each other (see fig. \ref{fig:triggermatrix}) which can be used for example in a dual level trigger. For the acquisition of signal data with amplitudes between a lower and an upper bound, for example, two level triggers can be connected (see fig. \ref{fig:dualleveltrig}): a falling level trigger with an upper threshold and a rising level trigger with a lower threshold.\par
 			Since the triggers are only connected by OR in the triggerblock logic (see fig. \ref{fig:triggermatrix}) they are assigned to one of the gates each and connected with AND via the gating block region of the trigger matrix (see fig. \ref{fig:triggermatrix} and \ref{fig:dualleveltriglogic}). Because of the dead times of the gates it is important to enable the retriggering feature. Furthermore a precursor of 2 clock cycles is needed, because the gates are delayed in relation to the ADC samples.\par
-			\begin{figure*}[h]
+			\begin{figure*}[ht]
 				\begin{center}
 					\includegraphics[width=\textwidth]{figures/dual_level_triggering.pdf}
 					\caption{\label{fig:dualleveltrig}Measuring data with amplitude between an upper and a lower threshold by means of two level triggers.}
 				\end{center}
 			\end{figure*}	
 			
-			\begin{figure*}[h]
+			\begin{figure*}[ht]
 				\begin{center}
 					\includegraphics[width=\textwidth]{figures/dual-level-triggering_logic.pdf}
 					\caption{\label{fig:dualleveltriglogic}Gating block logic for the AND connection of two triggers.}

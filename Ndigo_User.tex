@@ -5,6 +5,7 @@
 \documentclass[11pt,notitlepage]{scrreprt}
 %
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage[usenames, dvipsnames]{color}
 \usepackage{graphicx} %for including figures
 \usepackage{tabularx}
@@ -20,9 +21,9 @@
 \usepackage{longtable}
 
 %
-\fancyfoot[CE,CO]{\thepage} %sets footer
-\fancyfoot[LE,LO]{cronologic GmbH \& Co. KG} %sets footer
-\fancyfoot[RE,RO]{Ndigo5G User Guide} %sets footer
+\fancyfoot[C,CO]{\thepage} %sets footer
+\fancyfoot[L,LO]{cronologic GmbH \& Co. KG} %sets footer
+\fancyfoot[R,RO]{Ndigo5G User Guide} %sets footer
 \fancyhead{} %removes header
 \renewcommand{\headrulewidth}{0pt} %removes header line
 \renewcommand{\footrulewidth}{1pt} %creates footer line
@@ -51,21 +52,24 @@
 %
 \title{
 	\ \\
-	\begin{center}
-		\includegraphics[width=0.5\textwidth]{figures/title2.pdf}
+ 	\begin{center}
+		\includegraphics[width=0.5\textwidth]{./figures/title2.pdf}
 	\end{center}
 	\ \\
 	\ \\
-	\includegraphics[width=0.6\textwidth]{figures/title.pdf}}
-	\subtitle{
+	\includegraphics[width=0.6\textwidth]{./figures/Title.pdf}
+}
+\subtitle{
 		\ \\
 		\ \\
 		\begin{center}
-			\includegraphics[width=0.75\textwidth]{figures/Ndigo5G-3Dlowres.jpg}
+			\includegraphics[width=0.75\textwidth]{./figures/Ndigo5G-3Dlowres.jpg}
 		\end{center}
 }
+
 \titlehead{Revision \hyperlink{ugrev}{1.1.4rc} as of 2022-11-04\\Firmware \hyperlink{fwrev}{2 (build 4865)}, Driver \hyperlink{drvrev}{v1.4.3}\\\\cronologic GmbH \& Co. KG\\Jahnstraße 49\\60318 Frankfurt am Main\\Germany \\ \href{https://www.cronologic.de/}{www.cronologic.de}
 \date{}}
+\author{}
 %
 \begin{document}
 	\newpage
