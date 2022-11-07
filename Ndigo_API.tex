@@ -353,7 +353,7 @@ first release.\par
 			Sets the input DC offset-values to +- this value in volts. Defaults to 0.\par
 
 			\cronvar{double}{dc\tu offset[2]}\\
-			Sets the DC offset in volts for the TDC trigger input (index 1) and the GATE input (index 0). For negative 0.8V NIM pulses a value of -0.4 should be set here.
+			Sets the DC offset in volts for the TDC trigger input (index 1) and the GATE input (index 0). The default is -0.35 which is a good setting vor \SI{0.8}{\volt} negative NIM pulses.
 			The values are limited by the driver to the range [-1.25, 1.25]. When using the TDC, nonnegative values for index 1 throw an error. \par
 
 			\cronvar{ndigo\tu trigger}{trigger[NDIGO\tu TRIGGER\tu COUNT + NDIGO\tu ADD\tu TRIGGER\tu COUNT]}\\
