@@ -89,8 +89,8 @@ ends of the cable, proper termination is required.}
 \section{Extension Card\label{cp:extcard}}
 
 	The Ndigo Extension card provides additional inputs or outputs to the FPGA. It is connected to the Samtec QSS-025 connector on an Ndigo5G by an Samtec SQCD cable assembly.\par
-	The Ndigo Extension Card provides up to ten single ended LEMO00 connectors. The circuit connecting to each of these circuits can be chosen to provide inputs or outputs. These can be AC or DC coupled. AC coupled inputs support NIM signaling.\par 
-	The signals connect to 2.5V IO Pins of the Xilinx Virtex-5 FPGA. The current firmware revision provides the following signal connections:\par
+	The Ndigo Extension Card provides up to ten single ended LEMO00 connectors. The circuit connecting to each of these circuits can be chosen to provide inputs or outputs. These can be AC or DC coupled. AC coupled inputs support NIM signaling. The signals connect to 2.5V IO Pins of the Xilinx Virtex-5 FPGA.\par 
+	The current firmware revision provides the following signal connections. The HPTDC clocks are $\SI{5}{\giga\hertz} / 128 = \SI{39.0625}{\mega\hertz}$\par
 	
 	\begin{small}
 	\begin{center}
@@ -101,10 +101,10 @@ ends of the cable, proper termination is required.}
 			LEMO00: CH0 & 22 & AD9 & Input & Ndigo Extension digital channel 0\\\hline
 			LEMO00: CH1 & 18 & AE10 & Input & Ndigo Extension digital channel 1\\\hline
 			LEMO00: CH2 & 14 & D10 & - & not connected\\\hline
-			LEMO00: CH3 & 10 & AF9 & Output & 39 MHz clock for HPTDC\\\hline
-			LEMO00: CH4 & 6 & AD11 & Output & 39 MHz clock for HPTDC\\\hline
-			LEMO00: CH5 & 5 & AE7 & Output & 39 MHz clock for HPTDC\\\hline
-			LEMO00: CH6 & 9 & AF7 & Output & 39 MHz clock for HPTDC\\\hline
+			LEMO00: CH3 & 10 & AF9 & Output & \SI{39.0625}{\mega\hertz} clock for HPTDC\\\hline
+			LEMO00: CH4 & 6 & AD11 & Output & 39.0625 MHz clock for HPTDC\\\hline
+			LEMO00: CH5 & 5 & AE7 & Output & 39.0625 MHz clock for HPTDC\\\hline
+			LEMO00: CH6 & 9 & AF7 & Output & 39.0625 MHz clock for HPTDC\\\hline
 			LEMO00: CH7 & 13 & D9 & - & not connected\\\hline
 			LEMO00: CH8 & 17 & V9 & Input & Ndigo Extension digital channel 2\\\hline
 			LEMO00: CH9 & 21 & W9 & Input & Ndigo Extension digital channel 3\\\hline
