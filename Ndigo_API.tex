@@ -179,7 +179,7 @@ The API is a DLL with C linkage. The functions provided by the DLL are declared 
 			Sample rate in once channel mode. Usually $5.0e9 = 5 Gsps$.\par
 
 			\cronvar{double}{analog\tu bandwidth}\\
-			3e9 for 3Ghz
+			9.5e8 for \SI{950}{\MHz}.
 			
 			\cronvar{int}{chip\tu id}\\
 			16 bit factory ID of the ADC chip\par
@@ -213,7 +213,7 @@ The API is a DLL with C linkage. The functions provided by the DLL are declared 
 first release.\par
 
 			\cronvar{double}{bandwidth}\\
-			Analog Bandwidth setting of the ADC. Either $3e9 = 3GHz$ or $1e9=1GHz$ for 10 bit version.\par
+			Bandwidth setting of the ADC. Note: This is not the bandwidth of the analog board frontend. \par
 
 			\cronvar{double}{sample\tu rate}\\
 			Sample rate. This is 1.25e9, 2.5e9 or 5.0e9 depending on the current ADC mode. $\text{sample\tu rate}\cdot \text{channels} = 5.0e9$.\par
@@ -340,7 +340,8 @@ first release.\par
 			\crondef{NDIGO\tu ADC\tu MODE\tu D12 31} // not available on all boards\par
 
 			\cronvar{double}{bandwidth}\\
-			Set to the minimum bandwidth required for the application. Lower bandwidth results in reduced noise. The driver will set the ADC to the minimum setting that has at least the desired bandwidth and report the selected bandwidth in the \textsf{ndigo\tu param\tu info} structure. The -8, -10 and -12 versions currently supports 1GHz and 3GHz bandwidth, the -8AQ version supports 2GHz, 1.5GHz, 600MHz and 500 MHz.\par
+			Set to the minimum bandwidth required for the application. Lower bandwidth results in reduced noise. The driver will set the ADC to the minimum setting that has at least the desired bandwidth and report the selected bandwidth in the \textsf{ndigo\tu param\tu info} structure. The -8, -10 and -12 versions currently supports 1GHz and 3GHz bandwidth, the -8AQ version supports 2GHz, 1.5GHz, 600MHz and 500 MHz. The bandwidth of the analog frontend of the board remains unchanged at about \SI{950}{\MHz}.
+			\par
 
 			\cronvar{ndigo\tu bool\tu t}{reserved}\\
 			\cronvar{ndigo\tu bool\tu t}{tdc\tu enabled}\\
