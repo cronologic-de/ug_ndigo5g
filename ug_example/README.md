@@ -22,7 +22,7 @@ You can download the user guide from the [product web page](https://www.cronolog
 - The project is a `Console` App.
 - The Project can be mainly built using `CMake`, on both Windows and Linux. 
 - `CMake` also can be used on Windows by Microsoft Visual Studio 2019 or later for build and debug, [`CMakeSettings.json`](/tools/CMakeSetting.json) is provided to build the project using Visual Studio CMake Tools.
-- Every time the project is built on Windows, it copies the related driver files from `driver` folder to the 
+- Every time the project is built on Windows, it copies the related driver files from `driver` folder to the output folder so the example runs directly.
 
 ### Prerequisites
 
@@ -33,18 +33,15 @@ To check if `CMake` is installed, run `cmake --version`; if not installed, pleas
 Copy the `driver` folder to the project folder as following:
 ```
 .
-└── ndigo5g_babel/
+└── ug_ndigo5g/
     └── ug_example/
         └── driver/
             ├── include/
             │   └── .h
-            ├── x64/
-            │   ├── .lib    (Windows only)
-            │   ├── .dll    (Windows only)
-            │   └── .a      (Linux only)
-            └── x86/        (Windows only)
-                ├── .lib
-                └── .dll
+            └── x64/
+                ├── .lib    (Windows only)
+                ├── .dll    (Windows only)
+                └── .a      (Linux only)
 ```
 
 ### Build Using Visual Studio for Windows
@@ -58,7 +55,7 @@ It is mainly done using `CMakeSettings.json` file provided in [`tools` folder](/
 ##### Open the Project 
 1. Open Visual Studio.
 2. Select `Open a local folder`.
-3. Select the project folder, e.g. `ndigo5g_babel\ug_example`.
+3. Select the project folder, e.g. `ug_ndigo5g\ug_example`.
 4. If "CMake Integration" message _to enable Visual Studio's CMake support with this workspace_ is displayed
    1. Select `Enable and set source directory` button.
    2. In "Select CMakeLists.txt" Dialog, navigate to the <path\to\project\folder>\tools, and open our project `CMakeLists.txt` file, e.g. `ug_example\tools\CMakeLists.txt`
@@ -70,8 +67,6 @@ Select `Build -> Build All` from menu, or any standard Visual Studio way to buil
 The Target Exectuable name is `ndigo_ugex.exe`.
 | Configuration     | `CMakeSettings` | `Build root`                     | `CMake generator`     | Output Folder          |
 | ----------------- | --------------- | -------------------------------- | --------------------- | ---------------------  |
-| **x86 Debug**     | x86-Debug       | `${projectDir}\..\build\bfvs32D` | Visual Studio 17 2022 | `driver\x86\Debug`   |
-| **x86 Release**   | x86-Release     | `${projectDir}\..\build\bfvs32R` | Visual Studio 17 2022 | `driver\x86\Release`   |
 | **x86_64 Debug**  | x64-Debug       | `${projectDir}\..\build\bfvsD`   | Visual Studio 17 2022 Win64 | `driver\x64\Release`   |
 | **x86_64 Release**| x64-Release     | `${projectDir}\..\build\bfvsR`   | Visual Studio 17 2022 Win64 | `driver\x64\Release`   |
 * The provided file builds the project using `Visual Studio 2022`, however, you can change `generator` in  `CMakeSettings.json` to any other Visual Studio generator you have on your machine.
@@ -83,8 +78,6 @@ Go to tools: `cd tools`, then run the following command:
 | ----------------- | ------------- | -------------------------------------------------     | ------------------------------------------------- | ---------------------  |
 | **Windows x86_64**| Release       | `cmake -B ..\build\bfR -A x64`                                                  | `cmake --build ..\build\bfR --config Release`     | `driver\x64\Release`   |
 | **Windows x86_64**| Debug         | `cmake -B ..\build\bfD -A x64`                                                  | `cmake --build ..\build\bfD --config Debug`       | `driver\x64\Debug`     |
-| **Windows x86**   | Release       | `cmake -B ..\build\bf32R -A Win32`                                              | `cmake --build ..\build\bf32R --config Release`   | `driver\x86\Release`   |
-| **Windows x86**   | Debug         | `cmake -B ..\build\bf32D -A Win32`                                              | `cmake --build ..\build\bf32D --config Debug`     | `driver\x86\Debug`     |
 | **Linux x86_64**  | Release       | `cmake -B ../build/bfR -DCMAKE_BUILD_TYPE=Release`                              | `cmake --build ../build/bfR`                      | `driver/x64/Release`   |
 | **Linux x86_64**  | Debug         | `cmake -B ../build/bfD -DCMAKE_BUILD_TYPE=Debug`                                | `cmake --build ../build/bfD`                      | `driver/x64/Debug`     |
 
