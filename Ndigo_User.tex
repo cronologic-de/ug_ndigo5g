@@ -42,14 +42,12 @@ left=25mm, right=25mm, top=24mm, bottom=24mm]{geometry} %for page properties (pa
 \renewcommand{\footrule}{{\color{cronblue}%
 \vskip-\footruleskip\vskip-\footrulewidth
 \hrule width\headwidth height\footrulewidth\vskip\footruleskip}}
-%
-%\definecolor{listinggray}{gray}{0.9}
-\definecolor{lbcolor}{rgb}{0.9,0.9,0.9} % background of code listings
-%\definecolor{crondarkgreen}{RGB}{32, 90, 133} %1. Überschrift
-%\definecolor{crondarkblue}{RGB}{43, 119, 177} %2. Überschrift
-%\definecolor{cronlightgreen}{RGB}{86,159,214} %3. Überschrift
+
+
+%%% set fonts and colors according to CI styleguide
+\definecolor{lbcolor}{gray}{0.9} % background of code listings
 \definecolor{crongrey}{gray}{0.32} %Variablendeklaration API
-%
+
 \newfontfamily\chapterfont{TeX Gyre Adventor}
 \addtokomafont{chapter}{\fontsize{19pt}{12}\selectfont\color{cronorange}\chapterfont\bfseries }
 \newfontfamily\sectionfont{Montserrat}
@@ -58,8 +56,10 @@ left=25mm, right=25mm, top=24mm, bottom=24mm]{geometry} %for page properties (pa
 \addtokomafont{subsection}{\fontsize{12pt}{12}\selectfont\color{cronblue}\subsectionfont \bfseries}
 \newfontfamily\subsubsectionfont{Montserrat}
 \addtokomafont{subsubsection}{\fontsize{12pt}{12}\selectfont\color{cronblue}\subsubsectionfont \bfseries}
+\addtokomafont{caption}{\sectionfont\fontsize{12pt}{12}\selectfont\color{crongrey}}  %font of caption
+\addtokomafont{captionlabel}{\sectionfont\fontsize{12pt}{12}\selectfont\color{crongrey}}  
 
-%
+
 \newcommand{\cronvar}[2]{\noindent\textsf{\textbf{\textcolor{crongrey}{#1} #2}}}%for variable declaration
 \newcommand{\crondef}[1]{\noindent\textsf{\textcolor{crongrey}{\#{}define} #1}}%for definitions
 \newcommand{\tu}{\textunderscore}%shorter
@@ -79,13 +79,13 @@ left=25mm, right=25mm, top=24mm, bottom=24mm]{geometry} %for page properties (pa
 \usepackage[T1]{fontenc}
 \renewcommand*\oldstylenums[1]{{\fontfamily{Montserrat-TOsF}\selectfont #1}}
 
-\addtokomafont{disposition}{\sffamily\color{cronorange}}
+\addtokomafont{disposition}{\chapterfont\color{cronorange}}
 
 \usepackage{hologo}
 
 \definecolor{org}{RGB}{237,120,0}
 \definecolor{gry}{RGB}{ 157,157,156}
-\definecolor{crongrey}{gray}{0.32} %Variablendeklaration API
+\definecolor{crongrey}{gray}{0.5} %Variablendeklaration API
 \definecolor{cronorange}{RGB}{237, 120, 0}
 \definecolor{cronblue}{RGB}{55, 110, 181}
 \definecolor{cronblack}{RGB}{0,0,0}
@@ -106,7 +106,6 @@ left=25mm, right=25mm, top=24mm, bottom=24mm]{geometry} %for page properties (pa
     \usepackage{setspace}
     \usepackage{caption}
     \usepackage{tocloft}
-\usepackage[labelfont={color=gray!32},font={color=gray!32,sf}]{caption}
 
 
 %% for TOC
