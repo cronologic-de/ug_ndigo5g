@@ -2,46 +2,63 @@
 % $Date: 2020-11-25 15:16:56 +0100 (Mi, 25 Nov 2020) $
 % $Rev: 5261 $
 % $Author: kolja $
-\documentclass[11pt,notitlepage]{scrreprt}
+\documentclass[10pt,notitlepage]{scrreprt}
 %
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{fontspec}
 \usepackage[usenames, dvipsnames]{color}
+\usepackage{svg}
 \usepackage{graphicx} %for including figures
 \usepackage{tabularx}
 \usepackage{amsmath} %for math environments
-\usepackage[left=25mm, right=25mm, top=25mm, bottom=25mm]{geometry} %for page properties (pagestyle)
+\usepackage{wrapfig}
+
+\usepackage[%showframe,
+left=25mm, right=25mm, top=24mm, bottom=24mm]{geometry} %for page properties (pagestyle)
+
+
 \usepackage[section,subsection,subsubsection]{extraplaceins} %for binding figures to a (sub-)section
 \usepackage{listings}%for code in latex document
 \usepackage{textcomp}%for code in latex document
 \usepackage{fancyhdr}%for header, footer
 \usepackage{balance}%for two-column layout
-\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage[colorlinks=true,linkcolor=cronblue,urlcolor  = gry]{hyperref}
 \usepackage{array} %for centered AND constant width columns
 \usepackage{longtable}
 \usepackage{siunitx}
-
 %
 \fancyfoot[C,CO]{\thepage} %sets footer
-\fancyfoot[L,LO]{cronologic GmbH \& Co. KG} %sets footer
-\fancyfoot[R,RO]{Ndigo5G User Guide} %sets footer
+\fancyfoot[L,LO]{\fontsize{17}{2}\selectfont
+\sffamily \textcolor{gry}{~\url{www.cronologic.de}}} %sets footer
+
+%%%Revision, also update Ndigo_UGRev.tex
+\fancyfoot[R,RO]{Ndigo5G User Guide \hyperlink{ugrev}{1.2.3rc}} %sets footer
+
+\pagestyle{fancy}
 \fancyhead{} %removes header
 \renewcommand{\headrulewidth}{0pt} %removes header line
 \renewcommand{\footrulewidth}{1pt} %creates footer line
-\renewcommand{\footrule}{{\color{cronlightgreen}%
+\renewcommand{\footrule}{{\color{cronblue}%
 \vskip-\footruleskip\vskip-\footrulewidth
 \hrule width\headwidth height\footrulewidth\vskip\footruleskip}}
 %
-\definecolor{listinggray}{gray}{0.9}
-\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
-\definecolor{crondarkgreen}{RGB}{32, 90, 133} %1. Überschrift
-\definecolor{crondarkblue}{RGB}{43, 119, 177} %2. Überschrift
-\definecolor{cronlightgreen}{RGB}{86,159,214} %3. Überschrift
+%\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9} % background of code listings
+%\definecolor{crondarkgreen}{RGB}{32, 90, 133} %1. Überschrift
+%\definecolor{crondarkblue}{RGB}{43, 119, 177} %2. Überschrift
+%\definecolor{cronlightgreen}{RGB}{86,159,214} %3. Überschrift
 \definecolor{crongrey}{gray}{0.32} %Variablendeklaration API
 %
-\addtokomafont{chapter}{\color{crondarkgreen}}
-\addtokomafont{section}{\color{crondarkblue}}
-\addtokomafont{subsection}{\color{cronlightgreen}}
+\newfontfamily\chapterfont{TeX Gyre Adventor}
+\addtokomafont{chapter}{\fontsize{19pt}{12}\selectfont\color{cronorange}\chapterfont\bfseries }
+\newfontfamily\sectionfont{Montserrat}
+\addtokomafont{section}{\fontsize{14pt}{12}\selectfont\color{cronorange}\sectionfont\bfseries}
+\newfontfamily\subsectionfont{Montserrat}
+\addtokomafont{subsection}{\fontsize{12pt}{12}\selectfont\color{cronblue}\subsectionfont \bfseries}
+\newfontfamily\subsubsectionfont{Montserrat}
+\addtokomafont{subsubsection}{\fontsize{12pt}{12}\selectfont\color{cronblue}\subsubsectionfont \bfseries}
+
 %
 \newcommand{\cronvar}[2]{\noindent\textsf{\textbf{\textcolor{crongrey}{#1} #2}}}%for variable declaration
 \newcommand{\crondef}[1]{\noindent\textsf{\textcolor{crongrey}{\#{}define} #1}}%for definitions
@@ -50,31 +67,66 @@
 \renewcommand{\arraystretch}{1.6}
 %
 \parskip 8pt
-%
-\title{
-	\ \\
- 	\begin{center}
-		\includegraphics[width=0.5\textwidth]{./figures/title2.pdf}
-	\end{center}
-	\ \\
-	\ \\
-	\includegraphics[width=0.6\textwidth]{./figures/Title.pdf}
-}
-\subtitle{
-		\ \\
-		\ \\
-		\begin{center}
-			\includegraphics[width=0.75\textwidth]{./figures/Ndigo5G-3Dlowres.jpg}
-		\end{center}
-}
 
-\titlehead{Revision \hyperlink{ugrev}{1.2.2rc} as of 2022-11-04\\Firmware \hyperlink{fwrev}{2 (build 4865)}, Driver \hyperlink{drvrev}{v1.4.3}\\\\cronologic GmbH \& Co. KG\\Jahnstraße 49\\60318 Frankfurt am Main\\Germany \\ \href{https://www.cronologic.de/}{www.cronologic.de}
-\date{}}
-\author{}
-%
+%\DeclareTextFontCommand{\textmyfont}{texgyreadventor-bold.otf}
+\usepackage{efbox}
+%%%%%%%%%%%%%%%%%%%%
+%\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{montserrat} %% Option 'defaultfam'
+%% only if the base font of the document is to be sans serif
+\usepackage[T1]{fontenc}
+\renewcommand*\oldstylenums[1]{{\fontfamily{Montserrat-TOsF}\selectfont #1}}
+
+\addtokomafont{disposition}{\sffamily\color{cronorange}}
+
+\usepackage{hologo}
+
+\definecolor{org}{RGB}{237,120,0}
+\definecolor{gry}{RGB}{ 157,157,156}
+\definecolor{crongrey}{gray}{0.32} %Variablendeklaration API
+\definecolor{cronorange}{RGB}{237, 120, 0}
+\definecolor{cronblue}{RGB}{55, 110, 181}
+\definecolor{cronblack}{RGB}{0,0,0}
+\newcommand{\codeexamplesize}{\footnotesize}
+
+\setmonofont{texgyreadventor-bold}[
+    Scale=0.85,
+    Extension = .otf
+    ]
+
+    \usepackage[most]{tcolorbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{float}
+\usepackage{efbox,graphicx}
+\efboxsetup{linecolor=gray!50,linewidth=0.5pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+    \usepackage{setspace}
+    \usepackage{caption}
+    \usepackage{tocloft}
+\usepackage[labelfont={color=gray!32},font={color=gray!32,sf}]{caption}
+
+
+%% for TOC
+\renewcommand{\cftchapfont}{\fontsize{12}{12}\selectfont\bfseries}
+\renewcommand{\cftsecfont}{\fontsize{12}{12}\selectfont}     
+\renewcommand{\cftsubsecfont}{\fontsize{12}{12}\selectfont}        % \subsection font in ToC
+\renewcommand{\cftsubsubsecfont}{\fontsize{12}{12}\selectfont}
+
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\color{cronblack}\setstretch{1.08} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{document}
-	\newpage
-	\maketitle
+\input{Ndigo_Title.tex}
+
+\newgeometry{left=25mm, right=25mm, top=25mm, bottom=25mm}
+ \newpage 
+%	\maketitle
 	\thispagestyle{empty}
 	\newpage
 	\pagenumbering{roman}
@@ -82,7 +134,6 @@
 	\clearpage
 	\pagestyle{fancy}
 	\pagenumbering{arabic}
-	%
 	\chapter{Introduction}
 		\input{Ndigo_Intro.tex}
 	\chapter{Hardware}
