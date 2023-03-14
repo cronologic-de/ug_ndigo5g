@@ -8,11 +8,11 @@
 \usepackage[T1]{fontenc}
 \usepackage{fontspec}
 \usepackage[usenames, dvipsnames]{color}
-\usepackage{svg}
+%\usepackage{svg}
 \usepackage{graphicx} %for including figures
 \usepackage{tabularx}
 \usepackage{amsmath} %for math environments
-\usepackage{wrapfig}
+%\usepackage{wrapfig}
 
 \usepackage[%showframe,
 left=25mm, right=25mm, top=24mm, bottom=24mm]{geometry} %for page properties (pagestyle)
@@ -29,8 +29,7 @@ left=25mm, right=25mm, top=24mm, bottom=24mm]{geometry} %for page properties (pa
 \usepackage{siunitx}
 %
 \fancyfoot[C,CO]{\thepage} %sets footer
-\fancyfoot[L,LO]{\fontsize{17}{2}\selectfont
-\sffamily \textcolor{gry}{~\url{www.cronologic.de}}} %sets footer
+\fancyfoot[L,LO]{\fontsize{12}{12}\selectfont{\url{www.cronologic.de}}} %sets footer
 
 %%%Revision, also update Ndigo_UGRev.tex
 \fancyfoot[R,RO]{Ndigo5G User Guide \hyperlink{ugrev}{1.2.3rc}} %sets footer
@@ -81,7 +80,7 @@ left=25mm, right=25mm, top=24mm, bottom=24mm]{geometry} %for page properties (pa
 
 \addtokomafont{disposition}{\chapterfont\color{cronorange}}
 
-\usepackage{hologo}
+%\usepackage{hologo}
 
 \definecolor{org}{RGB}{237,120,0}
 \definecolor{gry}{RGB}{ 157,157,156}
@@ -126,7 +125,7 @@ left=25mm, right=25mm, top=24mm, bottom=24mm]{geometry} %for page properties (pa
 \newgeometry{left=25mm, right=25mm, top=25mm, bottom=25mm}
  \newpage 
 %	\maketitle
-	\thispagestyle{empty}
+	%\thispagestyle{empty}
 	\newpage
 	\pagenumbering{roman}
 	\tableofcontents
