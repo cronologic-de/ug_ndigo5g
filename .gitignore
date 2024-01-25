@@ -282,3 +282,4 @@ build
 ug_example/driver
 .vs
 driver
+.venv/

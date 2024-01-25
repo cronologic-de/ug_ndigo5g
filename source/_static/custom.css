@@ -1,0 +1,17 @@
+@import url("default.css");
+
+.ctypered {
+  color: #8E2100;
+}
+.cronoblue {
+  color: #376EB5;
+}
+.red {
+  color: red;
+}
+
+div.sphinxsidebar {
+  font-feature-settings: "tnum" 1;
+  max-height: 95%;
+  overflow-y: auto;
+}
