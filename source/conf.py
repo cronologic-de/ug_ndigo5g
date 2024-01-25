@@ -71,7 +71,6 @@ html_css_files = ["custom.css"]
 # latex_toplevel_sectioning = "section" 
 
 latex_engine = 'xelatex'
-latex_xindy_use = False
 latex_elements = {
     "papersize": "a4paper",
     "pointsize": "12pt",
@@ -100,7 +99,6 @@ latex_additional_files = [
     "cronologicug.sty",
     "extraplaceins.sty",
 ]
-
 
 numfig = True
 numfig_format = {
