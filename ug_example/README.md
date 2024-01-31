@@ -2,9 +2,11 @@
 
 ## About
 
-This directory contains a project to compile the C++ example shows in the user guide of the cronologic Ndigo5G-10 analog-to-digital converter.
+This directory contains a project to compile the C++ example shows in the user
+guide of the cronologic Ndigo5G-10 analog-to-digital converter.
 
-You can download the user guide from the [product web page](https://www.cronologic.de/products/adcs/cronologic-ndigo5g-10).
+You can download the user guide from the
+[product web page](https://www.cronologic.de/products/adcs/cronologic-ndigo5g-10).
 
 ## Directory Structure
 ```
@@ -21,13 +23,17 @@ You can download the user guide from the [product web page](https://www.cronolog
 ### Overview
 - The project is a `Console` App.
 - The Project can be mainly built using `CMake`, on both Windows and Linux. 
-- `CMake` also can be used on Windows by Microsoft Visual Studio 2019 or later for build and debug, [`CMakeSettings.json`](/tools/CMakeSetting.json) is provided to build the project using Visual Studio CMake Tools.
-- Every time the project is built on Windows, it copies the related driver files from `driver` folder to the output folder so the example runs directly.
+- `CMake` also can be used on Windows by Microsoft Visual Studio 2019 or later
+  for build and debug, [`CMakeSettings.json`](/tools/CMakeSetting.json) is
+  provided to build the project using Visual Studio CMake Tools.
+- Every time the project is built on Windows, it copies the related driver
+  files from `driver` folder to the output folder so the example runs directly.
 
 ### Prerequisites
 
 ##### 1. Install `CMake`
-To check if `CMake` is installed, run `cmake --version`; if not installed, please refer to [Installing CMake](https://cmake.org/install/).
+To check if `CMake` is installed, run `cmake --version`; if not installed,
+please refer to [Installing CMake](https://cmake.org/install/).
 
 ##### 2. Copy Driver Files
 Copy the `driver` folder to the project folder as following:
@@ -45,23 +51,31 @@ Copy the `driver` folder to the project folder as following:
 ```
 
 ### Build Using Visual Studio for Windows
-It is mainly done using `CMakeSettings.json` file provided in [`tools` folder](/tools/CMakeSettings.json) package, that uses the projects [`CMakeLists.txt`](/tools/CMakeLists.tx).
+It is mainly done using `CMakeSettings.json` file provided in
+[`tools` folder](/tools/CMakeSettings.json) package, that uses the projects
+[`CMakeLists.txt`](/tools/CMakeLists.tx).
 
 #### Prerequisites
 ##### 1. Install Development Tools
 1. `Visual Studio 2019` or later is installed.
-2. In "Visual Studio Installer", under "Desktop development with C++", the option [`C++ CMake tools for Windows`](https://docs.microsoft.com/en-us/cpp/build/cmake-projects-in-visual-studio#installation) is installed.
+2. In "Visual Studio Installer", under "Desktop development with C++", the
+   option [`C++ CMake tools for Windows`](https://docs.microsoft.com/en-us/cpp/build/cmake-projects-in-visual-studio#installation)
+   is installed.
 
 ##### Open the Project 
 1. Open Visual Studio.
 2. Select `Open a local folder`.
 3. Select the project folder, e.g. `ug_ndigo5g\ug_example`.
-4. If "CMake Integration" message _to enable Visual Studio's CMake support with this workspace_ is displayed
+4. If "CMake Integration" message _to enable Visual Studio's CMake support_
+   _with this workspace_ is displayed
    1. Select `Enable and set source directory` button.
-   2. In "Select CMakeLists.txt" Dialog, navigate to the <path\to\project\folder>\tools, and open our project `CMakeLists.txt` file, e.g. `ug_example\tools\CMakeLists.txt`
+   2. In "Select CMakeLists.txt" Dialog, navigate to the
+      <path\to\project\folder>\tools, and open our project `CMakeLists.txt`
+      file, e.g., `ug_example\tools\CMakeLists.txt`
 
 ##### Compile and Link
-Select `Build -> Build All` from menu, or any standard Visual Studio way to build the project.
+Select `Build -> Build All` from menu, or any standard Visual Studio way to
+build the project.
 
 #### Project Environments and Configurations
 The Target Exectuable name is `ndigo_ugex.exe`.
@@ -92,5 +106,7 @@ Go to tools: `cd tools`, then run the following command:
 - Cronologic Kernel Module is installed.
 
 **Steps**
-- Run the executable found in the _Output Folder_ from system command, you might need to use `sudo` in Linux.
-- For Windows, there is nothing special about using MS Visual Studio in debugging the project, just go ahead using MS Visual Studio debugger.
+- Run the executable found in the _Output Folder_ from system command, you
+  might need to use `sudo` in Linux.
+- For Windows, there is nothing special about using MS Visual Studio in
+  debugging the project, just go ahead using MS Visual Studio debugger.
