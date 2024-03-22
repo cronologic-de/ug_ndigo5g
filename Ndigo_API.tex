@@ -26,7 +26,7 @@ The API is a DLL with C linkage. The functions provided by the DLL are declared 
 		\cronvar{int}{ndigo\tu get\tu default\tu init\tu parameters(}\cronvar{ndigo\tu init\tu parameters}{*init)}\\
 		Get a set of default parameters to feed into \textsf{ndigo\tu init()}. This must always be used to initialize the \textsf{ndigo\tu init\tu parameter structure}.\par
 
-		\cronvar{ndigo\tu device}{*ndigo\tu init(}\cronvar{ndigo\tu init\tu parameters}{*params}, \cronvar{int}{*error\tu code}, \cronvar{char}{**error\tu message)}\\
+		\cronvar{ndigo\tu device}{*ndigo\tu init(}\cronvar{ndigo\tu init\tu parameters}{*params}, \cronvar{int}{*error\tu code},\newline \cronvar{char}{**error\tu message)}\\
 		Open and initialize the Ndigo board with the given index. With \textsf{error\tu code} and \textsf{error\tu message} the user must provide pointers where to buffers where error information should be written by the driver. The buffer for the error message must by at least 80 chars long.\par
 		
 		Params is a structure of type \textsf{ndigo\tu init\tu parameters} that must be completely initialized.\par
@@ -89,6 +89,8 @@ The API is a DLL with C linkage. The functions provided by the DLL are declared 
 			
 			\cronvar{int}{dma\tu read\tu delay}\\
 			Initialized by \textsf{ndigo\tu get\tu default\tu init\tu parameters()}. The write pointer update is delay by this number of 4 ns clock periods to hide race conditions between software and DMA.
+
+	\clearpage
 	\section{Status Information}
 		\subsection{Functions for Information Retrieval}
 		
@@ -294,9 +296,9 @@ first release.\par
 	
 		The device is configured with a configuration structure. The user should first obtain a structure that contains the default settings of the device read from an on board ROM , than modify the structure as needed for the user application and use the result to configure the device.\par
 
-		\cronvar{int}{ndigo\tu get\tu default\tu configuration(}\cronvar{ndigo\tu device}{*device,} \cronvar{ndigo\tu configuration}{*config)}\par
+		\cronvar{int}{ndigo\tu get\tu default\tu configuration(}\cronvar{ndigo\tu device}{*device,}\newline \cronvar{ndigo\tu configuration}{*config)}\par
 
-		\cronvar{int}{ndigo\tu get\tu current\tu configuration(}\cronvar{ndigo\tu device}{*device,} \cronvar{ndigo\tu configuration}{*config)}\par
+		\cronvar{int}{ndigo\tu get\tu current\tu configuration(}\cronvar{ndigo\tu device}{*device,}\newline \cronvar{ndigo\tu configuration}{*config)}\par
 		
 		\cronvar{int}{ndigo\tu configure(}\cronvar{ndigo\tu device} {*device,} \cronvar{ndigo\tu configuration}{*config)}\par
 

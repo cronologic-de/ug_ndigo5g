@@ -1,87 +1,17 @@
-% SVN Info:
-% $Date: 2020-11-25 15:16:56 +0100 (Mi, 25 Nov 2020) $
-% $Rev: 5261 $
-% $Author: kolja $
-\documentclass[10pt,notitlepage]{scrreprt}
-%
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{fontspec}
-\usepackage[usenames, dvipsnames]{color}
-%\usepackage{svg}
-\usepackage{graphicx} %for including figures
-\usepackage{tabularx}
-\usepackage{amsmath} %for math environments
-%\usepackage{wrapfig}
-
-\usepackage[%showframe,
-left=25mm, right=25mm, top=24mm, bottom=24mm]{geometry} %for page properties (pagestyle)
-
-
-\usepackage[section,subsection,subsubsection]{extraplaceins} %for binding figures to a (sub-)section
-\usepackage{listings}%for code in latex document
-\usepackage{textcomp}%for code in latex document
-\usepackage{fancyhdr}%for header, footer
-\usepackage{balance}%for two-column layout
-\usepackage[colorlinks=true,linkcolor=cronblue,urlcolor  = gry]{hyperref}
-\usepackage{array} %for centered AND constant width columns
-\usepackage{longtable}
-\usepackage{siunitx}
-%
-\fancyfoot[C,CO]{\thepage} %sets footer
-\fancyfoot[L,LO]{\fontsize{12}{12}\selectfont{\url{www.cronologic.de}}} %sets footer
-
-%%%Revision, also update Ndigo_UGRev.tex
-\fancyfoot[R,RO]{Ndigo5G User Guide \hyperlink{ugrev}{1.2.3rc}} %sets footer
-\fancypagestyle{plain}{}
-
-\pagestyle{fancy}
-\fancyhead{} %removes header
-\renewcommand{\headrulewidth}{0pt} %removes header line
-\renewcommand{\footrulewidth}{1pt} %creates footer line
-\renewcommand{\footrule}{{\color{cronblue}%
-\vskip-\footruleskip\vskip-\footrulewidth
-\hrule width\headwidth height\footrulewidth\vskip\footruleskip}}
-
+\documentclass[12pt,notitlepage,a4paper]{report}
+\usepackage[
+	font=avenirnext,
+	pdfkeywords={User Guide, cronologic, ADC, time-to-digital converter,
+	             Ndigo5G-10},
+]{cronologicug}
 
 %%% set fonts and colors according to CI styleguide
 \definecolor{lbcolor}{gray}{0.9} % background of code listings
-\definecolor{crongrey}{gray}{0.32} %Variablendeklaration API
 
-\newfontfamily\chapterfont{TeX Gyre Adventor}
-\addtokomafont{chapter}{\fontsize{19pt}{12}\selectfont\color{cronorange}\chapterfont\bfseries }
-\newfontfamily\sectionfont{Montserrat}
-\addtokomafont{section}{\fontsize{14pt}{12}\selectfont\color{cronorange}\sectionfont\bfseries}
-\newfontfamily\subsectionfont{Montserrat}
-\addtokomafont{subsection}{\fontsize{12pt}{12}\selectfont\color{cronblue}\subsectionfont \bfseries}
-\newfontfamily\subsubsectionfont{Montserrat}
-\addtokomafont{subsubsection}{\fontsize{12pt}{12}\selectfont\color{cronblue}\subsubsectionfont \bfseries}
-\addtokomafont{caption}{\sectionfont\fontsize{12pt}{12}\selectfont\color{crongrey}}  %font of caption
-\addtokomafont{captionlabel}{\sectionfont\fontsize{12pt}{12}\selectfont\color{crongrey}}  
+\newcommand{\ugrev}{1.2.3} % also update in NdigoUGRev.tex
 
-
-\newcommand{\cronvar}[2]{\noindent\textsf{\textbf{\textcolor{crongrey}{#1} #2}}}%for variable declaration
-\newcommand{\crondef}[1]{\noindent\textsf{\textcolor{crongrey}{\#{}define} #1}}%for definitions
-\newcommand{\tu}{\textunderscore}%shorter
-\newcommand{\subscript}[1]{\ensuremath{_{\textrm{#1}}}}
-\renewcommand{\arraystretch}{1.6}
-%
-\parskip 8pt
-
-%\DeclareTextFontCommand{\textmyfont}{texgyreadventor-bold.otf}
-\usepackage{efbox}
-%%%%%%%%%%%%%%%%%%%%
-%\usepackage{graphicx}
-\usepackage{tikz}
-\usepackage{xcolor}
-\usepackage{montserrat} %% Option 'defaultfam'
-%% only if the base font of the document is to be sans serif
-\usepackage[T1]{fontenc}
-\renewcommand*\oldstylenums[1]{{\fontfamily{Montserrat-TOsF}\selectfont #1}}
-
-\addtokomafont{disposition}{\chapterfont\color{cronorange}}
-
-%\usepackage{hologo}
+\title{Ndigo5G-10 -- User Guide, Rev. \ugrev}
+\author{cronologic GmbH & Co. KG}
 
 \definecolor{org}{RGB}{237,120,0}
 \definecolor{gry}{RGB}{ 157,157,156}
@@ -91,43 +21,11 @@ left=25mm, right=25mm, top=24mm, bottom=24mm]{geometry} %for page properties (pa
 \definecolor{cronblack}{RGB}{0,0,0}
 \newcommand{\codeexamplesize}{\footnotesize}
 
-\setmonofont{texgyreadventor-bold}[
-    Scale=0.85,
-    Extension = .otf
-    ]
-
-    \usepackage[most]{tcolorbox}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{float}
-\usepackage{efbox,graphicx}
-\efboxsetup{linecolor=gray!50,linewidth=0.5pt}
-%%%%%%%%%%%%%%%%%%%%%%%%%
-    \usepackage{setspace}
-    \usepackage{caption}
-    \usepackage{tocloft}
-
-
-%% for TOC
-\renewcommand{\cftchapfont}{\fontsize{12}{12}\selectfont\bfseries}
-\renewcommand{\cftsecfont}{\fontsize{12}{12}\selectfont}     
-\renewcommand{\cftsubsecfont}{\fontsize{12}{12}\selectfont}        % \subsection font in ToC
-\renewcommand{\cftsubsubsecfont}{\fontsize{12}{12}\selectfont}
-
-
-\renewcommand{\familydefault}{\sfdefault}
-
-\color{cronblack}\setstretch{1.08} 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{document}
-\input{Ndigo_Title.tex}
-
-\newgeometry{left=25mm, right=25mm, top=25mm, bottom=25mm}
- \newpage 
-%	\maketitle
-	%\thispagestyle{empty}
-	\newpage
+	\RaggedRight
+	\input{Ndigo_Title.tex}
+	\cleardoublepage 
+	% \newpage
 	\pagenumbering{roman}
 	\tableofcontents
 	\clearpage

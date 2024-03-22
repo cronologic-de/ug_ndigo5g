@@ -2,7 +2,7 @@
 % $Date: 2019-06-04 12:35:07 +0200 (Di, 04 Jun 2019) $
 % $Rev: 4976 $
 % $Author: andreas $
-\subsection{Output Structure ndigo\tu packet}
+\section{Output Structure ndigo\tu packet}
 
 	\cronvar{unsigned char}{channel}\\
 	0 to 3 for the ADC input channels, 4 for the TDC, 5 for the timestamp channel.\par
@@ -48,14 +48,17 @@
 	\cronvar{unsigned int}{length}\\
 	Number of 64-bit elements (each containing 4 samples) in the data array if type $< 128$.\par
 
-	If type = 128 this is the pattern of trigger sources that where active in the clock cycle given by the timestamp. Bits are set according to the trigger sources, i.e. bit 0 is set if trigger A0 was active, bit 29 is set if trigger BUS3\tu PE was active. Use the \textsf{NDIGO\tu TRIGGER\tu SOURCE\tu *defines} to check for the bits set.\par
+	If type = 128 this is the pattern of trigger sources that where active in the clock cycle given by the timestamp. Bits are set according to the trigger sources, i.e. bit 0 is set if trigger A0 was active, bit 29 is set if trigger BUS3\tu PE was active. Use the \textsf{NDIGO\tu TRIGGER\tu SOURCE\tu *defines}{} to check for the bits set.\par
 
 	\cronvar{unsigned \tu\tu int64}{timestamp}\\
 	ADC channels A to D: Timestamp of the last word in the packet in ps.\par
 	
-	TDC: Timestamp of the trigger event (falling edge) on the TDC channel in ps. When \textsf{ndigo\tu process\tu tdc\tu packet()} is called once on the packet the timestamp is replaced with the precise timestamp for the edge.\par
+	TDC: Timestamp of the trigger event (falling edge) on the TDC channel in ps.\par
+	
+	When \textsf{ndigo\tu process\tu tdc\tu packet()} is called once on the packet, the timestamp is replaced with the precise timestamp for the edge.\par
 
 	Timestamp channel: Timestamp of the trigger event in ps.\par
 
 	\cronvar{unsigned \tu\tu int64}{data[]}\\
-	Sample data. For the Ndigo5G each 64 bit word contains four 16 bit signed words from the ADC. The user can cast the array to short* to directly operate on the sample data.
+	Sample data.\par
+    For the Ndigo5G, each 64 bit word contains four 16 bit signed words from the ADC. The user can cast the array to \texttt{short*} to directly operate on the sample data.
