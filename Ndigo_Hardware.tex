@@ -387,15 +387,15 @@ Triggers can be fed into the gate blocks described on page \pageref{fig:GatingBl
     
         Some applications require periodic or random triggering. Ndigo5G's function generator provides this functionality.\par
 
-        The delay between two trigger pulses of this trigger generator is the sum of two components: A fixed value M and a pseudo random value given by the exponent N. \par
+        The delay between two trigger pulses of this trigger generator is the sum of two components: A fixed value $M$ and a pseudo random value given by the exponent $N$. \par
 
         The period is
 
         \begin{align}
-            T = 1 + M + [1...2^N]
+            T = M + [1...2^N] - 1
         \end{align}
 
-        clock cycles with a duration of 3.2 ns per cycle.\par
+        clock cycles with a duration of 3.2 ns per cycle, where $8 \leq M < 2^{32}$ and $0 \leq N < 32$.\par
         
         This allows to monitor input signals at times the current trigger configuration does not trigger, e. g. to get base line information in mass spectrometry applications. It can also be used to determine a suitable threshold level for the trigger by first getting random statistics on the input signal.	
     

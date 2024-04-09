@@ -408,14 +408,14 @@ first release.\par
 			Create a trigger either periodically or randomly. There are two parameters $M = \text{trigger\tu period}$ and $N = \text{random\tu exponent}$ that result in a distance between triggers of
 			
 			\begin{align}
-				T = 1 + M + [1...2^N]
+				T = M + [1...2^N] - 1
 			\end{align}
 
 			clock cycles.
 			
 			\begin{align}
-				0 \leq M < 2^{32}\\
-				0 \leq N < 32
+				8 &\leq M < 2^{32}\\
+				0 &\leq N < 32
 			\end{align}					
 		
 			There is no enable or reset as the usage of this trigger can be configured in the trigger block channel source field.\par
