@@ -6,7 +6,7 @@
 
     \cronvar{unsigned char}{channel}\\
     0 to 3 for the ADC input channels, 4 for the TDC, 5 for the timestamp channel.\par
-    
+
     \cronvar{unsigned char}{card}\\
     Identifies the source card in case there are multiple boards present. Defaults to 0 if no value is assigned to the parameter \textsf{board\tu id} in Structure \textsf{ndigo\tu init\tu parameters} or set via\\ \textsf{int ndigo\tu set\tu board\tu id(ndigo\tu device *device, int board\tu id)}.\par
 
@@ -16,7 +16,7 @@
     For the TDC channel it is set to 8 to signify 64 bit unsigned data.\par
 
     If the type field is 128 or greater then there is no data present, even if length is not 0. In this cases the length field may contain other data.\par
-    
+
     \noindent
     \begin{small}
     \begin{tabular}{|c|c|p{9,5cm}|}
@@ -52,9 +52,9 @@
 
     \cronvar{unsigned \tu\tu int64}{timestamp}\\
     ADC channels A to D: Timestamp of the last word in the packet in ps.\par
-    
+
     TDC: Timestamp of the trigger event (falling edge) on the TDC channel in ps.\par
-    
+
     When \textsf{ndigo\tu process\tu tdc\tu packet()} is called once on the packet, the timestamp is replaced with the precise timestamp for the edge.\par
 
     Timestamp channel: Timestamp of the trigger event in ps.\par
