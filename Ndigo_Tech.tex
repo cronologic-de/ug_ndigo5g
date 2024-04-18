@@ -79,6 +79,21 @@ Input Passband: 4.5\,MHz to 950\,MHz.\par
 	\subsection{Oscillator}
 		
 		The Ndigo5G uses an OCXO oscillator with 25ppb stability. After power up the oscillator needs to run for 10 minutes to reach this stability.
+
+		\noindent
+		\begin{tabularx}{\textwidth}{|c|X|c|c|c|c|}
+			\hline
+			Symbol & Parameter & Min & Typical & Max & Units\\
+			\hline\hline
+				ΔT & Temperature stability \SIrange{20}{70}{\degreeCelsius} & & & 25 & ppb \\
+			\hline
+				F & Initial calibration & & & 500 & ppb \\
+			\hline
+				ΔF/F\subscript{1} & Aging first year & & & 100 & ppb \\
+			\hline
+				ΔF/F\subscript{10} & Aging 10 years & & & 1000 & ppb \\ 
+			\hline
+		\end{tabularx}
 		
 	\subsection{Environmental Conditions for Operation}
 		\label{enviro_op}
