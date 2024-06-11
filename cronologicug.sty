@@ -293,7 +293,7 @@
       range=bfit/{latin,Latin,greek,Greek}
     ]{Avenir Next Demi Bold Italic}
 
-    \newfontfamily\cronoheaderfont{Avgardm.ttf}
+    \newfontfamily\cronoheaderfont{Avgardm.ttf}[Scale=MatchUppercase]
 }{\relax}
 
 \ifthenelse{\equal{\@crono@font}{default}}
@@ -345,7 +345,7 @@
     {\thesubsection}{1em}{}{}
 
 \titleformat{\subsubsection}%
-    {\cronoheaderfont\bfseries\itshape\color{cronoblue}}%
+    {\itshape\color{cronoblue}}%
     {\thesubsubsection}{1em}{}{}
 
 % draw frame around text
