@@ -27,9 +27,9 @@ The API is a DLL with C linkage. The functions provided by the DLL are declared 
         Get a set of default parameters to feed into \textsf{ndigo\tu init()}. This must always be used to initialize the \textsf{ndigo\tu init\tu parameter structure}.\par
 
         \cronvar{ndigo\tu device}{*ndigo\tu init(}\cronvar{ndigo\tu init\tu parameters}{*params}, \cronvar{int}{*error\tu code},\newline \cronvar{char}{**error\tu message)}\\
-        Open and initialize the Ndigo board with the given index. With \textsf{error\tu code} and \textsf{error\tu message} the user must provide pointers where to buffers where error information should be written by the driver. The buffer for the error message must by at least 80 chars long.\par
+        Open and initialize the Ndigo board with the given index. With \textsf{error\tu code} and \textsf{error\tu message} the user must provide pointers to buffers where error information should be written by the driver. The buffer for the error message must by at least 80 chars long.\par
 
-        Params is a structure of type \textsf{ndigo\tu init\tu parameters} that must be completely initialized.\par
+        \textsf{params} is a structure of type \textsf{ndigo\tu init\tu parameters} that must be completely initialized.\par
 
         \cronvar{int}{ndigo\tu close(}\cronvar{ndigo\tu device}{*device)}\\
         Finalize the driver for this device.
@@ -43,7 +43,7 @@ The API is a DLL with C linkage. The functions provided by the DLL are declared 
             The index in the list of Ndigo5G boards that should be initialized. There might be multiple boards in the system that are handled by this driver as reported by \textsf{ndigo\tu count\tu devices}. This index selects one of them. Boards are enumerated depending on the PCIe slot. The lower the bus number and the lower the slot number the lower the card index.\par
 
             \cronvar{int}{board\tu id}\\
-            This 8 bit number is filled into each packet created by the board and is useful if data streams of multiple boards will be merged. If only Ndigo5G cards are used this number can be set to the card index. If boards of different types that use a compatible data format are used in a system each board should get a unique id. Can be changed with \textsf{int ndigo\tu set\tu board\tu id(ndigo\tu device *device, int board\tu id)}.\par
+            This 8-bit number is filled into each packet created by the board and is useful if data streams of multiple boards will be merged. If only Ndigo5G cards are used this number can be set to the card index. If boards of different types that use a compatible data format are used in a system each board should get a unique ID. Can be changed with \textsf{int ndigo\tu set\tu board\tu id(ndigo\tu device *device, int board\tu id)}.\par
 
             \cronvar{ndigo\tu bool\tu t}{use\tu external\tu clock}\\
             Use 10MHz clock supplied by IPC flat band cable. Must be set for all slaves.\par
@@ -55,7 +55,7 @@ The API is a DLL with C linkage. The functions provided by the DLL are declared 
             Data acquisition of this board is controlled by the master board.\par
 
             \cronvar{int}{sync\tu period}\\
-            Period of the multicard sync pulse. Should be set to 4 (default) when using several Ndigo boards in sync. Ignored for single board setups. The Ndigo5G has 4 phases relative to the global 10MHz clock.\par
+            Period of the multi-card sync pulse. Should be set to 4 (default) when using several Ndigo boards in sync. Ignored for single board setups. The Ndigo5G has 4 phases relative to the global 10MHz clock.\par
 
             \cronvar{int}{sync\tu delay}\\
             Fine tap delay for incoming sync signals.\par
@@ -88,7 +88,7 @@ The API is a DLL with C linkage. The functions provided by the DLL are declared 
             \end{description}
 
             \cronvar{int}{dma\tu read\tu delay}\\
-            Initialized by \textsf{ndigo\tu get\tu default\tu init\tu parameters()}. The write pointer update is delay by this number of 4 ns clock periods to hide race conditions between software and DMA.
+            Initialized by \textsf{ndigo\tu get\tu default\tu init\tu parameters()}. The write-pointer update is delay by this number of 4\,ns clock periods to hide race conditions between software and DMA.
 
     \clearpage
     \section{Status Information}
@@ -133,7 +133,7 @@ The API is a DLL with C linkage. The functions provided by the DLL are declared 
             \cronvar{int}{driver\tu revision}\\
             The lower three bytes contain a triple level hierarchy of version numbers, e.g. 0x010103 encodes version 1.1.3.\par
 
-            A change in the first digit generally requires a recompilation of user applications. Change in the second digit denote significant improvements or changes that don't break compatibility and the third digit changes with minor bugfixes and similar updates.\par
+            A change in the first digit generally requires a recompilation of user applications. Change in the second digit denote significant improvements or changes that don't break compatibility and the third digit changes with minor bug fixes and similar updates.\par
 
             \cronvar{int}{firmware\tu revision}\\
             Firmware revision of the FPGA configuration. This increments only when there is a functional change.\par
@@ -151,7 +151,7 @@ The API is a DLL with C linkage. The functions provided by the DLL are declared 
             \noindent\textit{For board revision 2 the following assignments are valid:}\par
 
             \noindent If Bit 3 = 0 this following is valid:\\
-            Bit 0 determines the ADC resolution. ($0 = 8-\text{bit}$ or $1 = 10-\text{bit}$ ).\\
+            Bit 0 determines the ADC resolution. ($0 = 8-\text{bit}$ or $1 = 10-\text{bit}$).\\
             Bit 1 determines whether the TDC-oscillator is present ($0 = \text{oscillator present}$, $1 = \text{simple trigger}$).\\
             Bit 2 determines the input connectors ($0 = \text{single ended}$, $1 = \text{differential}$).\par
 
@@ -294,7 +294,7 @@ first release.\par
 
     \section{Configuration}
 
-        The device is configured with a configuration structure. The user should first obtain a structure that contains the default settings of the device read from an on board ROM , than modify the structure as needed for the user application and use the result to configure the device.\par
+        The device is configured with a configuration structure. The user should first obtain a structure that contains the default settings of the device read from an on-board ROM, then modify the structure as needed for the user application and use the result to configure the device.\par
 
         \cronvar{int}{ndigo\tu get\tu default\tu configuration(}\cronvar{ndigo\tu device}{*device,}\newline \cronvar{ndigo\tu configuration}{*config)}\par
 
@@ -342,7 +342,7 @@ first release.\par
             \crondef{NDIGO\tu ADC\tu MODE\tu D12 31} // not available on all boards\par
 
             \cronvar{double}{bandwidth}\\
-            Set to the minimum bandwidth required for the application. Lower bandwidth results in reduced noise. The driver will set the ADC to the minimum setting that has at least the desired bandwidth and report the selected bandwidth in the \textsf{ndigo\tu param\tu info} structure. The -8, -10 and -12 versions currently supports 1GHz and 3GHz bandwidth, the -8AQ version supports 2GHz, 1.5GHz, 600MHz and 500 MHz. The bandwidth of the analog frontend of the board remains unchanged at about \SI{950}{\MHz}.
+            Set to the minimum bandwidth required for the application. Lower bandwidth results in reduced noise. The driver will set the ADC to the minimum setting that has at least the desired bandwidth and report the selected bandwidth in the \textsf{ndigo\tu param\tu info} structure. The -8, -10 and -12 versions currently supports 1GHz and 3GHz bandwidth, the -8AQ version supports 2GHz, 1.5GHz, 600MHz and 500 MHz. The bandwidth of the analog frontend of the board remains unchanged at about 950\,MHz.
             \par
 
             \cronvar{ndigo\tu bool\tu t}{reserved}\\
@@ -353,7 +353,7 @@ first release.\par
             Enable enhanced TDC resolution. Currently not implemented.\par
 
             \cronvar{double}{analog\tu offset[NDIGO\tu CHANNEL\tu COUNT]}\\
-            Sets the input DC offset-values to +- this value in volts. Defaults to 0.\par
+            Sets the input DC offset-values to plus/minus this value in volts. Defaults to 0.\par
 
             \cronvar{double}{dc\tu offset[2]}\\
             Sets the DC offset in volts for the TDC trigger input (index 1) and the GATE input (index 0). The default is -0.35 which is a good setting vor \SI{0.8}{\volt} negative NIM pulses.
@@ -433,7 +433,7 @@ first release.\par
 
             \cronvar{typedef short}{(*lut\tu func)(}\cronvar{int}{channel,} \cronvar{float}{x)}\par
 
-            This can be used e.g. for custom INL, offset and gain correction that covers user front end electronics. It can also invert the signal or correct the effect of logarithmic input amplifiers etc.\par
+            This can be used, e.g., for custom INL, offset and gain correction that covers user front end electronics. It can also invert the signal or correct the effect of logarithmic input amplifiers etc.\par
 
             The LUT is applied on the board, thus using it does not cause any additional CPU load. In the mode ``\textsf{NDIGO\tu OUTPUT\tu MODE\tu CUSTOM\tu INL}'' the on-board INL correction table is applied before the user function, while ``\textsf{NDIGO\tu OUTPUT\tu MODE\tu CUSTOM}'' does not perform INL correction. In order to use the user lookup table functionality \textsf{lut\tu func} must be set to a pointer to the LUT-function.
 
@@ -464,7 +464,7 @@ first release.\par
         Activate triggers on this channel.\par
 
         \cronvar{ndigo\tu bool\tu t}{retrigger}\\
-        If a new trigger condition occurs while the postcursor is acquired the packet is extended by starting a new postcursor. Otherwise the new trigger is ignored and the packet ends after the precursor of the first trigger.\par
+        If a new trigger condition occurs while the postcursor is acquired the packet is extended by starting a new postcursor. Otherwise, the new trigger is ignored and the packet ends after the precursor of the first trigger.\par
 
         The retrigger setting is ignored for the timestamp channel.\par
 
@@ -532,7 +532,7 @@ trigger condition is fulfilled.\par
         \end{tabular}
 
         \cronvar{double}{minimum\tu free\tu packets;}\\
-        This parameter sets how many packets are supposed to fit into the on-board FIFO before a new packet is recorded after the FIFO was full, i.e. a certain amount of free space in the FIFO is demanded before a new packet is written after the FIFO was full. As a measure for the packet length the gatelength set by the user is used. The on-board algorithm checks the free FIFO space only in case the FIFO is full. Therefore, if this number is 1.0 or more at least every second packet in the DMA buffer is guaranteed to have the full length set by the gatelength parameters. In many cases smaller values will also result in full length packets. But below a certain value multiple packets that are cut off at the end will show up.
+        This parameter sets how many packets are supposed to fit into the on-board FIFO before a new packet is recorded after the FIFO was full, i.e. a certain amount of free space in the FIFO is demanded before a new packet is written after the FIFO was full. As a measure for the packet length, the gate-length set by the user is used. The on-board algorithm checks the free FIFO space only in case the FIFO is full. Therefore, if this number is 1.0 or more at least every second packet in the DMA buffer is guaranteed to have the full length set by the gate-length parameters. In many cases smaller values will also result in full length packets. But below a certain value multiple packets that are cut off at the end will show up.
 
         \subsection{Structure ndigo\tu gating\tu block\label{cp:gatingblock}}
 
@@ -540,7 +540,7 @@ trigger condition is fulfilled.\par
             Invert output polarity. Defaults to false.\par
 
             \cronvar{ndigo\tu bool\tu t}{retrigger}\\
-            Defaults to false. If retriggering is enabled the timer is reset to the value of the start parameter whenever the input signal is set while waiting to reach the stop time.\par
+            Defaults to false. If re-triggering is enabled the timer is reset to the value of the start parameter whenever the input signal is set while waiting to reach the stop time.\par
 
             \cronvar{ndigo\tu bool\tu t}{extend}\\
             Defaults to true. If set, a gate is created with the set timing from the first occurrence of the input trigger even for short gates. If not set, the input signal must persist for the gate to be created. This feature is NOT YET IMPLEMENTED.\par
@@ -554,7 +554,7 @@ trigger condition is fulfilled.\par
             \cronvar{int}{stop}\\
             In multiples of 3.2ns. Maximum allowed value is $2^{16}-1$.\par
 
-            The time from leaving the idle state until the gating output is reset. If retriggering is enabled the timer is reset to the value of the start parameter whenever the input signal is set while waiting to reach the stop time.\par
+            The time from leaving the idle state until the gating output is reset. If re-triggering is enabled the timer is reset to the value of the start parameter whenever the input signal is set while waiting to reach the stop time.\par
 
             \cronvar{int}{sources}\\
             A bit mask with a bit set for all trigger sources that can trigger this channel. The gates cannot use the additional digital trigger sources \textsf{NDIGO\tu TRIGGER\tu SOURCE\tu TDC\tu PE} to\\ \textsf{NDIGO\tu TRIGGER\tu SOURCE\tu BUS3\tu PE}.\par
@@ -585,7 +585,7 @@ trigger condition is fulfilled.\par
             Enable routing of digital signal from Ndigo extension board to the according BUSx trigger unit.\par
 
             \cronvar{ndigo\tu bool\tu t}{ignore\tu cable}\\
-            If \textit{false} input signal and BUS signal are ORed before routing to the according BUSx trigger unit. Otherwise only the signal from Ndigo extension board is used.
+            If \textit{false}, input signal and BUS signal are ORed before routing to the according BUSx trigger unit. Otherwise, only the signal from Ndigo extension board is used.
 
         \subsection{Run Time Control}
 
@@ -601,14 +601,14 @@ trigger condition is fulfilled.\par
     \section{Readout\label{cp:readout}}
 
         \cronvar{int}{ndigo\tu read(}\cronvar{ndigo\tu device}{*device,} \cronvar{ndigo\tu read\tu in}{*in,} \cronvar{ndigo\tu read\tu out}{*out)}\\
-        Return a pointer to an array of captured data in \textsf{read\tu out}. The result can contain any number of packets of type \textsf{ndigo\tu packet}. \textsf{read\tu in} provides parameters to the driver. A call to this method automatically allows the driver to reuse the memory returned in the previous call.\par
+        Return a pointer to an array of captured data in \textsf{read\tu out}. The result can contain any number of packets of type \textsf{ndigo\tu packet}. \textsf{read\tu in} provides parameters to the driver. A call to this method automatically allows the driver to reuse the memory returned by the previous call.\par
 
 Returns an error code as defined in the structure \textsf{ndigo\tu read\tu out}.\par
 
         \cronvar{int}{ndigo\tu acknowledge(}\cronvar{ndigo\tu device}{*device,} \cronvar{ndigo\tu packet}{*packet)}\\
         Acknowledge all data up to the packet provided as parameter. This is mandatory if \textsf{acknowledge\tu last\tu read} in the \textsf{ndigo\tu read\tu in} structure is set to false for calls to \textsf{ndigo\tu read}.\par
 
-        This feature allows to either free up partial DMA space early if there will be no call to \textsf{ndigo\tu read} anytime soon. It also allows to keep data over multiple calls to \textsf{ndigo\tu read} to avoid unnecessary copying of data.\par
+        This feature allows to either free up partial DMA space early if there will be no call to \textsf{ndigo\tu read} anytime soon. It also allows keeping data over multiple calls to \textsf{ndigo\tu read} to avoid unnecessary copying of data.\par
 
         \cronvar{int}{ndigo\tu process\tu tdc\tu packet(}\cronvar{ndigo\tu device}{*device,} \cronvar{ndigo\tu packet}{*packet)}\\
         Call on a TDC packet to update the timestamp of the packet with a more accurate value. If called more than once on a packet the timestamp will be invalid.

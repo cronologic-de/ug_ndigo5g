@@ -5,12 +5,12 @@
 \section{Installing the Board}
 %
 The Ndigo5G board can be installed in any x4 (or higher amount of lanes) PCIe slot. If the slot electrically supports less than 4 lanes, the board will operate at lower data throughput rates.\par
-Please ensure proper cooling of the device. The Ndigo5G has an onboard temperature detection. If the ADC chip temperature exceeds 90$^{\circ}$C, a warning is issued to the device driver. In case the temperature is higher than 95$^{\circ}$C, the ADC is disabled to avoid damage. Using a PCI-slot cooler is in many cases an appropriate solution to circumvent problems caused by overheating if the board is used inside a PC. The Ndigo-Crate will provide sufficient cooling under normal operating conditions.\par
+Please ensure proper cooling of the device. The Ndigo5G has an onboard temperature detection. If the ADC chip temperature exceeds 90$^{\circ}$C, a warning is issued to the device driver. In case the temperature is higher than 95$^{\circ}$C, the ADC is disabled to avoid damage. Using a PCI-slot cooler is in many cases an appropriate solution to circumvent problems caused by overheating if the board is used inside a PC. The Ndigo Crate will provide sufficient cooling under normal operating conditions.\par
 
 Using a single Ndigo5G, no further connections need to be made. For applications that require more than 4 ADC channels, several Ndigo5G boards can be operated in sync.\par
 
 The signals used for board synchronization and inter-board triggering are transferred on a bus between the boards. Join all C2 connectors (see Figure \ref{fig:schematics} on page \pageref{fig:schematics}) on the boards using a ribbon cable. Both ends of the bus need to be terminated properly. If using a Ndigo Crate, connectors providing the termination are located on the crate mainboard next to the PCIe slots to the extreme left and right. For more details, please refer to the Ndigo Crate user guide. In applications that use only a few Ndigo boards installed directly inside a PC, termination PCBs available from cronologic can be used.\par
-Ndigo5G's standard device driver can be used to read out all boards and acquire data. For more complex scenarios, using the cronoSync-library, which is part of cronoTools, is recommended. The cronoSync library is provided with the Ndigo device driver. Please refer to the cronoTools user guide for more information.
+Ndigo5G's standard device driver can be used to read out all boards and acquire data. For more complex scenarios, using the cronoSync library, which is part of cronoTools, is recommended. The cronoSync library is provided with the Ndigo device driver. Please refer to the cronoTools user guide for more information.
 %
 \begin{figure*}[ht]
     \centering
@@ -26,7 +26,7 @@ Ndigo5G's standard device driver can be used to read out all boards and acquire 
 \section{Ndigo5G External Inputs and Connectors}
 \subsection{Connectors}
 %
-The inputs of the Ndigo5G are located on the PCI bracket. Figure~\ref{fig:schematics} on page~\pageref{fig:schematics} shows the location of the 4 analog inputs A to D and the two digital inputs G (GATE) and T (Trigger). Furthermore, two board interconnection connectors can be found at the top edge of the Ndigo5G, as displayed in  Figure \ref{fig:schematics} on page \pageref{fig:schematics}. Connector C1 is used for a board-to-board connection (e. g. to link a HPTDC8-PCI and a Ndigo5G via a Ndigo Extension board, see chapter \ref{cp:extcard}). Connector C2 is used as a bus interface between multiple Ndigo boards distributing clock, trigger and sync signals. Proper termination must be placed at both ends of the bus interconnection ribbon cable.
+The inputs of the Ndigo5G are located on the PCI bracket. Figure~\ref{fig:schematics} on page~\pageref{fig:schematics} shows the location of the 4 analog inputs A to D and the two digital inputs G (GATE) and T (Trigger). Furthermore, two board interconnection connectors can be found at the top edge of the Ndigo5G, as displayed in  Figure \ref{fig:schematics} on page \pageref{fig:schematics}. Connector C1 is used for a board-to-board connection (e.g., to link a HPTDC8-PCI and a Ndigo5G via a Ndigo Extension board, see chapter \ref{cp:extcard}). Connector C2 is used as a bus interface between multiple Ndigo boards distributing clock, trigger and sync signals. Proper termination must be placed at both ends of the bus interconnection ribbon cable.
 %
 \begin{figure*}[hb]
     \centering
@@ -95,7 +95,7 @@ TDC pulses must have a minimum duration of 3.3ns. The dead-time of the TDC is 32
 %
 \section{Extension Card\label{cp:extcard}}
 
-The Ndigo Extension card provides additional inputs or outputs to the FPGA. It is connected to the Samtec QSS-025 connector on an Ndigo5G by an Samtec SQCD cable assembly.\par
+The Ndigo Extension card provides additional inputs or outputs to the FPGA. It is connected to the Samtec QSS-025 connector on an Ndigo5G by a Samtec SQCD cable assembly.\par
 The Ndigo Extension Card provides up to ten single ended LEMO00 connectors. The circuit connecting to each of these circuits can be chosen to provide inputs or outputs. These can be AC or DC coupled. AC coupled inputs support NIM signaling. The signals connect to 2.5V IO Pins of the Xilinx Virtex-5 FPGA.\par
 The current firmware revision provides the following signal connections. The HPTDC clocks are $\SI{5}{\giga\hertz} / 128 = \SI{39.0625}{\mega\hertz}$\par
 
@@ -121,7 +121,7 @@ The current firmware revision provides the following signal connections. The HPT
 \end{center}
 \end{small}
 
-The 4 digital inputs are routed to the bus inputs of the trigger matrix to be used for triggering. The routing can be configured to either ORing the sync bus and extension channels or use the extension channels exclusively.
+The 4 digital inputs are routed to the bus inputs of the trigger matrix to be used for triggering. The routing can be configured to either OR-ing the sync bus and extension channels or use the extension channels exclusively.
 
 \begin{center}
 \begin{tabular}{|c|c|c|c|}
@@ -143,19 +143,19 @@ The 4 digital inputs are routed to the bus inputs of the trigger matrix to be us
 \section{Ndigo5G Functionality}
 \subsection{ADC Modes}
 
-Depending on board configuration, the analog input signal is quantized to 8 or 10 bits. However, the board always scales and offsets the data to 16 bit signed data centered around 0.\par
+Depending on board configuration, the analog input signal is quantized to 8 or 10 bits. However, the board always scales and offsets the data to 16-bit signed data centered around 0.\par
 Data processing such as trigger detection or packet building are always performed on 3.2ns intervals. Depending on the ADC mode, this interval may contain 4, 8 or 16 samples.\par
 The board supports using one, two or four channels:
 
-\subsubsection{1 Channel Modes A, B, C and D}
+\subsubsection{1-Channel-Modes A, B, C and D}
 
 In these modes, only a single channel is used. The analog signal on that channel is digitized at 5Gsps. Packet size is always a multiple of 16 samples per 3.2ns. See Figure \ref{fig:1ChannelMode} on page \pageref{fig:1ChannelMode} and Figure \ref{fig:1ChannelTriggering} on page \pageref{fig:1ChannelTriggering}.
 
-\subsubsection{2 Channel Modes AC, BC, AD and BD}
+\subsubsection{2-Channel-Modes AC, BC, AD and BD}
 
 In these modes, two channels are used simultaneously. The analog signals on these channels are digitized at 2.5Gsps each. Packet size is always a multiple of 8 samples per 3.2ns. See Figure \ref{fig:2ChannelMode} on page \pageref{fig:2ChannelMode} and Figure \ref{fig:2ChannelTriggering} on page \pageref{fig:2ChannelTriggering}.
 
-\subsubsection{4 Channel Mode ABCD}
+\subsubsection{4-Channel-Mode ABCD}
 
 In this mode, all four channels are digitized independently at 1.25Gsps each. The packet size is always a multiple of 4 samples per 3.2ns. See Figure \ref{fig:4ChannelMode} on page \pageref{fig:4ChannelMode} and Figure \ref{fig:4ChannelTriggering} on page \pageref{fig:4ChannelTriggering}.
 
@@ -169,26 +169,25 @@ During interleaving, the Ndigo5G firmware reorders and groups the data into a li
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{figures/4ChannelMode.pdf}
-    \caption{ADCs in 4 channel mode ABCD at 1.25Gsps.\label{fig:4ChannelMode}}
+    \caption{ADCs in 4-channel-mode ABCD at 1.25Gsps.\label{fig:4ChannelMode}}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{figures/2ChannelMode.pdf}
-    \caption{ADCs in 2 channel mode AD, interleaved for 2.5Gsps.\label{fig:2ChannelMode}}
+    \caption{ADCs in 2-channel-mode AD, interleaved for 2.5Gsps.\label{fig:2ChannelMode}}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{figures/1ChannelMode.pdf}
-    \caption{ADCs in 1 channel mode A, B, C or D interleaved for 5Gsps.\label{fig:1ChannelMode}}
+    \caption{ADCs in 1-channel-mode A, B, C or D interleaved for 5Gsps.\label{fig:1ChannelMode}}
 \end{figure}
 
 \clearpage
 \subsection{Zero Suppression}
 
-One of Ndigo5G's key features is on-board zero suppression to reduce PCIe bus load. Only data that passes specifications predefined by the user is transmitted. This guide refers to transmitted waveform data as ``packets.'' A packet contains the waveform data and a timestamp giving the absolute time (i.e. the time since start of data acquisition) of the packet's last sample.\par
-Figure \ref{fig:ZeroSupp} shows a simple example: Data is written to the PC only if values exceed a specified threshold. Expanding on that, Ndigo5G's zero suppression can be used to realize much more complex scenarios.
+One of Ndigo5G's key features is on-board zero suppression to reduce PCIe bus load. Only data that passes specifications predefined by the user is transmitted. This guide refers to transmitted waveform data as ``packets.'' A packet contains the waveform data and a timestamp giving the absolute time (i.e., the time since start of data acquisition) of the packet's last sample.\par Figure \ref{fig:ZeroSupp} shows a simple example: Data is written to the PC only if values exceed a specified threshold. Expanding on that, Ndigo5G's zero suppression can be used to realize much more complex scenarios.
 
 \begin{figure*}[hb]
     \centering
@@ -208,7 +207,7 @@ When using edge triggering, all packets have the same length (Figure \ref{fig:ed
 
 Please note that triggering is not accurate to sample. For each 3.2ns clock cycle, it is determined whether on any sample during that clock cycle a trigger condition is met. The clock cycle is then selected as the trigger point. As a result, the trigger sample can be anywhere within a range of up to 16 samples in single channel mode (Figure \ref{fig:1ChannelTriggering} on page \pageref{fig:1ChannelTriggering}) at 16 samples per 3.2ns.\par
 
-If retriggering is active, the current trigger window is extended if a trigger event is detected inside the window.\par
+If re-triggering is active, the current trigger window is extended if a trigger event is detected inside the window.\par
 
 A trigger block can use several input sources:
 
@@ -218,7 +217,7 @@ A trigger block can use several input sources:
     \item the Trigger or TDC input,  (Figure \ref{fig:DigitalInput} on page \pageref{fig:DigitalInput})
     \item a function trigger providing random or periodic triggering (Section \ref{cp:AutoTriggeringFunctionGenerator} on page \pageref{cp:AutoTriggeringFunctionGenerator})
     \item triggers originating from other cards connected with the sync cable or from the Ndigo Extension card (BUS0, BUS1, BUS2, BUS3)
-    \item A second set of trigger units with names ending in \textsf{\tu pe} for the digital inputs Trigger, GATE, BUS0, BUS1, BUS2, and BUS3 configured for positive edge triggering. Together with the regular trigger units on this inputs, both edges of a pulse can be used in the trigger logic. This set of triggers is not available as inputs for the gate blocks.
+    \item A second set of trigger units with names ending in \textsf{\tu pe} for the digital inputs Trigger, GATE, BUS0, BUS1, BUS2, and BUS3 configured for positive edge triggering. Together with the regular trigger units on these inputs, both edges of a pulse can be used in the trigger logic. This set of triggers is not available as inputs for the gate blocks.
 \end{itemize}
 
 Trigger inputs from the above sources can be concatenated using logical ``OR'' (Figure \ref{fig:triggermatrix} on page \pageref{fig:triggermatrix}) by setting the appropriate bits in the trigger blocks source mask.\par
@@ -240,19 +239,19 @@ Triggers can be fed into the gate blocks described on page \pageref{fig:GatingBl
 \begin{figure*}[ht]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/4ChannelTriggering.pdf}
-    \caption{Triggering in 4 channel mode at 4 samples per clock cycle.\label{fig:4ChannelTriggering}}
+    \caption{Triggering in 4-channel mode at 4 samples per clock cycle.\label{fig:4ChannelTriggering}}
 \end{figure*}
 
 \begin{figure*}[hb]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/2ChannelTriggering.pdf}
-    \caption{Triggering in 2 channel mode at 8 samples per clock cycle.\label{fig:2ChannelTriggering}}
+    \caption{Triggering in 2-channel mode at 8 samples per clock cycle.\label{fig:2ChannelTriggering}}
 \end{figure*}
 
 \begin{figure*}[ht]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/1ChannelTriggering.pdf}
-    \caption{Triggering in 1 channel mode at 16 samples per clock cycle.\label{fig:1ChannelTriggering}}
+    \caption{Triggering in 1-channel mode at 16 samples per clock cycle.\label{fig:1ChannelTriggering}}
 \end{figure*}
 
 \begin{figure*}[hb]
@@ -293,7 +292,7 @@ Triggers can be fed into the gate blocks described on page \pageref{fig:GatingBl
         Trigger blocks can use the gate signal to suppress data acquisition: Only data that fulfills zero suppression specifications occurring in an active gate window is written to the PC.\par
         As input, any trigger from the 4 trigger blocks, the GATE and Trigger inputs, a trigger from a connected board and the function generator can be used.\par
 
-        The retrigger feature will create a new gate if a trigger occurs during an active gate window. The gate signal can be inverted, causing an active gate to close for a time defined by the user.\par
+        The re-trigger feature will create a new gate if a trigger occurs during an active gate window. The gate signal can be inverted, causing an active gate to close for a time defined by the user.\par
 
         The parameters of a gating block are set in Structure \textsf{ndigo\tu gating\tu block} described on page \pageref{cp:gatingblock}.\par
 
@@ -325,7 +324,7 @@ Triggers can be fed into the gate blocks described on page \pageref{fig:GatingBl
         \subsubsection{Gating Example 3: Dual Level Trigger}
 
             The gates provide AND connections between each other (see fig. \ref{fig:triggermatrix}) which can be used for example in a dual level trigger. For the acquisition of signal data with amplitudes between a lower and an upper bound, for example, two level triggers can be connected (see fig. \ref{fig:dualleveltrig}): a falling level trigger with an upper threshold and a rising level trigger with a lower threshold.\par
-            Since the triggers are only connected by OR in the triggerblock logic (see fig. \ref{fig:triggermatrix}) they are assigned to one of the gates each and connected with AND via the gating block region of the trigger matrix (see fig. \ref{fig:triggermatrix} and \ref{fig:dualleveltriglogic}). Because of the dead times of the gates it is important to enable the retriggering feature. Furthermore a precursor of 2 clock cycles is needed, because the gates are delayed in relation to the ADC samples.\par
+            Since the triggers are only connected by OR in the trigger-block logic (see fig. \ref{fig:triggermatrix}) they are assigned to one of the gates each and connected with AND via the gating block region of the trigger matrix (see fig. \ref{fig:triggermatrix} and \ref{fig:dualleveltriglogic}). Because of the dead times of the gates it is important to enable the re-triggering feature. Furthermore, a precursor of 2 clock cycles is needed, because the gates are delayed in relation to the ADC samples.\par
             \begin{figure*}[ht]
                 \begin{center}
                     \includegraphics[width=\textwidth]{figures/dual_level_triggering.pdf}
@@ -397,7 +396,7 @@ Triggers can be fed into the gate blocks described on page \pageref{fig:GatingBl
 
         clock cycles with a duration of 3.2 ns per cycle, where $8 \leq M < 2^{32}$ and $0 \leq N < 32$.\par
 
-        This allows to monitor input signals at times the current trigger configuration does not trigger, e. g. to get base line information in mass spectrometry applications. It can also be used to determine a suitable threshold level for the trigger by first getting random statistics on the input signal.
+        This allows to monitor input signals at times the current trigger configuration does not trigger, e.g., to get baseline information in mass spectrometry applications. It can also be used to determine a suitable threshold level for the trigger by first getting random statistics on the input signal.
 
     \subsection{Timestamp Channel}
 
@@ -407,7 +406,7 @@ Triggers can be fed into the gate blocks described on page \pageref{fig:GatingBl
 
     \subsection{Data Lookup Table}
 
-        In some applications it might be useful to modify the ADC sample data by a user defined function $f(x)$. In this case the onboard FPGA is able to perform this task such that the the data stream consists of data words $f(sample)$ instead of $sample$. The function f(x) is applied using a 1024 word lookup table (LUT) which needs to be provided by the user. This is done by defining the corresponding function as a custom\_lut-member of the ndigo\_configuration structure. Please feel free to contact cronologic if you plan the use this feature. The onboard INL correction is applied prior to mapping the LUT values.
+        In some applications it might be useful to modify the ADC sample data by a user defined function $f(x)$. In this case, the onboard FPGA is able to perform this task such that the data stream consists of data words $f(sample)$ instead of $sample$. The function f(x) is applied using a 1024 word lookup table (LUT) which needs to be provided by the user. This is done by defining the corresponding function as a custom\_lut-member of the ndigo\_configuration structure. Please feel free to contact cronologic if you plan the use this feature. The onboard INL correction is applied prior to mapping the LUT values.
 
 \section{Multiple Ndigo boards synchronization}
     Using several Ndigo devices in applications that use more channels than a single board can provide requires synchronized operation. This way up to 8 Boards can be synchronized. To ensure exact synchronization, a delay parameter needs to be set for each board. This parameter might change in case boards are swapped, added or removed and in some cases might change after a firmware update.\par
@@ -452,9 +451,9 @@ Triggers can be fed into the gate blocks described on page \pageref{fig:GatingBl
 
     \subsection{Synchronizing a Ndgio5G and an HPTDC8-PCI}
 
-        In order to operate a Ndigo5G in sync with one ore more HPTDC8-PCI boards, a board to board interconnection using a Ndigo Extension Board needs to be done. The Ndigo Extension Board has four clock outputs. One of them needs to be connected to the external clock input of the HPTDC using a standard Lemo 00 cable. The Ndigo5G is connected to the Ndigo Extension Board using the Samtec ribbon cable provided with the Ndigo Extension Board. The signals used for synchronization of the boards are transmitted by a standard 10pin ribbon cable connecting the Ndigo Extension Board and the HPTDC. A schematic of all necessary connections is shown in Figure \ref{fig:InterconNdigo}.\par
+        In order to operate a Ndigo5G in sync with one or more HPTDC8-PCI boards, a board to board interconnection using a Ndigo Extension Board needs to be done. The Ndigo Extension Board has four clock outputs. One of them needs to be connected to the external clock input of the HPTDC using a standard LEMO00 cable. The Ndigo5G is connected to the Ndigo Extension Board using the Samtec ribbon cable provided with the Ndigo Extension Board. The signals used for synchronization of the boards are transmitted by a standard 10pin ribbon cable connecting the Ndigo Extension Board and the HPTDC. A schematic of all necessary connections is shown in Figure \ref{fig:InterconNdigo}.\par
 
-        In principle the user can use the standard device drivers of the Ndigo5G and the HPTDC8-PCI to perform data acquisition. It is, however, recommended to use the cronoSync-library, which is a part of the cronoTools provided with with the Ndigo5G device driver. CronoSync offers an easy group-based access to the data recorded and handles the synchronization of all cronologic data ac-quisition devices used. A detailed description of cronoTools and cronoSync can be found in the cronoTools user guide.
+        In principle the user can use the standard device drivers of the Ndigo5G and the HPTDC8-PCI to perform data acquisition. It is, however, recommended using the cronoSync library, which is a part of the cronoTools provided with the Ndigo5G device driver. cronoSync offers an easy group-based access to the data recorded and handles the synchronization of all cronologic data acquisition devices used. A detailed description of cronoTools and cronoSync can be found in the cronoTools user guide.
 
         \begin{figure*}[hb]
             \begin{center}
@@ -494,7 +493,7 @@ After flashing and shutting the PC or the crate off and on again it is recommend
             \item Connect an external pulse signal to the Trigger input. The signal should be low active with a frequency in the kHz range. It must not be synchronized to the clock source of the Ndigo5G-10. The input frequency must not exceed 10 MHz. The pulse low and high width has to be at least 10ns each.
             \item Set \textit{Serial Number} according to the sticker on the card if the shown value is not correct.
             \item Start capturing pulse events by pressing the \textit{Start} button.
-            \item Adjust the \textit{Input Offset} so that \textit{First Bin} is in the range of 4 to 16. If \textit{First Bin} is less than 4, increment \textit{Input Offset} by one. If \textit{First Bin} is greater than 16 decrement \textit{Input Offset} by one. Repeat increment/decrement until \textit{First Bin} is in the range of 4 to 16. Depending on the firmware revision the \textit{Input Offset} value for a successful calibration may be in the range of 6 – 10 or 28 – 32.
+            \item Adjust the \textit{Input Offset} so that \textit{First Bin} is in the range of 4 to 16. If \textit{First Bin} is less than 4, increment \textit{Input Offset} by one. If \textit{First Bin} is greater than 16, decrement \textit{Input Offset} by one. Repeat increment/decrement until \textit{First Bin} is in the range of 4 to 16. Depending on the firmware revision the \textit{Input Offset} value for a successful calibration may be in the range of 6–10 or 28–32.
             \item When the \textit{Write Calibration Data} button becomes enabled press it to update the calibration data on the card.
             \item Calibration done!
         \end{enumerate}

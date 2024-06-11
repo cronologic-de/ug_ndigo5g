@@ -11,11 +11,11 @@
     Identifies the source card in case there are multiple boards present. Defaults to 0 if no value is assigned to the parameter \textsf{board\tu id} in Structure \textsf{ndigo\tu init\tu parameters} or set via\\ \textsf{int ndigo\tu set\tu board\tu id(ndigo\tu device *device, int board\tu id)}.\par
 
     \cronvar{unsigned char}{type}\\
-    For the ADC channels this is set to 1 to signify 16 bit signed data.\par
+    For the ADC channels this is set to 1 to signify 16-bit signed data.\par
 
-    For the TDC channel it is set to 8 to signify 64 bit unsigned data.\par
+    For the TDC channel it is set to 8 to signify 64-bit unsigned data.\par
 
-    If the type field is 128 or greater then there is no data present, even if length is not 0. In this cases the length field may contain other data.\par
+    If the type field is 128 or greater than there is no data present, even if length is not 0. In these cases the length field may contain other data.\par
 
     \noindent
     \begin{small}
@@ -23,7 +23,7 @@
         \hline
         Type & Length Field & Description\\\hline
         \hline
-        1 & Number of payload words & 16 bit signed samples from one of the ADCs\\\hline
+        1 & Number of payload words & 16-bit signed samples from one of the ADCs\\\hline
         8 & Number of payload words & 64 Bit unsigned TDC Data, only for internal processing\\\hline
         128 & Bit pattern of trigger sources & Whenever at least one of the sources that is enabled for the timestamp channel triggers, one of these packets is generated. The length field contains the triggers active when this packet was created.\\\hline
     \end{tabular}
@@ -51,9 +51,9 @@
     If type = 128 this is the pattern of trigger sources that where active in the clock cycle given by the timestamp. Bits are set according to the trigger sources, i.e. bit 0 is set if trigger A0 was active, bit 29 is set if trigger BUS3\tu PE was active. Use the \textsf{NDIGO\tu TRIGGER\tu SOURCE\tu *defines}{} to check for the bits set.\par
 
     \cronvar{unsigned \tu\tu int64}{timestamp}\\
-    ADC channels A to D: Timestamp of the last word in the packet in ps.\par
+    ADC channels A to D: Timestamp of the last word in the packet in picoseconds.\par
 
-    TDC: Timestamp of the trigger event (falling edge) on the TDC channel in ps.\par
+    TDC: Timestamp of the trigger event (falling edge) on the TDC channel in picoseconds.\par
 
     When \textsf{ndigo\tu process\tu tdc\tu packet()} is called once on the packet, the timestamp is replaced with the precise timestamp for the edge.\par
 
@@ -61,4 +61,4 @@
 
     \cronvar{unsigned \tu\tu int64}{data[]}\\
     Sample data.\par
-    For the Ndigo5G, each 64 bit word contains four 16 bit signed words from the ADC. The user can cast the array to \texttt{short*} to directly operate on the sample data.
+    For the Ndigo5G, each 64 bit word contains four 16-bit signed words from the ADC. The user can cast the array to \texttt{short*} to directly operate on the sample data.
