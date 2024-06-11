@@ -169,10 +169,10 @@ The API is a DLL with C linkage. The functions provided by the DLL are declared 
             0011 Ndigo5G-8-AQ 2.5u 8\\
             0110 Ndigo5G-10-Diff 560pF 10 DIFF\\
             1000 Ndigo5G-8 560pF 8+\\
-            1010 Ndigo1250M-12 2.2uF 12 Sciex DC\\
+            1010 Ndigo1250M-12 2.2uF 12 S DC\\
             1011 Ndigo5G-10 560pF 10\\
-            1110 Ndigo5G-Sciex 2.2uF 10 Sciex Infiniband, DIFF\\
-            1111 Ndigo5G-Roent = fADC4/10 560pF 10\par
+            1110 Ndigo5G-S 2.2uF 10 S Infiniband, DIFF\\
+            1111 Ndigo5G-R = fADC4/10 560pF 10\par
 
             \cronvar{int}{adc\tu resolution}\\
             Number of bits of the ADC, set to 0 if unknown.\par
@@ -272,7 +272,7 @@ first release.\par
             In $^\circ$C measured on die.\par
 
             \cronvar{int}{pcie\tu link\tu width}\\
-            Number of PCIe lanes that the card uses. Should be 4 for Ndigo5G. \par %% and 8 for Ndigo5G-Sciex.\par
+            Number of PCIe lanes that the card uses. Should be 4 for Ndigo5G. \par
 
             \cronvar{int}{pcie\tu max\tu payload}\\
             Maximum size in bytes for one PCIe transaction, depends on system configuration.\par
