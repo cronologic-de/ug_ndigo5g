@@ -279,7 +279,6 @@ TSWLatexianTemp*
 build
 ug_example/driver
 .vs
-.vscode/*
-!.vscode/settings.json
+.vscode
 .venv
 driver
