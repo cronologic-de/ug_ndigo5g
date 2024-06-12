@@ -1,6 +1,6 @@
 # ug_ndigo5g
 
-Userguide for the cronologic Ndigo5G digitizer. 
+Userguide for the cronologic Ndigo5G digitizer.
 
 This is a LaTeX2e project that creates the userguides for the [Ndigo5G-10 and Ndigo5G-8](https://www.cronologic.de/product/ndigo5g-10), gigasample PCIe digitizer boards by cronologic GmbH & Co. KG.
 

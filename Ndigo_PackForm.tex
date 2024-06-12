@@ -4,61 +4,61 @@
 % $Author: andreas $
 \section{Output Structure ndigo\tu packet}
 
-	\cronvar{unsigned char}{channel}\\
-	0 to 3 for the ADC input channels, 4 for the TDC, 5 for the timestamp channel.\par
-	
-	\cronvar{unsigned char}{card}\\
-	Identifies the source card in case there are multiple boards present. Defaults to 0 if no value is assigned to the parameter \textsf{board\tu id} in Structure \textsf{ndigo\tu init\tu parameters} or set via\\ \textsf{int ndigo\tu set\tu board\tu id(ndigo\tu device *device, int board\tu id)}.\par
+    \cronvar{unsigned char}{channel}\\
+    0 to 3 for the ADC input channels, 4 for the TDC, 5 for the timestamp channel.\par
 
-	\cronvar{unsigned char}{type}\\
-	For the ADC channels this is set to 1 to signify 16 bit signed data.\par
+    \cronvar{unsigned char}{card}\\
+    Identifies the source card in case there are multiple boards present. Defaults to 0 if no value is assigned to the parameter \textsf{board\tu id} in Structure \textsf{ndigo\tu init\tu parameters} or set via\\ \textsf{int ndigo\tu set\tu board\tu id(ndigo\tu device *device, int board\tu id)}.\par
 
-	For the TDC channel it is set to 8 to signify 64 bit unsigned data.\par
+    \cronvar{unsigned char}{type}\\
+    For the ADC channels this is set to 1 to signify 16-bit signed data.\par
 
-	If the type field is 128 or greater then there is no data present, even if length is not 0. In this cases the length field may contain other data.\par
-	
-	\noindent
-	\begin{small}
-	\begin{tabular}{|c|c|p{9,5cm}|}
-		\hline
-		Type & Length Field & Description\\\hline
-		\hline
-		1 & Number of payload words & 16 bit signed samples from one of the ADCs\\\hline
-		8 & Number of payload words & 64 Bit unsigned TDC Data, only for internal processing\\\hline
-		128 & Bit pattern of trigger sources & Whenever at least one of the sources that is enabled for the timestamp channel triggers, one of these packets is generated. The length field contains the triggers active when this packet was created.\\\hline
-	\end{tabular}
-	\end{small}
+    For the TDC channel it is set to 8 to signify 64-bit unsigned data.\par
 
-	\cronvar{unsigned char}{flags}\par
-	\indent\crondef{NDIGO\tu PACKET\tu FLAG\tu SHORTENED} 1\\
-	\indent If the bit with weight 1 is set, the packet was truncated because the internal FIFO was full. Less than the requested number of samples have been written due to the full FIFO.\par
-	\indent\crondef{NDIGO\tu PACKET\tu FLAG\tu PACKETS\tu LOST} 2\\
-	\indent If the bit with weight 2 is set, there are lost triggers immediately preceding this packet due to insufficient DMA buffers. The DMA controller has discarded packets due to full host buffer.\par
-	\indent\crondef{NDIGO\tu PACKET\tu FLAG\tu OVERFLOW} 4\\
-	\indent If the bit with weight 4 is set, the packet contains ADC sample overflows.\par
-	\indent\crondef{NDIGO\tu PACKET\tu FLAG\tu TRIGGER\tu MISSED} 8\\
-	\indent If the bit with weight 8 is set, there are lost triggers immediately preceding this packet due to insufficient buffers. The trigger unit has discarded packets due to full FIFO.\par
-	\indent\crondef{NDIGO\tu PACKET\tu FLAG\tu DMA\tu FIFO\tu FULL} 16\\
-	\indent If the bit with weight 16 is set, the internal DMA FIFO was full. Triggers only got lost if a subsequent package has the bit with weight 8 set.\par
-	\indent\crondef{NDIGO\tu PACKET\tu FLAG\tu HOST\tu BUFFER\tu FULL} 32\\
-	\indent If the bit with weight 32 is set, the host buffer was full. Triggers only got lost if a subsequent package has the bit with weight 8 set.\par
-	\indent\crondef{NDIGO\tu PACKET\tu FLAG\tu TDC\tu NO\tu EDGE} 64\\
-	\indent If the bit with weight 64 is set, the packet from the TDC does not contain valid data and the timestamp is not corrected. No valid edge was found in TDC packet.\par
+    If the type field is 128 or greater than there is no data present, even if length is not 0. In these cases the length field may contain other data.\par
 
-	\cronvar{unsigned int}{length}\\
-	Number of 64-bit elements (each containing 4 samples) in the data array if type $< 128$.\par
+    \noindent
+    \begin{small}
+    \begin{tabular}{|c|c|p{9,5cm}|}
+        \hline
+        Type & Length Field & Description\\\hline
+        \hline
+        1 & Number of payload words & 16-bit signed samples from one of the ADCs\\\hline
+        8 & Number of payload words & 64 Bit unsigned TDC Data, only for internal processing\\\hline
+        128 & Bit pattern of trigger sources & Whenever at least one of the sources that is enabled for the timestamp channel triggers, one of these packets is generated. The length field contains the triggers active when this packet was created.\\\hline
+    \end{tabular}
+    \end{small}
 
-	If type = 128 this is the pattern of trigger sources that where active in the clock cycle given by the timestamp. Bits are set according to the trigger sources, i.e. bit 0 is set if trigger A0 was active, bit 29 is set if trigger BUS3\tu PE was active. Use the \textsf{NDIGO\tu TRIGGER\tu SOURCE\tu *defines}{} to check for the bits set.\par
+    \cronvar{unsigned char}{flags}\par
+    \indent\crondef{NDIGO\tu PACKET\tu FLAG\tu SHORTENED} 1\\
+    \indent If the bit with weight 1 is set, the packet was truncated because the internal FIFO was full. Less than the requested number of samples have been written due to the full FIFO.\par
+    \indent\crondef{NDIGO\tu PACKET\tu FLAG\tu PACKETS\tu LOST} 2\\
+    \indent If the bit with weight 2 is set, there are lost triggers immediately preceding this packet due to insufficient DMA buffers. The DMA controller has discarded packets due to full host buffer.\par
+    \indent\crondef{NDIGO\tu PACKET\tu FLAG\tu OVERFLOW} 4\\
+    \indent If the bit with weight 4 is set, the packet contains ADC sample overflows.\par
+    \indent\crondef{NDIGO\tu PACKET\tu FLAG\tu TRIGGER\tu MISSED} 8\\
+    \indent If the bit with weight 8 is set, there are lost triggers immediately preceding this packet due to insufficient buffers. The trigger unit has discarded packets due to full FIFO.\par
+    \indent\crondef{NDIGO\tu PACKET\tu FLAG\tu DMA\tu FIFO\tu FULL} 16\\
+    \indent If the bit with weight 16 is set, the internal DMA FIFO was full. Triggers only got lost if a subsequent package has the bit with weight 8 set.\par
+    \indent\crondef{NDIGO\tu PACKET\tu FLAG\tu HOST\tu BUFFER\tu FULL} 32\\
+    \indent If the bit with weight 32 is set, the host buffer was full. Triggers only got lost if a subsequent package has the bit with weight 8 set.\par
+    \indent\crondef{NDIGO\tu PACKET\tu FLAG\tu TDC\tu NO\tu EDGE} 64\\
+    \indent If the bit with weight 64 is set, the packet from the TDC does not contain valid data and the timestamp is not corrected. No valid edge was found in TDC packet.\par
 
-	\cronvar{unsigned \tu\tu int64}{timestamp}\\
-	ADC channels A to D: Timestamp of the last word in the packet in ps.\par
-	
-	TDC: Timestamp of the trigger event (falling edge) on the TDC channel in ps.\par
-	
-	When \textsf{ndigo\tu process\tu tdc\tu packet()} is called once on the packet, the timestamp is replaced with the precise timestamp for the edge.\par
+    \cronvar{unsigned int}{length}\\
+    Number of 64-bit elements (each containing 4 samples) in the data array if type $< 128$.\par
 
-	Timestamp channel: Timestamp of the trigger event in ps.\par
+    If type = 128 this is the pattern of trigger sources that where active in the clock cycle given by the timestamp. Bits are set according to the trigger sources, i.e. bit 0 is set if trigger A0 was active, bit 29 is set if trigger BUS3\tu PE was active. Use the \textsf{NDIGO\tu TRIGGER\tu SOURCE\tu *defines}{} to check for the bits set.\par
 
-	\cronvar{unsigned \tu\tu int64}{data[]}\\
-	Sample data.\par
-    For the Ndigo5G, each 64 bit word contains four 16 bit signed words from the ADC. The user can cast the array to \texttt{short*} to directly operate on the sample data.
+    \cronvar{unsigned \tu\tu int64}{timestamp}\\
+    ADC channels A to D: Timestamp of the last word in the packet in picoseconds.\par
+
+    TDC: Timestamp of the trigger event (falling edge) on the TDC channel in picoseconds.\par
+
+    When \textsf{ndigo\tu process\tu tdc\tu packet()} is called once on the packet, the timestamp is replaced with the precise timestamp for the edge.\par
+
+    Timestamp channel: Timestamp of the trigger event in ps.\par
+
+    \cronvar{unsigned \tu\tu int64}{data[]}\\
+    Sample data.\par
+    For the Ndigo5G, each 64 bit word contains four 16-bit signed words from the ADC. The user can cast the array to \texttt{short*} to directly operate on the sample data.
