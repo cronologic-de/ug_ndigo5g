@@ -52,7 +52,7 @@ The Ndigo5G uses internal FIFO (first-in, first-out) memories. In one of these F
     \indent\crondef{NDIGO\tu PACKET\tu FLAG\tu SHORTENED} 1\\
     \indent If the bit with weight 1 is set, the packet was truncated because the internal FIFO was full. Less than the requested number of samples have been written due to the full FIFO.\par
     \indent\crondef{NDIGO\tu PACKET\tu FLAG\tu PACKETS\tu LOST} 2\\
-    \indent If the bit with weight 2 is set, there are lost triggers immediately preceding this packet due to insufficient DMA buffers. The DMA controller has discarded packets due to full host buffer.\par
+    \indent If the bit with weight 2 is set, there are lost triggers immediately preceding this packet due to insufficient host buffers. The DMA controller has discarded packets due to full host buffer.\par
     \indent\crondef{NDIGO\tu PACKET\tu FLAG\tu OVERFLOW} 4\\
     \indent If the bit with weight 4 is set, the packet contains ADC sample overflows.\par
     \indent\crondef{NDIGO\tu PACKET\tu FLAG\tu TRIGGER\tu MISSED} 8\\

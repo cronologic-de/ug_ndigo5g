@@ -67,7 +67,7 @@ The API is a DLL with C linkage. The functions provided by the DLL are declared 
             A HPTDC is connected to this board. Enables the clock and sync line from the Ndigo5G to the HPTDC.\par
 
             \cronvar{\tu \tu int64}{buffer\tu size[8]}\\
-            The minimum size of the DMA buffer. If set to 0 the default size of 16MByte is used. Ndigo5G only uses \textsf{buffer\tu size[0]}.\par
+            The minimum size of the host buffer. If set to 0 the default size of 16MByte is used. Ndigo5G only uses \textsf{buffer\tu size[0]}.\par
 
             \cronvar{int}{buffer\tu type}\\
             Must be set to \textsf{NDIGO\tu BUFFER\tu ALLOCATE}.\par
@@ -233,10 +233,10 @@ first release.\par
             Mask with a set bit for each enabled input channel.\par
 
             \cronvar{\tu\tu int64}{total\tu buffer}\\
-            The total amount of the DMA buffer in bytes.\par
+            The total amount of the host buffer in bytes.\par
 
 %			\cronvar{\tu\tu int64}{free\tu buffer}\\
-%			Unused portion of the DMA buffer in bytes.\par
+%			Unused portion of the host buffer in bytes.\par
 
         \subsection{Structure ndigo\tu fast\tu info}
 
@@ -532,7 +532,7 @@ trigger condition is fulfilled.\par
         \end{tabular}
 
         \cronvar{double}{minimum\tu free\tu packets;}\\
-        This parameter sets how many packets are supposed to fit into the on-board FIFO before a new packet is recorded after the FIFO was full, i.e. a certain amount of free space in the FIFO is demanded before a new packet is written after the FIFO was full. As a measure for the packet length, the gate-length set by the user is used. The on-board algorithm checks the free FIFO space only in case the FIFO is full. Therefore, if this number is 1.0 or more at least every second packet in the DMA buffer is guaranteed to have the full length set by the gate-length parameters. In many cases smaller values will also result in full length packets. But below a certain value multiple packets that are cut off at the end will show up.
+        This parameter sets how many packets are supposed to fit into the on-board FIFO before a new packet is recorded after the FIFO was full, i.e. a certain amount of free space in the FIFO is demanded before a new packet is written after the FIFO was full. As a measure for the packet length, the gate-length set by the user is used. The on-board algorithm checks the free FIFO space only in case the FIFO is full. Therefore, if this number is 1.0 or more at least every second packet in the host buffer is guaranteed to have the full length set by the gate-length parameters. In many cases smaller values will also result in full length packets. But below a certain value multiple packets that are cut off at the end will show up.
 
         \subsection{Structure ndigo\tu gating\tu block\label{cp:gatingblock}}
 
@@ -608,7 +608,7 @@ trigger condition is fulfilled.\par
         \cronvar{int}{ndigo\tu acknowledge(}\cronvar{ndigo\tu device}{*device,} \cronvar{ndigo\tu packet}{*packet)}\\
         Acknowledge all data up to the packet provided as parameter. This is mandatory if \textsf{acknowledge\tu last\tu read} in the \textsf{ndigo\tu read\tu in} structure is set to false for calls to \textsf{ndigo\tu read}.\par
 
-        This feature allows to either free up partial DMA space early if there will be no call to \textsf{ndigo\tu read} anytime soon. It also allows keeping data over multiple calls to \textsf{ndigo\tu read} to avoid unnecessary copying of data.\par
+        This feature allows to either free up partial host-buffer space early if there will be no call to \textsf{ndigo\tu read} anytime soon. It also allows keeping data over multiple calls to \textsf{ndigo\tu read} to avoid unnecessary copying of data.\par
 
         \cronvar{int}{ndigo\tu process\tu tdc\tu packet(}\cronvar{ndigo\tu device}{*device,} \cronvar{ndigo\tu packet}{*packet)}\\
         Call on a TDC packet to update the timestamp of the packet with a more accurate value. If called more than once on a packet the timestamp will be invalid.
