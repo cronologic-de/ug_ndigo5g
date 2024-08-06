@@ -2,6 +2,25 @@
 % $Date: 2019-06-04 12:35:07 +0200 (Di, 04 Jun 2019) $
 % $Rev: 4976 $
 % $Author: andreas $
+\section{Memory Management}
+
+The \textit{host buffer} is memory on the host's system in which the data recorded by the Ndigo5G is stored until it is acknowledged by the user.
+
+The host buffer is managed by the DMA (direct memory access) driver. The DMA driver can only ever write to the host buffer if enough memory is free. That means, new packets will never overwrite old packets, unless they have been acknowledged.
+
+If the host buffer is full, data may be lost. Then, the \texttt{CRONO\_PACKET\_FLAG\_HOST\_BUFFER\_FULL} bit of \texttt{crono\_packet::flags} is set. To ensure that this does not happen, the user must acknowledge packets fast enough by the analysis software. Note that data only has been lost due to a full host buffer if the \texttt{CRONO\_PACKET\_FLAG\_TRIGGER\_MISSED} bit of \texttt{crono\_packet::flags} is set.
+
+\subsection{Acknowledge Packets}
+A packet in the ring buffer will only be overwritten if it has been acknowledged. This can be done manually by the user by calling \texttt{ndigo\_acknowledge()} or automatically by the driver if in the call of \texttt{ndigo\_read()}, \texttt{acknowledge\_last\_read} of the \texttt{ndigo\_read\_in} structure \texttt{in} was set to \texttt{true} (see Section~\ref{cp:readout}).
+
+Acknowledging a packet acknowledges all previous packets as well.
+
+Be aware that acknowledging a packet \textit{immediately} invalidates it, and it is unsafe to attempt accessing its content.
+
+\subsection{Ndigo5G-Internal Memory Layout}
+The Ndigo5G uses internal FIFO (first-in, first-out) memories. In one of these FIFOs, referred to as the DMA FIFO, packets that are ready to be sent to the host system are buffered. If the DMA FIFO is full at any point, the affected packets \texttt{CRONO\_PACKET\_FLAG\_DMA\_FIFO\_FULL} bit of \texttt{crono\_packet::flags} is set. This does not mean that data has been necessarily lost. Only if the\newline\texttt{CRONO\_PACKET\_FLAG\_TRIGGER\_MISSED} bit is set has data been lost.
+
+
 \section{Output Structure ndigo\tu packet}
 
     \cronvar{unsigned char}{channel}\\
@@ -37,11 +56,11 @@
     \indent\crondef{NDIGO\tu PACKET\tu FLAG\tu OVERFLOW} 4\\
     \indent If the bit with weight 4 is set, the packet contains ADC sample overflows.\par
     \indent\crondef{NDIGO\tu PACKET\tu FLAG\tu TRIGGER\tu MISSED} 8\\
-    \indent If the bit with weight 8 is set, there are lost triggers immediately preceding this packet due to insufficient buffers. The trigger unit has discarded packets due to full FIFO.\par
+    \indent If the bit with weight 8 is set, there are lost triggers immediately preceding this packet due to insufficient buffers. The trigger unit has discarded packets due to a full DMA FIFO or due to a full host buffer.\par
     \indent\crondef{NDIGO\tu PACKET\tu FLAG\tu DMA\tu FIFO\tu FULL} 16\\
-    \indent If the bit with weight 16 is set, the internal DMA FIFO was full. Triggers only got lost if a subsequent package has the bit with weight 8 set.\par
+    \indent If the bit with weight 16 is set, the internal DMA FIFO was full. Triggers only got lost if a subsequent package has the bit with weight 8 set. If this flag is set, the PCIe link speed of the host system may be too small.\par
     \indent\crondef{NDIGO\tu PACKET\tu FLAG\tu HOST\tu BUFFER\tu FULL} 32\\
-    \indent If the bit with weight 32 is set, the host buffer was full. Triggers only got lost if a subsequent package has the bit with weight 8 set.\par
+    \indent If the bit with weight 32 is set, the host buffer was full. Triggers only got lost if a subsequent package has the bit with weight 8 set. If this flag is set, the user analysis software may be too slow.\par
     \indent\crondef{NDIGO\tu PACKET\tu FLAG\tu TDC\tu NO\tu EDGE} 64\\
     \indent If the bit with weight 64 is set, the packet from the TDC does not contain valid data and the timestamp is not corrected. No valid edge was found in TDC packet.\par
 

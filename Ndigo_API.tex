@@ -601,9 +601,9 @@ trigger condition is fulfilled.\par
     \section{Readout\label{cp:readout}}
 
         \cronvar{int}{ndigo\tu read(}\cronvar{ndigo\tu device}{*device,} \cronvar{ndigo\tu read\tu in}{*in,} \cronvar{ndigo\tu read\tu out}{*out)}\\
-        Return a pointer to an array of captured data in \textsf{read\tu out}. The result can contain any number of packets of type \textsf{ndigo\tu packet}. \textsf{read\tu in} provides parameters to the driver. A call to this method automatically allows the driver to reuse the memory returned by the previous call.\par
+        Return a pointer to an array of captured data that has not been read by a previous call of \texttt{ndigo\_read} in \texttt{read\tu out}. The result can contain any number of packets of type \texttt{ndigo\tu packet}. \texttt{read\tu in} provides parameters to the driver. A call of \texttt{ndigo\_read} with \texttt{in.acknowledge\_last\_read} set to \texttt{true} automatically allows the driver to reuse the memory returned by the previous call.\par
 
-Returns an error code as defined in the structure \textsf{ndigo\tu read\tu out}.\par
+        Returns an error code as defined in the structure \textsf{ndigo\tu read\tu out}.\par
 
         \cronvar{int}{ndigo\tu acknowledge(}\cronvar{ndigo\tu device}{*device,} \cronvar{ndigo\tu packet}{*packet)}\\
         Acknowledge all data up to the packet provided as parameter. This is mandatory if \textsf{acknowledge\tu last\tu read} in the \textsf{ndigo\tu read\tu in} structure is set to false for calls to \textsf{ndigo\tu read}.\par
