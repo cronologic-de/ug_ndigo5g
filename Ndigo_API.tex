@@ -490,7 +490,7 @@ trigger condition is fulfilled.\par
         \cronvar{int}{sources}\\
         A bit mask with a bit set for all trigger sources that can trigger this channel.\par
 
-        \begin{tabular}{lc}
+        \begin{xltabular}{\textwidth}{lX}
             \crondef{NDIGO\tu TRIGGER\tu SOURCE\tu A0} & 0x00000001\\
             \crondef{NDIGO\tu TRIGGER\tu SOURCE\tu A1} & 0x00000002\\
             \crondef{NDIGO\tu TRIGGER\tu SOURCE\tu B0} & 0x00000004\\
@@ -503,23 +503,17 @@ trigger condition is fulfilled.\par
             \crondef{NDIGO\tu TRIGGER\tu SOURCE\tu GATE} & 0x00000200\\
             \crondef{NDIGO\tu TRIGGER\tu SOURCE\tu BUS0} & 0x00000400\\
             \crondef{NDIGO\tu TRIGGER\tu SOURCE\tu BUS1} & 0x00000800\\
-        \end{tabular}\\
-        \begin{tabular}{lc}
             \crondef{NDIGO\tu TRIGGER\tu SOURCE\tu BUS2} & 0x00001000\\
-            \crondef{NDIGO\tu TRIGGER\tu SOURCE\tu BUS3} & 0x00002000
-        \end{tabular}\\
-        \begin{tabular}{lc}
+            \crondef{NDIGO\tu TRIGGER\tu SOURCE\tu BUS3} & 0x00002000\\
             \crondef{NDIGO\tu TRIGGER\tu SOURCE\tu AUTO} & 0x00004000\\
-            \crondef{NDIGO\tu TRIGGER\tu SOURCE\tu ONE} & 0x00008000
-        \end{tabular}\\
-        \begin{tabular}{lc}
+            \crondef{NDIGO\tu TRIGGER\tu SOURCE\tu ONE} & 0x00008000\\
             \crondef{NDIGO\tu TRIGGER\tu SOURCE\tu TDC\tu PE} & 0x01000000\\
             \crondef{NDIGO\tu TRIGGER\tu SOURCE\tu GATE\tu PE} & 0x02000000\\
             \crondef{NDIGO\tu TRIGGER\tu SOURCE\tu BUS0\tu PE} & 0x04000000\\
             \crondef{NDIGO\tu TRIGGER\tu SOURCE\tu BUS1\tu PE} & 0x08000000\\
             \crondef{NDIGO\tu TRIGGER\tu SOURCE\tu BUS2\tu PE} & 0x10000000\\
             \crondef{NDIGO\tu TRIGGER\tu SOURCE\tu BUS3\tu PE} & 0x20000000
-        \end{tabular}
+        \end{xltabular}
 
         \cronvar{int}{gates}\par
 
@@ -559,7 +553,7 @@ trigger condition is fulfilled.\par
             \cronvar{int}{sources}\\
             A bit mask with a bit set for all trigger sources that can trigger this channel. The gates cannot use the additional digital trigger sources \textsf{NDIGO\tu TRIGGER\tu SOURCE\tu TDC\tu PE} to\\ \textsf{NDIGO\tu TRIGGER\tu SOURCE\tu BUS3\tu PE}.\par
 
-            \begin{tabular}{lc}
+            \begin{xltabular}{\textwidth}{lX}
                 \crondef{NDIGO\tu TRIGGER\tu SOURCE\tu A0} & 0x00000001\\
                 \crondef{NDIGO\tu TRIGGER\tu SOURCE\tu A1} & 0x00000002\\
                 \crondef{NDIGO\tu TRIGGER\tu SOURCE\tu B0} & 0x00000004\\
@@ -576,7 +570,7 @@ trigger condition is fulfilled.\par
                 \crondef{NDIGO\tu TRIGGER\tu SOURCE\tu BUS3} & 0x00002000\\
                 \crondef{NDIGO\tu TRIGGER\tu SOURCE\tu AUTO} & 0x00004000\\
                 \crondef{NDIGO\tu TRIGGER\tu SOURCE\tu ONE} & 0x00008000
-            \end{tabular}
+            \end{xltabular}
 
         \subsection{Structure ndigo\tu extension\tu block}
             This structure configures how the inputs from the optional extension board and signals from the synchronization bus are merged.\par
