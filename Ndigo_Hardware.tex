@@ -147,19 +147,19 @@ Depending on board configuration, the analog input signal is quantized to 8 or 1
 Data processing such as trigger detection or packet building are always performed on 3.2ns intervals. Depending on the ADC mode, this interval may contain 4, 8 or 16 samples.\par
 The board supports using one, two or four channels:
 
-\subsubsection{1-Channel-Modes A, B, C and D}
+\subsubsection{1-Channel Modes A, B, C and D}
 
 In these modes, only a single channel is used. The analog signal on that channel is digitized at 5Gsps. Packet size is always a multiple of 16 samples per 3.2ns. See Figure \ref{fig:1ChannelMode} on page \pageref{fig:1ChannelMode} and Figure \ref{fig:1ChannelTriggering} on page \pageref{fig:1ChannelTriggering}.
 
-\subsubsection{2-Channel-Modes AC, BC, AD and BD}
+\subsubsection{2-Channel Modes AC, BC, AD and BD}
 
 In these modes, two channels are used simultaneously. The analog signals on these channels are digitized at 2.5Gsps each. Packet size is always a multiple of 8 samples per 3.2ns. See Figure \ref{fig:2ChannelMode} on page \pageref{fig:2ChannelMode} and Figure \ref{fig:2ChannelTriggering} on page \pageref{fig:2ChannelTriggering}.
 
-\subsubsection{4-Channel-Mode ABCD}
+\subsubsection{4-Channel Mode ABCD}
 
 In this mode, all four channels are digitized independently at 1.25Gsps each. The packet size is always a multiple of 4 samples per 3.2ns. See Figure \ref{fig:4ChannelMode} on page \pageref{fig:4ChannelMode} and Figure \ref{fig:4ChannelTriggering} on page \pageref{fig:4ChannelTriggering}.
 
-\subsubsection{Multiple Sampling Modes AAAA, BBBB, CCCC and DDDD}
+\subsubsection{Multiple-Sampling Modes AAAA, BBBB, CCCC and DDDD}
 
 In these modes, only one analog input channel is used, but the channel is sampled independently and simultaneously by four ADCs at 1.25Gsps. The board creates four independent streams with 4 samples each per 3.2ns.\par
 Using the same trigger setting on all ADCs, can be used to reduce noise by averaging the four channels. To deal with complex triggering conditions, different trigger settings on each of the ADCs can be used.\par
@@ -292,16 +292,16 @@ Triggers can be fed into the gate blocks described on page \pageref{fig:GatingBl
         Trigger blocks can use the gate signal to suppress data acquisition: Only data that fulfills zero suppression specifications occurring in an active gate window is written to the PC.\par
         As input, any trigger from the 4 trigger blocks, the GATE and Trigger inputs, a trigger from a connected board and the function generator can be used.\par
 
-        The re-trigger feature will create a new gate if a trigger occurs during an active gate window. The gate signal can be inverted, causing an active gate to close for a time defined by the user.\par
+        The re-trigger feature will extent the gate if a trigger occurs during an active gate window. The gate signal can be inverted, causing an active gate to close for a time defined by the user.\par
 
-        The parameters of a gating block are set in Structure \textsf{ndigo\tu gating\tu block} described on page \pageref{cp:gatingblock}.\par
+        The parameters of a gating block are set in Structure \textsf{ndigo\tu gating\tu block} described on page~\pageref{cp:gatingblock}.\par
 
-        Figure \ref{fig:GateUDelay} shows the functionality of the gate timing and delay unit. Active gate time is marked in green.
+        Figure~\ref{fig:GateUDelay} shows the principle of the gate timing and delay unit.
 
         \begin{figure*}[ht]
             \begin{center}
-                \includegraphics[width=0.8\textwidth]{figures/GateUDelay.pdf}
-                \caption{\label{fig:GateUDelay} Gate and delay functionality: When a trigger occurs, the gate opens after a set period of time (``gate start'') and closes when it reaches ``gate stop''.}
+                \includegraphics[width=1.0\textwidth]{figures/gating_principle.pdf}
+                \caption{\label{fig:GateUDelay} Principle of a gating block. Packets (PKT) are only recorded while the gate is open. Gate Start, Gate Stop, retrigger, and negate influence when that is the case.}
             \end{center}
         \end{figure*}
 
