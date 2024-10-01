@@ -46,28 +46,45 @@ The API is a DLL with C linkage. The functions provided by the DLL are declared 
             This 8-bit number is filled into each packet created by the board and is useful if data streams of multiple boards will be merged. If only Ndigo5G cards are used this number can be set to the card index. If boards of different types that use a compatible data format are used in a system each board should get a unique ID. Can be changed with \textsf{int ndigo\tu set\tu board\tu id(ndigo\tu device *device, int board\tu id)}.\par
 
             \cronvar{ndigo\tu bool\tu t}{use\tu external\tu clock}\\
-            Use 10MHz clock supplied by IPC flat band cable. Must be set for all slaves.\par
+            Use 10\,MHz clock supplied by IPC flat band cable. If multiple 
+            boards are used in sync, this must be set for all slave cards.\par
+            Defaults to false.\par
 
             \cronvar{ndigo\tu bool\tu t}{drive\tu external\tu clock}\\
-            Drive internal 10MHz clock of this board to IPC flat band cable. Must be set for master.\par
+            Drive internal 10\,MHz clock of this board to IPC flat band cable. If multiple boards are used in sync, this must be set for the master card.\par
+            Defaults to false.\par
 
             \cronvar{ndigo\tu bool\tu t}{is\tu slave}\\
             Data acquisition of this board is controlled by the master board.\par
+            Defaults to false.\par
+
+            \cronvar{ndigo\_bool\_t}{mutliboard\_sync}\\
+            Set whether the board is used in  a multiple boards environment.\par
+            Defaults to false.\par
+
+            \cronvar{int}{direct\_sync}\\
+            If larger than 0, the direct sync method is used in multi-board applications.\par
+            The value corresponds to accuracy (larger values for more accurate phase matches).\par
+            Defaults to 0.\par
 
             \cronvar{int}{sync\tu period}\\
             Period of the multi-card sync pulse. Should be set to 4 (default) when using several Ndigo boards in sync. Ignored for single board setups. The Ndigo5G has 4 phases relative to the global 10MHz clock.\par
+            Defaults to 4.\par
 
             \cronvar{int}{sync\tu delay}\\
             Fine tap delay for incoming sync signals.\par
+            Defaults to -1.\par
 
             \cronvar{ndigo\tu bool\tu t}{force\tu window\tu calibration}\\
-            If true/1, valid data window is detected at initialization. Default value is false/0: values from flash memory are used in order to set data window to correct position.
+            If true/1, valid data window is detected at initialization. Default value is false/0: values from flash memory are used in order to set data window to correct position.\par
+            Defaults to false.\par
 
             \cronvar{ndigo\tu bool\tu t}{hptdc\tu sync\tu enabled}\\
             A HPTDC is connected to this board. Enables the clock and sync line from the Ndigo5G to the HPTDC.\par
+            Defaults to false.\par
 
             \cronvar{\tu \tu int64}{buffer\tu size[8]}\\
-            The minimum size of the host buffer. If set to 0 the default size of 16MByte is used. Ndigo5G only uses \textsf{buffer\tu size[0]}.\par
+            The minimum size of the host buffer. If set to 0 the default size of 16\,MByte is used. Ndigo5G only uses \textsf{buffer\tu size[0]}.\par
 
             \cronvar{int}{buffer\tu type}\\
             Must be set to \textsf{NDIGO\tu BUFFER\tu ALLOCATE}.\par
@@ -88,7 +105,7 @@ The API is a DLL with C linkage. The functions provided by the DLL are declared 
             \end{description}
 
             \cronvar{int}{dma\tu read\tu delay}\\
-            Initialized by \textsf{ndigo\tu get\tu default\tu init\tu parameters()}. The write-pointer update is delay by this number of 4\,ns clock periods to hide race conditions between software and DMA.
+            Initialized by \textsf{ndigo\tu get\tu default\tu init\tu parameters()}. The write-pointer update is delay by this number of 4\,ns clock periods to hide race conditions between software and DMA.\par
 
     \clearpage
     \section{Status Information}
@@ -323,6 +340,8 @@ first release.\par
             \cronvar{int}{adc\tu mode}\\
             Constant describing the ADC mode\par
 
+            Defaults to \texttt{NDIGO\_ADC\_MODE\_ABCD}.\par
+
             \crondef{NDIGO\tu ADC\tu MODE\tu ABCD 0}\\
             \crondef{NDIGO\tu ADC\tu MODE\tu AC 4}\\
             \crondef{NDIGO\tu ADC\tu MODE\tu BC 5}\\
@@ -338,11 +357,11 @@ first release.\par
             \crondef{NDIGO\tu ADC\tu MODE\tu DDDD 15}\\
             \crondef{NDIGO\tu ADC\tu MODE\tu A12 28} // not available on all boards\\
             \crondef{NDIGO\tu ADC\tu MODE\tu B12 29} // not available on all boards\\
-            \crondef{NDIGO\tu ADC\tu MODE\tu C12 3}0 // not available on all boards\\
+            \crondef{NDIGO\tu ADC\tu MODE\tu C12 30} // not available on all boards\\
             \crondef{NDIGO\tu ADC\tu MODE\tu D12 31} // not available on all boards\par
 
             \cronvar{double}{bandwidth}\\
-            Set to the minimum bandwidth required for the application. Lower bandwidth results in reduced noise. The driver will set the ADC to the minimum setting that has at least the desired bandwidth and report the selected bandwidth in the \textsf{ndigo\tu param\tu info} structure. The -8, -10 and -12 versions currently supports 1GHz and 3GHz bandwidth, the -8AQ version supports 2GHz, 1.5GHz, 600MHz and 500 MHz. The bandwidth of the analog frontend of the board remains unchanged at about 950\,MHz.
+            Set to the minimum bandwidth required for the application. Lower bandwidth results in reduced noise. The driver will set the ADC to the minimum setting that has at least the desired bandwidth and report the selected bandwidth in the \textsf{ndigo\tu param\tu info} structure. The -8 and -10 versions currently supports 1\,GHz and 3\,GHz bandwidth, the -8AQ version supports 2\,GHz, 1.5\,GHz, 600\,MHz and 500\,MHz. The bandwidth of the analog frontend of the board remains unchanged at about 950\,MHz.
             \par
 
             \cronvar{ndigo\tu bool\tu t}{reserved}\\
@@ -534,10 +553,14 @@ trigger condition is fulfilled.\par
             Invert output polarity. Defaults to false.\par
 
             \cronvar{ndigo\tu bool\tu t}{retrigger}\\
-            Defaults to false. If re-triggering is enabled the timer is reset to the value of the start parameter whenever the input signal is set while waiting to reach the stop time.\par
+            If re-triggering is enabled the timer is reset to the value of the start parameter whenever the input signal is set while waiting to reach the stop time.\par
+
+            Defaults to false.\par
 
             \cronvar{ndigo\tu bool\tu t}{extend}\\
-            Defaults to true. If set, a gate is created with the set timing from the first occurrence of the input trigger even for short gates. If not set, the input signal must persist for the gate to be created. This feature is NOT YET IMPLEMENTED.\par
+            If set, a gate is created with the set timing from the first occurrence of the input trigger even for short gates. If not set, the input signal must persist for the gate to be created. This feature is NOT YET IMPLEMENTED.\par
+
+            Defaults to true.\par
 
             \cronvar{ndigo\tu bool\tu t}{reserved1}\\
             Defaults to false. Do not change.\par
@@ -545,13 +568,19 @@ trigger condition is fulfilled.\par
             \cronvar{int}{start}\\
             In multiples of 3.2ns. The time from the first input signal seen in the idle state until the gating output is set. The value of start needs to be less or equal to the stop value. Maximum value for start and stop is $2^{16}-1$.\par
 
+            Defaults to 0.\par
+
             \cronvar{int}{stop}\\
             In multiples of 3.2ns. Maximum allowed value is $2^{16}-1$.\par
 
             The time from leaving the idle state until the gating output is reset. If re-triggering is enabled the timer is reset to the value of the start parameter whenever the input signal is set while waiting to reach the stop time.\par
 
+            Defaults to 1000.\par
+
             \cronvar{int}{sources}\\
             A bit mask with a bit set for all trigger sources that can trigger this channel. The gates cannot use the additional digital trigger sources \textsf{NDIGO\tu TRIGGER\tu SOURCE\tu TDC\tu PE} to\\ \textsf{NDIGO\tu TRIGGER\tu SOURCE\tu BUS3\tu PE}.\par
+
+            Defaults to \texttt{NDIGO\_TRIGGER\_SOURCE\_A0} for \texttt{gating\_block[0]},\newline\texttt{NDIGO\_TRIGGER\_SOURCE\_B0} for \texttt{gating\_block[1]}, etc.
 
             \begin{xltabular}{\textwidth}{lX}
                 \crondef{NDIGO\tu TRIGGER\tu SOURCE\tu A0} & 0x00000001\\
@@ -571,6 +600,7 @@ trigger condition is fulfilled.\par
                 \crondef{NDIGO\tu TRIGGER\tu SOURCE\tu AUTO} & 0x00004000\\
                 \crondef{NDIGO\tu TRIGGER\tu SOURCE\tu ONE} & 0x00008000
             \end{xltabular}
+
 
         \subsection{Structure ndigo\tu extension\tu block}
             This structure configures how the inputs from the optional extension board and signals from the synchronization bus are merged.\par
