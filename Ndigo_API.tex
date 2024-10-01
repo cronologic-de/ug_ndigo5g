@@ -37,7 +37,7 @@ The API is a DLL with C linkage. The functions provided by the DLL are declared 
         \subsection{Structure ndigo\tu init\tu parameters}
 
             \cronvar{int}{version}\\
-            Must be set to \textsf{NDIGO\tu API\tu VERSION}\par
+            Must be set to \textsf{NDIGO\tu API\tu VERSION}.\par
 
             \cronvar{int}{card\tu index}\\
             The index in the list of Ndigo5G boards that should be initialized. There might be multiple boards in the system that are handled by this driver as reported by \textsf{ndigo\tu count\tu devices}. This index selects one of them. Boards are enumerated depending on the PCIe slot. The lower the bus number and the lower the slot number the lower the card index.\par
@@ -361,12 +361,15 @@ first release.\par
             \crondef{NDIGO\tu ADC\tu MODE\tu D12 31} // not available on all boards\par
 
             \cronvar{double}{bandwidth}\\
-            Set to the minimum bandwidth required for the application. Lower bandwidth results in reduced noise. The driver will set the ADC to the minimum setting that has at least the desired bandwidth and report the selected bandwidth in the \textsf{ndigo\tu param\tu info} structure. The -8 and -10 versions currently supports 1\,GHz and 3\,GHz bandwidth, the -8AQ version supports 2\,GHz, 1.5\,GHz, 600\,MHz and 500\,MHz. The bandwidth of the analog frontend of the board remains unchanged at about 950\,MHz.
+            Set to the minimum bandwidth required for the application. Lower bandwidth results in reduced noise. The driver will set the ADC to the minimum setting that has at least the desired bandwidth and report the selected bandwidth in the \textsf{ndigo\tu param\tu info} structure. The -8 and -10 versions currently supports 1\,GHz and 3\,GHz bandwidth, the -8AQ version supports 2\,GHz, 1.5\,GHz, 600\,MHz and 500\,MHz. The bandwidth of the analog frontend of the board remains unchanged at about 950\,MHz.\par
+
+            Defaults to 3\,GHz (1\,GHz for the -250M variant).
             \par
 
             \cronvar{ndigo\tu bool\tu t}{reserved}\\
             \cronvar{ndigo\tu bool\tu t}{tdc\tu enabled}\\
             Enable capturing of TDC measurements on external digital input channel.\par
+            Defaults to false.\par
 
             \cronvar{ndigo\tu bool\tu t}{tdc\tu fb\tu enabled}\\
             Enable enhanced TDC resolution. Currently not implemented.\par
