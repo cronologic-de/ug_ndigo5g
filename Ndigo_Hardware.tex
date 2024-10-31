@@ -3,13 +3,24 @@
 % $Rev: 5271 $
 % $Author: andreas $
 \section{Installing the Board}
+\label{sec:installation}
 %
 The Ndigo5G board can be installed in any x4 (or higher amount of lanes) PCIe slot. If the slot electrically supports less than 4 lanes, the board will operate at lower data throughput rates.\par
 Please ensure proper cooling of the device. The Ndigo5G has an onboard temperature detection. If the ADC chip temperature exceeds 90$^{\circ}$C, a warning is issued to the device driver. In case the temperature is higher than 95$^{\circ}$C, the ADC is disabled to avoid damage. Using a PCI-slot cooler is in many cases an appropriate solution to circumvent problems caused by overheating if the board is used inside a PC. The Ndigo Crate will provide sufficient cooling under normal operating conditions.\par
 
 Using a single Ndigo5G, no further connections need to be made. For applications that require more than 4 ADC channels, several Ndigo5G boards can be operated in sync.\par
 
-The signals used for board synchronization and inter-board triggering are transferred on a bus between the boards. Join all C2 connectors (see Figure \ref{fig:schematics} on page \pageref{fig:schematics}) on the boards using a ribbon cable. Both ends of the bus need to be terminated properly. If using a Ndigo Crate, connectors providing the termination are located on the crate mainboard next to the PCIe slots to the extreme left and right. For more details, please refer to the Ndigo Crate user guide. In applications that use only a few Ndigo boards installed directly inside a PC, termination PCBs available from cronologic can be used.\par
+\textbf{Caution:} In some cases, modern PC mainboards have PCIe slots with an additional metal shielding. Be careful not to cause an electric short when installing the board as some board components (see Figure~\ref{fig:pcie-plug}) are located close to the PCIe connector. 
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/pcie-plug.jpg}
+    \caption{Close-up of the Ndigo5G-10 PCIe-Plug. Make sure that the highlighted elements do not get in contact with any metal parts of your
+    mainboard's PCIe slot.}
+    \label{fig:pcie-plug}
+\end{figure}
+
+The signals used for board synchronization and inter-board triggering are transferred on a bus between the boards. Join all C2 connectors (see Figure~\ref{fig:schematics} on page \pageref{fig:schematics}) on the boards using a ribbon cable. Both ends of the bus need to be terminated properly. If using a Ndigo Crate, connectors providing the termination are located on the crate mainboard next to the PCIe slots to the extreme left and right. For more details, please refer to the Ndigo Crate user guide. In applications that use only a few Ndigo boards installed directly inside a PC, termination PCBs available from cronologic can be used.\par
 Ndigo5G's standard device driver can be used to read out all boards and acquire data. For more complex scenarios, using the cronoSync library, which is part of cronoTools, is recommended. The cronoSync library is provided with the Ndigo device driver. Please refer to the cronoTools user guide for more information.
 %
 \begin{figure*}[ht]
