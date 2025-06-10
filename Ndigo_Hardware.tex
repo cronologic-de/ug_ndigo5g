@@ -147,44 +147,44 @@ The 4 digital inputs are routed to the bus inputs of the trigger matrix to be us
 \subsection{ADC Modes}
 
 Depending on board configuration, the analog input signal is quantized to 8 or 10 bits. However, the board always scales and offsets the data to 16-bit signed data centered around 0.\par
-Data processing such as trigger detection or packet building are always performed on 3.2ns intervals. Depending on the ADC mode, this interval may contain 4, 8 or 16 samples.\par
+Data processing such as trigger detection or packet building are always performed on 3.2~ns intervals. Depending on the ADC mode, this interval may contain 4, 8 or 16 samples.\par
 The board supports using one, two or four channels:
 
 \subsubsection{1-Channel Modes A, B, C and D}
 
-In these modes, only a single channel is used. The analog signal on that channel is digitized at 5Gsps. Packet size is always a multiple of 16 samples per 3.2ns. See Figure \ref{fig:1ChannelMode} on page \pageref{fig:1ChannelMode} and Figure \ref{fig:1ChannelTriggering} on page \pageref{fig:1ChannelTriggering}.
+In these modes, only a single channel is used. The analog signal on that channel is digitized at 5~Gsps. Packet size is always a multiple of 16 samples per 3.2~ns. See Figure \ref{fig:1ChannelMode} on page \pageref{fig:1ChannelMode} and Figure \ref{fig:1ChannelTriggering} on page \pageref{fig:1ChannelTriggering}.
 
 \subsubsection{2-Channel Modes AC, BC, AD and BD}
 
-In these modes, two channels are used simultaneously. The analog signals on these channels are digitized at 2.5Gsps each. Packet size is always a multiple of 8 samples per 3.2ns. See Figure \ref{fig:2ChannelMode} on page \pageref{fig:2ChannelMode} and Figure \ref{fig:2ChannelTriggering} on page \pageref{fig:2ChannelTriggering}.
+In these modes, two channels are used simultaneously. The analog signals on these channels are digitized at 2.5~Gsps each. Packet size is always a multiple of 8 samples per 3.2~ns. See Figure \ref{fig:2ChannelMode} on page \pageref{fig:2ChannelMode} and Figure \ref{fig:2ChannelTriggering} on page \pageref{fig:2ChannelTriggering}.
 
 \subsubsection{4-Channel Mode ABCD}
 
-In this mode, all four channels are digitized independently at 1.25Gsps each. The packet size is always a multiple of 4 samples per 3.2ns. See Figure \ref{fig:4ChannelMode} on page \pageref{fig:4ChannelMode} and Figure \ref{fig:4ChannelTriggering} on page \pageref{fig:4ChannelTriggering}.
+In this mode, all four channels are digitized independently at 1.25~Gsps each. The packet size is always a multiple of 4 samples per 3.2~ns. See Figure \ref{fig:4ChannelMode} on page \pageref{fig:4ChannelMode} and Figure \ref{fig:4ChannelTriggering} on page \pageref{fig:4ChannelTriggering}.
 
 \subsubsection{Multiple-Sampling Modes AAAA, BBBB, CCCC and DDDD}
 
-In these modes, only one analog input channel is used, but the channel is sampled independently and simultaneously by four ADCs at 1.25Gsps. The board creates four independent streams with 4 samples each per 3.2ns.\par
+In these modes, only one analog input channel is used, but the channel is sampled independently and simultaneously by four ADCs at 1.25~Gsps. The board creates four independent streams with 4 samples each per 3.2~ns.\par
 Using the same trigger setting on all ADCs, can be used to reduce noise by averaging the four channels. To deal with complex triggering conditions, different trigger settings on each of the ADCs can be used.\par
-The Ndigo5G provides 4 ADCs sampling at 1.25Gsps each. Higher speed modes are implemented by interleaving two or four of these ADCs.\par
-During interleaving, the Ndigo5G firmware reorders and groups the data into a linear sample stream. The process is fully transparent. For users, the only difference is that a 3.2ns cycle can contain 4, 8 or 16 samples, depending on mode.
+The Ndigo5G provides 4 ADCs sampling at 1.25~Gsps each. Higher speed modes are implemented by interleaving two or four of these ADCs.\par
+During interleaving, the Ndigo5G firmware reorders and groups the data into a linear sample stream. The process is fully transparent. For users, the only difference is that a 3.2~ns cycle can contain 4, 8 or 16 samples, depending on mode.
 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{figures/4ChannelMode.pdf}
-    \caption{ADCs in 4-channel-mode ABCD at 1.25Gsps.\label{fig:4ChannelMode}}
+    \caption{ADCs in 4-channel-mode ABCD at 1.25~Gsps.\label{fig:4ChannelMode}}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{figures/2ChannelMode.pdf}
-    \caption{ADCs in 2-channel-mode AD, interleaved for 2.5Gsps.\label{fig:2ChannelMode}}
+    \caption{ADCs in 2-channel-mode AD, interleaved for 2.5~Gsps.\label{fig:2ChannelMode}}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{figures/1ChannelMode.pdf}
-    \caption{ADCs in 1-channel-mode A, B, C or D interleaved for 5Gsps.\label{fig:1ChannelMode}}
+    \caption{ADCs in 1-channel-mode A, B, C or D interleaved for 5~Gsps.\label{fig:1ChannelMode}}
 \end{figure}
 
 \clearpage
@@ -204,11 +204,11 @@ Ndigo5G-10 and Ndigo5G-8 record analog waveforms using zero suppression. Wheneve
 
 Each trigger block consists of two independent units that check the incoming raw data stream for trigger conditions (Fig. \ref{fig:ZeroSupp} on page \pageref{fig:ZeroSupp}). Users can specify a threshold and can choose whether triggering is used whenever incoming data is below or above the threshold (level triggering) or only if data exceeds the threshold (edge triggering).\par
 
-A gate length can be set to extend the trigger window by multiples of 3.2ns. Furthermore, if users choose precursor values $> 0$, the trigger unit will start writing data to the FIFO $\text{precursor}\cdot 3.2ns$ before the trigger event.\par
+A gate length can be set to extend the trigger window by multiples of 3.2~ns. Furthermore, if users choose precursor values $> 0$, the trigger unit will start writing data to the FIFO $\text{precursor}\cdot 3.2$~ns before the trigger event.\par
 
-When using edge triggering, all packets have the same length (Figure \ref{fig:edge-trigger} on page \pageref{fig:edge-trigger}): $\text{precursor}+\text{length}+1$ cycles of 3.2ns. For level triggering, packet length is data dependent (Figure \ref{fig:level-trigger} on page \pageref{fig:level-trigger}).\par
+When using edge triggering, all packets have the same length (Figure \ref{fig:edge-trigger} on page \pageref{fig:edge-trigger}): $\text{precursor}+\text{length}+1$ cycles of 3.2~ns. For level triggering, packet length is data dependent (Figure \ref{fig:level-trigger} on page \pageref{fig:level-trigger}).\par
 
-Please note that triggering is not accurate to sample. For each 3.2ns clock cycle, it is determined whether on any sample during that clock cycle a trigger condition is met. The clock cycle is then selected as the trigger point. As a result, the trigger sample can be anywhere within a range of up to 16 samples in single channel mode (Figure \ref{fig:1ChannelTriggering} on page \pageref{fig:1ChannelTriggering}) at 16 samples per 3.2ns.\par
+Please note that triggering is not accurate to sample. For each 3.2~ns clock cycle, it is determined whether on any sample during that clock cycle a trigger condition is met. The clock cycle is then selected as the trigger point. As a result, the trigger sample can be anywhere within a range of up to 16 samples in single channel mode (Figure \ref{fig:1ChannelTriggering} on page \pageref{fig:1ChannelTriggering}) at 16 samples per 3.2~ns.\par
 
 If re-triggering is active, the current trigger window is extended if a trigger event is detected inside the window.\par
 
@@ -290,7 +290,7 @@ Triggers can be fed into the gate blocks described on page \pageref{fig:GatingBl
             \end{center}
         \end{figure*}
 
-        To decrease the amount of data transmitted to the PC, Ndigo5G includes 4 independent gate and delay units. A gate and delay unit creates a gate window starting at a specified time after a trigger, closing the window at gate stop. Both timing values — gate start and gate stop — must be set as multiples of 3.2ns.\par
+        To decrease the amount of data transmitted to the PC, Ndigo5G includes 4 independent gate and delay units. A gate and delay unit creates a gate window starting at a specified time after a trigger, closing the window at gate stop. Both timing values — gate start and gate stop — must be set as multiples of 3.2~ns.\par
 
         Trigger blocks can use the gate signal to suppress data acquisition: Only data that fulfills zero suppression specifications occurring in an active gate window is written to the PC.\par
         As input, any trigger from the 4 trigger blocks, the GATE and Trigger inputs, a trigger from a connected board and the function generator can be used.\par
@@ -312,7 +312,7 @@ Triggers can be fed into the gate blocks described on page \pageref{fig:GatingBl
 
             In mass spectrometer and other experiments, noise while starting data acquisition can result in undesired trigger events for that time period. To prevent noise in the output data, a gating block could be used to suppress all triggers during start-up.\par
 
-            The following example illustrates the use of a gating block to prevent noise: The GATE input transmits a pulse on each acquisition start. The trigger structure of the GATE input is used to select pulse polarity. Then, the GATE trigger is selected as gating block input and the gating block's start parameter is set to 0. The stop parameter is set to the desired length measured in 3.2ns clock cycle and negate is set to true. The gating block will now output a low pulse of the desired length whenever there is a pulse on the GATE input.\par
+            The following example illustrates the use of a gating block to prevent noise: The GATE input transmits a pulse on each acquisition start. The trigger structure of the GATE input is used to select pulse polarity. Then, the GATE trigger is selected as gating block input and the gating block's start parameter is set to 0. The stop parameter is set to the desired length measured in 3.2~ns clock cycle and negate is set to true. The gating block will now output a low pulse of the desired length whenever there is a pulse on the GATE input.\par
 
         Enabling this gating block as an AND input to the trigger block, for which noise shall be suppressed.
 
@@ -320,7 +320,7 @@ Triggers can be fed into the gate blocks described on page \pageref{fig:GatingBl
 
             To sample a short window at a specified time after a trigger event on a channel, the gating block can be used to create a delayed trigger. To do this, one of the triggers of the channel of interested is configured to the desired parameters by selecting the threshold, setting the edge polarity and enabling edge triggering.\par
 
-            Instead of directly using this trigger as input to the trigger block's input matrix, the trigger is selected as an input to a gating block. The block is configured to $start = delay$ [in 3.2ns clock cycles] and $stop = start+1$, $negate = false$. This causes the gating block to produce a one clock cycle pulse on its output after the specified delay.\par
+            Instead of directly using this trigger as input to the trigger block's input matrix, the trigger is selected as an input to a gating block. The block is configured to $start = delay$ [in 3.2~ns clock cycles] and $stop = start+1$, $negate = false$. This causes the gating block to produce a one clock cycle pulse on its output after the specified delay.\par
 
             To send this pulse to the trigger block, the gating block must be enabled in the trigger block's AND matrix and the ONE trigger source must be selected.
 
@@ -374,7 +374,7 @@ Triggers can be fed into the gate blocks described on page \pageref{fig:GatingBl
             T = M + [1...2^N] - 1
         \end{align}
 
-        clock cycles with a duration of 3.2 ns per cycle, where $8 \leq M < 2^{32}$ and $0 \leq N < 32$.\par
+        clock cycles with a duration of 3.2~ns per cycle, where $8 \leq M < 2^{32}$ and $0 \leq N < 32$.\par
 
         This allows to monitor input signals at times the current trigger configuration does not trigger, e.g., to get baseline information in mass spectrometry applications. It can also be used to determine a suitable threshold level for the trigger by first getting random statistics on the input signal.
 
