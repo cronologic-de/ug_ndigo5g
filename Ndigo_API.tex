@@ -485,6 +485,11 @@ first release.\par
         \cronvar{ndigo\tu bool\tu t}{enabled}\\
         Activate triggers on this channel.\par
 
+        \cronvar{ndigo\tu bool\tu t}{force\tu led}\\
+        Activates LED on input, even if trigger block is not enabled.\par
+
+        Required for LED activity in Multi/SingleShot mode.
+
         \cronvar{ndigo\tu bool\tu t}{retrigger}\\
         If a new trigger condition occurs while the postcursor is acquired the packet is extended by starting a new postcursor. Otherwise, the new trigger is ignored and the packet ends after the precursor of the first trigger.\par
 
@@ -495,6 +500,11 @@ first release.\par
 
         \cronvar{ndigo\tu bool\tu t}{reserved2}\\
         Defaults to false. Do not change.\par
+
+        \cronvar{int}{multi\tu shot\tu count}\\
+        Number of packets created in single shot mode before packet generation stops.
+
+        Maximum is NDIGO\tu MAX\tu MULTISHOT = 65535.
 
         \cronvar{int}{precursor}\\
         Precursor in multiples of 3.2ns. The amount of data preceding a trigger that is captured.\par
@@ -624,6 +634,12 @@ trigger condition is fulfilled.\par
             Call this to resume data acquisition after a call to \textsf{ndigo\tu pause\tu capture}.\par
 
             \cronvar{int}{ndigo\tu stop\tu capture(}\cronvar{ndigo\tu device}{*device)}
+
+            \cronvar{int}{ndigo\tu single\tu shot(}\cronvar{ndigo\tu device}{*device}, \cronvar{int}{channel\tu mask)}\\
+            Enables each of the specified channels for one trigger, respectively.
+
+            \cronvar{int}{ndigo\tu manual\tu trigger(}\cronvar{ndigo\tu device}{*device}, \cronvar{int}{channel\tu mask)}\\
+            Enables manual triggering of the specified channels, respectively.
 
     \section{Readout\label{cp:readout}}
 
