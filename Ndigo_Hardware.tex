@@ -29,7 +29,7 @@ Ndigo5G's standard device driver can be used to read out all boards and acquire 
 \section{Ndigo5G External Inputs and Connectors}
 \subsection{Connectors}
 %
-The inputs of the Ndigo5G are located on the PCI bracket. Figure~\ref{fig:schematics} on page~\pageref{fig:schematics} shows the location of the 4 analog inputs A to D and the two digital inputs G (GATE) and T (Trigger). Furthermore, two board interconnection connectors can be found at the top edge of the Ndigo5G, as displayed in  Figure \ref{fig:schematics} on page \pageref{fig:schematics}. Connector C1 is used for a board-to-board connection (e.g., to link a HPTDC8-PCI and a Ndigo5G via a Ndigo Extension board, see chapter \ref{cp:extcard}). Connector C2 is used as a bus interface between multiple Ndigo boards distributing clock, trigger and sync signals. Proper termination must be placed at both ends of the bus interconnection ribbon cable.
+The inputs of the Ndigo5G are located on the PCI bracket. Figure~\ref{fig:schematics} on page~\pageref{fig:schematics} shows the location of the 4 analog inputs A to D and the two digital inputs G (GATE) and T (Trigger). Furthermore, two board interconnection connectors can be found at the top edge of the Ndigo5G, as displayed in  Figure \ref{fig:schematics} on page \pageref{fig:schematics}. Connector C1 is used for a board-to-board connection (e.g., to link a HPTDC8-PCI and a Ndigo5G via a Ndigo Extension board, see chapter \ref{cp:extcard}). Connector C2 is used as a bus interface between multiple Ndigo boards distributing clock, trigger and sync signals. It can be used to supply the Ndigo5G with an external 10 MHz clock or to output such a signal (depending on the initialization parameters, see Section~\ref{sec:initialization}). Refer to Table~\ref{table:c2-pinout} for the pinout. Proper termination must be placed at both ends of the bus interconnection ribbon cable.
 %
 \begin{figure*}[hb]
     \centering
@@ -42,6 +42,53 @@ The inputs of the Ndigo5G are located on the PCI bracket. Figure~\ref{fig:schema
     \includegraphics[width=0.7\textwidth]{figures/Ndigo_schematic.pdf}
     \caption{Schematics of an Ndigo5G board showing inter-board connectors C1 and C2.\label{fig:schematics}}
 \end{figure*}
+%
+\begin{table}
+        \begin{small}
+        \centering
+            \begin{tabular}{|c|c|}
+                \hline
+                Pin & Name\\
+                \hline\hline
+                1, 2 & GND\\
+                \hline
+                3, 4 & ext. CLK in (or out) N, ext. CLK in (or out) P\\
+                \hline
+                5, 6 & GND\\
+                \hline
+                7, 8 & reserved/NC\\
+                \hline
+                9, 10 & GND\\
+                \hline
+                11, 12 & reserved/NC\\
+                \hline
+                13, 14 & GND\\
+                \hline
+                15, 16 & reserved/NC\\
+                \hline
+                17, 18 & GND\\
+                \hline
+                19, 20 & reserved/NC\\
+                \hline
+                21, 22 & GND\\
+                \hline
+                23, 24 & reserved/NC\\
+                \hline
+                25, 26 & GND\\
+                \hline
+                27, 28 & reserved/NC\\
+                \hline
+                29, 30 & GND\\
+                \hline
+                31, 32 & reserved/NC\\
+                \hline
+                33, 34 & GND\\
+                \hline
+            \end{tabular}
+            \caption{Pinout of connector C2.}
+            \label{table:c2-pinout}
+    \end{small}
+\end{table}
 %
 %
 %

@@ -19,6 +19,7 @@ The API is a DLL with C linkage. The functions provided by the DLL are declared 
     Additional set of triggers for digital inputs.
 
     \section{Initialization}
+    \label{sec:initialization}
 
         \cronvar{int}{ndigo\tu count\tu devices(}\cronvar{int}{*error\tu code}, \cronvar{char}{**error\tu message)}\\
         Return the number of boards that are supported by this driver in the system.\par
@@ -49,10 +50,16 @@ The API is a DLL with C linkage. The functions provided by the DLL are declared 
             Use 10\,MHz clock supplied by IPC flat band cable. If multiple 
             boards are used in sync, this must be set for all slave cards.\par
             Defaults to false.\par
+            When true, the corresponding pins of connector (see Table~\ref{table:c2-pinout})
+            must be supplied by a differential 10~MHz clock signal with a common mode
+            of about 1200~mV and at least 150~mV voltage difference.\par
 
             \cronvar{ndigo\tu bool\tu t}{drive\tu external\tu clock}\\
             Drive internal 10\,MHz clock of this board to IPC flat band cable. If multiple boards are used in sync, this must be set for the master card.\par
             Defaults to false.\par
+            When true, the corresponding pins of connector (see Table~\ref{table:c2-pinout})
+            output a differential LVDS 10~MHz clock signal with a common mode of
+            1000~mV and a voltage difference of at least 480~mV.
 
             \cronvar{ndigo\tu bool\tu t}{is\tu slave}\\
             Data acquisition of this board is controlled by the master board.\par
