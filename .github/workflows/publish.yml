@@ -1,0 +1,42 @@
+name: build-and-publish-pdfs
+
+on:
+  release:
+    types: created
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v4
+
+      - name: Compile User Guide
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: Ndigo_User.tex
+          latexmk_use_lualatex: true
+          # work_in_root_file_dir: true
+
+      - name: Rename
+        run: |
+          cp Ndigo_User.pdf Ndigo5G_User_Guide.pdf
+
+      - name: Publish
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: ${{ secrets.PORT }}
+          key: ${{ secrets.KEY }}
+          source: ./Ndigo5G_User_Guide.pdf
+          target: ${{ secrets.TARGETPDF }}
+          # strip_components: 2
+          rm: true
+
+      - name: Upload documentation as release asset
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          gh release upload ${{ github.event.release.tag_name }} ./Ndigo5G_User_Guide.pdf
