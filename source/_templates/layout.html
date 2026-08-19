@@ -1,0 +1,9 @@
+{% extends "!layout.html" %}
+
+{% block extrahead %}
+{{ super() }}
+<link rel="preload" href="{{ pathto('_static/montserrat-regular.woff2', 1) }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ pathto('_static/montserrat-italic.woff2', 1) }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ pathto('_static/montserrat-bold.woff2', 1) }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ pathto('_static/montserrat-bolditalic.woff2', 1) }}" as="font" type="font/woff2" crossorigin>
+{% endblock %}

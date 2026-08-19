@@ -22,3 +22,5 @@ If you decide to contribute to this repository you transfer non-exclusive but un
 ![Creative Commons by-nd 4.0](https://i.creativecommons.org/l/by-nd/4.0/88x31.png)
 
 The file [extraplaceins.sty](extraplaceins.sty) is in the public domain.
+
+The Montserrat font is licensed under the [SIL OPEN FONT LICENSE](OFL.txt).
