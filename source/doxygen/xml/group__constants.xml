@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="group__constants" kind="group">
+    <compoundname>constants</compoundname>
+    <title>Constants</title>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__constants_1gac379792362ce2cd5b1cb8c8a848123d8" prot="public" static="no">
+        <name>NDIGO_CHANNEL_COUNT</name>
+        <initializer>4</initializer>
+        <briefdescription>
+<para>The number of analog input channels. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="19" column="9" bodyfile="ndigo_interface.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__constants_1ga48190e4da54045852fff719e6f075b68" prot="public" static="no">
+        <name>NDIGO_GATE_COUNT</name>
+        <initializer>4</initializer>
+        <briefdescription>
+<para>The number of gating blocks. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="23" column="9" bodyfile="ndigo_interface.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__constants_1ga2a0d32793761a91f991974aea91e52a2" prot="public" static="no">
+        <name>NDIGO_EXTENSION_COUNT</name>
+        <initializer>4</initializer>
+        <briefdescription>
+<para>The number of external triggers. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="27" column="9" bodyfile="ndigo_interface.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__constants_1ga14a282bcd4c24d8f329e2fb8f5205f51" prot="public" static="no">
+        <name>NDIGO_FIFO_DEPTH</name>
+        <initializer>8176</initializer>
+        <briefdescription>
+<para>ADC sample FIFO depth. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="31" column="9" bodyfile="ndigo_interface.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__constants_1gac907ec25e02b2509b71255b51edd284d" prot="public" static="no">
+        <name>NDIGO_API_VERSION</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Used for <ref refid="structndigo__init__parameters_1aad880fc4455c253781e8968f2239d56f" kindref="member">ndigo_init_parameters::version</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="39" column="9" bodyfile="ndigo_common_interface.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__constants_1ga98ac7cabf3b9e4acad5fc89465537eb0" prot="public" static="no">
+        <name>NDIGO_STATIC_INFO_VERSION</name>
+        <initializer>1</initializer>
+        <briefdescription>
+<para>Current version of <ref refid="structndigo__static__info" kindref="compound">ndigo_static_info</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="43" column="9" bodyfile="ndigo_common_interface.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__constants_1ga0d8b328e1e3be9011814636105e9542c" prot="public" static="no">
+        <name>NDIGO_FAST_INFO_VERSION</name>
+        <initializer>1</initializer>
+        <briefdescription>
+<para>Current version of <ref refid="structndigo__fast__info" kindref="compound">ndigo_fast_info</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="47" column="9" bodyfile="ndigo_common_interface.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__constants_1gacdd2881695d8c687a5a1507f86d01fd0" prot="public" static="no">
+        <name>NDIGO_TRIGGER_COUNT</name>
+        <initializer>16</initializer>
+        <briefdescription>
+<para>The number of triggers. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Two per analog input, one per digital input plus some specials. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="52" column="9" bodyfile="ndigo_common_interface.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__constants_1gad2b797bf4bfedd0ee89c846e04209c0f" prot="public" static="no">
+        <name>NDIGO_ADD_TRIGGER_COUNT</name>
+        <initializer>6</initializer>
+        <briefdescription>
+<para>Additional set of triggers for digital inputs. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="56" column="9" bodyfile="ndigo_common_interface.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__constants_1ga07d035e24c17796a9fc369174c6262e8" prot="public" static="no">
+        <name>NDIGO_RAW_VALUE_MIN</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Minimal raw ADC value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>RAW mode should not be used. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="61" column="9" bodyfile="ndigo_common_interface.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__constants_1ga43032f9a2f061d108afddb9f442488c4" prot="public" static="no">
+        <name>NDIGO_RAW_VALUE_ZERO</name>
+        <initializer>512</initializer>
+        <briefdescription>
+<para>Raw ADC value corresponding to zero. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>RAW mode should not be used. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="66" column="9" bodyfile="ndigo_common_interface.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__constants_1gafca2e778a20a57978f9222ee086ac350" prot="public" static="no">
+        <name>NDIGO_RAW_VALUE_MAX</name>
+        <initializer>1023</initializer>
+        <briefdescription>
+<para>Maximal raw ADC value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>RAW mode should not be used. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="71" column="9" bodyfile="ndigo_common_interface.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__constants_1ga991ac4041e65018bd3e915b6d46f7cfb" prot="public" static="no">
+        <name>NDIGO_RAW_VALUE_COUNT</name>
+        <initializer>1024</initializer>
+        <briefdescription>
+<para>Number of raw ADC values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>RAW mode should not be used. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="76" column="9" bodyfile="ndigo_common_interface.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__constants_1gacb8d58e0a099ed9cba89d77dd59eaa58" prot="public" static="no">
+        <name>NDIGO_CALIBRATION_DATE_LEN</name>
+        <initializer>20</initializer>
+        <briefdescription>
+<para>Fixed length of calibration date string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Calibration date format is YYYY-MM-DD hh:mm.</para>
+<para>Used by <ref refid="structndigo__static__info_1a3a708964caa000b7e4a3dd1359d59dcc" kindref="member">ndigo_static_info::calibration_date</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="82" column="9" bodyfile="ndigo_common_interface.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__constants_1gaed84bfc75975f4b9b23d15a623dcc636" prot="public" static="no">
+        <name>NDIGO_BITSTREAM_DATE_LEN</name>
+        <initializer>20</initializer>
+        <briefdescription>
+<para>Bitstream date format is YYYY-MM-DD hh:mm:ss. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Used by <ref refid="structndigo__static__info_1a92d710dd152e402a7475b21e8b13a350" kindref="member">ndigo_static_info::bitstream_date</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="87" column="9" bodyfile="ndigo_common_interface.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,401 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structndigo__configuration" kind="struct" language="C++" prot="public">
+    <compoundname>ndigo_configuration</compoundname>
+    <includes refid="ndigo__interface_8h" local="no">ndigo_interface.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structndigo__configuration_1a439227feff9d7f55384e8780cfc2eb82" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <qualifiedname>ndigo_configuration::size</qualifiedname>
+        <briefdescription>
+<para>The number of bytes occupied by the structure. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="188" column="9" bodyfile="ndigo_interface.h" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__configuration_1aad880fc4455c253781e8968f2239d56f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int version</definition>
+        <argsstring></argsstring>
+        <name>version</name>
+        <qualifiedname>ndigo_configuration::version</qualifiedname>
+        <briefdescription>
+<para>Version number of the struct used by the API. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="193" column="9" bodyfile="ndigo_interface.h" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__configuration_1a18a373c8b2126ea9409c08cede8f7326" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int reserved1</definition>
+        <argsstring></argsstring>
+        <name>reserved1</name>
+        <qualifiedname>ndigo_configuration::reserved1</qualifiedname>
+        <briefdescription>
+<para>Reserved for internal usage. Do not change. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="198" column="9" bodyfile="ndigo_interface.h" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__configuration_1a05331e51c932e355bad5f7d88fca6920" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int adc_mode</definition>
+        <argsstring></argsstring>
+        <name>adc_mode</name>
+        <qualifiedname>ndigo_configuration::adc_mode</qualifiedname>
+        <briefdescription>
+<para>ADC mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Must be one of the following:</para>
+<para><verbatim>embed:rst:leading-asterisk
+*          .. doxygengroup:: adcdefs
+*              :content-only:
+*          </verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="208" column="9" bodyfile="ndigo_interface.h" bodystart="208" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__configuration_1a3a14628ead92d0afcce5f53e0ff017c8" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double bandwidth</definition>
+        <argsstring></argsstring>
+        <name>bandwidth</name>
+        <qualifiedname>ndigo_configuration::bandwidth</qualifiedname>
+        <briefdescription>
+<para>Minimum bandwidth in Hz. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Set to the minimum bandwidth required for the application.</para>
+<para>Lower bandwidth results in reduced noise. The driver will set the ADC to the minimum setting that has at least the desired bandwidth and report the selected bandwidth in <ref refid="structndigo__param__info_1a3a14628ead92d0afcce5f53e0ff017c8" kindref="member">ndigo_param_info::bandwidth</ref>.</para>
+<para>The -8, -10 and -12 versions currently supports 1GHz and 3GHz bandwidth. The -8AQ version supports 2GHz, 1.5GHz, 600MHz and 500 MHz. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="221" column="12" bodyfile="ndigo_interface.h" bodystart="221" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__configuration_1af27b6f6b2eab1180dc892de09a8eed53" prot="public" static="no" mutable="no">
+        <type><ref refid="ndigo__common__interface_8h_1ac8108da51e15c2c7cd3dadb52ec3efd9" kindref="member">ndigo_bool_t</ref></type>
+        <definition>ndigo_bool_t reserved</definition>
+        <argsstring></argsstring>
+        <name>reserved</name>
+        <qualifiedname>ndigo_configuration::reserved</qualifiedname>
+        <briefdescription>
+<para>Reserved for internal usage. Do not change. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="226" column="18" bodyfile="ndigo_interface.h" bodystart="226" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__configuration_1a8f5d649667fad6326d05e3d82ea51a8b" prot="public" static="no" mutable="no">
+        <type><ref refid="ndigo__common__interface_8h_1ac8108da51e15c2c7cd3dadb52ec3efd9" kindref="member">ndigo_bool_t</ref></type>
+        <definition>ndigo_bool_t tdc_enabled</definition>
+        <argsstring></argsstring>
+        <name>tdc_enabled</name>
+        <qualifiedname>ndigo_configuration::tdc_enabled</qualifiedname>
+        <briefdescription>
+<para>Enable capturing of TDC measurements on external digital input channel. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="232" column="18" bodyfile="ndigo_interface.h" bodystart="232" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__configuration_1a483007c61e4985f40820641e1f87ce29" prot="public" static="no" mutable="no">
+        <type><ref refid="ndigo__common__interface_8h_1ac8108da51e15c2c7cd3dadb52ec3efd9" kindref="member">ndigo_bool_t</ref></type>
+        <definition>ndigo_bool_t tdc_fb_enabled</definition>
+        <argsstring></argsstring>
+        <name>tdc_fb_enabled</name>
+        <qualifiedname>ndigo_configuration::tdc_fb_enabled</qualifiedname>
+        <briefdescription>
+<para>Enable enhanced TDC resolution. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Currently not implemented. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="238" column="18" bodyfile="ndigo_interface.h" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__configuration_1a16890d0dd1327ea43fc27f6975913f87" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double analog_offset[NDIGO_CHANNEL_COUNT]</definition>
+        <argsstring>[NDIGO_CHANNEL_COUNT]</argsstring>
+        <name>analog_offset</name>
+        <qualifiedname>ndigo_configuration::analog_offset</qualifiedname>
+        <briefdescription>
+<para>Configure DC offset values for ADC channels. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the input DC offset-values to this value in Volts.</para>
+<para>Default is 0. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="245" column="12" bodyfile="ndigo_interface.h" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__configuration_1a4d3f609fa9310848e6cc07398d47cad1" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double dc_offset[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>dc_offset</name>
+        <qualifiedname>ndigo_configuration::dc_offset</qualifiedname>
+        <briefdescription>
+<para>Sets DC offset for GATE input and TRIGGER input. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The default value of -0.35V is ideal for negative NIM pulses of -0.8V. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="252" column="12" bodyfile="ndigo_interface.h" bodystart="252" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__configuration_1a8bc5b11a6dc9431517fb00335d4d9aeb" prot="public" static="no" mutable="no">
+        <type><ref refid="structndigo__trigger" kindref="compound">ndigo_trigger</ref></type>
+        <definition>ndigo_trigger trigger[NDIGO_TRIGGER_COUNT+NDIGO_ADD_TRIGGER_COUNT]</definition>
+        <argsstring>[NDIGO_TRIGGER_COUNT+NDIGO_ADD_TRIGGER_COUNT]</argsstring>
+        <name>trigger</name>
+        <qualifiedname>ndigo_configuration::trigger</qualifiedname>
+        <briefdescription>
+<para>Configuration of the external trigger sources. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The indices correspond to the following defines.</para>
+<para><computeroutput>_PE</computeroutput> are additional triggers that are always a positive edge trigger in hardware.</para>
+<para><verbatim>embed:rst:leading-asterisk
+*          .. doxygengroup:: triggerdefs
+*              :content-only:
+*          </verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="264" column="19" bodyfile="ndigo_interface.h" bodystart="264" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__configuration_1a69714f56a65985fa0ded10b4cee3dc47" prot="public" static="no" mutable="no">
+        <type><ref refid="structndigo__trigger__block" kindref="compound">ndigo_trigger_block</ref></type>
+        <definition>ndigo_trigger_block trigger_block[NDIGO_CHANNEL_COUNT+1]</definition>
+        <argsstring>[NDIGO_CHANNEL_COUNT+1]</argsstring>
+        <name>trigger_block</name>
+        <qualifiedname>ndigo_configuration::trigger_block</qualifiedname>
+        <briefdescription>
+<para>Trigger settings of input ADC and timestamp channels. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This configures the trigger sources, trigger block lengths, etc, not the trigger type, which is configured by <ref refid="structndigo__configuration_1a8bc5b11a6dc9431517fb00335d4d9aeb" kindref="member">ndigo_configuration::trigger</ref>.</para>
+<para>The number of enabled input channels depends on <ref refid="structndigo__configuration_1a05331e51c932e355bad5f7d88fca6920" kindref="member">ndigo_configuration::adc_mode</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="274" column="25" bodyfile="ndigo_interface.h" bodystart="274" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__configuration_1a3111a1ef5a8a20abb614f23ce0d562cf" prot="public" static="no" mutable="no">
+        <type><ref refid="structndigo__gating__block" kindref="compound">ndigo_gating_block</ref></type>
+        <definition>ndigo_gating_block gating_block[NDIGO_GATE_COUNT]</definition>
+        <argsstring>[NDIGO_GATE_COUNT]</argsstring>
+        <name>gating_block</name>
+        <qualifiedname>ndigo_configuration::gating_block</qualifiedname>
+        <briefdescription>
+<para>Configuration of gating blocks. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Gating blocks are used to filter <ref refid="structndigo__configuration_1a69714f56a65985fa0ded10b4cee3dc47" kindref="member">ndigo_configuration::trigger_block</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="281" column="24" bodyfile="ndigo_interface.h" bodystart="281" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__configuration_1abe00d88c10650083b32bc50ecddb8e41" prot="public" static="no" mutable="no">
+        <type><ref refid="structndigo__extension__block" kindref="compound">ndigo_extension_block</ref></type>
+        <definition>ndigo_extension_block extension_block[NDIGO_EXTENSION_COUNT]</definition>
+        <argsstring>[NDIGO_EXTENSION_COUNT]</argsstring>
+        <name>extension_block</name>
+        <qualifiedname>ndigo_configuration::extension_block</qualifiedname>
+        <briefdescription>
+<para>Configuration of extension blocks. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A structure describing the routing of the four digital channels of the Ndigo extension board to the trigger matrix. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="288" column="27" bodyfile="ndigo_interface.h" bodystart="288" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__configuration_1a5033c43fbdb9b5d56fa0922ea6c3724b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int drive_bus[4]</definition>
+        <argsstring>[4]</argsstring>
+        <name>drive_bus</name>
+        <qualifiedname>ndigo_configuration::drive_bus</qualifiedname>
+        <briefdescription>
+<para>Enables output drives. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Enables output drive for each of the four external sync lines. Each integer represents a bitmask selecting the trigger sources for that line.</para>
+<para>The bit mapping is documented in <ref refid="structndigo__trigger__block_1a09bf0a0c15c4905391944154b116a637" kindref="member">ndigo_trigger_block::sources</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="298" column="9" bodyfile="ndigo_interface.h" bodystart="298" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__configuration_1ab66c682cd186a6226dd8133b03ca55b8" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int auto_trigger_period</definition>
+        <argsstring></argsstring>
+        <name>auto_trigger_period</name>
+        <qualifiedname>ndigo_configuration::auto_trigger_period</qualifiedname>
+        <briefdescription>
+<para>Configure periodicity of the auto trigger. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Works in conjunction with <ref refid="structndigo__configuration_1ae7da8f7efc68e229b839523ec8310124" kindref="member">ndigo_configuration::auto_trigger_random_exponent</ref>.</para>
+<para>The two parameters <formula id="0">$ M $</formula> = <ref refid="structndigo__configuration_1ab66c682cd186a6226dd8133b03ca55b8" kindref="member">auto_trigger_period</ref> and <formula id="1">$ N $</formula> = <ref refid="structndigo__configuration_1ae7da8f7efc68e229b839523ec8310124" kindref="member">auto_trigger_random_exponent</ref> result in a distance between triggers of</para>
+<para><formula id="2">$ T = M + [1 \dots 2^N] - 1 $</formula></para>
+<para>clock cycles.</para>
+<para><formula id="3">$ 8 \leq M &lt; 2^{32} $</formula></para>
+<para><formula id="4">$ 0 \leq N &lt; 32 $</formula></para>
+<para>There is no enable or reset as the usage of this trigger can be configured in the channels.</para>
+<para>To actually use this trigger, it has to be set as a trigger source in <ref refid="structndigo__configuration_1a69714f56a65985fa0ded10b4cee3dc47" kindref="member">trigger_block</ref>.</para>
+<para><verbatim>embed:rst:leading-asterisk
+*          See also :doc:`../functionality/auto_trigger`.
+*          </verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="323" column="9" bodyfile="ndigo_interface.h" bodystart="323" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__configuration_1ae7da8f7efc68e229b839523ec8310124" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int auto_trigger_random_exponent</definition>
+        <argsstring></argsstring>
+        <name>auto_trigger_random_exponent</name>
+        <qualifiedname>ndigo_configuration::auto_trigger_random_exponent</qualifiedname>
+        <briefdescription>
+<para>Configure randomness of the auto trigger. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>See also <ref refid="structndigo__configuration_1ab66c682cd186a6226dd8133b03ca55b8" kindref="member">auto_trigger_period</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="329" column="9" bodyfile="ndigo_interface.h" bodystart="329" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__configuration_1aaf241640a83ec470bf6c337d6426ae33" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int output_mode</definition>
+        <argsstring></argsstring>
+        <name>output_mode</name>
+        <qualifiedname>ndigo_configuration::output_mode</qualifiedname>
+        <briefdescription>
+<para>Defines the data representation in the output. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This influences the meaning of the values of <ref refid="structndigo__packet_1a8973e4107f0b644d540e9c0725574c3d" kindref="member">ndigo_packet::data</ref>.</para>
+<para>Must be one of the following:</para>
+<para><verbatim>embed:rst:leading-asterisk
+*          .. doxygengroup:: outputdefs
+*              :content-only
+*          </verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="341" column="9" bodyfile="ndigo_interface.h" bodystart="341" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__configuration_1a63d17412a8a08c726467c0e562ff9a3e" prot="public" static="no" mutable="no">
+        <type><ref refid="ndigo__interface_8h_1aba3f4484158c5712fdc54d936c17ca25" kindref="member">lut_func</ref></type>
+        <definition>lut_func custom_lut</definition>
+        <argsstring></argsstring>
+        <name>custom_lut</name>
+        <qualifiedname>ndigo_configuration::custom_lut</qualifiedname>
+        <briefdescription>
+<para>Custom mapping from raw ADC value to output value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the <ref refid="structndigo__configuration_1aaf241640a83ec470bf6c337d6426ae33" kindref="member">ndigo_configuration::output_mode</ref> is set to <ref refid="group__outputdefs_1gad2694ad6c819534bcbc949ed08c8cd62" kindref="member">NDIGO_OUTPUT_MODE_CUSTOM</ref> or <ref refid="group__outputdefs_1gab41c3a3b5a9c7d9195d52568de4cffd5" kindref="member">NDIGO_OUTPUT_MODE_CUSTOM_INL</ref> this function is used for mapping from ADC value to output value. The driver will call this function with a value from -1 to +1 and the function must return the corresponding signed 16 bit value that the board should return for an input voltage relative to the full scale range. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="354" column="14" bodyfile="ndigo_interface.h" bodystart="354" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Contains all configurable settings. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The struct should be first populated using <ref refid="ndigo__interface_8h_1a6625f29fd29d0c833104a9a8eca919f5" kindref="member">ndigo_get_default_configuration()</ref>, or if the Ndigo5G has already been previously configured, using <ref refid="ndigo__interface_8h_1a9d9040b94d074ffdedab815fa65b0266" kindref="member">ndigo_get_current_configuration()</ref>.</para>
+<para>Afterwards, user-specific changes can be applied.</para>
+<para>An initialized Ndigo5G device can then be configured using <ref refid="ndigo__interface_8h_1a5f54dea50662f66e8040fe608d8b6c73" kindref="member">ndigo_configure()</ref>. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>ndigo_configuration</label>
+        <link refid="structndigo__configuration"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>trigger</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>trigger_block</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>gating_block</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>extension_block</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>ndigo_extension_block</label>
+        <link refid="structndigo__extension__block"/>
+      </node>
+      <node id="4">
+        <label>ndigo_gating_block</label>
+        <link refid="structndigo__gating__block"/>
+      </node>
+      <node id="2">
+        <label>ndigo_trigger</label>
+        <link refid="structndigo__trigger"/>
+      </node>
+      <node id="3">
+        <label>ndigo_trigger_block</label>
+        <link refid="structndigo__trigger__block"/>
+      </node>
+    </collaborationgraph>
+    <location file="ndigo_interface.h" line="184" column="1" bodyfile="ndigo_interface.h" bodystart="184" bodyend="356"/>
+    <listofallmembers>
+      <member refid="structndigo__configuration_1a05331e51c932e355bad5f7d88fca6920" prot="public" virt="non-virtual"><scope>ndigo_configuration</scope><name>adc_mode</name></member>
+      <member refid="structndigo__configuration_1a16890d0dd1327ea43fc27f6975913f87" prot="public" virt="non-virtual"><scope>ndigo_configuration</scope><name>analog_offset</name></member>
+      <member refid="structndigo__configuration_1ab66c682cd186a6226dd8133b03ca55b8" prot="public" virt="non-virtual"><scope>ndigo_configuration</scope><name>auto_trigger_period</name></member>
+      <member refid="structndigo__configuration_1ae7da8f7efc68e229b839523ec8310124" prot="public" virt="non-virtual"><scope>ndigo_configuration</scope><name>auto_trigger_random_exponent</name></member>
+      <member refid="structndigo__configuration_1a3a14628ead92d0afcce5f53e0ff017c8" prot="public" virt="non-virtual"><scope>ndigo_configuration</scope><name>bandwidth</name></member>
+      <member refid="structndigo__configuration_1a63d17412a8a08c726467c0e562ff9a3e" prot="public" virt="non-virtual"><scope>ndigo_configuration</scope><name>custom_lut</name></member>
+      <member refid="structndigo__configuration_1a4d3f609fa9310848e6cc07398d47cad1" prot="public" virt="non-virtual"><scope>ndigo_configuration</scope><name>dc_offset</name></member>
+      <member refid="structndigo__configuration_1a5033c43fbdb9b5d56fa0922ea6c3724b" prot="public" virt="non-virtual"><scope>ndigo_configuration</scope><name>drive_bus</name></member>
+      <member refid="structndigo__configuration_1abe00d88c10650083b32bc50ecddb8e41" prot="public" virt="non-virtual"><scope>ndigo_configuration</scope><name>extension_block</name></member>
+      <member refid="structndigo__configuration_1a3111a1ef5a8a20abb614f23ce0d562cf" prot="public" virt="non-virtual"><scope>ndigo_configuration</scope><name>gating_block</name></member>
+      <member refid="structndigo__configuration_1aaf241640a83ec470bf6c337d6426ae33" prot="public" virt="non-virtual"><scope>ndigo_configuration</scope><name>output_mode</name></member>
+      <member refid="structndigo__configuration_1af27b6f6b2eab1180dc892de09a8eed53" prot="public" virt="non-virtual"><scope>ndigo_configuration</scope><name>reserved</name></member>
+      <member refid="structndigo__configuration_1a18a373c8b2126ea9409c08cede8f7326" prot="public" virt="non-virtual"><scope>ndigo_configuration</scope><name>reserved1</name></member>
+      <member refid="structndigo__configuration_1a439227feff9d7f55384e8780cfc2eb82" prot="public" virt="non-virtual"><scope>ndigo_configuration</scope><name>size</name></member>
+      <member refid="structndigo__configuration_1a8f5d649667fad6326d05e3d82ea51a8b" prot="public" virt="non-virtual"><scope>ndigo_configuration</scope><name>tdc_enabled</name></member>
+      <member refid="structndigo__configuration_1a483007c61e4985f40820641e1f87ce29" prot="public" virt="non-virtual"><scope>ndigo_configuration</scope><name>tdc_fb_enabled</name></member>
+      <member refid="structndigo__configuration_1a8bc5b11a6dc9431517fb00335d4d9aeb" prot="public" virt="non-virtual"><scope>ndigo_configuration</scope><name>trigger</name></member>
+      <member refid="structndigo__configuration_1a69714f56a65985fa0ded10b4cee3dc47" prot="public" virt="non-virtual"><scope>ndigo_configuration</scope><name>trigger_block</name></member>
+      <member refid="structndigo__configuration_1aad880fc4455c253781e8968f2239d56f" prot="public" virt="non-virtual"><scope>ndigo_configuration</scope><name>version</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

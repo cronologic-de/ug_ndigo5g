@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="group__multishotdef" kind="group">
+    <compoundname>multishotdef</compoundname>
+    <title>Multishot definitions</title>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__multishotdef_1ga6dd832ffc6a5b503fbb117696a57abc8" prot="public" static="no">
+        <name>NDIGO_MAX_MULTISHOT</name>
+        <initializer>65535</initializer>
+        <briefdescription>
+<para>Maximum <ref refid="structndigo__trigger__block_1a2c5c3f6d832916c465850cf9a684237e" kindref="member">ndigo_trigger_block::multi_shot_count</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="122" column="9" bodyfile="ndigo_interface.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

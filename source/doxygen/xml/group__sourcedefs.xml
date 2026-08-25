@@ -1,0 +1,266 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="group__sourcedefs" kind="group">
+    <compoundname>sourcedefs</compoundname>
+    <title>Trigger sources defines</title>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__sourcedefs_1ga287fc637e6d030a7607c506d222e5173" prot="public" static="no">
+        <name>NDIGO_TRIGGER_SOURCE_NONE</name>
+        <initializer>0x00000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="207" column="9" bodyfile="ndigo_common_interface.h" bodystart="207" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sourcedefs_1gad57ed5dbf34f66af23756728e5351abe" prot="public" static="no">
+        <name>NDIGO_TRIGGER_SOURCE_A0</name>
+        <initializer>0x00000001</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="208" column="9" bodyfile="ndigo_common_interface.h" bodystart="208" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sourcedefs_1ga9766585d2f6cd6c2b8c809c9f9608159" prot="public" static="no">
+        <name>NDIGO_TRIGGER_SOURCE_A1</name>
+        <initializer>0x00000002</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="209" column="9" bodyfile="ndigo_common_interface.h" bodystart="209" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sourcedefs_1ga37630382139662f3f58ec402baa38af4" prot="public" static="no">
+        <name>NDIGO_TRIGGER_SOURCE_B0</name>
+        <initializer>0x00000004</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="210" column="9" bodyfile="ndigo_common_interface.h" bodystart="210" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sourcedefs_1ga01ebb7e05ef18668e0819507da58b151" prot="public" static="no">
+        <name>NDIGO_TRIGGER_SOURCE_B1</name>
+        <initializer>0x00000008</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="211" column="9" bodyfile="ndigo_common_interface.h" bodystart="211" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sourcedefs_1ga10533278e57b18fac97e386eee7499db" prot="public" static="no">
+        <name>NDIGO_TRIGGER_SOURCE_C0</name>
+        <initializer>0x00000010</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="212" column="9" bodyfile="ndigo_common_interface.h" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sourcedefs_1gacc196a6c8daf07e4467d0c33b25f54bf" prot="public" static="no">
+        <name>NDIGO_TRIGGER_SOURCE_C1</name>
+        <initializer>0x00000020</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="213" column="9" bodyfile="ndigo_common_interface.h" bodystart="213" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sourcedefs_1ga2a8568f128112fcd21b27ca8fd10c2f7" prot="public" static="no">
+        <name>NDIGO_TRIGGER_SOURCE_D0</name>
+        <initializer>0x00000040</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="214" column="9" bodyfile="ndigo_common_interface.h" bodystart="214" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sourcedefs_1ga230da1d96d8f81dac853b0a2661648c4" prot="public" static="no">
+        <name>NDIGO_TRIGGER_SOURCE_D1</name>
+        <initializer>0x00000080</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="215" column="9" bodyfile="ndigo_common_interface.h" bodystart="215" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sourcedefs_1ga3d02c09ef43f45ed73605574dc829800" prot="public" static="no">
+        <name>NDIGO_TRIGGER_SOURCE_TDC</name>
+        <initializer>0x00000100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="216" column="9" bodyfile="ndigo_common_interface.h" bodystart="216" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sourcedefs_1gadfb1ab1d80e433f17a926755f62d844d" prot="public" static="no">
+        <name>NDIGO_TRIGGER_SOURCE_GATE</name>
+        <initializer>0x00000200</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="217" column="9" bodyfile="ndigo_common_interface.h" bodystart="217" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sourcedefs_1ga5cc66666f1cafd8083969752bcb4e37f" prot="public" static="no">
+        <name>NDIGO_TRIGGER_SOURCE_BUS0</name>
+        <initializer>0x00000400</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="218" column="9" bodyfile="ndigo_common_interface.h" bodystart="218" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sourcedefs_1ga73820d9ec4f6f362fc3ae3cc768bbd1e" prot="public" static="no">
+        <name>NDIGO_TRIGGER_SOURCE_BUS1</name>
+        <initializer>0x00000800</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="219" column="9" bodyfile="ndigo_common_interface.h" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sourcedefs_1ga8ba0c02d2f451d1869fd93e8345c0715" prot="public" static="no">
+        <name>NDIGO_TRIGGER_SOURCE_BUS2</name>
+        <initializer>0x00001000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="220" column="9" bodyfile="ndigo_common_interface.h" bodystart="220" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sourcedefs_1ga35b806747f00a989dc6ed2bded4f6ebd" prot="public" static="no">
+        <name>NDIGO_TRIGGER_SOURCE_BUS3</name>
+        <initializer>0x00002000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="221" column="9" bodyfile="ndigo_common_interface.h" bodystart="221" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sourcedefs_1ga19bcd71b51c13f1bb926ef394a33853e" prot="public" static="no">
+        <name>NDIGO_TRIGGER_SOURCE_AUTO</name>
+        <initializer>0x00004000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="222" column="9" bodyfile="ndigo_common_interface.h" bodystart="222" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sourcedefs_1gad9404e865bb0384fc1d2bfc9de5097f0" prot="public" static="no">
+        <name>NDIGO_TRIGGER_SOURCE_ONE</name>
+        <initializer>0x00008000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="223" column="9" bodyfile="ndigo_common_interface.h" bodystart="223" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sourcedefs_1gab668920b021ca846bca24b7cfbb66714" prot="public" static="no">
+        <name>NDIGO_TRIGGER_SOURCE_TDC_PE</name>
+        <initializer>0x01000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="224" column="9" bodyfile="ndigo_common_interface.h" bodystart="224" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sourcedefs_1gae9e3d1ef0d0168fec30dfc85d7652179" prot="public" static="no">
+        <name>NDIGO_TRIGGER_SOURCE_GATE_PE</name>
+        <initializer>0x02000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="225" column="9" bodyfile="ndigo_common_interface.h" bodystart="225" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sourcedefs_1gab26138e772399e6ac0819af17588d24a" prot="public" static="no">
+        <name>NDIGO_TRIGGER_SOURCE_BUS0_PE</name>
+        <initializer>0x04000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="226" column="9" bodyfile="ndigo_common_interface.h" bodystart="226" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sourcedefs_1gae1c9be7694ec3d0ef2e9126f4b7d7fcf" prot="public" static="no">
+        <name>NDIGO_TRIGGER_SOURCE_BUS1_PE</name>
+        <initializer>0x08000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="227" column="9" bodyfile="ndigo_common_interface.h" bodystart="227" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sourcedefs_1gad97da473ca250be7a2dbe10134e999a1" prot="public" static="no">
+        <name>NDIGO_TRIGGER_SOURCE_BUS2_PE</name>
+        <initializer>0x10000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="228" column="9" bodyfile="ndigo_common_interface.h" bodystart="228" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__sourcedefs_1ga5058bd6fdb5e3eaf6ab6e54942658d56" prot="public" static="no">
+        <name>NDIGO_TRIGGER_SOURCE_BUS3_PE</name>
+        <initializer>0x20000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="229" column="9" bodyfile="ndigo_common_interface.h" bodystart="229" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

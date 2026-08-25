@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="group__bufferdef" kind="group">
+    <compoundname>bufferdef</compoundname>
+    <title>Defines for buffer</title>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__bufferdef_1gaada79869f9e48d85fc07d15f04977bb4" prot="public" static="no">
+        <name>NDIGO_BUFFER_ALLOCATE</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Buffer is allocated by the device driver. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="250" column="9" bodyfile="ndigo_common_interface.h" bodystart="250" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__bufferdef_1ga10b9935a4646124afb3d0dcd78799b7a" prot="public" static="no">
+        <name>NDIGO_BUFFER_USE_PHYSICAL</name>
+        <initializer>1</initializer>
+        <briefdescription>
+<para>Not implemented. Do not use. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="254" column="9" bodyfile="ndigo_common_interface.h" bodystart="254" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__bufferdef_1gafc11af4ff8536dfdaa1cf6faad6a7af6" prot="public" static="no">
+        <name>NDIGO_BUFFER_USE_PREALLOCATED</name>
+        <initializer>2</initializer>
+        <briefdescription>
+<para>Not implemented. Do not use. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="258" column="9" bodyfile="ndigo_common_interface.h" bodystart="258" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="group__unavailadcdefs" kind="group">
+    <compoundname>unavailadcdefs</compoundname>
+    <title>Unavailable ADC modes</title>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__unavailadcdefs_1ga0e38f80d4a584300f3cdfcc760e054ce" prot="public" static="no">
+        <name>NDIGO_ADC_MODE_A12</name>
+        <initializer>28</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="99" column="9" bodyfile="ndigo_interface.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__unavailadcdefs_1ga11b269c9236557a6edb3121be156757b" prot="public" static="no">
+        <name>NDIGO_ADC_MODE_B12</name>
+        <initializer>29</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="100" column="9" bodyfile="ndigo_interface.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__unavailadcdefs_1gaec77b4fbbac363b9f9c745f2d5f7c2ec" prot="public" static="no">
+        <name>NDIGO_ADC_MODE_C12</name>
+        <initializer>30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="101" column="9" bodyfile="ndigo_interface.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__unavailadcdefs_1gaa5f41a09bbd86ebb44b11caf1d5a4c03" prot="public" static="no">
+        <name>NDIGO_ADC_MODE_D12</name>
+        <initializer>31</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="102" column="9" bodyfile="ndigo_interface.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Currently unavailable ADC modes. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Availability of the following modes depends on the specific hardware/firmware revision. </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

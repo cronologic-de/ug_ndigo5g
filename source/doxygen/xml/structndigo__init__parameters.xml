@@ -1,0 +1,372 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structndigo__init__parameters" kind="struct" language="C++" prot="public">
+    <compoundname>ndigo_init_parameters</compoundname>
+    <includes refid="ndigo__common__interface_8h" local="no">ndigo_common_interface.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structndigo__init__parameters_1aad880fc4455c253781e8968f2239d56f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int version</definition>
+        <argsstring></argsstring>
+        <name>version</name>
+        <qualifiedname>ndigo_init_parameters::version</qualifiedname>
+        <briefdescription>
+<para>Version number. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It is increased when the definition of the structure is changed. The increment can be larger than one to match driver version numbers or similar.</para>
+<para>Set to 0 for all versions up to first release.</para>
+<para>Must be set to <ref refid="group__constants_1gac907ec25e02b2509b71255b51edd284d" kindref="member">NDIGO_API_VERSION</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="525" column="9" bodyfile="ndigo_common_interface.h" bodystart="525" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__init__parameters_1a76f4fd1aefbb9db87716f117658faf83" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int card_index</definition>
+        <argsstring></argsstring>
+        <name>card_index</name>
+        <qualifiedname>ndigo_init_parameters::card_index</qualifiedname>
+        <briefdescription>
+<para>The index in the list of installed Ndigo boards that should be initialized. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>There might be multiple boards in the system that are handled by this driver as reported by ndigo count devices. This index selects one of them. Boards are enumerated depending on the PCIe slot. The lower the bus number and the lower the slot number the lower the card index. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="537" column="9" bodyfile="ndigo_common_interface.h" bodystart="537" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__init__parameters_1a7edf6305fafb8d595318dde91addca3c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int board_id</definition>
+        <argsstring></argsstring>
+        <name>board_id</name>
+        <qualifiedname>ndigo_init_parameters::board_id</qualifiedname>
+        <briefdescription>
+<para>8-bit board ID number. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This number is filled into each packet created by the board and is useful if data streams of multiple boards will be merged. If boards of different types that use a compatible data format are used in a system each board should get a unique ID.</para>
+<para>Can be changed with <ref refid="ndigo__common__interface_8h_1a96f8d98125ac8e8f4c0f8103666b5192" kindref="member">ndigo_set_board_id()</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="547" column="9" bodyfile="ndigo_common_interface.h" bodystart="547" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__init__parameters_1a6b019828873747353a4f181b33504470" prot="public" static="no" mutable="no">
+        <type><ref refid="ndigo__common__interface_8h_1ac8108da51e15c2c7cd3dadb52ec3efd9" kindref="member">ndigo_bool_t</ref></type>
+        <definition>ndigo_bool_t use_external_clock</definition>
+        <argsstring></argsstring>
+        <name>use_external_clock</name>
+        <qualifiedname>ndigo_init_parameters::use_external_clock</qualifiedname>
+        <briefdescription>
+<para>Use 10MHz clock supplied by IPC at band cable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Must be set for all slaves when synchronizing multiple boards. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="553" column="18" bodyfile="ndigo_common_interface.h" bodystart="553" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__init__parameters_1a1b35fdc62186f75210be574bc22b09ea" prot="public" static="no" mutable="no">
+        <type><ref refid="ndigo__common__interface_8h_1ac8108da51e15c2c7cd3dadb52ec3efd9" kindref="member">ndigo_bool_t</ref></type>
+        <definition>ndigo_bool_t drive_external_clock</definition>
+        <argsstring></argsstring>
+        <name>drive_external_clock</name>
+        <qualifiedname>ndigo_init_parameters::drive_external_clock</qualifiedname>
+        <briefdescription>
+<para>Drive internal 10MHz clock of this board to IPC at band cable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Must be set for the master board when synchronizing multiple boards. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="560" column="18" bodyfile="ndigo_common_interface.h" bodystart="560" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__init__parameters_1ad875b5d5c5f5f820a900a28c34ab6e6c" prot="public" static="no" mutable="no">
+        <type><ref refid="ndigo__common__interface_8h_1ac8108da51e15c2c7cd3dadb52ec3efd9" kindref="member">ndigo_bool_t</ref></type>
+        <definition>ndigo_bool_t is_slave</definition>
+        <argsstring></argsstring>
+        <name>is_slave</name>
+        <qualifiedname>ndigo_init_parameters::is_slave</qualifiedname>
+        <briefdescription>
+<para>Data acquisition of this board is controlled by the master board. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="566" column="18" bodyfile="ndigo_common_interface.h" bodystart="566" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__init__parameters_1a3b8edeb542fd7d1e6947d64cd2e39c64" prot="public" static="no" mutable="no">
+        <type><ref refid="ndigo__common__interface_8h_1ac8108da51e15c2c7cd3dadb52ec3efd9" kindref="member">ndigo_bool_t</ref></type>
+        <definition>ndigo_bool_t multiboard_sync</definition>
+        <argsstring></argsstring>
+        <name>multiboard_sync</name>
+        <qualifiedname>ndigo_init_parameters::multiboard_sync</qualifiedname>
+        <briefdescription>
+<para>Set whether board is used in a multiple boards environment. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="571" column="18" bodyfile="ndigo_common_interface.h" bodystart="571" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__init__parameters_1a87ffda54f6d402421a520421cb0c56f7" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int direct_sync</definition>
+        <argsstring></argsstring>
+        <name>direct_sync</name>
+        <qualifiedname>ndigo_init_parameters::direct_sync</qualifiedname>
+        <briefdescription>
+<para>If &gt;0, the direct sync method is used for multi-board applications. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Value corresponds to accuracy (higher values for more accurate phase match). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="579" column="9" bodyfile="ndigo_common_interface.h" bodystart="579" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__init__parameters_1a9b5ec047e5c93374d1b04155bab36073" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int sync_period</definition>
+        <argsstring></argsstring>
+        <name>sync_period</name>
+        <qualifiedname>ndigo_init_parameters::sync_period</qualifiedname>
+        <briefdescription>
+<para>Period of the multi-card sync pulse. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Should be set to 4 if only Ndigo5G boards are present in the system. If other boards are synchronized, the correct value is the lowest common denominator of the value of all boards.</para>
+<para>Ignored for single board setups. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="588" column="9" bodyfile="ndigo_common_interface.h" bodystart="588" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__init__parameters_1acec61bca70d258de51ac0dc873c585a6" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int sync_delay</definition>
+        <argsstring></argsstring>
+        <name>sync_delay</name>
+        <qualifiedname>ndigo_init_parameters::sync_delay</qualifiedname>
+        <briefdescription>
+<para>Fine tap delay for incoming sync signals. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Ignored for single board setups. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="594" column="9" bodyfile="ndigo_common_interface.h" bodystart="594" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__init__parameters_1a483012f7886376a52ab2d8be24ac4234" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int sync_delay_master</definition>
+        <argsstring></argsstring>
+        <name>sync_delay_master</name>
+        <qualifiedname>ndigo_init_parameters::sync_delay_master</qualifiedname>
+        <briefdescription>
+<para>Fine tap delay for sync signals. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Ignored for single board setups </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="600" column="9" bodyfile="ndigo_common_interface.h" bodystart="600" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__init__parameters_1a1b32190dc65d3ce4ebe79858bb413510" prot="public" static="no" mutable="no">
+        <type><ref refid="ndigo__common__interface_8h_1ac8108da51e15c2c7cd3dadb52ec3efd9" kindref="member">ndigo_bool_t</ref></type>
+        <definition>ndigo_bool_t force_window_calibration</definition>
+        <argsstring></argsstring>
+        <name>force_window_calibration</name>
+        <qualifiedname>ndigo_init_parameters::force_window_calibration</qualifiedname>
+        <briefdescription>
+<para>Window calibration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If true, a valid data window is automatically detected at initialization.</para>
+<para>If false, values from flash memory are used in order to set the data window to the correct position.</para>
+<para>Defaults to false. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="610" column="18" bodyfile="ndigo_common_interface.h" bodystart="610" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__init__parameters_1a2c37ef1a3ad8802afad6dbe8f23a5381" prot="public" static="no" mutable="no">
+        <type><ref refid="ndigo__common__interface_8h_1ac8108da51e15c2c7cd3dadb52ec3efd9" kindref="member">ndigo_bool_t</ref></type>
+        <definition>ndigo_bool_t hptdc_sync_enabled</definition>
+        <argsstring></argsstring>
+        <name>hptdc_sync_enabled</name>
+        <qualifiedname>ndigo_init_parameters::hptdc_sync_enabled</qualifiedname>
+        <briefdescription>
+<para>Enable the CLK and sync line for the HPTDC. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Must be set to false.</para>
+<para>If an HPTDC is connected to the board this enables the CLK and sync line for the HPTDC. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="618" column="18" bodyfile="ndigo_common_interface.h" bodystart="618" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__init__parameters_1ada476c6eaaba1ad3aab64831b1cd78f0" prot="public" static="no" mutable="no">
+        <type>int64_t</type>
+        <definition>int64_t buffer_size[8]</definition>
+        <argsstring>[8]</argsstring>
+        <name>buffer_size</name>
+        <qualifiedname>ndigo_init_parameters::buffer_size</qualifiedname>
+        <briefdescription>
+<para>The minimum size of the host buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If set to 0, the default size of 16MByte is used.</para>
+<para>Only buffer_size[0] is used. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="625" column="13" bodyfile="ndigo_common_interface.h" bodystart="625" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__init__parameters_1a915a1572263beb4fae6d85b802f12c8e" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int buffer_type</definition>
+        <argsstring></argsstring>
+        <name>buffer_type</name>
+        <qualifiedname>ndigo_init_parameters::buffer_type</qualifiedname>
+        <briefdescription>
+<para>Type of buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Possible values follow. Currently, this has to be set to <ref refid="group__bufferdef_1gaada79869f9e48d85fc07d15f04977bb4" kindref="member">NDIGO_BUFFER_ALLOCATE</ref>.</para>
+<para><verbatim>embed:rst:leading-asterisk
+*          .. doxygengroup:: bufferdef
+*               :content-only:
+*          </verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="636" column="9" bodyfile="ndigo_common_interface.h" bodystart="636" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__init__parameters_1a49c2a3e4d481af5bbd5c153f1e896614" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t buffer_address</definition>
+        <argsstring></argsstring>
+        <name>buffer_address</name>
+        <qualifiedname>ndigo_init_parameters::buffer_address</qualifiedname>
+        <briefdescription>
+<para>The start of the memory address in case <ref refid="group__bufferdef_1ga10b9935a4646124afb3d0dcd78799b7a" kindref="member">NDIGO_BUFFER_USE_PHYSICAL</ref> is used. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Currently ignored. May be used for future buffer types.</para>
+<para>The buffers will be allocated with the sizes given by <ref refid="structndigo__init__parameters_1ada476c6eaaba1ad3aab64831b1cd78f0" kindref="member">ndigo_init_parameters::buffer_size</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="645" column="14" bodyfile="ndigo_common_interface.h" bodystart="645" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__init__parameters_1a1ad8f69f5cb3f7c9d85add2d9621c612" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int preallocated_buffer_size</definition>
+        <argsstring></argsstring>
+        <name>preallocated_buffer_size</name>
+        <qualifiedname>ndigo_init_parameters::preallocated_buffer_size</qualifiedname>
+        <briefdescription>
+<para>The size of the preallocated buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Used if <ref refid="group__bufferdef_1gafc11af4ff8536dfdaa1cf6faad6a7af6" kindref="member">NDIGO_BUFFER_USE_PREALLOCATED</ref> is used. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="651" column="18" bodyfile="ndigo_common_interface.h" bodystart="651" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__init__parameters_1a3dc8782d59680c65908799b3eefb9793" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int variant</definition>
+        <argsstring></argsstring>
+        <name>variant</name>
+        <qualifiedname>ndigo_init_parameters::variant</qualifiedname>
+        <briefdescription>
+<para>Specify board variant. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Can be used to activate future device variants, such as different base frequencies.</para>
+<para>Defaults to 0. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="659" column="9" bodyfile="ndigo_common_interface.h" bodystart="659" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__init__parameters_1a65c41de4127d26b94dfbcd870b0fb249" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int device_type</definition>
+        <argsstring></argsstring>
+        <name>device_type</name>
+        <qualifiedname>ndigo_init_parameters::device_type</qualifiedname>
+        <briefdescription>
+<para>A constant for the different devices from cronologic. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Initialized by <ref refid="ndigo__interface_8h_1a531f2422f13797ce226cff26b1245bed" kindref="member">ndigo_get_default_init_parameters()</ref> and set to <ref refid="group__cronodevicetypes_1ga48b633bbe6acab8eda1a2acebb7fea82" kindref="member">CRONO_DEVICE_NDIGO5G</ref>.</para>
+<para>Must be left unchanged. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="667" column="9" bodyfile="ndigo_common_interface.h" bodystart="667" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__init__parameters_1aec252b7f9290ce207cb8111e9d7b12b2" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int dma_read_delay</definition>
+        <argsstring></argsstring>
+        <name>dma_read_delay</name>
+        <qualifiedname>ndigo_init_parameters::dma_read_delay</qualifiedname>
+        <briefdescription>
+<para>The write pointer is delayed by this number 4n clock periods. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The write pointer update is delayed by this number of 4n clock periods to hide race conditions between software and DMA.</para>
+<para>Initialized by <ref refid="ndigo__interface_8h_1a531f2422f13797ce226cff26b1245bed" kindref="member">ndigo_get_default_init_parameters()</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="675" column="9" bodyfile="ndigo_common_interface.h" bodystart="675" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Struct for the initialization of the Ndigo board. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This structure must be completely initialized by calling <ref refid="ndigo__interface_8h_1a531f2422f13797ce226cff26b1245bed" kindref="member">ndigo_get_default_init_parameters()</ref> before initializing an Ndigo5G using <ref refid="ndigo__interface_8h_1a8c704f55c580db43fba8c5f84cd9fa15" kindref="member">ndigo_init()</ref>. </para>
+    </detaileddescription>
+    <location file="ndigo_common_interface.h" line="516" column="1" bodyfile="ndigo_common_interface.h" bodystart="516" bodyend="676"/>
+    <listofallmembers>
+      <member refid="structndigo__init__parameters_1a7edf6305fafb8d595318dde91addca3c" prot="public" virt="non-virtual"><scope>ndigo_init_parameters</scope><name>board_id</name></member>
+      <member refid="structndigo__init__parameters_1a49c2a3e4d481af5bbd5c153f1e896614" prot="public" virt="non-virtual"><scope>ndigo_init_parameters</scope><name>buffer_address</name></member>
+      <member refid="structndigo__init__parameters_1ada476c6eaaba1ad3aab64831b1cd78f0" prot="public" virt="non-virtual"><scope>ndigo_init_parameters</scope><name>buffer_size</name></member>
+      <member refid="structndigo__init__parameters_1a915a1572263beb4fae6d85b802f12c8e" prot="public" virt="non-virtual"><scope>ndigo_init_parameters</scope><name>buffer_type</name></member>
+      <member refid="structndigo__init__parameters_1a76f4fd1aefbb9db87716f117658faf83" prot="public" virt="non-virtual"><scope>ndigo_init_parameters</scope><name>card_index</name></member>
+      <member refid="structndigo__init__parameters_1a65c41de4127d26b94dfbcd870b0fb249" prot="public" virt="non-virtual"><scope>ndigo_init_parameters</scope><name>device_type</name></member>
+      <member refid="structndigo__init__parameters_1a87ffda54f6d402421a520421cb0c56f7" prot="public" virt="non-virtual"><scope>ndigo_init_parameters</scope><name>direct_sync</name></member>
+      <member refid="structndigo__init__parameters_1aec252b7f9290ce207cb8111e9d7b12b2" prot="public" virt="non-virtual"><scope>ndigo_init_parameters</scope><name>dma_read_delay</name></member>
+      <member refid="structndigo__init__parameters_1a1b35fdc62186f75210be574bc22b09ea" prot="public" virt="non-virtual"><scope>ndigo_init_parameters</scope><name>drive_external_clock</name></member>
+      <member refid="structndigo__init__parameters_1a1b32190dc65d3ce4ebe79858bb413510" prot="public" virt="non-virtual"><scope>ndigo_init_parameters</scope><name>force_window_calibration</name></member>
+      <member refid="structndigo__init__parameters_1a2c37ef1a3ad8802afad6dbe8f23a5381" prot="public" virt="non-virtual"><scope>ndigo_init_parameters</scope><name>hptdc_sync_enabled</name></member>
+      <member refid="structndigo__init__parameters_1ad875b5d5c5f5f820a900a28c34ab6e6c" prot="public" virt="non-virtual"><scope>ndigo_init_parameters</scope><name>is_slave</name></member>
+      <member refid="structndigo__init__parameters_1a3b8edeb542fd7d1e6947d64cd2e39c64" prot="public" virt="non-virtual"><scope>ndigo_init_parameters</scope><name>multiboard_sync</name></member>
+      <member refid="structndigo__init__parameters_1a1ad8f69f5cb3f7c9d85add2d9621c612" prot="public" virt="non-virtual"><scope>ndigo_init_parameters</scope><name>preallocated_buffer_size</name></member>
+      <member refid="structndigo__init__parameters_1acec61bca70d258de51ac0dc873c585a6" prot="public" virt="non-virtual"><scope>ndigo_init_parameters</scope><name>sync_delay</name></member>
+      <member refid="structndigo__init__parameters_1a483012f7886376a52ab2d8be24ac4234" prot="public" virt="non-virtual"><scope>ndigo_init_parameters</scope><name>sync_delay_master</name></member>
+      <member refid="structndigo__init__parameters_1a9b5ec047e5c93374d1b04155bab36073" prot="public" virt="non-virtual"><scope>ndigo_init_parameters</scope><name>sync_period</name></member>
+      <member refid="structndigo__init__parameters_1a6b019828873747353a4f181b33504470" prot="public" virt="non-virtual"><scope>ndigo_init_parameters</scope><name>use_external_clock</name></member>
+      <member refid="structndigo__init__parameters_1a3dc8782d59680c65908799b3eefb9793" prot="public" virt="non-virtual"><scope>ndigo_init_parameters</scope><name>variant</name></member>
+      <member refid="structndigo__init__parameters_1aad880fc4455c253781e8968f2239d56f" prot="public" virt="non-virtual"><scope>ndigo_init_parameters</scope><name>version</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

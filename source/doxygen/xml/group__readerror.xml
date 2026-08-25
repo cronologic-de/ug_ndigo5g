@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="group__readerror" kind="group">
+    <compoundname>readerror</compoundname>
+    <title>Read error defines</title>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__readerror_1gaa9265bd09d07847831c174e2dc7f10e8" prot="public" static="no">
+        <name>NDIGO_READ_OK</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>No read error occurred. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="297" column="9" bodyfile="ndigo_common_interface.h" bodystart="297" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__readerror_1gaca5e1c19dbb8c507a5299a6365d25f5b" prot="public" static="no">
+        <name>NDIGO_READ_NO_DATA</name>
+        <initializer>1</initializer>
+        <briefdescription>
+<para>Read did not yield any data. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="301" column="9" bodyfile="ndigo_common_interface.h" bodystart="301" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__readerror_1ga47cec4ed538dd187c1a51e7868d945a5" prot="public" static="no">
+        <name>NDIGO_READ_INTERNAL_ERROR</name>
+        <initializer>2</initializer>
+        <briefdescription>
+<para>Error in buffer handling. The device has to be re-initialized. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="305" column="9" bodyfile="ndigo_common_interface.h" bodystart="305" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__readerror_1ga7fb6873069975065aeb0b5e70c7616d2" prot="public" static="no">
+        <name>NDIGO_READ_TIMEOUT</name>
+        <initializer>3</initializer>
+        <briefdescription>
+<para>Currently not used. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="309" column="9" bodyfile="ndigo_common_interface.h" bodystart="309" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

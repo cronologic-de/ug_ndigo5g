@@ -10,6 +10,10 @@ import os
 import pathlib
 import tomllib
 
+from docutils import nodes
+from docutils.parsers.rst import Directive, directives
+from docutils.statemachine import StringList
+
 
 def get_version() -> str:
     pyproject = pathlib.Path("./pyproject.toml")
@@ -36,6 +40,7 @@ extensions = [
 
 breathe_projects = {"ndigo5g_api": os.fspath("./doxygen/xml/")}
 breathe_default_project = "ndigo5g_api"
+breathe_default_members = ("members", "undoc-members")
 breathe_show_include = False
 breathe_show_define_initializer = True
 
@@ -141,3 +146,120 @@ latex_additional_files = [
     "cronologicug.sty",
     "extraplaceins.sty",
 ]
+
+
+class PassThroughOptions(dict):
+    """
+    Dictionary subclass allowing dynamic acceptance of any directive option.
+    """
+
+    def __contains__(self, key):
+        return True
+
+    def __getitem__(self, key):
+        if key in ("no-latex-header", "hide-initializer"):
+            return directives.flag
+        return directives.unchanged
+
+
+class LatexTocDoxygenBase(Directive):
+    """
+    Base directive wrapping Breathe doxygen directives to inject LaTeX TOC entries.
+
+    Available Options:
+        :no-latex-header: (flag) If present, disables the LaTeX raw block generation.
+        :toclevel: (string) The LaTeX TOC level to use. Defaults to 'subsection'.
+        :hide-initializer: (flag) Temporarily disables breathe_show_define_initializer.
+        *Any other options provided are passed through to the underlying doxygen directive.
+    """
+
+    required_arguments = 1
+    optional_arguments = 0
+    final_argument_whitespace = True
+    has_content = True
+    option_spec = PassThroughOptions()
+
+    def run(self):
+        name = self.arguments[0]
+        escaped_name = name.replace("_", r"\_")
+        no_latex = "no-latex-header" in self.options
+        toclevel = self.options.get("toclevel", "subsection")
+        hide_initializer = "hide-initializer" in self.options
+
+        rst = []
+        if not no_latex:
+            rst.extend(
+                [
+                    ".. raw:: latex",
+                    "",
+                    "    \\phantomsection",
+                    f"    \\addcontentsline{{toc}}{{{toclevel}}}{{{escaped_name}}}",
+                    "",
+                ]
+            )
+
+        rst.append(f".. {self.doxy_type}:: {name}")  # ty: ignore[unresolved-attribute]
+
+        for k, v in self.options.items():
+            if k not in ("no-latex-header", "toclevel", "hide-initializer"):
+                rst.append(f"   :{k}:" if v is None else f"   :{k}: {v}")
+
+        if self.content:
+            rst.append("")
+            rst.extend(f"   {line}" for line in self.content)
+
+        node = nodes.Element()
+        env = self.state.document.settings.env
+
+        orig_initializer_setting = getattr(
+            env.config, "breathe_show_define_initializer", False
+        )
+
+        if hide_initializer:
+            env.config.breathe_show_define_initializer = False
+
+        try:
+            self.state.nested_parse(
+                StringList(rst, source=self.state.document.current_source),
+                self.content_offset,
+                node,
+            )
+        finally:
+            if hide_initializer:
+                env.config.breathe_show_define_initializer = orig_initializer_setting
+
+        return node.children
+
+
+class LatexTocDoxygenFunction(LatexTocDoxygenBase):
+    """
+    Sphinx directive wrapping doxygenfunction with LaTeX TOC injection.
+    """
+
+    doxy_type = "doxygenfunction"
+
+
+class LatexTocDoxygenStruct(LatexTocDoxygenBase):
+    """
+    Sphinx directive wrapping doxygenstruct with LaTeX TOC injection.
+    """
+
+    doxy_type = "doxygenstruct"
+
+
+class LatexTocDoxygenDefine(LatexTocDoxygenBase):
+    """
+    Sphinx directive wrapping doxygendefine with LaTeX TOC injection.
+    """
+
+    doxy_type = "doxygendefine"
+
+
+def setup(app):
+    """
+    Registers the custom LaTeX TOC doxygen directives with the Sphinx application.
+    """
+    app.add_directive("latex-toc-doxygenfunction", LatexTocDoxygenFunction)
+    app.add_directive("latex-toc-doxygenstruct", LatexTocDoxygenStruct)
+    app.add_directive("latex-toc-doxygendefine", LatexTocDoxygenDefine)
+    return {"version": "1.0", "parallel_read_safe": True}

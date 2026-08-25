@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structndigo__device" kind="struct" language="C++" prot="public">
+    <compoundname>ndigo_device</compoundname>
+    <includes refid="ndigo__common__interface_8h" local="no">ndigo_common_interface.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structndigo__device_1a7b1d0df736739f38994ed29f54cffdf3" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool is_valid</definition>
+        <argsstring></argsstring>
+        <name>is_valid</name>
+        <qualifiedname>ndigo_device::is_valid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="456" column="10" bodyfile="ndigo_common_interface.h" bodystart="456" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__device_1affd64fcbef63b9de78b48c8355dbe078" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* ndigo</definition>
+        <argsstring></argsstring>
+        <name>ndigo</name>
+        <qualifiedname>ndigo_device::ndigo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="457" column="10" bodyfile="ndigo_common_interface.h" bodystart="457" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Contains information on the current device. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Returned by <ref refid="ndigo__interface_8h_1a8c704f55c580db43fba8c5f84cd9fa15" kindref="member">ndigo_init</ref>. </para>
+    </detaileddescription>
+    <location file="ndigo_common_interface.h" line="455" column="1" bodyfile="ndigo_common_interface.h" bodystart="455" bodyend="458"/>
+    <listofallmembers>
+      <member refid="structndigo__device_1a7b1d0df736739f38994ed29f54cffdf3" prot="public" virt="non-virtual"><scope>ndigo_device</scope><name>is_valid</name></member>
+      <member refid="structndigo__device_1affd64fcbef63b9de78b48c8355dbe078" prot="public" virt="non-virtual"><scope>ndigo_device</scope><name>ndigo</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

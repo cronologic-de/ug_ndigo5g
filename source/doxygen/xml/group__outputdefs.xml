@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="group__outputdefs" kind="group">
+    <compoundname>outputdefs</compoundname>
+    <title>Output format definitions</title>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__outputdefs_1ga2590f128181ea4332de3e0e25240758e" prot="public" static="no">
+        <name>NDIGO_OUTPUT_MODE_SIGNED16</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>Output in signed16 integer format. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Raw ADC values are scaled and INL corrected to a range of -32768 to 32767. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="134" column="9" bodyfile="ndigo_interface.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__outputdefs_1ga6da4f29b3f6dd4430f78dc2b939e2a2d" prot="public" static="no">
+        <name>NDIGO_OUTPUT_MODE_RAW</name>
+        <initializer>1</initializer>
+        <briefdescription>
+<para>Return the native ADC range. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Ranges from <ref refid="group__constants_1ga07d035e24c17796a9fc369174c6262e8" kindref="member">NDIGO_RAW_VALUE_MIN</ref> to <ref refid="group__constants_1gafca2e778a20a57978f9222ee086ac350" kindref="member">NDIGO_RAW_VALUE_MAX</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="140" column="9" bodyfile="ndigo_interface.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__outputdefs_1gad2694ad6c819534bcbc949ed08c8cd62" prot="public" static="no">
+        <name>NDIGO_OUTPUT_MODE_CUSTOM</name>
+        <initializer>2</initializer>
+        <briefdescription>
+<para>Custom output mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Requires that <ref refid="ndigo__interface_8h_1aba3f4484158c5712fdc54d936c17ca25" kindref="member">lut_func</ref> is set to an appropriate function pointer.</para>
+<para>Requires configuration of <ref refid="structndigo__configuration_1a63d17412a8a08c726467c0e562ff9a3e" kindref="member">ndigo_configuration::custom_lut</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="147" column="9" bodyfile="ndigo_interface.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__outputdefs_1gab41c3a3b5a9c7d9195d52568de4cffd5" prot="public" static="no">
+        <name>NDIGO_OUTPUT_MODE_CUSTOM_INL</name>
+        <initializer>3</initializer>
+        <briefdescription>
+<para>Custom output mode which applies a custom LUT correction. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Requires that <ref refid="ndigo__interface_8h_1aba3f4484158c5712fdc54d936c17ca25" kindref="member">lut_func</ref> is set to an appropriate function pointer.</para>
+<para>Requires configuration of <ref refid="structndigo__configuration_1a63d17412a8a08c726467c0e562ff9a3e" kindref="member">ndigo_configuration::custom_lut</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="154" column="9" bodyfile="ndigo_interface.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

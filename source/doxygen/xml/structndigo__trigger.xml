@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structndigo__trigger" kind="struct" language="C++" prot="public">
+    <compoundname>ndigo_trigger</compoundname>
+    <includes refid="ndigo__common__interface_8h" local="no">ndigo_common_interface.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structndigo__trigger_1afff4cd79ce8bef5eb16061de39587d90" prot="public" static="no" mutable="no">
+        <type>short</type>
+        <definition>short threshold</definition>
+        <argsstring></argsstring>
+        <name>threshold</name>
+        <qualifiedname>ndigo_trigger::threshold</qualifiedname>
+        <briefdescription>
+<para>Threshold of both triggers units. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Valid values depend on output mode:<itemizedlist>
+<listitem><para><ref refid="group__outputdefs_1ga6da4f29b3f6dd4430f78dc2b939e2a2d" kindref="member">NDIGO_OUTPUT_MODE_RAW</ref>: 0 to 1023</para>
+</listitem><listitem><para><ref refid="group__outputdefs_1ga2590f128181ea4332de3e0e25240758e" kindref="member">NDIGO_OUTPUT_MODE_SIGNED16</ref>: -32768 to +32767</para>
+<para>For trigger indices <ref refid="group__triggerdefs_1ga965c178fd1642744c3477627eb7de843" kindref="member">NDIGO_TRIGGER_TDC</ref> to <ref refid="group__triggerdefs_1ga1303a942415e4849dd715e9037d33df4" kindref="member">NDIGO_TRIGGER_BUS3_PE</ref> the threshold is ignored. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="473" column="11" bodyfile="ndigo_common_interface.h" bodystart="473" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__trigger_1a27316febd6206386bbbc8e1310678962" prot="public" static="no" mutable="no">
+        <type><ref refid="ndigo__common__interface_8h_1ac8108da51e15c2c7cd3dadb52ec3efd9" kindref="member">ndigo_bool_t</ref></type>
+        <definition>ndigo_bool_t edge</definition>
+        <argsstring></argsstring>
+        <name>edge</name>
+        <qualifiedname>ndigo_trigger::edge</qualifiedname>
+        <briefdescription>
+<para>Enable edge trigger functionality. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If true, operate as an edge trigger.</para>
+<para>If false, operate as a level trigger.</para>
+<para>An edge trigger triggers as soon as its set threshold is crossed by the signal. Thus the roots in reference to the threshold are recorded.</para>
+<para>A level trigger triggers as long as the signal is above (or below) the set threshold. Therefore, the trigger gives the sign of the signal in reference to the threshold.</para>
+<para>For trigger indices <ref refid="group__triggerdefs_1gae88dc2cdeaa20a6c90d8b726c5d5b5a3" kindref="member">NDIGO_TRIGGER_AUTO</ref> and <ref refid="group__triggerdefs_1ga1115f490ea453ff315993927b8424b05" kindref="member">NDIGO_TRIGGER_ONE</ref> this is ignored.</para>
+<para>For trigger indices <ref refid="group__triggerdefs_1gab4b66daf69fb38f6aa9ffa47db814876" kindref="member">NDIGO_TRIGGER_TDC_PE</ref> to <ref refid="group__triggerdefs_1ga1303a942415e4849dd715e9037d33df4" kindref="member">NDIGO_TRIGGER_BUS3_PE</ref> this must be set. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="490" column="18" bodyfile="ndigo_common_interface.h" bodystart="490" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__trigger_1af8473ec25f5ef654d24c79394c4d8312" prot="public" static="no" mutable="no">
+        <type><ref refid="ndigo__common__interface_8h_1ac8108da51e15c2c7cd3dadb52ec3efd9" kindref="member">ndigo_bool_t</ref></type>
+        <definition>ndigo_bool_t rising</definition>
+        <argsstring></argsstring>
+        <name>rising</name>
+        <qualifiedname>ndigo_trigger::rising</qualifiedname>
+        <briefdescription>
+<para>Configure rising or falling edge trigger functionality. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If true (false)<itemizedlist>
+<listitem><para><ref refid="structndigo__trigger_1a27316febd6206386bbbc8e1310678962" kindref="member">ndigo_trigger::edge</ref> is true: Trigger on rising (falling) edges, that is, when the signal level crosses from below to above the value of <ref refid="structndigo__trigger_1afff4cd79ce8bef5eb16061de39587d90" kindref="member">ndigo_trigger::threshold</ref>.</para>
+</listitem><listitem><para><ref refid="structndigo__trigger_1a27316febd6206386bbbc8e1310678962" kindref="member">ndigo_trigger::edge</ref> is false (level triggering): Trigger parts of the signal that are above (below) the value of <ref refid="structndigo__trigger_1afff4cd79ce8bef5eb16061de39587d90" kindref="member">ndigo_trigger::threshold</ref>.</para>
+<para>For trigger indices <ref refid="group__triggerdefs_1gae88dc2cdeaa20a6c90d8b726c5d5b5a3" kindref="member">NDIGO_TRIGGER_AUTO</ref> and <ref refid="group__triggerdefs_1ga1115f490ea453ff315993927b8424b05" kindref="member">NDIGO_TRIGGER_ONE</ref> this is ignored.</para>
+<para>For trigger indices <ref refid="group__triggerdefs_1gab4b66daf69fb38f6aa9ffa47db814876" kindref="member">NDIGO_TRIGGER_TDC_PE</ref> to <ref refid="group__triggerdefs_1ga1303a942415e4849dd715e9037d33df4" kindref="member">NDIGO_TRIGGER_BUS3_PE</ref> this must be set. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="507" column="18" bodyfile="ndigo_common_interface.h" bodystart="507" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Struct containing trigger settings. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Used by <ref refid="structndigo__configuration_1a8bc5b11a6dc9431517fb00335d4d9aeb" kindref="member">ndigo_configuration::trigger</ref>. </para>
+    </detaileddescription>
+    <location file="ndigo_common_interface.h" line="464" column="1" bodyfile="ndigo_common_interface.h" bodystart="464" bodyend="508"/>
+    <listofallmembers>
+      <member refid="structndigo__trigger_1a27316febd6206386bbbc8e1310678962" prot="public" virt="non-virtual"><scope>ndigo_trigger</scope><name>edge</name></member>
+      <member refid="structndigo__trigger_1af8473ec25f5ef654d24c79394c4d8312" prot="public" virt="non-virtual"><scope>ndigo_trigger</scope><name>rising</name></member>
+      <member refid="structndigo__trigger_1afff4cd79ce8bef5eb16061de39587d90" prot="public" virt="non-virtual"><scope>ndigo_trigger</scope><name>threshold</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,79 +1,51 @@
-\NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{cronologicug}[2026-04-28]
+\NeedsTeXFormat{LaTeX2e}[2022-06-01]
+\ProvidesPackage{cronologicug}[2026-04-29]
 \author{cronologic GmbH \& Co KG}
 
 \RequirePackage{iftex}
-\ifLuaTeX
+\ifLuaTeX 
   \directlua{pdf.setminorversion(7)}
 \fi
 \ifxetex
   \special{pdf:minorversion 7}
 \fi
 
-\RequirePackage{ifthen}
+\DeclareKeys{
+  sphinx.if               = @crono@sphinx,
+  noframe.if              = @crono@noframe,
+  monofontdescriptions.if = @crono@monofontdescriptions,
+  pdfsubject.store  = \@crono@subject,
+  pdfkeywords.store = \@crono@keywords,
+  pdflang.store     = \@crono@language,
+  left.store   = \@crono@left,
+  right.store  = \@crono@right,
+  top.store    = \@crono@top,
+  bottom.store = \@crono@bottom,
+  framemargin.store    = \@crono@framemargin,
+  frameoffset.store    = \@crono@frameoffset,
+  framelinesep.store   = \@crono@framelinesep,
+  framelinewidth.store = \@crono@framelinewidth,
+  headsep.store = \@crono@headsep,
+  footskip.store = \@crono@footskip,
+  webpage.store = \@crono@webpage,
+}
 
-\RequirePackage{kvoptions}
-\SetupKeyvalOptions{family=crono, prefix=@crono@}
+\SetKeys{
+  noframe = false,
+  pdflang = en,
+  left    = 1.5cm,
+  right   = 1.5cm,
+  top     = 1.5cm,
+  bottom  = 1.5cm,
+  framemargin    = 1.25cm,
+  frameoffset    = 0.8cm,
+  framelinesep   = 0.6pt,
+  framelinewidth = 0.3pt,
+  headsep        = 0.35cm,
+  footskip       = 18pt,
+}
 
-\DeclareBoolOption[false]{sphinx}
-\DeclareBoolOption[false]{noframe}
-\DeclareBoolOption[false]{monofontdescriptions}
-\DeclareStringOption{pdfsubject}
-\DeclareStringOption{pdfkeywords}
-\DeclareStringOption{pdflang}
-\DeclareStringOption[1.5cm]{left}
-\DeclareStringOption[1.5cm]{right}
-\DeclareStringOption[1.5cm]{top}
-\DeclareStringOption[1.5cm]{bottom}
-\DeclareStringOption[1.25cm]{framemargin}
-\DeclareStringOption[0.8cm]{frameoffset}
-\DeclareStringOption[0.6pt]{framelinesep}
-\DeclareStringOption[0.3pt]{framelinewidth}
-\DeclareStringOption[0.35cm]{headsep}
-\DeclareStringOption[18pt]{footskip}
-
-\ProcessKeyvalOptions{crono}
-
-% This style of keyword processing only works in LaTeX2e 2022-06-01, which is
-% not always available
-%
-%\DeclareKeys{
-%  font.store              = \@crono@font,
-%  sphinx.if               = @crono@sphinx,
-%  noframe.if              = @crono@noframe,
-%  monofontdescriptions.if = @crono@monofontdescriptions,
-%  pdfsubject.store  = \@crono@pdfsubject,
-%  pdfkeywords.store = \@crono@pdfkeywords,
-%  pdflang.store     = \@crono@pdflanguage,
-%  left.store   = \@crono@left,
-%  right.store  = \@crono@right,
-%  top.store    = \@crono@top,
-%  bottom.store = \@crono@bottom,
-%  framemargin.store    = \@crono@framemargin,
-%  frameoffset.store    = \@crono@frameoffset,
-%  framelinesep.store   = \@crono@framelinesep,
-%  framelinewidth.store = \@crono@framelinewidth,
-%  headsep.store = \@crono@headsep,
-%  footskip.store = \@crono@footskip,
-%}
-%
-%\SetKeys{
-%  font    = montserrat,
-%  noframe = false,
-%  pdflang = en,
-%  left    = 1.5cm,
-%  right   = 1.5cm,
-%  top     = 1.5cm,
-%  bottom  = 1.5cm,
-%  framemargin    = 1.25cm,
-%  frameoffset    = 0.8cm,
-%  framelinesep   = 0.6pt,
-%  framelinewidth = 0.3pt,
-%  headsep        = 0.35cm,
-%  footskip       = 18pt,
-%}
-%
-%\ProcessKeyOptions
+\ProcessKeyOptions
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % colors
@@ -93,16 +65,17 @@
 % miscellaneous
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage{graphicx}
-\RequirePackage{tabularx}
+\RequirePackage{tabularx,xltabular}
 \RequirePackage{siunitx}
 \RequirePackage{fancyhdr}
+\RequirePackage{ifthen}
 
-\ifthenelse{\boolean{@crono@monofontdescriptions}}{
+\if@crono@monofontdescriptions
   \RequirePackage{enumitem} % customized list layouts
   \setlist[description]{
     font={\ttfamily\bfseries}
   }
-}{\relax}
+\fi
 
 \RequirePackage{polyglossia}
 \RequirePackage{pdfpages} % include pdfs with, e.g.,
@@ -114,7 +87,7 @@
 \RequirePackage{array} %for centered AND constant width columns
 \RequirePackage{makecell}  % multi line table cells
 \RequirePackage{incgraph} % to include the title page
-\RequirePackage{attachfile2}
+\RequirePackage{attachfile2} 
 
 \RequirePackage{listings}
 \definecolor{lstgreen}{RGB}{0, 112, 33}
@@ -143,6 +116,12 @@
   upquote=true,
   extendedchars=true,
 }
+
+% make hyphenation unlikely
+\RequirePackage[none]{hyphenat}
+\sloppy
+\emergencystretch=3em
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -212,17 +191,18 @@
     BoldItalicFont={TexGyreAdventor-BoldItalic.otf}
 ]{TexGyreAdventor-Regular.otf}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Definitions for the whole document
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definitions for the whole document 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
 \newcommand{\filesep}{\textbackslash\allowbreak}  % used in file pathes
 \newcommand{\lb}{\linebreak}
 \newcommand{\cronvar}[2]{\noindent\texttt{\textbf{\textcolor{cronogrey}{#1}~#2}}}%for variable declaration
 \newcommand{\crondef}[1]{\noindent\texttt{\textcolor{cronogrey}{\#{}define} #1}}%for definitions
 \newcommand{\tu}{\textunderscore}%shorter
 \newcommand{\subscript}[1]{\ensuremath{_{\textrm{#1}}}}
-\renewcommand{\arraystretch}{1.6}
+\renewcommand{\arraystretch}{1.6} 
 \parskip 8pt
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -242,59 +222,57 @@
 % headings
 \RequirePackage{titlesec}
 \titleformat{\chapter}%
-    {\cronoheaderfont\LARGE\bfseries\color{cronoorange}}%
+    {\cronoheaderfont\Huge\bfseries\color{cronoorange}}%
     {\thechapter}{1em}{\thispagestyle{normal}}{}
 \titlespacing*{\chapter}%
     {0ex}{0ex}{*2}
 
 \titleformat{\section}%
-    {\cronoheaderfont\Large\bfseries\color{cronoorange}}%
+    {\cronoheaderfont\LARGE\bfseries\color{cronoorange}}%
     {\thesection}{1em}{}{}
 
 \titleformat{\subsection}%
-    {\cronoheaderfont\large\bfseries\color{cronoblue}}%
+    {\cronoheaderfont\Large\bfseries\color{cronoblue}}%
     {\thesubsection}{1em}{}{}
 
 \titleformat{\subsubsection}%
-    {\cronoheaderfont\bfseries\itshape\color{cronoblue}}%
+    {\cronoheaderfont\large\bfseries\itshape\color{cronoblue}}%
     {\thesubsubsection}{1em}{}{}
-
+    
 % draw frame around text
-\ifthenelse{\boolean{@crono@noframe}}{
-  \relax
-}{
+\unless\if@crono@noframe
   \usetikzlibrary{calc}
   \AddToHook{shipout/background}{
     \ifnum\value{page}>1%
       \begin{tikzpicture}[remember picture,overlay]%
       % left lines
-      \draw [line width=\@crono@framelinewidth,cronolightgrey]
+      \draw [line width=\@crono@framelinewidth,cronolightgrey] 
       ($(current page.north west)+(\@crono@framemargin,-\@crono@frameoffset)$)
       -- ($(current page.south west)+(\@crono@framemargin,\@crono@frameoffset)$);
-      \draw [line width=\@crono@framelinewidth,cronolightgrey]
+      \draw [line width=\@crono@framelinewidth,cronolightgrey] 
       ($(current page.north west)+
         (\@crono@framemargin+\@crono@framelinesep,-\@crono@frameoffset)$)
-      --
+      -- 
       ($(current page.south west)+
         (\@crono@framemargin+\@crono@framelinesep,\@crono@frameoffset)$);
       % right lines
-      \draw [line width=\@crono@framelinewidth,cronolightgrey]
+      \draw [line width=\@crono@framelinewidth,cronolightgrey] 
       ($(current page.north east)+(-\@crono@framemargin,-\@crono@frameoffset)$)
       -- ($(current page.south east)+(-\@crono@framemargin,\@crono@frameoffset)$);
-      \draw [line width=\@crono@framelinewidth,cronolightgrey]
+      \draw [line width=\@crono@framelinewidth,cronolightgrey] 
       ($(current page.north east)+
         (-\@crono@framemargin-\@crono@framelinesep,-\@crono@frameoffset)$)
-      --
+      -- 
       ($(current page.south east)+
         (-\@crono@framemargin-\@crono@framelinesep,\@crono@frameoffset)$);
       % top lines
-      \draw [line width=\@crono@framelinewidth,cronolightgrey]
+      \draw [line width=\@crono@framelinewidth,cronolightgrey] 
       ($(current page.north west)+(\@crono@frameoffset,-\@crono@framemargin)$)
       -- ($(current page.north east)+(-\@crono@frameoffset,-\@crono@framemargin)$);
-      \draw [line width=\@crono@framelinewidth,cronolightgrey]
+      \draw [line width=\@crono@framelinewidth,cronolightgrey] 
       ($(current page.north west)+
         (\@crono@frameoffset,-\@crono@framemargin-\@crono@framelinesep)$)
-      --
+      -- 
       ($(current page.north east)+
         (-\@crono@frameoffset,-\@crono@framemargin-\@crono@framelinesep)$);
       % bottom lines
@@ -307,25 +285,40 @@
       \end{tikzpicture}
     \fi%
   }
-}
+\fi
 
-\ifthenelse{\boolean{@crono@sphinx}}{
-  \newcommand{\@crono@foot}{\@title\sphinxheadercomma\py@release}
-}{
-  \newcommand{\@crono@foot}{\@title}
-}
+
+% if sphinx is not used, format headings etc
+\if@crono@sphinx
+  \newcommand{\cronotitle}{\@title\sphinxheadercomma\py@release}
+\else
+  \newcommand{\cronotitle}{\@title}
+\fi
 
 \fancypagestyle{normal}{
   \fancyhf{}
-  \fancyhead[L]{}
-  \fancyfoot[L]{\textcolor{cronogrey}{\llap{\hfill\bfseries\thepage\hspace*{10pt}}\href{https://www.cronologic.de}{\footnotesize\textbf{cronologic} GmbH \& Co. KG}}}
-  \fancyfoot[R]{\textcolor{cronogrey}{\footnotesize\@crono@foot}}
+  \fancyhead[L]{{\footnotesize\color{cronogrey}\nouppercase{\leftmark}}}
+  \fancyhead[R]{{\footnotesize\color{cronogrey}\nouppercase{\rightmark}}}
+  \fancyfoot[R]{{\color{cronogrey}}}
+  \fancyfoot[L]{{\color{cronogrey}\llap{\hfill\bfseries\thepage\hspace*{10pt}}\href{https://www.cronologic.de}{\footnotesize\textbf{cronologic} GmbH \& Co. KG}}}
+  \fancyfoot[R]{{\href{\@crono@webpage}{\footnotesize\color{cronogrey}\cronotitle}}}
   \renewcommand{\headrulewidth}{0pt}
   \renewcommand{\footrulewidth}{0pt}
+}
+\fancypagestyle{plain}{
+  \pagestyle{normal}
+  \fancyhead[L]{}
+  \fancyhead[R]{}
 }
 \setlength{\headheight}{14.5pt}
 \pagestyle{normal}
 
+% Remove "Contents" from header
+\renewcommand{\tableofcontents}{%
+  \chapter*{\contentsname}%
+  \@starttoc{toc}%
+  \markboth{}{}%
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % hyperref package should be included last
@@ -343,8 +336,8 @@
   \hypersetup{
     pdfauthor   = {\@author},
     pdftitle    = {\@title},
-    pdfkeywords = {\@crono@pdfkeywords},
-    pdfsubject  = {\@crono@pdfsubject},
-    pdflang     = {\@crono@pdflanguage},
+    pdfkeywords = {\@crono@keywords},
+    pdfsubject  = {\@crono@subject},
+    pdflang     = {\@crono@language},
   }
 }

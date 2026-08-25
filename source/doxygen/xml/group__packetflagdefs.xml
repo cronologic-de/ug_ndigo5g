@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="group__packetflagdefs" kind="group">
+    <compoundname>packetflagdefs</compoundname>
+    <title>Packet flag defines</title>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__packetflagdefs_1ga8e041f54660079627143198eed136b52" prot="public" static="no">
+        <name>NDIGO_PACKET_FLAG_SHORTENED</name>
+        <initializer>1</initializer>
+        <briefdescription>
+<para>Less than the requested number of samples have been written due to a full FIFO. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="127" column="9" bodyfile="ndigo_common_interface.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__packetflagdefs_1ga133800458be58f77559fbbd5e937c7ec" prot="public" static="no">
+        <name>NDIGO_PACKET_FLAG_PACKETS_LOST</name>
+        <initializer>2</initializer>
+        <briefdescription>
+<para>Packets were discarded due to a full host buffer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="132" column="9" bodyfile="ndigo_common_interface.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__packetflagdefs_1ga913cc1c0599884b69821312455f81f51" prot="public" static="no">
+        <name>NDIGO_PACKET_FLAG_OVERFLOW</name>
+        <initializer>4</initializer>
+        <briefdescription>
+<para>The previous packet included ADC samples with overflows. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="137" column="9" bodyfile="ndigo_common_interface.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__packetflagdefs_1ga00826edb4c187a812ac9c3167d85b934" prot="public" static="no">
+        <name>NDIGO_PACKET_FLAG_TRIGGER_MISSED</name>
+        <initializer>8</initializer>
+        <briefdescription>
+<para>The trigger unit has discarded packets due to a full FIFO. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="142" column="9" bodyfile="ndigo_common_interface.h" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__packetflagdefs_1ga64c5dcb44af78ece1babb8784b9ad5c3" prot="public" static="no">
+        <name>NDIGO_PACKET_FLAG_DMA_FIFO_FULL</name>
+        <initializer>16</initializer>
+        <briefdescription>
+<para>The internal DMA FIFO was full. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This <emphasis>may</emphasis> result in missed data, but only if <ref refid="group__packetflagdefs_1ga8e041f54660079627143198eed136b52" kindref="member">NDIGO_PACKET_FLAG_SHORTENED</ref> or <ref refid="group__packetflagdefs_1ga00826edb4c187a812ac9c3167d85b934" kindref="member">NDIGO_PACKET_FLAG_TRIGGER_MISSED</ref> are set. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="150" column="9" bodyfile="ndigo_common_interface.h" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__packetflagdefs_1gaa42d7e7f6be3b50945c3f7895866f2ff" prot="public" static="no">
+        <name>NDIGO_PACKET_FLAG_HOST_BUFFER_FULL</name>
+        <initializer>32</initializer>
+        <briefdescription>
+<para>Host buffer was full. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This <emphasis>may</emphasis> result in missed data, but only if <ref refid="group__packetflagdefs_1ga133800458be58f77559fbbd5e937c7ec" kindref="member">NDIGO_PACKET_FLAG_PACKETS_LOST</ref> is set. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="157" column="9" bodyfile="ndigo_common_interface.h" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__packetflagdefs_1ga5b93755bb8f09ee1db66ff53fc85a939" prot="public" static="no">
+        <name>NDIGO_PACKET_FLAG_TDC_NO_EDGE</name>
+        <initializer>64</initializer>
+        <briefdescription>
+<para>No valid edge was found in TDC packet, timestamp uncorrected. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="162" column="9" bodyfile="ndigo_common_interface.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

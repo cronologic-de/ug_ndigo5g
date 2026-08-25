@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structndigo__param__info" kind="struct" language="C++" prot="public">
+    <compoundname>ndigo_param_info</compoundname>
+    <includes refid="ndigo__common__interface_8h" local="no">ndigo_common_interface.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structndigo__param__info_1a439227feff9d7f55384e8780cfc2eb82" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <qualifiedname>ndigo_param_info::size</qualifiedname>
+        <briefdescription>
+<para>The number of bytes occupied by the structure. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="1139" column="9" bodyfile="ndigo_common_interface.h" bodystart="1139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__param__info_1aad880fc4455c253781e8968f2239d56f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int version</definition>
+        <argsstring></argsstring>
+        <name>version</name>
+        <qualifiedname>ndigo_param_info::version</qualifiedname>
+        <briefdescription>
+<para>Version number of this struct used by the API. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="1144" column="9" bodyfile="ndigo_common_interface.h" bodystart="1144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__param__info_1a3a14628ead92d0afcce5f53e0ff017c8" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double bandwidth</definition>
+        <argsstring></argsstring>
+        <name>bandwidth</name>
+        <qualifiedname>ndigo_param_info::bandwidth</qualifiedname>
+        <briefdescription>
+<para>Bandwidth in Hz. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Currently fixed at 3e9. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="1150" column="12" bodyfile="ndigo_common_interface.h" bodystart="1150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__param__info_1a5cd2077a80052e0e93450f6259fa5f92" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double sample_rate</definition>
+        <argsstring></argsstring>
+        <name>sample_rate</name>
+        <qualifiedname>ndigo_param_info::sample_rate</qualifiedname>
+        <briefdescription>
+<para>Actual sample rate of currently sampled data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Depends on <ref refid="structndigo__configuration_1a05331e51c932e355bad5f7d88fca6920" kindref="member">ndigo_configuration::adc_mode</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="1156" column="12" bodyfile="ndigo_common_interface.h" bodystart="1156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__param__info_1aedfa85528cba762e80baddf649c4785c" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double sample_period</definition>
+        <argsstring></argsstring>
+        <name>sample_period</name>
+        <qualifiedname>ndigo_param_info::sample_period</qualifiedname>
+        <briefdescription>
+<para>The period one sample in the data represent in picoseconds. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="1161" column="12" bodyfile="ndigo_common_interface.h" bodystart="1161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__param__info_1a7edf6305fafb8d595318dde91addca3c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int board_id</definition>
+        <argsstring></argsstring>
+        <name>board_id</name>
+        <qualifiedname>ndigo_param_info::board_id</qualifiedname>
+        <briefdescription>
+<para>The ID the board uses to identify itself in the output data stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Takes values between 0 to 255. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="1168" column="9" bodyfile="ndigo_common_interface.h" bodystart="1168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__param__info_1a178795099d0608972755dfef8d8367e3" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int channels</definition>
+        <argsstring></argsstring>
+        <name>channels</name>
+        <qualifiedname>ndigo_param_info::channels</qualifiedname>
+        <briefdescription>
+<para>Number of channels in the current mode. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="1173" column="9" bodyfile="ndigo_common_interface.h" bodystart="1173" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__param__info_1a1828665f397349849aef147847b7ee1d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int channel_mask</definition>
+        <argsstring></argsstring>
+        <name>channel_mask</name>
+        <qualifiedname>ndigo_param_info::channel_mask</qualifiedname>
+        <briefdescription>
+<para>Mask with a set bit for each enabled input channel. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="1178" column="9" bodyfile="ndigo_common_interface.h" bodystart="1178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__param__info_1a9801e889811f380fc700e1f4bbb0a623" prot="public" static="no" mutable="no">
+        <type>int64_t</type>
+        <definition>int64_t total_buffer</definition>
+        <argsstring></argsstring>
+        <name>total_buffer</name>
+        <qualifiedname>ndigo_param_info::total_buffer</qualifiedname>
+        <briefdescription>
+<para>Size of the host buffer in bytes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="1183" column="13" bodyfile="ndigo_common_interface.h" bodystart="1183" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Contains configuration changes. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This structure contains information that change indirectly due to configuration changes.</para>
+<para>It is populated using <ref refid="ndigo__common__interface_8h_1a7b164cb7a88305c7feb9031734704b53" kindref="member">ndigo_get_param_info</ref>. </para>
+    </detaileddescription>
+    <location file="ndigo_common_interface.h" line="1135" column="1" bodyfile="ndigo_common_interface.h" bodystart="1135" bodyend="1184"/>
+    <listofallmembers>
+      <member refid="structndigo__param__info_1a3a14628ead92d0afcce5f53e0ff017c8" prot="public" virt="non-virtual"><scope>ndigo_param_info</scope><name>bandwidth</name></member>
+      <member refid="structndigo__param__info_1a7edf6305fafb8d595318dde91addca3c" prot="public" virt="non-virtual"><scope>ndigo_param_info</scope><name>board_id</name></member>
+      <member refid="structndigo__param__info_1a1828665f397349849aef147847b7ee1d" prot="public" virt="non-virtual"><scope>ndigo_param_info</scope><name>channel_mask</name></member>
+      <member refid="structndigo__param__info_1a178795099d0608972755dfef8d8367e3" prot="public" virt="non-virtual"><scope>ndigo_param_info</scope><name>channels</name></member>
+      <member refid="structndigo__param__info_1aedfa85528cba762e80baddf649c4785c" prot="public" virt="non-virtual"><scope>ndigo_param_info</scope><name>sample_period</name></member>
+      <member refid="structndigo__param__info_1a5cd2077a80052e0e93450f6259fa5f92" prot="public" virt="non-virtual"><scope>ndigo_param_info</scope><name>sample_rate</name></member>
+      <member refid="structndigo__param__info_1a439227feff9d7f55384e8780cfc2eb82" prot="public" virt="non-virtual"><scope>ndigo_param_info</scope><name>size</name></member>
+      <member refid="structndigo__param__info_1a9801e889811f380fc700e1f4bbb0a623" prot="public" virt="non-virtual"><scope>ndigo_param_info</scope><name>total_buffer</name></member>
+      <member refid="structndigo__param__info_1aad880fc4455c253781e8968f2239d56f" prot="public" virt="non-virtual"><scope>ndigo_param_info</scope><name>version</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

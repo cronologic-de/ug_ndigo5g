@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="group__funcreturnsndigo" kind="group">
+    <compoundname>funcreturnsndigo</compoundname>
+    <title>Return codes</title>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__funcreturnsndigo_1ga7ec1c337c4a20c97f4af3c3e5043962a" prot="public" static="no">
+        <name>NDIGO_OK</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="95" column="9" bodyfile="ndigo_common_interface.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__funcreturnsndigo_1ga90f541f59f88d3959a96222746c29bc4" prot="public" static="no">
+        <name>NDIGO_WINDRIVER_NOT_FOUND</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="96" column="9" bodyfile="ndigo_common_interface.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__funcreturnsndigo_1ga96976be91a9fc6d4064efa84f1aceb27" prot="public" static="no">
+        <name>NDIGO_DEVICE_NOT_FOUND</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="97" column="9" bodyfile="ndigo_common_interface.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__funcreturnsndigo_1ga651c58be46b0f91cd2de523eaad34f51" prot="public" static="no">
+        <name>NDIGO_NOT_INITIALIZED</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="98" column="9" bodyfile="ndigo_common_interface.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__funcreturnsndigo_1ga73e4aa07966257e115244d8edd00235f" prot="public" static="no">
+        <name>NDIGO_WRONG_STATE</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="99" column="9" bodyfile="ndigo_common_interface.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__funcreturnsndigo_1ga17280840e49240e8599df9a2f7ee5ca6" prot="public" static="no">
+        <name>NDIGO_INVALID_DEVICE</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="100" column="9" bodyfile="ndigo_common_interface.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__funcreturnsndigo_1gaeddcb6ec3eb0d4e94346723af8e30a80" prot="public" static="no">
+        <name>NDIGO_BUFFER_ALLOC_FAILED</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="101" column="9" bodyfile="ndigo_common_interface.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__funcreturnsndigo_1ga1ca6b34dcda910c2dbaf4e1021a06439" prot="public" static="no">
+        <name>NDIGO_TDC_NO_EDGE_FOUND</name>
+        <initializer>7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="102" column="9" bodyfile="ndigo_common_interface.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__funcreturnsndigo_1ga54583cd16ae655415338ffc87c877249" prot="public" static="no">
+        <name>NDIGO_INVALID_BUFFER_PARAMETERS</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="103" column="9" bodyfile="ndigo_common_interface.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__funcreturnsndigo_1ga2a05191bc7d8a1c385daf941420fcb9c" prot="public" static="no">
+        <name>NDIGO_INVALID_CONFIG_PARAMETERS</name>
+        <initializer>9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="104" column="9" bodyfile="ndigo_common_interface.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__funcreturnsndigo_1ga01a5074fd10f17889617d967ffc6e0ba" prot="public" static="no">
+        <name>NDIGO_WINDOW_CALIBRATION_FAILED</name>
+        <initializer>10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="105" column="9" bodyfile="ndigo_common_interface.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__funcreturnsndigo_1ga0c1dc7325a7180e574104cd28867d5dc" prot="public" static="no">
+        <name>NDIGO_HARDWARE_FAILURE</name>
+        <initializer>11</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="106" column="9" bodyfile="ndigo_common_interface.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__funcreturnsndigo_1gae707f4c4b87981ead8cc9e0057f6ea56" prot="public" static="no">
+        <name>NDIGO_INVALID_ADC_MODE</name>
+        <initializer>12</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="107" column="9" bodyfile="ndigo_common_interface.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__funcreturnsndigo_1gaed173866bbae75f3f69432f037c90872" prot="public" static="no">
+        <name>NDIGO_SYNCHRONIZATION_FAILED</name>
+        <initializer>13</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="108" column="9" bodyfile="ndigo_common_interface.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__funcreturnsndigo_1ga6efd68ca43931a7f82d1cc3dcc149ad7" prot="public" static="no">
+        <name>NDIGO_DEVICE_OPEN_FAILED</name>
+        <initializer>14</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="109" column="9" bodyfile="ndigo_common_interface.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__funcreturnsndigo_1ga3b3752e9a704578f7a351a0eb7f3249b" prot="public" static="no">
+        <name>NDIGO_INTERNAL_ERROR</name>
+        <initializer>15</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="110" column="9" bodyfile="ndigo_common_interface.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__funcreturnsndigo_1ga7d39a74bc6f947a2d0bfe425b23b7eb7" prot="public" static="no">
+        <name>NDIGO_INVALID_ARGUMENTS</name>
+        <initializer>17</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="111" column="9" bodyfile="ndigo_common_interface.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Defines representing error codes used by various API functions. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

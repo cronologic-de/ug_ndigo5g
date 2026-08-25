@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="group__adcdefs" kind="group">
+    <compoundname>adcdefs</compoundname>
+    <title>ADC modes</title>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__adcdefs_1ga212fb414f95fd59d4397288bad6a1588" prot="public" static="no">
+        <name>NDIGO_ADC_MODE_ABCD</name>
+        <initializer>0</initializer>
+        <briefdescription>
+<para>4-channel mode at sample rate 1.25GHz. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="41" column="9" bodyfile="ndigo_interface.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__adcdefs_1gacca2cdd8cf7a928a8eb146c4c230c93e" prot="public" static="no">
+        <name>NDIGO_ADC_MODE_AC</name>
+        <initializer>4</initializer>
+        <briefdescription>
+<para>2-channel mode at sample rate 2.5GHz. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="45" column="9" bodyfile="ndigo_interface.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__adcdefs_1gaf3f95860101404e9547776310890c9bd" prot="public" static="no">
+        <name>NDIGO_ADC_MODE_BC</name>
+        <initializer>5</initializer>
+        <briefdescription>
+<para>2-channel mode at sample rate 2.5GHz. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="49" column="9" bodyfile="ndigo_interface.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__adcdefs_1gae8ef54c58cbe389ff361df85a65c748b" prot="public" static="no">
+        <name>NDIGO_ADC_MODE_AD</name>
+        <initializer>6</initializer>
+        <briefdescription>
+<para>2-channel mode at sample rate 2.5GHz. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="53" column="9" bodyfile="ndigo_interface.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__adcdefs_1gaa8ede7fed2e1f4cae543da4085c4956b" prot="public" static="no">
+        <name>NDIGO_ADC_MODE_BD</name>
+        <initializer>7</initializer>
+        <briefdescription>
+<para>2-channel mode at sample rate 2.5GHz. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="57" column="9" bodyfile="ndigo_interface.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__adcdefs_1ga5a5e8eab72a1334681f97fe85a1ced17" prot="public" static="no">
+        <name>NDIGO_ADC_MODE_A</name>
+        <initializer>8</initializer>
+        <briefdescription>
+<para>Single channel mode at sample rate 5GHz. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="61" column="9" bodyfile="ndigo_interface.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__adcdefs_1gac8e615bb0f46af32964bcb3655161a70" prot="public" static="no">
+        <name>NDIGO_ADC_MODE_B</name>
+        <initializer>9</initializer>
+        <briefdescription>
+<para>Single channel mode at sample rate 5GHz. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="65" column="9" bodyfile="ndigo_interface.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__adcdefs_1ga481154e64c280321d33849899b8c2672" prot="public" static="no">
+        <name>NDIGO_ADC_MODE_C</name>
+        <initializer>10</initializer>
+        <briefdescription>
+<para>Single channel mode at sample rate 5GHz. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="69" column="9" bodyfile="ndigo_interface.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__adcdefs_1ga4a9a889924173829816130100fb40adb" prot="public" static="no">
+        <name>NDIGO_ADC_MODE_D</name>
+        <initializer>11</initializer>
+        <briefdescription>
+<para>Single channel mode at sample rate 5GHz. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="73" column="9" bodyfile="ndigo_interface.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__adcdefs_1gae5bcc8d1cb6365ccdf55a771f699b174" prot="public" static="no">
+        <name>NDIGO_ADC_MODE_AAAA</name>
+        <initializer>12</initializer>
+        <briefdescription>
+<para>Single channel mode at sample rate 1.25GHz. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="77" column="9" bodyfile="ndigo_interface.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__adcdefs_1ga36758ed098915b7cd08eaf1e93cefadc" prot="public" static="no">
+        <name>NDIGO_ADC_MODE_BBBB</name>
+        <initializer>13</initializer>
+        <briefdescription>
+<para>Single channel mode at sample rate 1.25GHz. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="81" column="9" bodyfile="ndigo_interface.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__adcdefs_1ga9f4253c7a50d86d2c52e9317cd64d2ef" prot="public" static="no">
+        <name>NDIGO_ADC_MODE_CCCC</name>
+        <initializer>14</initializer>
+        <briefdescription>
+<para>Single channel mode at sample rate 1.25GHz. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="85" column="9" bodyfile="ndigo_interface.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__adcdefs_1ga4f400c0838a0b8f471ed82d6d9235413" prot="public" static="no">
+        <name>NDIGO_ADC_MODE_DDDD</name>
+        <initializer>15</initializer>
+        <briefdescription>
+<para>Single channel mode at sample rate 1.25GHz. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="89" column="9" bodyfile="ndigo_interface.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

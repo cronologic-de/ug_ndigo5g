@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structndigo__slow__info" kind="struct" language="C++" prot="public">
+    <compoundname>ndigo_slow_info</compoundname>
+    <includes refid="ndigo__common__interface_8h" local="no">ndigo_common_interface.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structndigo__slow__info_1a439227feff9d7f55384e8780cfc2eb82" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <qualifiedname>ndigo_slow_info::size</qualifiedname>
+        <briefdescription>
+<para>The number of bytes occupied by the structure. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="1198" column="9" bodyfile="ndigo_common_interface.h" bodystart="1198" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__slow__info_1aad880fc4455c253781e8968f2239d56f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int version</definition>
+        <argsstring></argsstring>
+        <name>version</name>
+        <qualifiedname>ndigo_slow_info::version</qualifiedname>
+        <briefdescription>
+<para>Version number of this struct used by the API. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="1203" column="9" bodyfile="ndigo_common_interface.h" bodystart="1203" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__slow__info_1ae5d9120bdc88ba79f9e0d94966a4c6ac" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double adc_temperature</definition>
+        <argsstring></argsstring>
+        <name>adc_temperature</name>
+        <qualifiedname>ndigo_slow_info::adc_temperature</qualifiedname>
+        <briefdescription>
+<para>ADC temperature in Celsius as measured on die. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="1208" column="12" bodyfile="ndigo_common_interface.h" bodystart="1208" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__slow__info_1ade0b824bcf6ebd44e327e07cae5cd15f" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double board_temperature</definition>
+        <argsstring></argsstring>
+        <name>board_temperature</name>
+        <qualifiedname>ndigo_slow_info::board_temperature</qualifiedname>
+        <briefdescription>
+<para>Temperature of the board in Celsius. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="1213" column="12" bodyfile="ndigo_common_interface.h" bodystart="1213" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Contains slow-to-obtain dynamic information. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The data reported in this structure requires milliseconds to be obtained.</para>
+<para>The application should only call it in situation where the program flow can cope with an interruption of that magnitude.</para>
+<para>Populated by <ref refid="ndigo__common__interface_8h_1af5c79932dced65c2b274b00dc5e6f71f" kindref="member">ndigo_get_slow_info</ref>. </para>
+    </detaileddescription>
+    <location file="ndigo_common_interface.h" line="1194" column="1" bodyfile="ndigo_common_interface.h" bodystart="1194" bodyend="1214"/>
+    <listofallmembers>
+      <member refid="structndigo__slow__info_1ae5d9120bdc88ba79f9e0d94966a4c6ac" prot="public" virt="non-virtual"><scope>ndigo_slow_info</scope><name>adc_temperature</name></member>
+      <member refid="structndigo__slow__info_1ade0b824bcf6ebd44e327e07cae5cd15f" prot="public" virt="non-virtual"><scope>ndigo_slow_info</scope><name>board_temperature</name></member>
+      <member refid="structndigo__slow__info_1a439227feff9d7f55384e8780cfc2eb82" prot="public" virt="non-virtual"><scope>ndigo_slow_info</scope><name>size</name></member>
+      <member refid="structndigo__slow__info_1aad880fc4455c253781e8968f2239d56f" prot="public" virt="non-virtual"><scope>ndigo_slow_info</scope><name>version</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

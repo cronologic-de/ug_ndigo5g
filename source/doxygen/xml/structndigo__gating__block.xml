@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structndigo__gating__block" kind="struct" language="C++" prot="public">
+    <compoundname>ndigo_gating_block</compoundname>
+    <includes refid="ndigo__common__interface_8h" local="no">ndigo_common_interface.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structndigo__gating__block_1a5a79f159f62ad4ad70760f7407d20249" prot="public" static="no" mutable="no">
+        <type><ref refid="ndigo__common__interface_8h_1ac8108da51e15c2c7cd3dadb52ec3efd9" kindref="member">ndigo_bool_t</ref></type>
+        <definition>ndigo_bool_t negate</definition>
+        <argsstring></argsstring>
+        <name>negate</name>
+        <qualifiedname>ndigo_gating_block::negate</qualifiedname>
+        <briefdescription>
+<para>Invert output polarity. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Defaults to false. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="804" column="18" bodyfile="ndigo_common_interface.h" bodystart="804" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__gating__block_1a830c5970a7f0a620b0c557129afea8fd" prot="public" static="no" mutable="no">
+        <type><ref refid="ndigo__common__interface_8h_1ac8108da51e15c2c7cd3dadb52ec3efd9" kindref="member">ndigo_bool_t</ref></type>
+        <definition>ndigo_bool_t retrigger</definition>
+        <argsstring></argsstring>
+        <name>retrigger</name>
+        <qualifiedname>ndigo_gating_block::retrigger</qualifiedname>
+        <briefdescription>
+<para>Enable retrigger functionality. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If retriggering is enabled, the timer is reset to the value of the start parameter whenever the input signal is set while waiting to reach the stop time.</para>
+<para>Defaults to false. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="813" column="18" bodyfile="ndigo_common_interface.h" bodystart="813" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__gating__block_1aadea60df0246e8eba5593d04e85f1e96" prot="public" static="no" mutable="no">
+        <type><ref refid="ndigo__common__interface_8h_1ac8108da51e15c2c7cd3dadb52ec3efd9" kindref="member">ndigo_bool_t</ref></type>
+        <definition>ndigo_bool_t extend</definition>
+        <argsstring></argsstring>
+        <name>extend</name>
+        <qualifiedname>ndigo_gating_block::extend</qualifiedname>
+        <briefdescription>
+<para>Currently not implemented. Do not use. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Defaults to true. If set, a gate is created with the set timing from the first occurrence of the input trigger even for short gates. If not set, the input signal must persist for the gate to be created. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="822" column="18" bodyfile="ndigo_common_interface.h" bodystart="822" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__gating__block_1ab6ec6599a71ab1edc8b12847f53c4509" prot="public" static="no" mutable="no">
+        <type><ref refid="ndigo__common__interface_8h_1ac8108da51e15c2c7cd3dadb52ec3efd9" kindref="member">ndigo_bool_t</ref></type>
+        <definition>ndigo_bool_t reserved1</definition>
+        <argsstring></argsstring>
+        <name>reserved1</name>
+        <qualifiedname>ndigo_gating_block::reserved1</qualifiedname>
+        <briefdescription>
+<para>Defaults to false. Do not change. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="827" column="18" bodyfile="ndigo_common_interface.h" bodystart="827" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__gating__block_1a37722a150250e2a5a98e5e0d11e53449" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int start</definition>
+        <argsstring></argsstring>
+        <name>start</name>
+        <qualifiedname>ndigo_gating_block::start</qualifiedname>
+        <briefdescription>
+<para>The time from the first input signal seen in the idle state until the gating output is set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><computeroutput>start</computeroutput> needs to be &gt;=0 and &lt;2^16.</para>
+<para><computeroutput>start</computeroutput> must be set to a value &lt;= <ref refid="structndigo__gating__block_1a6c0af9f2e97842405fb15ed952ef2976" kindref="member">stop</ref>.</para>
+<para>In multiples of 3.2ns. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="836" column="9" bodyfile="ndigo_common_interface.h" bodystart="836" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__gating__block_1a6c0af9f2e97842405fb15ed952ef2976" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int stop</definition>
+        <argsstring></argsstring>
+        <name>stop</name>
+        <qualifiedname>ndigo_gating_block::stop</qualifiedname>
+        <briefdescription>
+<para>The number of samples from leaving the idle state until the gating output is reset. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If retriggering is enabled the timer is reset to the value of the start parameter whenever the input signal is set while waiting to reach the stop time.</para>
+<para><computeroutput>stop</computeroutput> needs to be &gt;=0 and &lt;2^16.</para>
+<para>In multiples of 3.2ns. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="847" column="9" bodyfile="ndigo_common_interface.h" bodystart="847" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__gating__block_1a09bf0a0c15c4905391944154b116a637" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int sources</definition>
+        <argsstring></argsstring>
+        <name>sources</name>
+        <qualifiedname>ndigo_gating_block::sources</qualifiedname>
+        <briefdescription>
+<para>A bitmask with a bit set for all trigger sources that can trigger this gating block. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The bits correspond to the same defines listed in <ref refid="structndigo__trigger__block_1a09bf0a0c15c4905391944154b116a637" kindref="member">ndigo_trigger_block::sources</ref>.</para>
+<para>The gating blocks cannot use the digital trigger as as a source, that is, bitmasks <ref refid="group__sourcedefs_1gab668920b021ca846bca24b7cfbb66714" kindref="member">NDIGO_TRIGGER_SOURCE_TDC_PE</ref> to <ref refid="group__sourcedefs_1ga5058bd6fdb5e3eaf6ab6e54942658d56" kindref="member">NDIGO_TRIGGER_SOURCE_BUS3_PE</ref> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="859" column="9" bodyfile="ndigo_common_interface.h" bodystart="859" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Contains settings of the gating blocks. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Used by <ref refid="structndigo__configuration_1a3111a1ef5a8a20abb614f23ce0d562cf" kindref="member">ndigo_configuration::gating_block</ref>. </para>
+    </detaileddescription>
+    <location file="ndigo_common_interface.h" line="799" column="1" bodyfile="ndigo_common_interface.h" bodystart="799" bodyend="860"/>
+    <listofallmembers>
+      <member refid="structndigo__gating__block_1aadea60df0246e8eba5593d04e85f1e96" prot="public" virt="non-virtual"><scope>ndigo_gating_block</scope><name>extend</name></member>
+      <member refid="structndigo__gating__block_1a5a79f159f62ad4ad70760f7407d20249" prot="public" virt="non-virtual"><scope>ndigo_gating_block</scope><name>negate</name></member>
+      <member refid="structndigo__gating__block_1ab6ec6599a71ab1edc8b12847f53c4509" prot="public" virt="non-virtual"><scope>ndigo_gating_block</scope><name>reserved1</name></member>
+      <member refid="structndigo__gating__block_1a830c5970a7f0a620b0c557129afea8fd" prot="public" virt="non-virtual"><scope>ndigo_gating_block</scope><name>retrigger</name></member>
+      <member refid="structndigo__gating__block_1a09bf0a0c15c4905391944154b116a637" prot="public" virt="non-virtual"><scope>ndigo_gating_block</scope><name>sources</name></member>
+      <member refid="structndigo__gating__block_1a37722a150250e2a5a98e5e0d11e53449" prot="public" virt="non-virtual"><scope>ndigo_gating_block</scope><name>start</name></member>
+      <member refid="structndigo__gating__block_1a6c0af9f2e97842405fb15ed952ef2976" prot="public" virt="non-virtual"><scope>ndigo_gating_block</scope><name>stop</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

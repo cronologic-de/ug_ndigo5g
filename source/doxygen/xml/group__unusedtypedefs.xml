@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="group__unusedtypedefs" kind="group">
+    <compoundname>unusedtypedefs</compoundname>
+    <title>Unused packet data type defines</title>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__unusedtypedefs_1gae8299aed0d0685b8974ae65578fee957" prot="public" static="no">
+        <name>NDIGO_PACKET_TYPE_8_BIT_SIGNED</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="194" column="9" bodyfile="ndigo_common_interface.h" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__unusedtypedefs_1ga8fface83fb4df4e1c0fbe44f919a4904" prot="public" static="no">
+        <name>NDIGO_PACKET_TYPE_32_BIT_SIGNED</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="195" column="9" bodyfile="ndigo_common_interface.h" bodystart="195" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__unusedtypedefs_1ga57a68581a8e1ab463ea2fc686228dd00" prot="public" static="no">
+        <name>NDIGO_PACKET_TYPE_64_BIT_SIGNED</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="196" column="9" bodyfile="ndigo_common_interface.h" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__unusedtypedefs_1ga5f608e893881fe478b4110db9900c6bb" prot="public" static="no">
+        <name>NDIGO_PACKET_TYPE_8_BIT_UNSIGNED</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="197" column="9" bodyfile="ndigo_common_interface.h" bodystart="197" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__unusedtypedefs_1ga61e65081bef948b4bf1b3b50e6a50d40" prot="public" static="no">
+        <name>NDIGO_PACKET_TYPE_16_BIT_UNSIGNED</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="198" column="9" bodyfile="ndigo_common_interface.h" bodystart="198" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__unusedtypedefs_1ga81934cbc6ef9fa50d98dec24b7a2e170" prot="public" static="no">
+        <name>NDIGO_PACKET_TYPE_32_BIT_UNSIGNED</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="199" column="9" bodyfile="ndigo_common_interface.h" bodystart="199" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__unusedtypedefs_1gaf3a53650f265974343f31716c447e2da" prot="public" static="no">
+        <name>NDIGO_PACKET_TYPE_64_BIT_UNSIGNED</name>
+        <initializer>7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="200" column="9" bodyfile="ndigo_common_interface.h" bodystart="200" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

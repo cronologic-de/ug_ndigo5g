@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structndigo__extension__block" kind="struct" language="C++" prot="public">
+    <compoundname>ndigo_extension_block</compoundname>
+    <includes refid="ndigo__common__interface_8h" local="no">ndigo_common_interface.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structndigo__extension__block_1ad8924c6b51a4b4be05cfe77312d39fb2" prot="public" static="no" mutable="no">
+        <type><ref refid="ndigo__common__interface_8h_1ac8108da51e15c2c7cd3dadb52ec3efd9" kindref="member">ndigo_bool_t</ref></type>
+        <definition>ndigo_bool_t enable</definition>
+        <argsstring></argsstring>
+        <name>enable</name>
+        <qualifiedname>ndigo_extension_block::enable</qualifiedname>
+        <briefdescription>
+<para>Enables routing of digital signal from the Ndigo extension board. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The signals are routed to the corresponding BUSx trigger unit. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="874" column="18" bodyfile="ndigo_common_interface.h" bodystart="874" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__extension__block_1a7a74743b049f826c3a1895e911ea2221" prot="public" static="no" mutable="no">
+        <type><ref refid="ndigo__common__interface_8h_1ac8108da51e15c2c7cd3dadb52ec3efd9" kindref="member">ndigo_bool_t</ref></type>
+        <definition>ndigo_bool_t ignore_cable</definition>
+        <argsstring></argsstring>
+        <name>ignore_cable</name>
+        <qualifiedname>ndigo_extension_block::ignore_cable</qualifiedname>
+        <briefdescription>
+<para>Control signal routing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If true, only the signal from Ndigo extension board is used.</para>
+<para>If false, input signal and BUS signal are read before routing to the according BUSx trigger unit. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="882" column="18" bodyfile="ndigo_common_interface.h" bodystart="882" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Configures the optional extension board. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This structure configures the merging of the inputs from the synchronization bus and the optional extension board.</para>
+<para>Used by <ref refid="structndigo__configuration_1abe00d88c10650083b32bc50ecddb8e41" kindref="member">ndigo_configuration::extension_block</ref>. </para>
+    </detaileddescription>
+    <location file="ndigo_common_interface.h" line="868" column="1" bodyfile="ndigo_common_interface.h" bodystart="868" bodyend="883"/>
+    <listofallmembers>
+      <member refid="structndigo__extension__block_1ad8924c6b51a4b4be05cfe77312d39fb2" prot="public" virt="non-virtual"><scope>ndigo_extension_block</scope><name>enable</name></member>
+      <member refid="structndigo__extension__block_1a7a74743b049f826c3a1895e911ea2221" prot="public" virt="non-virtual"><scope>ndigo_extension_block</scope><name>ignore_cable</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

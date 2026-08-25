@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structndigo__packet" kind="struct" language="C++" prot="public">
+    <compoundname>ndigo_packet</compoundname>
+    <includes refid="ndigo__common__interface_8h" local="no">ndigo_common_interface.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structndigo__packet_1adc18ec7f4fcbc00d327f412b44a6385d" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char channel</definition>
+        <argsstring></argsstring>
+        <name>channel</name>
+        <qualifiedname>ndigo_packet::channel</qualifiedname>
+        <briefdescription>
+<para>Enumeration of channels. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>0 to 3 for the ADC input channels, 4 for the TDC, and 5 for the timestamp channel. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="381" column="19" bodyfile="ndigo_common_interface.h" bodystart="381" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__packet_1a618b1abada075b9b8f98e4c9e9466dba" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char card</definition>
+        <argsstring></argsstring>
+        <name>card</name>
+        <qualifiedname>ndigo_packet::card</qualifiedname>
+        <briefdescription>
+<para>Identify source card among others. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Defaults to 0 if no value is assigned to the parameter <ref refid="structndigo__init__parameters_1a7edf6305fafb8d595318dde91addca3c" kindref="member">ndigo_init_parameters::board_id</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="388" column="19" bodyfile="ndigo_common_interface.h" bodystart="388" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__packet_1aa5044999f3339d2ba3b1bf22fa6cfe95" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <qualifiedname>ndigo_packet::type</qualifiedname>
+        <briefdescription>
+<para>Type indicator for <ref refid="structndigo__packet_1a8973e4107f0b644d540e9c0725574c3d" kindref="member">ndigo_packet::data</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>One of the following:</para>
+<para><verbatim>embed:rst:leading-asterisk
+*          .. doxygengroup:: usedtypedefs
+*              :content-only:
+*          </verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="398" column="19" bodyfile="ndigo_common_interface.h" bodystart="398" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__packet_1a78ac89a4a0f57ffa7c2ecf31749aa390" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char flags</definition>
+        <argsstring></argsstring>
+        <name>flags</name>
+        <qualifiedname>ndigo_packet::flags</qualifiedname>
+        <briefdescription>
+<para>Contains packet flags. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>One of the following:</para>
+<para><verbatim>embed:rst:leading-asterisk
+*          .. doxygengroup:: packetflagdefs
+*              :content-only:
+*          </verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="408" column="19" bodyfile="ndigo_common_interface.h" bodystart="408" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__packet_1ac8d42bcd4a44e078047ccd7291059238" prot="public" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int length</definition>
+        <argsstring></argsstring>
+        <name>length</name>
+        <qualifiedname>ndigo_packet::length</qualifiedname>
+        <briefdescription>
+<para>Length of <ref refid="structndigo__packet_1a8973e4107f0b644d540e9c0725574c3d" kindref="member">ndigo_packet::data</ref> in units of 64 bit. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Number of 64-bit elements (each containing 4 samples) in the data array as long as <ref refid="structndigo__packet_1aa5044999f3339d2ba3b1bf22fa6cfe95" kindref="member">ndigo_packet::type</ref> &lt; <ref refid="group__usedtypedefs_1gaef7566e384760955b43719deb3d906e7" kindref="member">NDIGO_PACKET_TYPE_TIMESTAMP_ONLY</ref>.</para>
+<para>If <ref refid="structndigo__packet_1aa5044999f3339d2ba3b1bf22fa6cfe95" kindref="member">ndigo_packet::type</ref> = <ref refid="group__usedtypedefs_1gaef7566e384760955b43719deb3d906e7" kindref="member">NDIGO_PACKET_TYPE_TIMESTAMP_ONLY</ref>. this is the pattern of trigger sources that where active in the clock cycle given by <ref refid="structndigo__packet_1a465bef81f6478756e5443025b1f2ddfa" kindref="member">ndigo_packet::timestamp</ref>. Bits are set according to the trigger sources, i.e. bit 0 is set if trigger <ref refid="group__sourcedefs_1gad57ed5dbf34f66af23756728e5351abe" kindref="member">NDIGO_TRIGGER_SOURCE_A0</ref> was active, bit 29 is set if <ref refid="group__sourcedefs_1ga5058bd6fdb5e3eaf6ab6e54942658d56" kindref="member">NDIGO_TRIGGER_SOURCE_BUS3_PE</ref> was active, etc, as listed in <ref refid="structndigo__trigger__block_1a09bf0a0c15c4905391944154b116a637" kindref="member">ndigo_trigger_block::sources</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="425" column="18" bodyfile="ndigo_common_interface.h" bodystart="425" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__packet_1a465bef81f6478756e5443025b1f2ddfa" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t timestamp</definition>
+        <argsstring></argsstring>
+        <name>timestamp</name>
+        <qualifiedname>ndigo_packet::timestamp</qualifiedname>
+        <briefdescription>
+<para>Timestamp in ps. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>ADC channels A to D: timestamp of the last word in the packet.</para>
+<para>TDC channel (<ref refid="structndigo__packet_1adc18ec7f4fcbc00d327f412b44a6385d" kindref="member">ndigo_packet::channel</ref> = 4): timestamp of the trigger event (falling edge) of the TDC channel. When <ref refid="ndigo__common__interface_8h_1aac09ea1a0bea1fb23cc5e25b7af9cd36" kindref="member">ndigo_process_tdc_packet()</ref> is called once on the the packet, the timestamp is replaced with the precise timestamp for the edge.</para>
+<para>Timestamp channel (<ref refid="structndigo__packet_1adc18ec7f4fcbc00d327f412b44a6385d" kindref="member">ndigo_packet::channel</ref> = 5): timestamp of the trigger event. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="439" column="14" bodyfile="ndigo_common_interface.h" bodystart="439" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__packet_1a8973e4107f0b644d540e9c0725574c3d" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t data[1]</definition>
+        <argsstring>[1]</argsstring>
+        <name>data</name>
+        <qualifiedname>ndigo_packet::data</qualifiedname>
+        <briefdescription>
+<para>Sample data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For the Ndigo5G each 64-bit word contains four 16bit signed words from the ADC.</para>
+<para>The user can cast the array to <computeroutput>short*</computeroutput> to directly operate on the sample data. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="448" column="14" bodyfile="ndigo_common_interface.h" bodystart="448" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Contains all packet information. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Packets are retrieved by <ref refid="ndigo__interface_8h_1aa5a18f08826d8e92841a651ce40d7ea5" kindref="member">ndigo_read()</ref>. </para>
+    </detaileddescription>
+    <location file="ndigo_common_interface.h" line="375" column="1" bodyfile="ndigo_common_interface.h" bodystart="375" bodyend="449"/>
+    <listofallmembers>
+      <member refid="structndigo__packet_1a618b1abada075b9b8f98e4c9e9466dba" prot="public" virt="non-virtual"><scope>ndigo_packet</scope><name>card</name></member>
+      <member refid="structndigo__packet_1adc18ec7f4fcbc00d327f412b44a6385d" prot="public" virt="non-virtual"><scope>ndigo_packet</scope><name>channel</name></member>
+      <member refid="structndigo__packet_1a8973e4107f0b644d540e9c0725574c3d" prot="public" virt="non-virtual"><scope>ndigo_packet</scope><name>data</name></member>
+      <member refid="structndigo__packet_1a78ac89a4a0f57ffa7c2ecf31749aa390" prot="public" virt="non-virtual"><scope>ndigo_packet</scope><name>flags</name></member>
+      <member refid="structndigo__packet_1ac8d42bcd4a44e078047ccd7291059238" prot="public" virt="non-virtual"><scope>ndigo_packet</scope><name>length</name></member>
+      <member refid="structndigo__packet_1a465bef81f6478756e5443025b1f2ddfa" prot="public" virt="non-virtual"><scope>ndigo_packet</scope><name>timestamp</name></member>
+      <member refid="structndigo__packet_1aa5044999f3339d2ba3b1bf22fa6cfe95" prot="public" virt="non-virtual"><scope>ndigo_packet</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

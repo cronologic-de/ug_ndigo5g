@@ -1,0 +1,424 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structndigo__static__info" kind="struct" language="C++" prot="public">
+    <compoundname>ndigo_static_info</compoundname>
+    <includes refid="ndigo__common__interface_8h" local="no">ndigo_common_interface.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structndigo__static__info_1a439227feff9d7f55384e8780cfc2eb82" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <qualifiedname>ndigo_static_info::size</qualifiedname>
+        <briefdescription>
+<para>The number of bytes occupied by the structure. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="895" column="9" bodyfile="ndigo_common_interface.h" bodystart="895" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__static__info_1aad880fc4455c253781e8968f2239d56f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int version</definition>
+        <argsstring></argsstring>
+        <name>version</name>
+        <qualifiedname>ndigo_static_info::version</qualifiedname>
+        <briefdescription>
+<para>Version number of this struct used by this API. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Equal <ref refid="group__constants_1ga98ac7cabf3b9e4acad5fc89465537eb0" kindref="member">NDIGO_STATIC_INFO_VERSION</ref> and must be left unchanged. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="901" column="9" bodyfile="ndigo_common_interface.h" bodystart="901" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__static__info_1a7edf6305fafb8d595318dde91addca3c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int board_id</definition>
+        <argsstring></argsstring>
+        <name>board_id</name>
+        <qualifiedname>ndigo_static_info::board_id</qualifiedname>
+        <briefdescription>
+<para>Index of the board as passed to the constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Can also be set via <ref refid="ndigo__common__interface_8h_1a96f8d98125ac8e8f4c0f8103666b5192" kindref="member">ndigo_set_board_id()</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="907" column="9" bodyfile="ndigo_common_interface.h" bodystart="907" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__static__info_1ad13d5f2a4d5f44ded6ed4278020b0d9c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int driver_revision</definition>
+        <argsstring></argsstring>
+        <name>driver_revision</name>
+        <qualifiedname>ndigo_static_info::driver_revision</qualifiedname>
+        <briefdescription>
+<para>Driver revision number. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The lower three bytes contain a triple level hierarchy of version numbers. E.g., 0x010103 codes version 1.1.3.</para>
+<para>Versioning follows the <ulink url="https://semver.org/">semver</ulink> standard. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="915" column="9" bodyfile="ndigo_common_interface.h" bodystart="915" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__static__info_1a8a77a6fdee403f69ff371bfe2bc921ce" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int driver_build_revision</definition>
+        <argsstring></argsstring>
+        <name>driver_build_revision</name>
+        <qualifiedname>ndigo_static_info::driver_build_revision</qualifiedname>
+        <briefdescription>
+<para>SVN revision of the driver build. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="920" column="9" bodyfile="ndigo_common_interface.h" bodystart="920" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__static__info_1acbde252346b57f45163b3b355daa3dcb" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int firmware_revision</definition>
+        <argsstring></argsstring>
+        <name>firmware_revision</name>
+        <qualifiedname>ndigo_static_info::firmware_revision</qualifiedname>
+        <briefdescription>
+<para>Revision number of the FPGA configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This can be read from a register. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="926" column="9" bodyfile="ndigo_common_interface.h" bodystart="926" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__static__info_1afc726c2d5b6d25fdad0e9a1dd74cb2c3" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int board_revision</definition>
+        <argsstring></argsstring>
+        <name>board_revision</name>
+        <qualifiedname>ndigo_static_info::board_revision</qualifiedname>
+        <briefdescription>
+<para>Board revision number. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This can be read from a register.</para>
+<para>It is a four bit number that changes when the schematic of the board is changed:<itemizedlist>
+<listitem><para>0: Experimental first board Version. Labeled Rev. 1</para>
+</listitem><listitem><para>2: First commercial Version. Labeled Rev. 2</para>
+</listitem><listitem><para>3: Revised version starting in 2011 labeled Rev. 3 </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="937" column="9" bodyfile="ndigo_common_interface.h" bodystart="937" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__static__info_1acb2f934097b300a105c40f2e4c41514b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int board_configuration</definition>
+        <argsstring></argsstring>
+        <name>board_configuration</name>
+        <qualifiedname>ndigo_static_info::board_configuration</qualifiedname>
+        <briefdescription>
+<para>Describes the schematic configuration of the board. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para><bold>Board revision 0:</bold> Always reads 0.</para>
+</listitem><listitem><para><bold>Board revision 2:</bold><itemizedlist>
+<listitem><para><bold>If Bit 3 = 0:</bold><itemizedlist>
+<listitem><para>Bit 0: ADC resolution (0 = 8-bit, 1 = 10-bit).</para>
+</listitem><listitem><para>Bit 1: TDC-oscillator (0 = oscillator present, 1 = simple trigger).</para>
+</listitem><listitem><para>Bit 2: Input connectors (0 = single ended, 1 = differential).</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>If Bit 3 = 1 (special version):</bold><itemizedlist>
+<listitem><para>0xA: Ndigo1250M-12 single ended with digital trigger.</para>
+</listitem><listitem><para>0x8: Ndigo5G-8 single ended with digital trigger.</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Board revision 3:</bold><itemizedlist>
+<listitem><para>Bit 2: Input connectors (0 = single ended, 1 = differential).</para>
+</listitem><listitem><para>Other bit patterns [Bits 3...0]:<itemizedlist>
+<listitem><para>0010: Ndigo5G-10 2.5u 10</para>
+</listitem><listitem><para>0011: Ndigo5G-8-AQ 2.5u 8</para>
+</listitem><listitem><para>0110: Ndigo5G-10-Diff 560pF 10 DIFF</para>
+</listitem><listitem><para>1000: Ndigo5G-8 560pF 8+</para>
+</listitem><listitem><para>1010: Ndigo1250M-12 2.2uF 12 S DC</para>
+</listitem><listitem><para>1011: Ndigo5G-10 560pF 10</para>
+</listitem><listitem><para>1110: Ndigo5G-S 2.2uF 10 S Infiniband, DIFF</para>
+</listitem><listitem><para>1111: Ndigo5G-R = fADC4/10 560pF 10 </para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="963" column="9" bodyfile="ndigo_common_interface.h" bodystart="963" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__static__info_1a640eab5cb7015dad62f28156dd316ac0" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int adc_resolution</definition>
+        <argsstring></argsstring>
+        <name>adc_resolution</name>
+        <qualifiedname>ndigo_static_info::adc_resolution</qualifiedname>
+        <briefdescription>
+<para>Number of bits of the ADC. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="968" column="9" bodyfile="ndigo_common_interface.h" bodystart="968" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__static__info_1ae471b12e59ea3dbf2405e729ac72510e" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double nominal_sample_rate</definition>
+        <argsstring></argsstring>
+        <name>nominal_sample_rate</name>
+        <qualifiedname>ndigo_static_info::nominal_sample_rate</qualifiedname>
+        <briefdescription>
+<para>Maximum sample rate in Hz. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Equals 5e9. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="974" column="12" bodyfile="ndigo_common_interface.h" bodystart="974" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__static__info_1a50e57cb478ca592990b512826972576b" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double analog_bandwidth</definition>
+        <argsstring></argsstring>
+        <name>analog_bandwidth</name>
+        <qualifiedname>ndigo_static_info::analog_bandwidth</qualifiedname>
+        <briefdescription>
+<para>Analog bandwidth in Hz. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Equals 3e9. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="980" column="12" bodyfile="ndigo_common_interface.h" bodystart="980" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__static__info_1ab6fb04639784cc2dc47148e481e3d346" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int chip_id</definition>
+        <argsstring></argsstring>
+        <name>chip_id</name>
+        <qualifiedname>ndigo_static_info::chip_id</qualifiedname>
+        <briefdescription>
+<para>Chip ID as read from the 16-bit ADC chip ID register. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="985" column="9" bodyfile="ndigo_common_interface.h" bodystart="985" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__static__info_1add5cabd93cfb03f8781a9fc9d02312ce" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int board_serial</definition>
+        <argsstring></argsstring>
+        <name>board_serial</name>
+        <qualifiedname>ndigo_static_info::board_serial</qualifiedname>
+        <briefdescription>
+<para>Serial number with year and running number in 8.24 format. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>8 bits are used to encode the year, 24 bits to encode the serial number.</para>
+<para>The number is identical to the one printed on the silvery sticker on the board. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="994" column="9" bodyfile="ndigo_common_interface.h" bodystart="994" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__static__info_1ab5b93565e4bf395d5bcbf4e154971e5f" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int flash_serial_low</definition>
+        <argsstring></argsstring>
+        <name>flash_serial_low</name>
+        <qualifiedname>ndigo_static_info::flash_serial_low</qualifiedname>
+        <briefdescription>
+<para>64-bit serial number from the configuration flash chip. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="999" column="9" bodyfile="ndigo_common_interface.h" bodystart="999" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__static__info_1ae45f83758f0734de6340fb8246c61201" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int flash_serial_high</definition>
+        <argsstring></argsstring>
+        <name>flash_serial_high</name>
+        <qualifiedname>ndigo_static_info::flash_serial_high</qualifiedname>
+        <briefdescription>
+<para>64-bit serial number from the configuration flash chip </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="1004" column="9" bodyfile="ndigo_common_interface.h" bodystart="1004" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__static__info_1a0c1bbd44d50a5e9b346000f7ed1c19c2" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int flash_valid</definition>
+        <argsstring></argsstring>
+        <name>flash_valid</name>
+        <qualifiedname>ndigo_static_info::flash_valid</qualifiedname>
+        <briefdescription>
+<para>If not 0, the driver found valid calibration data in the flash on the board and is using it. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="1010" column="9" bodyfile="ndigo_common_interface.h" bodystart="1010" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__static__info_1a102ad1ade3130c552108707e33911196" prot="public" static="no" mutable="no">
+        <type><ref refid="ndigo__common__interface_8h_1ac8108da51e15c2c7cd3dadb52ec3efd9" kindref="member">ndigo_bool_t</ref></type>
+        <definition>ndigo_bool_t dc_coupled</definition>
+        <argsstring></argsstring>
+        <name>dc_coupled</name>
+        <qualifiedname>ndigo_static_info::dc_coupled</qualifiedname>
+        <briefdescription>
+<para>False for the standard AC coupled Ndigo5G. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="1015" column="18" bodyfile="ndigo_common_interface.h" bodystart="1015" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__static__info_1ad78b55994665dc684984f95507ef1feb" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int subversion_revision</definition>
+        <argsstring></argsstring>
+        <name>subversion_revision</name>
+        <qualifiedname>ndigo_static_info::subversion_revision</qualifiedname>
+        <briefdescription>
+<para>Subversion revision ID of the FPGA configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="1020" column="9" bodyfile="ndigo_common_interface.h" bodystart="1020" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__static__info_1a3a708964caa000b7e4a3dd1359d59dcc" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char calibration_date[NDIGO_CALIBRATION_DATE_LEN]</definition>
+        <argsstring>[NDIGO_CALIBRATION_DATE_LEN]</argsstring>
+        <name>calibration_date</name>
+        <qualifiedname>ndigo_static_info::calibration_date</qualifiedname>
+        <briefdescription>
+<para>Calibration date. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>DIN EN ISO 8601 string YYYY-MM-DD HH:DD describing the time when the card was calibrated. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="1027" column="10" bodyfile="ndigo_common_interface.h" bodystart="1027" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__static__info_1a92d710dd152e402a7475b21e8b13a350" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char bitstream_date[NDIGO_BITSTREAM_DATE_LEN]</definition>
+        <argsstring>[NDIGO_BITSTREAM_DATE_LEN]</argsstring>
+        <name>bitstream_date</name>
+        <qualifiedname>ndigo_static_info::bitstream_date</qualifiedname>
+        <briefdescription>
+<para>Bitstream creation date. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>DIN EN ISO 8601 string YYYY-MM-DD HH:DD:SS describing the time when the bitstream was created. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="1034" column="10" bodyfile="ndigo_common_interface.h" bodystart="1034" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__static__info_1ab17764e23c70f28493d47047ca604f31" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int fpga_module_revision</definition>
+        <argsstring></argsstring>
+        <name>fpga_module_revision</name>
+        <qualifiedname>ndigo_static_info::fpga_module_revision</qualifiedname>
+        <briefdescription>
+<para>FPGA module revision number. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>It is a 4-bit number that changes when the schematic of the FPGA module is changed. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="1041" column="9" bodyfile="ndigo_common_interface.h" bodystart="1041" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structndigo__static__info_1aafe0d83e6e8cf01fd65884a69a577ccc" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int fpga_module_configuration</definition>
+        <argsstring></argsstring>
+        <name>fpga_module_configuration</name>
+        <qualifiedname>ndigo_static_info::fpga_module_configuration</qualifiedname>
+        <briefdescription>
+<para>FPGA module configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The same FPGA module can be populated in multiple variants encoded in 6 bits. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="1048" column="9" bodyfile="ndigo_common_interface.h" bodystart="1048" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Structure contains static information. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This structure contains information about the board that does not change during run time.</para>
+<para>It is provided by <ref refid="ndigo__common__interface_8h_1af4d199bbfc73896263809e21e1b5a596" kindref="member">ndigo_get_static_info()</ref>. </para>
+    </detaileddescription>
+    <location file="ndigo_common_interface.h" line="891" column="1" bodyfile="ndigo_common_interface.h" bodystart="891" bodyend="1049"/>
+    <listofallmembers>
+      <member refid="structndigo__static__info_1a640eab5cb7015dad62f28156dd316ac0" prot="public" virt="non-virtual"><scope>ndigo_static_info</scope><name>adc_resolution</name></member>
+      <member refid="structndigo__static__info_1a50e57cb478ca592990b512826972576b" prot="public" virt="non-virtual"><scope>ndigo_static_info</scope><name>analog_bandwidth</name></member>
+      <member refid="structndigo__static__info_1a92d710dd152e402a7475b21e8b13a350" prot="public" virt="non-virtual"><scope>ndigo_static_info</scope><name>bitstream_date</name></member>
+      <member refid="structndigo__static__info_1acb2f934097b300a105c40f2e4c41514b" prot="public" virt="non-virtual"><scope>ndigo_static_info</scope><name>board_configuration</name></member>
+      <member refid="structndigo__static__info_1a7edf6305fafb8d595318dde91addca3c" prot="public" virt="non-virtual"><scope>ndigo_static_info</scope><name>board_id</name></member>
+      <member refid="structndigo__static__info_1afc726c2d5b6d25fdad0e9a1dd74cb2c3" prot="public" virt="non-virtual"><scope>ndigo_static_info</scope><name>board_revision</name></member>
+      <member refid="structndigo__static__info_1add5cabd93cfb03f8781a9fc9d02312ce" prot="public" virt="non-virtual"><scope>ndigo_static_info</scope><name>board_serial</name></member>
+      <member refid="structndigo__static__info_1a3a708964caa000b7e4a3dd1359d59dcc" prot="public" virt="non-virtual"><scope>ndigo_static_info</scope><name>calibration_date</name></member>
+      <member refid="structndigo__static__info_1ab6fb04639784cc2dc47148e481e3d346" prot="public" virt="non-virtual"><scope>ndigo_static_info</scope><name>chip_id</name></member>
+      <member refid="structndigo__static__info_1a102ad1ade3130c552108707e33911196" prot="public" virt="non-virtual"><scope>ndigo_static_info</scope><name>dc_coupled</name></member>
+      <member refid="structndigo__static__info_1a8a77a6fdee403f69ff371bfe2bc921ce" prot="public" virt="non-virtual"><scope>ndigo_static_info</scope><name>driver_build_revision</name></member>
+      <member refid="structndigo__static__info_1ad13d5f2a4d5f44ded6ed4278020b0d9c" prot="public" virt="non-virtual"><scope>ndigo_static_info</scope><name>driver_revision</name></member>
+      <member refid="structndigo__static__info_1acbde252346b57f45163b3b355daa3dcb" prot="public" virt="non-virtual"><scope>ndigo_static_info</scope><name>firmware_revision</name></member>
+      <member refid="structndigo__static__info_1ae45f83758f0734de6340fb8246c61201" prot="public" virt="non-virtual"><scope>ndigo_static_info</scope><name>flash_serial_high</name></member>
+      <member refid="structndigo__static__info_1ab5b93565e4bf395d5bcbf4e154971e5f" prot="public" virt="non-virtual"><scope>ndigo_static_info</scope><name>flash_serial_low</name></member>
+      <member refid="structndigo__static__info_1a0c1bbd44d50a5e9b346000f7ed1c19c2" prot="public" virt="non-virtual"><scope>ndigo_static_info</scope><name>flash_valid</name></member>
+      <member refid="structndigo__static__info_1aafe0d83e6e8cf01fd65884a69a577ccc" prot="public" virt="non-virtual"><scope>ndigo_static_info</scope><name>fpga_module_configuration</name></member>
+      <member refid="structndigo__static__info_1ab17764e23c70f28493d47047ca604f31" prot="public" virt="non-virtual"><scope>ndigo_static_info</scope><name>fpga_module_revision</name></member>
+      <member refid="structndigo__static__info_1ae471b12e59ea3dbf2405e729ac72510e" prot="public" virt="non-virtual"><scope>ndigo_static_info</scope><name>nominal_sample_rate</name></member>
+      <member refid="structndigo__static__info_1a439227feff9d7f55384e8780cfc2eb82" prot="public" virt="non-virtual"><scope>ndigo_static_info</scope><name>size</name></member>
+      <member refid="structndigo__static__info_1ad78b55994665dc684984f95507ef1feb" prot="public" virt="non-virtual"><scope>ndigo_static_info</scope><name>subversion_revision</name></member>
+      <member refid="structndigo__static__info_1aad880fc4455c253781e8968f2239d56f" prot="public" virt="non-virtual"><scope>ndigo_static_info</scope><name>version</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

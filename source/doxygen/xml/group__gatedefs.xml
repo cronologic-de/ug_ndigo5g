@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="group__gatedefs" kind="group">
+    <compoundname>gatedefs</compoundname>
+    <title>Gate defines</title>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__gatedefs_1ga27bd3250ded07a442602ab479dc02dd7" prot="public" static="no">
+        <name>NDIGO_TRIGGER_GATE_NONE</name>
+        <initializer>0x0000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="236" column="9" bodyfile="ndigo_common_interface.h" bodystart="236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__gatedefs_1ga52b96cd21bca1a2a2e1a2cafc3884ab8" prot="public" static="no">
+        <name>NDIGO_TRIGGER_GATE_0</name>
+        <initializer>0x0001</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="237" column="9" bodyfile="ndigo_common_interface.h" bodystart="237" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__gatedefs_1ga2132fba85c99eae02752a3adcedde547" prot="public" static="no">
+        <name>NDIGO_TRIGGER_GATE_1</name>
+        <initializer>0x0002</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="238" column="9" bodyfile="ndigo_common_interface.h" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__gatedefs_1ga598769400d834d2633b69e9920b5985c" prot="public" static="no">
+        <name>NDIGO_TRIGGER_GATE_2</name>
+        <initializer>0x0004</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="239" column="9" bodyfile="ndigo_common_interface.h" bodystart="239" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__gatedefs_1gaaf69024a3f09e352e7f38d5269334ebb" prot="public" static="no">
+        <name>NDIGO_TRIGGER_GATE_3</name>
+        <initializer>0x0008</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="240" column="9" bodyfile="ndigo_common_interface.h" bodystart="240" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

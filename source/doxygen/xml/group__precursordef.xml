@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="group__precursordef" kind="group">
+    <compoundname>precursordef</compoundname>
+    <title>Precursor definitions</title>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__precursordef_1ga761017d18975c9b13e1ea8cf274356a6" prot="public" static="no">
+        <name>NDIGO_MAX_PRECURSOR</name>
+        <initializer>25</initializer>
+        <briefdescription>
+<para>Maximum of <ref refid="structndigo__trigger__block_1aa313c7cca7f719735e68839e5f9ec632" kindref="member">ndigo_trigger_block::precursor</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_interface.h" line="112" column="9" bodyfile="ndigo_interface.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

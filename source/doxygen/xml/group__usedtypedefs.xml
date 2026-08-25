@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="group__usedtypedefs" kind="group">
+    <compoundname>usedtypedefs</compoundname>
+    <title>Unused packet data type defines</title>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__usedtypedefs_1gad2ac0106c884dcec6213291ff1b8b9e2" prot="public" static="no">
+        <name>NDIGO_PACKET_TYPE_16_BIT_SIGNED</name>
+        <initializer>1</initializer>
+        <briefdescription>
+<para>16-bit signed ADC data. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="172" column="9" bodyfile="ndigo_common_interface.h" bodystart="172" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__usedtypedefs_1ga9b89ff6818fe1288f689ed23c9b4304c" prot="public" static="no">
+        <name>NDIGO_PACKET_TYPE_TDC_DATA</name>
+        <initializer>8</initializer>
+        <briefdescription>
+<para>64-bit unsigned TDC data. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Only for internal processing. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="177" column="9" bodyfile="ndigo_common_interface.h" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__usedtypedefs_1gaef7566e384760955b43719deb3d906e7" prot="public" static="no">
+        <name>NDIGO_PACKET_TYPE_TIMESTAMP_ONLY</name>
+        <initializer>128</initializer>
+        <briefdescription>
+<para>Empty <ref refid="structndigo__packet_1a8973e4107f0b644d540e9c0725574c3d" kindref="member">ndigo_packet::data</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="structndigo__packet_1ac8d42bcd4a44e078047ccd7291059238" kindref="member">ndigo_packet::length</ref> may contain alternative information. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="182" column="9" bodyfile="ndigo_common_interface.h" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__usedtypedefs_1ga55316b63a8fa801c7c5e99664d3b30c9" prot="public" static="no">
+        <name>NDIGO_PACKET_TYPE_END_OF_BUFFER</name>
+        <initializer>129</initializer>
+        <briefdescription>
+<para>Empty <ref refid="structndigo__packet_1a8973e4107f0b644d540e9c0725574c3d" kindref="member">ndigo_packet::data</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The packet may contain other data. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="187" column="9" bodyfile="ndigo_common_interface.h" bodystart="187" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>
