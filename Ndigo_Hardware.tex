@@ -120,7 +120,17 @@ AC coupling removes the common mode voltage from the input signal. Users can mov
     \caption{Asymmetric signal shifted to increase dynamic range\label{fig:shiftInput}}
 \end{figure*}
 %
-This feature is useful for highly asymmetric signals, such as pulses from TOF spectrometers or LIDAR systems. Without analog offset compensation, the pulses would begin in the middle of the ADC range, effectively cutting the dynamic range in half (see Figure \ref{fig:shiftInput}). By shifting the DC baseline to one end of the ADC range, the input range can be used fully, providing the maximum dynamic range. The analog offset can be set between $\pm 0,25V$.
+This feature is useful for highly asymmetric signals, such as pulses from TOF
+spectrometers or LIDAR systems. Without analog offset compensation, the pulses
+would begin in the middle of the ADC range, effectively cutting the dynamic
+range in half (see Figure \ref{fig:shiftInput}). By shifting the DC baseline
+to one end of the ADC range, the input range can be used fully, providing the
+maximum dynamic range. The analog offset can be set between $\pm 0.25V$.
+
+\textbf{Attention:} After calling \texttt{ndigo\_init}, the ADC chip will heat up,
+which will slightly shift the baseline \texttt{analog\_offset} compares
+against. If you plan to measure very small pulses, wait for about 2 minutes
+after calling \texttt{ndigo\_init} before you start capturing data.
 %
 %
 %
@@ -146,8 +156,11 @@ TDC pulses must have a minimum duration of 3.3ns. The dead-time of the TDC is 32
 \section{Extension Card\label{cp:extcard}}
 
 The Ndigo Extension card provides additional inputs or outputs to the FPGA. It is connected to the Samtec QSS-025 connector on an Ndigo5G by a Samtec SQCD cable assembly.\par
-The Ndigo Extension Card provides up to ten single ended LEMO00 connectors. The circuit connecting to each of these circuits can be chosen to provide inputs or outputs. These can be AC or DC coupled. AC coupled inputs support NIM signaling. The signals connect to 2.5V IO Pins of the Xilinx Virtex-5 FPGA.\par
-The current firmware revision provides the following signal connections. The HPTDC clocks are $\SI{5}{\giga\hertz} / 128 = \SI{39.0625}{\mega\hertz}$\par
+The Ndigo Extension Card provides up to ten single ended LEMO00 connectors. The circuit connecting to each of these circuits can be chosen to provide inputs or outputs. These can be AC or DC coupled. AC coupled inputs support NIM signaling. The signals connect to 2.5V IO Pins of the Xilinx Virtex-5 FPGA.
+
+The current firmware revision provides the following signal connections.
+
+The HPTDC clocks are $\SI{5}{\giga\hertz} / 128 = \SI{39.0625}{\mega\hertz}$\par
 
 \begin{small}
 \begin{center}
