@@ -128,9 +128,10 @@ to one end of the ADC range, the input range can be used fully, providing the
 maximum dynamic range. The analog offset can be set between $\pm 0.25V$.
 
 \textbf{Attention:} After calling \texttt{ndigo\_init}, the ADC chip will heat up,
-which will slightly shift the baseline \texttt{analog\_offset} compares
-against. If you plan to measure very small pulses, wait for about 2 minutes
-after calling \texttt{ndigo\_init} before you start capturing data.
+which will slightly shift its baseline.
+If you plan to measure very small pulses, wait for about 2 minutes
+after calling \texttt{ndigo\_init} before you start capturing data and set
+the values of \texttt{analog\_offset} only after this startup period.
 %
 %
 %
