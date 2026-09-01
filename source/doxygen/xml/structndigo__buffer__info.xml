@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_interface.h" line="408" column="14" bodyfile="ndigo_interface.h" bodystart="408" bodyend="-1"/>
+        <location file="ndigo_interface.h" line="421" column="14" bodyfile="ndigo_interface.h" bodystart="421" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__buffer__info_1ab7ef5ad7c0ae31c7f43a08feb997a0e2" prot="public" static="no" mutable="no">
         <type>int64_t</type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_interface.h" line="413" column="13" bodyfile="ndigo_interface.h" bodystart="413" bodyend="-1"/>
+        <location file="ndigo_interface.h" line="426" column="13" bodyfile="ndigo_interface.h" bodystart="426" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -40,7 +40,7 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="ndigo_interface.h" line="404" column="1" bodyfile="ndigo_interface.h" bodystart="404" bodyend="414"/>
+    <location file="ndigo_interface.h" line="417" column="1" bodyfile="ndigo_interface.h" bodystart="417" bodyend="427"/>
     <listofallmembers>
       <member refid="structndigo__buffer__info_1a8f42b30e133f5e794e3a6797279b838a" prot="public" virt="non-virtual"><scope>ndigo_buffer_info</scope><name>buffer_address</name></member>
       <member refid="structndigo__buffer__info_1ab7ef5ad7c0ae31c7f43a08feb997a0e2" prot="public" virt="non-virtual"><scope>ndigo_buffer_info</scope><name>buffer_size</name></member>

@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_interface.h" line="188" column="9" bodyfile="ndigo_interface.h" bodystart="188" bodyend="-1"/>
+        <location file="ndigo_interface.h" line="189" column="9" bodyfile="ndigo_interface.h" bodystart="189" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__configuration_1aad880fc4455c253781e8968f2239d56f" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_interface.h" line="193" column="9" bodyfile="ndigo_interface.h" bodystart="193" bodyend="-1"/>
+        <location file="ndigo_interface.h" line="194" column="9" bodyfile="ndigo_interface.h" bodystart="194" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__configuration_1a18a373c8b2126ea9409c08cede8f7326" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -47,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_interface.h" line="198" column="9" bodyfile="ndigo_interface.h" bodystart="198" bodyend="-1"/>
+        <location file="ndigo_interface.h" line="199" column="9" bodyfile="ndigo_interface.h" bodystart="199" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__configuration_1a05331e51c932e355bad5f7d88fca6920" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -67,7 +67,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_interface.h" line="208" column="9" bodyfile="ndigo_interface.h" bodystart="208" bodyend="-1"/>
+        <location file="ndigo_interface.h" line="209" column="9" bodyfile="ndigo_interface.h" bodystart="209" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__configuration_1a3a14628ead92d0afcce5f53e0ff017c8" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -85,7 +85,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_interface.h" line="221" column="12" bodyfile="ndigo_interface.h" bodystart="221" bodyend="-1"/>
+        <location file="ndigo_interface.h" line="222" column="12" bodyfile="ndigo_interface.h" bodystart="222" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__configuration_1af27b6f6b2eab1180dc892de09a8eed53" prot="public" static="no" mutable="no">
         <type><ref refid="ndigo__common__interface_8h_1ac8108da51e15c2c7cd3dadb52ec3efd9" kindref="member">ndigo_bool_t</ref></type>
@@ -100,7 +100,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_interface.h" line="226" column="18" bodyfile="ndigo_interface.h" bodystart="226" bodyend="-1"/>
+        <location file="ndigo_interface.h" line="227" column="18" bodyfile="ndigo_interface.h" bodystart="227" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__configuration_1a8f5d649667fad6326d05e3d82ea51a8b" prot="public" static="no" mutable="no">
         <type><ref refid="ndigo__common__interface_8h_1ac8108da51e15c2c7cd3dadb52ec3efd9" kindref="member">ndigo_bool_t</ref></type>
@@ -115,7 +115,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_interface.h" line="232" column="18" bodyfile="ndigo_interface.h" bodystart="232" bodyend="-1"/>
+        <location file="ndigo_interface.h" line="233" column="18" bodyfile="ndigo_interface.h" bodystart="233" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__configuration_1a483007c61e4985f40820641e1f87ce29" prot="public" static="no" mutable="no">
         <type><ref refid="ndigo__common__interface_8h_1ac8108da51e15c2c7cd3dadb52ec3efd9" kindref="member">ndigo_bool_t</ref></type>
@@ -131,7 +131,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_interface.h" line="238" column="18" bodyfile="ndigo_interface.h" bodystart="238" bodyend="-1"/>
+        <location file="ndigo_interface.h" line="239" column="18" bodyfile="ndigo_interface.h" bodystart="239" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__configuration_1a16890d0dd1327ea43fc27f6975913f87" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -144,11 +144,22 @@
         </briefdescription>
         <detaileddescription>
 <para>Sets the input DC offset-values to this value in Volts.</para>
-<para>Default is 0. </para>
+<para>Default is 0.</para>
+<para><verbatim>embed:rst:leading-asterisk
+*          .. attention::
+* 
+*              After calling :func:`ndigo_init`, the ADC chip will heat up,
+*              which will slightly shift its baseline.
+* 
+*              If you plan to measure very small pulses, wait for about
+*              2 minutes after calling ``ndigo_init`` before you start
+*              capturing data and set the values of ``analog_offset``
+*              only after this startup period.
+*          </verbatim> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_interface.h" line="245" column="12" bodyfile="ndigo_interface.h" bodystart="245" bodyend="-1"/>
+        <location file="ndigo_interface.h" line="257" column="12" bodyfile="ndigo_interface.h" bodystart="257" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__configuration_1a4d3f609fa9310848e6cc07398d47cad1" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -160,11 +171,12 @@
 <para>Sets DC offset for GATE input and TRIGGER input. </para>
         </briefdescription>
         <detaileddescription>
-<para>The default value of -0.35V is ideal for negative NIM pulses of -0.8V. </para>
+<para>The default value of -0.35V is ideal for negative NIM pulses of -0.8V.</para>
+<para>Index 0 refers to the TRIGGER input, index 1 to the GATE input. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_interface.h" line="252" column="12" bodyfile="ndigo_interface.h" bodystart="252" bodyend="-1"/>
+        <location file="ndigo_interface.h" line="265" column="12" bodyfile="ndigo_interface.h" bodystart="265" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__configuration_1a8bc5b11a6dc9431517fb00335d4d9aeb" prot="public" static="no" mutable="no">
         <type><ref refid="structndigo__trigger" kindref="compound">ndigo_trigger</ref></type>
@@ -185,7 +197,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_interface.h" line="264" column="19" bodyfile="ndigo_interface.h" bodystart="264" bodyend="-1"/>
+        <location file="ndigo_interface.h" line="277" column="19" bodyfile="ndigo_interface.h" bodystart="277" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__configuration_1a69714f56a65985fa0ded10b4cee3dc47" prot="public" static="no" mutable="no">
         <type><ref refid="structndigo__trigger__block" kindref="compound">ndigo_trigger_block</ref></type>
@@ -202,7 +214,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_interface.h" line="274" column="25" bodyfile="ndigo_interface.h" bodystart="274" bodyend="-1"/>
+        <location file="ndigo_interface.h" line="287" column="25" bodyfile="ndigo_interface.h" bodystart="287" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__configuration_1a3111a1ef5a8a20abb614f23ce0d562cf" prot="public" static="no" mutable="no">
         <type><ref refid="structndigo__gating__block" kindref="compound">ndigo_gating_block</ref></type>
@@ -218,7 +230,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_interface.h" line="281" column="24" bodyfile="ndigo_interface.h" bodystart="281" bodyend="-1"/>
+        <location file="ndigo_interface.h" line="294" column="24" bodyfile="ndigo_interface.h" bodystart="294" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__configuration_1abe00d88c10650083b32bc50ecddb8e41" prot="public" static="no" mutable="no">
         <type><ref refid="structndigo__extension__block" kindref="compound">ndigo_extension_block</ref></type>
@@ -234,7 +246,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_interface.h" line="288" column="27" bodyfile="ndigo_interface.h" bodystart="288" bodyend="-1"/>
+        <location file="ndigo_interface.h" line="301" column="27" bodyfile="ndigo_interface.h" bodystart="301" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__configuration_1a5033c43fbdb9b5d56fa0922ea6c3724b" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -251,7 +263,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_interface.h" line="298" column="9" bodyfile="ndigo_interface.h" bodystart="298" bodyend="-1"/>
+        <location file="ndigo_interface.h" line="311" column="9" bodyfile="ndigo_interface.h" bodystart="311" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__configuration_1ab66c682cd186a6226dd8133b03ca55b8" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -277,7 +289,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_interface.h" line="323" column="9" bodyfile="ndigo_interface.h" bodystart="323" bodyend="-1"/>
+        <location file="ndigo_interface.h" line="336" column="9" bodyfile="ndigo_interface.h" bodystart="336" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__configuration_1ae7da8f7efc68e229b839523ec8310124" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -293,7 +305,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_interface.h" line="329" column="9" bodyfile="ndigo_interface.h" bodystart="329" bodyend="-1"/>
+        <location file="ndigo_interface.h" line="342" column="9" bodyfile="ndigo_interface.h" bodystart="342" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__configuration_1aaf241640a83ec470bf6c337d6426ae33" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -314,7 +326,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_interface.h" line="341" column="9" bodyfile="ndigo_interface.h" bodystart="341" bodyend="-1"/>
+        <location file="ndigo_interface.h" line="354" column="9" bodyfile="ndigo_interface.h" bodystart="354" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__configuration_1a63d17412a8a08c726467c0e562ff9a3e" prot="public" static="no" mutable="no">
         <type><ref refid="ndigo__interface_8h_1aba3f4484158c5712fdc54d936c17ca25" kindref="member">lut_func</ref></type>
@@ -330,7 +342,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_interface.h" line="354" column="14" bodyfile="ndigo_interface.h" bodystart="354" bodyend="-1"/>
+        <location file="ndigo_interface.h" line="367" column="14" bodyfile="ndigo_interface.h" bodystart="367" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -375,7 +387,7 @@
         <link refid="structndigo__trigger__block"/>
       </node>
     </collaborationgraph>
-    <location file="ndigo_interface.h" line="184" column="1" bodyfile="ndigo_interface.h" bodystart="184" bodyend="356"/>
+    <location file="ndigo_interface.h" line="185" column="1" bodyfile="ndigo_interface.h" bodystart="185" bodyend="369"/>
     <listofallmembers>
       <member refid="structndigo__configuration_1a05331e51c932e355bad5f7d88fca6920" prot="public" virt="non-virtual"><scope>ndigo_configuration</scope><name>adc_mode</name></member>
       <member refid="structndigo__configuration_1a16890d0dd1327ea43fc27f6975913f87" prot="public" virt="non-virtual"><scope>ndigo_configuration</scope><name>analog_offset</name></member>

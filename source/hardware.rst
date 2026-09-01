@@ -29,12 +29,14 @@ Using a single Ndigo5G, no further connections need to be made.
 For applications that require more than four ADC channels, several Ndigo5G
 boards can be operated in sync.
 
+
 .. attention::
 
     In some cases, modern PC mainboards have PCIe slots with an
     additional metal shielding.
     Be careful not to cause an electric short when installing the board as some
     board components are located close to the PCIe connector.
+
 
 The signals used for board synchronization and inter-board triggering
 are transferred on a bus between the boards.
@@ -205,6 +207,7 @@ The analog offset can be set between ±0.25 V.
 
     After calling :func:`ndigo_init`, the ADC chip will heat up,
     which will slightly shift its baseline.
+
     If you plan to measure very small pulses, wait for about 2 minutes after
     calling ``ndigo_init`` before you start capturing data and set the values
     of :member:`~ndigo_configuration::analog_offset` only after this startup
@@ -234,8 +237,6 @@ The digital inputs are further configured using
 
 :numref:`fig digital trigger` in :doc:`functionality/trigger_blocks`
 shows the trigger units of the digital channels.
-
-
 
 
 

@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_interface.h" line="378" column="27" bodyfile="ndigo_interface.h" bodystart="378" bodyend="-1"/>
+        <location file="ndigo_interface.h" line="391" column="27" bodyfile="ndigo_interface.h" bodystart="391" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__read__out_1a0bfd9604e2a21e029966692f8a498768" prot="public" static="no" mutable="no">
         <type>volatile <ref refid="structndigo__packet" kindref="compound">ndigo_packet</ref> *</type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_interface.h" line="383" column="27" bodyfile="ndigo_interface.h" bodystart="383" bodyend="-1"/>
+        <location file="ndigo_interface.h" line="396" column="27" bodyfile="ndigo_interface.h" bodystart="396" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__read__out_1a7d16b1c68c87cec009d972e79abfba78" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -52,7 +52,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_interface.h" line="393" column="9" bodyfile="ndigo_interface.h" bodystart="393" bodyend="-1"/>
+        <location file="ndigo_interface.h" line="406" column="9" bodyfile="ndigo_interface.h" bodystart="406" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__read__out_1aed3e11140a4ff2456ee8cb2bb7271c3c" prot="public" static="no" mutable="no">
         <type>const char *</type>
@@ -67,7 +67,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_interface.h" line="398" column="16" bodyfile="ndigo_interface.h" bodystart="398" bodyend="-1"/>
+        <location file="ndigo_interface.h" line="411" column="16" bodyfile="ndigo_interface.h" bodystart="411" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -89,7 +89,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="ndigo_interface.h" line="373" column="1" bodyfile="ndigo_interface.h" bodystart="373" bodyend="399"/>
+    <location file="ndigo_interface.h" line="386" column="1" bodyfile="ndigo_interface.h" bodystart="386" bodyend="412"/>
     <listofallmembers>
       <member refid="structndigo__read__out_1a7d16b1c68c87cec009d972e79abfba78" prot="public" virt="non-virtual"><scope>ndigo_read_out</scope><name>error_code</name></member>
       <member refid="structndigo__read__out_1aed3e11140a4ff2456ee8cb2bb7271c3c" prot="public" virt="non-virtual"><scope>ndigo_read_out</scope><name>error_message</name></member>

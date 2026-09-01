@@ -3,12 +3,13 @@ Calibrating the TDC
 ===================
 
 
-
 After each update of the Ndigo5G-10 firmware the TDC has to be
 calibrated.
 
+
 The calibration is done with the tool ``TDCCalibration.exe``
 which is available after installing the Ndigo device driver.
+
 
 After invoking the application a window as shown in Figure
 :numref:`fig calib`.
@@ -46,6 +47,7 @@ The card can only be successfully calibrated if:
 -  *Empty Bins* is less than (First Bin + 4)
 -  at least 10,000 events have been captured
 -  a valid serial number is set.
+
 
 .. hint::
 
