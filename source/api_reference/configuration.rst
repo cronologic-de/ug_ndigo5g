@@ -49,6 +49,8 @@ or in :doc:`../code_example/index`.
 
 .. latex-toc-doxygenfunction:: ndigo_set_board_id
 
+.. doxygentypedef:: lut_func
+
 
 .. latex-toc-doxygenstruct:: ndigo_configuration
 

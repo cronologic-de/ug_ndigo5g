@@ -16,7 +16,7 @@ from docutils.statemachine import StringList
 
 
 def get_version() -> str:
-    pyproject = pathlib.Path("./pyproject.toml")
+    pyproject = pathlib.Path("../pyproject.toml")
     if pyproject.exists():
         with pyproject.open("rb") as f:
             data = tomllib.load(f)

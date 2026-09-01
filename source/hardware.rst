@@ -232,8 +232,8 @@ The digital inputs are further configured using
 :member:`ndigo_configuration::trigger`
 
 
-:numref:`fig digital input` in :doc:`functionality/trigger_blocks` shows the
-trigger units of the digital channels.
+:numref:`fig digital trigger` in :doc:`functionality/trigger_blocks`
+shows the trigger units of the digital channels.
 
 
 
