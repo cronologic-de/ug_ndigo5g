@@ -61,7 +61,7 @@ templates_path = ["_templates"]
 exclude_patterns = ["global.rst"]
 
 numfig = True
-numfig_format = {"figure": "Figure %s:", "table": "Table %s:"}
+numfig_format = {"figure": "Figure %s", "table": "Table %s"}
 numfig_secnum_depth = 1
 primary_domain = "cpp"
 
