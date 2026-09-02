@@ -3,13 +3,13 @@ Technical Data
 ==============
 
 
-**Input Passband**: 4.5 MHz to 950 MHz.
+**Input Passband**: 4.5 MHz to 950 MHz.
 
-**Power Requirements**: 25 W
+**Power Requirements**: 25 W
 
-**Mechanical Dimensions** (excluding slot bracket): 170 mm × 111.15 mm
+**Mechanical Dimensions** (excluding slot bracket): 170 mm × 111.15 mm
 
-**Throughput**: 800 MByte/s on PCIe x4
+**Throughput**: 800 MByte/s on PCIe x4
 
 
 
@@ -132,11 +132,11 @@ Oscillator
 |                 | Warm-up\ :sup:`2`       |     |         | 3    | min.  |
 +-----------------+-------------------------+-----+---------+------+-------+
 
-:sup:`1`\ Over –40 °C to +85 °C; relative to stabilized frequency
-after 1 hour of continuous operation
+:sup:`1`\ Over –40 °C to +85 °C; relative to stabilized frequency
+after 1 hour of continuous operation
 
-:sup:`2` @+25 °C; within ±100 ppb of F, where F is the stabilized frequency
-reached after 1 hour of continuous operation
+:sup:`2` @+25 °C; within ±100 ppb of F, where F is the stabilized frequency
+reached after 1 hour of continuous operation
 
 
 
@@ -362,7 +362,7 @@ quality of the enclosure. It is the responsibility of the system
 integrator to ensure that the assembled system is compliant to
 applicable standards of the country that the system is operated in,
 especially regarding user safety and electromagnetic interference.
-Compliance was only tested for attached cables shorter than 3 m.
+Compliance was only tested for attached cables shorter than 3 m.
 
 When handling the board, adequate measures have to be taken to protect
 the circuits against electrostatic discharge (ESD). All power supplied
