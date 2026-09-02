@@ -55,18 +55,4 @@ instead.
 
 ## License
 
-![Creative Commons by-nd 4.0](https://i.creativecommons.org/l/by-nd/4.0/88x31.png)
-
-This documentation is licensed under the
-[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0/) license. You are
-free to copy and redistribute the material in any medium or format for any
-purpose, even commercially unchanged if you give appropriate credit to
-cronologic GmbH & Co. KG. A link to
-[this repository](https://github.com/cronologic-de/ug_timetagger4) or the
-[product page](https://www.cronologic.de/product/timetagger) is sufficient. If
-you decide to contribute to this repository, you transfer non-exclusive but
-unlimited rights to your edit to cronologic GmbH & Co. KG.
-
-The file [extraplaceins.sty](extraplaceins.sty) is in the public domain.
-
-The Montserrat font is licensed under the [SIL OPEN FONT LICENSE](OFL.txt).
+See [LICENSE](LICENSE).
