@@ -156,10 +156,7 @@ latex_elements = {
         \sffamily \textcolor{org}{USER GUIDE}};
         \end{tikzpicture}
         \\ \vspace{5pt}
-        %{\efbox{
-        %\hspace{-10pt}
         \includegraphics[width=120mm,height=150mm,keepaspectratio]{Title5G.pdf}
-        %}}
         \\
         \end{tabular}
         \end{minipage}
