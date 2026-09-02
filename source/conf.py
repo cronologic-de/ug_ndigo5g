@@ -129,6 +129,8 @@ latex_elements = {
         ]
         {cronologicug}
         \definecolor{ctypered}{RGB}{142,33,0} % C-type auto highlighting color
+        \definecolor{org}{RGB}{237,120,0}
+        \definecolor{gry}{RGB}{ 157,157,156}
         \newcommand{\docutilsrolectypered}[1]{{\color{ctypered} #1}}
         \newcommand{\docutilsrolered}[1]{{\color{red} #1}}
         \newcommand{\docutilsrolecronoblue}[1]{{\color{cronoblue} #1}}
@@ -136,7 +138,49 @@ latex_elements = {
     """,
     "extraclassoptions": r"openany",
     "tableofcontents": r"\tableofcontents",
-    "maketitle": r"%\includepdf[pages={1}]{Ndigo6G-12_Front_Page.pdf}",
+    "maketitle": r"""
+        \thispagestyle{empty}
+        \begin{tikzpicture}
+        \draw[inner sep=0pt] node at (0,0)   { \includegraphics[width=\textwidth]{cronologic.pdf}};
+        \end{tikzpicture}
+
+        \begin{minipage}{0.83\textwidth}
+        \begin{tabular}{l}
+
+        \begin{tikzpicture}
+        \draw[inner sep=0pt] node at (-8.3,1){\fontsize{20}{2}\selectfont
+        \cronoheaderfont
+        {\textcolor{org}{Ndigo5G-PCIe}}};
+
+        \draw[align=center] node at (-8.3,0){\fontsize{20}{2}\selectfont
+        \sffamily \textcolor{org}{USER GUIDE}};
+        \end{tikzpicture}
+        \\ \vspace{5pt}
+        %{\efbox{
+        %\hspace{-10pt}
+        \includegraphics[width=120mm,height=150mm,keepaspectratio]{Title5G.pdf}
+        %}}
+        \\
+        \end{tabular}
+        \end{minipage}
+        \begin{minipage}{0\textwidth}
+        \vspace{25pt}
+        \begin{tikzpicture}
+        \draw[inner sep=0pt] node at (0,-5){
+        \fontsize{100}{2}\selectfont
+        \bfseries \textcolor{org}{ \rotatebox{90}{Ndigo5G-PCIe}}};
+        \end{tikzpicture}
+        \end{minipage}
+
+        \vspace{-25pt}
+        \begin{minipage}{0\textwidth}
+        \begin{tikzpicture}
+        \draw[inner sep=0pt] node at (-3,-18){\fontsize{20}{2}\selectfont
+        \sffamily \textcolor{gry}{~\url{www.cronologic.de}}};
+        \end{tikzpicture}
+        \end{minipage}
+        \newpage
+    """,
     "releasename": "Rev.",
     "makeindex": "",
     "printindex": "",
@@ -145,6 +189,8 @@ latex_theme = "manual"  # manual (book class) or howto (article class)
 latex_additional_files = [
     "cronologicug.sty",
     "extraplaceins.sty",
+    "cronologic.pdf",
+    "Title5G.pdf",
 ]
 
 
@@ -255,6 +301,14 @@ class LatexTocDoxygenDefine(LatexTocDoxygenBase):
     doxy_type = "doxygendefine"
 
 
+class LatexTocDoxygenTypedef(LatexTocDoxygenBase):
+    """
+    Sphinx directive wrapping doxygentypedef with LaTeX TOC injection.
+    """
+
+    doxy_type = "doxygentypedef"
+
+
 def setup(app):
     """
     Registers the custom LaTeX TOC doxygen directives with the Sphinx application.
@@ -262,4 +316,5 @@ def setup(app):
     app.add_directive("latex-toc-doxygenfunction", LatexTocDoxygenFunction)
     app.add_directive("latex-toc-doxygenstruct", LatexTocDoxygenStruct)
     app.add_directive("latex-toc-doxygendefine", LatexTocDoxygenDefine)
+    app.add_directive("latex-toc-doxygentypedef", LatexTocDoxygenTypedef)
     return {"version": "1.0", "parallel_read_safe": True}

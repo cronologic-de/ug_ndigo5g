@@ -39,7 +39,6 @@ Setting up and using a Ndigo5G in your application software requires that you:
 .. toctree::
     :maxdepth: 2
 
-    constants
     initialization
     configuration
     runtime_control
@@ -48,3 +47,4 @@ Setting up and using a Ndigo5G in your application software requires that you:
     status_information
     driver_information
     led_controls
+    constants

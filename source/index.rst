@@ -46,4 +46,6 @@ together with a timestamp.
     functionality/index
     api_reference/index
     code_example/index
+    technical_data
+    revhistory
 

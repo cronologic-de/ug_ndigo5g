@@ -12,6 +12,7 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "esbonio>=2.1.0",
     "mplutils==0.6.0",
 ]
 
