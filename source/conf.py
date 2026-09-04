@@ -226,7 +226,7 @@ class LatexTocDoxygenBase(Directive):
         name = self.arguments[0]
         escaped_name = name.replace("_", r"\_")
         no_latex = "no-latex-header" in self.options
-        toclevel = self.options.get("toclevel", "subsection")
+        toclevel = self.options.get("toclevel", "subsubsection")
         hide_initializer = "hide-initializer" in self.options
 
         rst = []
