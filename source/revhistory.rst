@@ -62,7 +62,7 @@ Driver and Applications
 User Guide
 ==========
 
-2.0.0 — TBD
+2.0.0 — 2026-09-14
     | Added HTML version of user guide
     | Updated driver revision list
 
