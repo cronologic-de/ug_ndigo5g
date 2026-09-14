@@ -27,6 +27,10 @@ Firmware
 Driver and Applications
 =======================
 
+1.6.1 — 2026-09-14
+    | Enhanced IOMMU compatibility: The kernel-mode driver now enables full DMA
+      support, ensuring seamless operation when IOMMU is active
+    | Updated docstrings in interface files
 
 1.5.12 — 2024-06-27
     | Revert HPTDC8-PCI support to v3.9.5 on ``crono_tools``
@@ -60,6 +64,7 @@ User Guide
 
 2.0.0 — TBD
     | Added HTML version of user guide
+    | Updated driver revision list
 
 1.3.7 — 2026-08-26
     | Documented thermal baseline drift after initialization
