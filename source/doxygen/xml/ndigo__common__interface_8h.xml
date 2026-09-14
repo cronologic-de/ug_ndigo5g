@@ -342,7 +342,7 @@
 </parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__funcreturns" kindref="compound">status code</ref>. </para>
+<simplesect kind="return"><para>A <ref refid="group__funcreturnsndigo" kindref="compound">status code</ref>. </para>
 </simplesect>
 </para>
         </detaileddescription>
@@ -776,7 +776,7 @@
 <para>Call on a TDC packet (that is, <ref refid="structndigo__packet_1adc18ec7f4fcbc00d327f412b44a6385d" kindref="member">ndigo_packet::channel</ref> = 4) to update the timestamp of the packet with a more accurate value.</para>
 <para><verbatim>embed:rst:leading-asterisk
 *          .. attention::
-* 
+*
 *              If called more than once on a packet, the timestamp will be
 *              invalid.
 *          </verbatim> <parameterlist kind="param"><parameteritem>

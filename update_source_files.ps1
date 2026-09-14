@@ -1,5 +1,5 @@
 # adjust: relative path to crimson_driver
-$baseDir = "../../../gitlab"
+$baseDir = "../../gitlab"
 
 $sourceFiles = @(
     "ndigo_driver/include/ndigo_common_interface.h",

@@ -2,7 +2,7 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
   <compounddef id="group__usedtypedefs" kind="group">
     <compoundname>usedtypedefs</compoundname>
-    <title>Unused packet data type defines</title>
+    <title>Used packet data type defines</title>
     <sectiondef kind="define">
       <memberdef kind="define" id="group__usedtypedefs_1gad2ac0106c884dcec6213291ff1b8b9e2" prot="public" static="no">
         <name>NDIGO_PACKET_TYPE_16_BIT_SIGNED</name>

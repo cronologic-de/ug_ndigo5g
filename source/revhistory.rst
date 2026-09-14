@@ -61,6 +61,8 @@ Driver and Applications
 
 User Guide
 ==========
+2.0.1 — TBD
+    | Minor fixes
 
 2.0.0 — 2026-09-14
     | Added HTML version of user guide
