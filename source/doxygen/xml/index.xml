@@ -387,6 +387,7 @@
     <member refid="group__readerror_1gaca5e1c19dbb8c507a5299a6365d25f5b" kind="define"><name>NDIGO_READ_NO_DATA</name></member>
     <member refid="group__readerror_1ga47cec4ed538dd187c1a51e7868d945a5" kind="define"><name>NDIGO_READ_INTERNAL_ERROR</name></member>
     <member refid="group__readerror_1ga7fb6873069975065aeb0b5e70c7616d2" kind="define"><name>NDIGO_READ_TIMEOUT</name></member>
+    <member refid="group__readerror_1ga7ffde6f93e282f2a2bfc980894524feb" kind="define"><name>NDIGO_READ_WRONG_STATE</name></member>
     <member refid="group__ndigoalertdefs_1gac9a5d71c89eed6b11ea3e5dbcffc5da3" kind="define"><name>NDIGO_ALERT_FPGA_TEMPERATURE</name></member>
     <member refid="group__ndigoalertdefs_1ga5be81b6da77192243b30fd24bc0433a1" kind="define"><name>NDIGO_ALERT_VCCINT</name></member>
     <member refid="group__ndigoalertdefs_1ga97cf07b4491c13c53017ce711c7521bf" kind="define"><name>NDIGO_ALERT_VCCAUX</name></member>
@@ -622,6 +623,7 @@
     <member refid="group__readerror_1gaca5e1c19dbb8c507a5299a6365d25f5b" kind="define"><name>NDIGO_READ_NO_DATA</name></member>
     <member refid="group__readerror_1ga47cec4ed538dd187c1a51e7868d945a5" kind="define"><name>NDIGO_READ_INTERNAL_ERROR</name></member>
     <member refid="group__readerror_1ga7fb6873069975065aeb0b5e70c7616d2" kind="define"><name>NDIGO_READ_TIMEOUT</name></member>
+    <member refid="group__readerror_1ga7ffde6f93e282f2a2bfc980894524feb" kind="define"><name>NDIGO_READ_WRONG_STATE</name></member>
   </compound>
   <compound refid="group__ndigoalertdefs" kind="group"><name>ndigoalertdefs</name>
     <member refid="group__ndigoalertdefs_1gac9a5d71c89eed6b11ea3e5dbcffc5da3" kind="define"><name>NDIGO_ALERT_FPGA_TEMPERATURE</name></member>

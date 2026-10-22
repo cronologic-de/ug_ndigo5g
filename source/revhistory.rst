@@ -27,6 +27,9 @@ Firmware
 Driver and Applications
 =======================
 
+1.6.2 — TBD
+    | TBD
+
 1.6.1 — 2026-09-14
     | Enhanced IOMMU compatibility: The kernel-mode driver now enables full DMA
       support, ensuring seamless operation when IOMMU is active
@@ -61,7 +64,10 @@ Driver and Applications
 
 User Guide
 ==========
-2.0.1 — TBD
+2.1.0 — TBD
+    | Fixed incorrect documentation for :member:`ndigo_configuration::dc_offset`
+    | Added documentation for :c:macro:`NDIGO_READ_WRONG_STATE`
+    | Updated driver revision list
     | Minor fixes
 
 2.0.0 — 2026-09-14

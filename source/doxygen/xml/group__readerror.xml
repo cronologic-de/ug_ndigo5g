@@ -52,6 +52,19 @@
         </inbodydescription>
         <location file="ndigo_common_interface.h" line="309" column="9" bodyfile="ndigo_common_interface.h" bodystart="309" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="define" id="group__readerror_1ga7ffde6f93e282f2a2bfc980894524feb" prot="public" static="no">
+        <name>NDIGO_READ_WRONG_STATE</name>
+        <initializer>4</initializer>
+        <briefdescription>
+<para><ref refid="ndigo__interface_8h_1aa5a18f08826d8e92841a651ce40d7ea5" kindref="member">ndigo_read()</ref> has been called in a wrong state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For example, before <ref refid="ndigo__common__interface_8h_1a93bf78242bbefaab13dbb5935ba7a921" kindref="member">ndigo_start_capture()</ref> or after <ref refid="ndigo__common__interface_8h_1ac3be69caae27ca45dab7aba92b699234" kindref="member">ndigo_stop_capture()</ref> has been called. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ndigo_common_interface.h" line="315" column="9" bodyfile="ndigo_common_interface.h" bodystart="315" bodyend="-1"/>
+      </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>

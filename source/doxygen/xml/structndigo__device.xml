@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="456" column="10" bodyfile="ndigo_common_interface.h" bodystart="456" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="464" column="10" bodyfile="ndigo_common_interface.h" bodystart="464" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__device_1affd64fcbef63b9de78b48c8355dbe078" prot="public" static="no" mutable="no">
         <type>void *</type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="457" column="10" bodyfile="ndigo_common_interface.h" bodystart="457" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="465" column="10" bodyfile="ndigo_common_interface.h" bodystart="465" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -39,7 +39,7 @@
     <detaileddescription>
 <para>Returned by <ref refid="ndigo__interface_8h_1a8c704f55c580db43fba8c5f84cd9fa15" kindref="member">ndigo_init</ref>. </para>
     </detaileddescription>
-    <location file="ndigo_common_interface.h" line="455" column="1" bodyfile="ndigo_common_interface.h" bodystart="455" bodyend="458"/>
+    <location file="ndigo_common_interface.h" line="463" column="1" bodyfile="ndigo_common_interface.h" bodystart="463" bodyend="466"/>
     <listofallmembers>
       <member refid="structndigo__device_1a7b1d0df736739f38994ed29f54cffdf3" prot="public" virt="non-virtual"><scope>ndigo_device</scope><name>is_valid</name></member>
       <member refid="structndigo__device_1affd64fcbef63b9de78b48c8355dbe078" prot="public" virt="non-virtual"><scope>ndigo_device</scope><name>ndigo</name></member>

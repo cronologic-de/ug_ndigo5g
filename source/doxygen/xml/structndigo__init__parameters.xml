@@ -20,7 +20,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="525" column="9" bodyfile="ndigo_common_interface.h" bodystart="525" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="533" column="9" bodyfile="ndigo_common_interface.h" bodystart="533" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__init__parameters_1a76f4fd1aefbb9db87716f117658faf83" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -36,7 +36,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="537" column="9" bodyfile="ndigo_common_interface.h" bodystart="537" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="545" column="9" bodyfile="ndigo_common_interface.h" bodystart="545" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__init__parameters_1a7edf6305fafb8d595318dde91addca3c" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -53,7 +53,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="547" column="9" bodyfile="ndigo_common_interface.h" bodystart="547" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="555" column="9" bodyfile="ndigo_common_interface.h" bodystart="555" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__init__parameters_1a6b019828873747353a4f181b33504470" prot="public" static="no" mutable="no">
         <type><ref refid="ndigo__common__interface_8h_1ac8108da51e15c2c7cd3dadb52ec3efd9" kindref="member">ndigo_bool_t</ref></type>
@@ -69,7 +69,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="553" column="18" bodyfile="ndigo_common_interface.h" bodystart="553" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="561" column="18" bodyfile="ndigo_common_interface.h" bodystart="561" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__init__parameters_1a1b35fdc62186f75210be574bc22b09ea" prot="public" static="no" mutable="no">
         <type><ref refid="ndigo__common__interface_8h_1ac8108da51e15c2c7cd3dadb52ec3efd9" kindref="member">ndigo_bool_t</ref></type>
@@ -85,7 +85,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="560" column="18" bodyfile="ndigo_common_interface.h" bodystart="560" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="568" column="18" bodyfile="ndigo_common_interface.h" bodystart="568" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__init__parameters_1ad875b5d5c5f5f820a900a28c34ab6e6c" prot="public" static="no" mutable="no">
         <type><ref refid="ndigo__common__interface_8h_1ac8108da51e15c2c7cd3dadb52ec3efd9" kindref="member">ndigo_bool_t</ref></type>
@@ -100,7 +100,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="566" column="18" bodyfile="ndigo_common_interface.h" bodystart="566" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="574" column="18" bodyfile="ndigo_common_interface.h" bodystart="574" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__init__parameters_1a3b8edeb542fd7d1e6947d64cd2e39c64" prot="public" static="no" mutable="no">
         <type><ref refid="ndigo__common__interface_8h_1ac8108da51e15c2c7cd3dadb52ec3efd9" kindref="member">ndigo_bool_t</ref></type>
@@ -115,7 +115,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="571" column="18" bodyfile="ndigo_common_interface.h" bodystart="571" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="579" column="18" bodyfile="ndigo_common_interface.h" bodystart="579" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__init__parameters_1a87ffda54f6d402421a520421cb0c56f7" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -131,7 +131,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="579" column="9" bodyfile="ndigo_common_interface.h" bodystart="579" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="587" column="9" bodyfile="ndigo_common_interface.h" bodystart="587" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__init__parameters_1a9b5ec047e5c93374d1b04155bab36073" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -148,7 +148,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="588" column="9" bodyfile="ndigo_common_interface.h" bodystart="588" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="596" column="9" bodyfile="ndigo_common_interface.h" bodystart="596" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__init__parameters_1acec61bca70d258de51ac0dc873c585a6" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -164,7 +164,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="594" column="9" bodyfile="ndigo_common_interface.h" bodystart="594" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="602" column="9" bodyfile="ndigo_common_interface.h" bodystart="602" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__init__parameters_1a483012f7886376a52ab2d8be24ac4234" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -180,7 +180,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="600" column="9" bodyfile="ndigo_common_interface.h" bodystart="600" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="608" column="9" bodyfile="ndigo_common_interface.h" bodystart="608" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__init__parameters_1a1b32190dc65d3ce4ebe79858bb413510" prot="public" static="no" mutable="no">
         <type><ref refid="ndigo__common__interface_8h_1ac8108da51e15c2c7cd3dadb52ec3efd9" kindref="member">ndigo_bool_t</ref></type>
@@ -198,7 +198,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="610" column="18" bodyfile="ndigo_common_interface.h" bodystart="610" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="618" column="18" bodyfile="ndigo_common_interface.h" bodystart="618" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__init__parameters_1a2c37ef1a3ad8802afad6dbe8f23a5381" prot="public" static="no" mutable="no">
         <type><ref refid="ndigo__common__interface_8h_1ac8108da51e15c2c7cd3dadb52ec3efd9" kindref="member">ndigo_bool_t</ref></type>
@@ -215,7 +215,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="618" column="18" bodyfile="ndigo_common_interface.h" bodystart="618" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="626" column="18" bodyfile="ndigo_common_interface.h" bodystart="626" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__init__parameters_1ada476c6eaaba1ad3aab64831b1cd78f0" prot="public" static="no" mutable="no">
         <type>int64_t</type>
@@ -232,7 +232,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="625" column="13" bodyfile="ndigo_common_interface.h" bodystart="625" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="633" column="13" bodyfile="ndigo_common_interface.h" bodystart="633" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__init__parameters_1a915a1572263beb4fae6d85b802f12c8e" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -252,7 +252,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="636" column="9" bodyfile="ndigo_common_interface.h" bodystart="636" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="644" column="9" bodyfile="ndigo_common_interface.h" bodystart="644" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__init__parameters_1a49c2a3e4d481af5bbd5c153f1e896614" prot="public" static="no" mutable="no">
         <type>uint64_t</type>
@@ -269,7 +269,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="645" column="14" bodyfile="ndigo_common_interface.h" bodystart="645" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="653" column="14" bodyfile="ndigo_common_interface.h" bodystart="653" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__init__parameters_1a1ad8f69f5cb3f7c9d85add2d9621c612" prot="public" static="no" mutable="no">
         <type>unsigned int</type>
@@ -285,7 +285,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="651" column="18" bodyfile="ndigo_common_interface.h" bodystart="651" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="659" column="18" bodyfile="ndigo_common_interface.h" bodystart="659" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__init__parameters_1a3dc8782d59680c65908799b3eefb9793" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -302,7 +302,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="659" column="9" bodyfile="ndigo_common_interface.h" bodystart="659" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="667" column="9" bodyfile="ndigo_common_interface.h" bodystart="667" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__init__parameters_1a65c41de4127d26b94dfbcd870b0fb249" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -319,7 +319,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="667" column="9" bodyfile="ndigo_common_interface.h" bodystart="667" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="675" column="9" bodyfile="ndigo_common_interface.h" bodystart="675" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__init__parameters_1aec252b7f9290ce207cb8111e9d7b12b2" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -336,7 +336,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="675" column="9" bodyfile="ndigo_common_interface.h" bodystart="675" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="683" column="9" bodyfile="ndigo_common_interface.h" bodystart="683" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -345,7 +345,7 @@
     <detaileddescription>
 <para>This structure must be completely initialized by calling <ref refid="ndigo__interface_8h_1a531f2422f13797ce226cff26b1245bed" kindref="member">ndigo_get_default_init_parameters()</ref> before initializing an Ndigo5G using <ref refid="ndigo__interface_8h_1a8c704f55c580db43fba8c5f84cd9fa15" kindref="member">ndigo_init()</ref>. </para>
     </detaileddescription>
-    <location file="ndigo_common_interface.h" line="516" column="1" bodyfile="ndigo_common_interface.h" bodystart="516" bodyend="676"/>
+    <location file="ndigo_common_interface.h" line="524" column="1" bodyfile="ndigo_common_interface.h" bodystart="524" bodyend="684"/>
     <listofallmembers>
       <member refid="structndigo__init__parameters_1a7edf6305fafb8d595318dde91addca3c" prot="public" virt="non-virtual"><scope>ndigo_init_parameters</scope><name>board_id</name></member>
       <member refid="structndigo__init__parameters_1a49c2a3e4d481af5bbd5c153f1e896614" prot="public" virt="non-virtual"><scope>ndigo_init_parameters</scope><name>buffer_address</name></member>

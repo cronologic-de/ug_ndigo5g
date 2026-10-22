@@ -23,7 +23,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="473" column="11" bodyfile="ndigo_common_interface.h" bodystart="473" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="481" column="11" bodyfile="ndigo_common_interface.h" bodystart="481" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__trigger_1a27316febd6206386bbbc8e1310678962" prot="public" static="no" mutable="no">
         <type><ref refid="ndigo__common__interface_8h_1ac8108da51e15c2c7cd3dadb52ec3efd9" kindref="member">ndigo_bool_t</ref></type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="490" column="18" bodyfile="ndigo_common_interface.h" bodystart="490" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="498" column="18" bodyfile="ndigo_common_interface.h" bodystart="498" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structndigo__trigger_1af8473ec25f5ef654d24c79394c4d8312" prot="public" static="no" mutable="no">
         <type><ref refid="ndigo__common__interface_8h_1ac8108da51e15c2c7cd3dadb52ec3efd9" kindref="member">ndigo_bool_t</ref></type>
@@ -66,7 +66,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="507" column="18" bodyfile="ndigo_common_interface.h" bodystart="507" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="515" column="18" bodyfile="ndigo_common_interface.h" bodystart="515" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -75,7 +75,7 @@
     <detaileddescription>
 <para>Used by <ref refid="structndigo__configuration_1a8bc5b11a6dc9431517fb00335d4d9aeb" kindref="member">ndigo_configuration::trigger</ref>. </para>
     </detaileddescription>
-    <location file="ndigo_common_interface.h" line="464" column="1" bodyfile="ndigo_common_interface.h" bodystart="464" bodyend="508"/>
+    <location file="ndigo_common_interface.h" line="472" column="1" bodyfile="ndigo_common_interface.h" bodystart="472" bodyend="516"/>
     <listofallmembers>
       <member refid="structndigo__trigger_1a27316febd6206386bbbc8e1310678962" prot="public" virt="non-virtual"><scope>ndigo_trigger</scope><name>edge</name></member>
       <member refid="structndigo__trigger_1af8473ec25f5ef654d24c79394c4d8312" prot="public" virt="non-virtual"><scope>ndigo_trigger</scope><name>rising</name></member>

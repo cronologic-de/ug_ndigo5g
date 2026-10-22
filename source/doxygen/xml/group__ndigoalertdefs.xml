@@ -14,7 +14,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="319" column="9" bodyfile="ndigo_common_interface.h" bodystart="319" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="327" column="9" bodyfile="ndigo_common_interface.h" bodystart="327" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__ndigoalertdefs_1ga5be81b6da77192243b30fd24bc0433a1" prot="public" static="no">
         <name>NDIGO_ALERT_VCCINT</name>
@@ -26,7 +26,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="323" column="9" bodyfile="ndigo_common_interface.h" bodystart="323" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="331" column="9" bodyfile="ndigo_common_interface.h" bodystart="331" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__ndigoalertdefs_1ga97cf07b4491c13c53017ce711c7521bf" prot="public" static="no">
         <name>NDIGO_ALERT_VCCAUX</name>
@@ -38,7 +38,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="327" column="9" bodyfile="ndigo_common_interface.h" bodystart="327" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="335" column="9" bodyfile="ndigo_common_interface.h" bodystart="335" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__ndigoalertdefs_1ga2e5a80b92c6fdd737aa1a8f9ab1fc743" prot="public" static="no">
         <name>NDIGO_ALERT_FPGA_TEMPERATURE_CRITICAL</name>
@@ -50,7 +50,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="331" column="9" bodyfile="ndigo_common_interface.h" bodystart="331" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="339" column="9" bodyfile="ndigo_common_interface.h" bodystart="339" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__ndigoalertdefs_1ga20a3fba4f99e4b7084f153a97206846b" prot="public" static="no">
         <name>NDIGO_ALERT_ADC_TEMPERATURE</name>
@@ -62,7 +62,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="335" column="9" bodyfile="ndigo_common_interface.h" bodystart="335" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="343" column="9" bodyfile="ndigo_common_interface.h" bodystart="343" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__ndigoalertdefs_1gacae8bfa78442fa050df62212642614d4" prot="public" static="no">
         <name>NDIGO_ALERT_ADC_TEMPERATURE_CRITICAL</name>
@@ -74,7 +74,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ndigo_common_interface.h" line="339" column="9" bodyfile="ndigo_common_interface.h" bodystart="339" bodyend="-1"/>
+        <location file="ndigo_common_interface.h" line="347" column="9" bodyfile="ndigo_common_interface.h" bodystart="347" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

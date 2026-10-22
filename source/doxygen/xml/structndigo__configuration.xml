@@ -172,7 +172,7 @@
         </briefdescription>
         <detaileddescription>
 <para>The default value of -0.35V is ideal for negative NIM pulses of -0.8V.</para>
-<para>Index 0 refers to the TRIGGER input, index 1 to the GATE input. </para>
+<para>Index 0 refers to the GATE input, index 1 to the TRIGGER input. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
