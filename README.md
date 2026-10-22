@@ -33,9 +33,28 @@ listed packages.
 - Latin Modern Mono Light (monospaced font): [lm](https://ctan.org/pkg/lm)
 - KerkisSans (expanded Greek letters): [kerkis](https://ctan.org/pkg/kerkis)
 
+### doxygen
+
+The API documentation is automatically created using
+[doxygen](https://www.doxygen.nl/index.html).
+
+When running doxygen, `crono_interface.h`, `ndigo_common_interface.h`, and
+`ndigo_interface.h` must exist in the working directory.
+
+Either copy these files manually, or use the provided script
+`update_source_files.ps1`. When using the script, create a file
+`.interface_source_locations` and paste the paths of the three `.h` files
+into it.
+
 ## Building
 
-Run
+If you updated anything in the interface `.h` files, run
+
+```shell
+doxygen
+```
+
+Otherwise, directly run
 
 ```shell
 make html

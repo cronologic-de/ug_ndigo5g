@@ -283,3 +283,4 @@ ug_example/driver
 .venv
 driver
 *_interface.h
+.interface_source_locations
